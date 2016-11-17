@@ -190,7 +190,7 @@ html_static_path = ['_static']
 
 # If false, no module index is generated.
 #
-# html_domain_indices = True
+html_domain_indices = True
 
 # If false, no index is generated.
 #
@@ -202,7 +202,7 @@ html_split_index = True
 
 # If true, links to the reST sources are added to the pages.
 #
-# html_show_sourcelink = True
+html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #
