@@ -11,6 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   overview
+   kelly
+   ma
+   multi_factor
+   turtle
    apt
+
 
 
