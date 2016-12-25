@@ -13,3 +13,5 @@ Contents:
 
    python_offline_runtime
 
+   pyalgo/index
+
