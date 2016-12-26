@@ -26,6 +26,8 @@
             if pow(index1, 3) + pow(index2, 3) + pow(index3, 3) == i:
                 print(i)
 
+    # 另外一个思路，找出N位数所包含所有数字的组合，遍历这些组合，检查所有数字的N次方之和的数字组成是否匹配这些数组。
+    # N位数所包含的数字组合是数学组合问题，其组合数目大大小于N位数的数目，因此算法效率高很多
     # https://oeis.org/A005188
     from itertools import combinations_with_replacement
     A005188_list = []
