@@ -20,6 +20,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import datetime
 
 # -- General configuration ------------------------------------------------
 
@@ -55,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'qytz-notes'
-copyright = '2016, qytz(lennyh)'
+copyright = '{0}, qytz(lennyh)'.format(datetime.datetime.now().year)
 author = 'qytz(lennyh)'
 
 # The version info for the project you're documenting, acts as replacement for
