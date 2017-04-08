@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    python_offline_runtime
+   async
 
    pyalgo/index
 
