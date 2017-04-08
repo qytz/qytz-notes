@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    overview
+   quantengine
    kelly
    ma
    multi_factor
