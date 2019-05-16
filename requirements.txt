@@ -2,5 +2,8 @@ ipython
 python-dateutil
 pytz
 Sphinx
+nbsphinx
 tornado
 recommonmark
+sphinx-markdown-builder
+sphinx-jekyll-builder
