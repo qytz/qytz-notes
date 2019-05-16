@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简易 git 服务器 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="量化投资" href="../quant/index.html" />
+    <link rel="prev" title="sphinx 生成本地化的文档" href="sphinx-i11n.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">技术笔记</a> &raquo;</li>
+        
+      <li>简易 git 服务器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/git-server.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="git">
+<h1>简易 git 服务器<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
+<div class="section" id="gitolite">
+<h2>简易 gitolite 服务器搭建<a class="headerlink" href="#gitolite" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>服务器搭建<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<p>步骤如下</p>
+<ol class="arabic simple">
+<li>创建 git 用户</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo adduser git
+su - git
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>添加 ssh 公钥</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir .ssh
+cat /tmp/id_rsa.lenny.pub &gt;&gt; ~/.ssh/authorized_keys
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>在任何 git 用户可读写的位置新建 git 裸仓库</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir project.git
+<span class="nb">cd</span> project.git
+git --bare init
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>服务器使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>远程直接克隆和推送内容</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@gitserver:/home/git/project.git
+<span class="nb">cd</span> project
+<span class="nb">echo</span> <span class="s2">&quot;sample git project&quot;</span> README
+git commit -am <span class="s1">&#39;fix for the README file&#39;</span>
+git push origin master
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gitolite-git">
+<h2>使用 gitolite 搭建 git 服务器<a class="headerlink" href="#gitolite-git" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>服务器搭建<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get install gitolite3 git-core
+</pre></div>
+</div>
+<p>安装 gitolite3 会要求输入管理员的 ssh 公钥。</p>
+</div>
+<div class="section" id="id4">
+<h3>服务器管理<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h4>下载管理仓库<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<p>Gitolite 使用 gitolite-admin.git 仓库来管理，所以需要抓下来修改、设置（未来所有管理也是如此）。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone gitolite@gitserver:gitolite-admin
+<span class="nb">cd</span> gitolite-admin
+ls
+conf/gitolite.conf <span class="c1"># 配置项，配置谁可以读写哪个仓库 Repository。</span>
+keydir <span class="c1"># 目录，存放每个帐号的 public key。 放置的文件命名：user1.pub, user2.pub (user1, user2.. 为帐号名称（文件名 = 帐号名）, 建议使用&quot;帐号.pub&quot; 文件名）</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>新增帐号<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> gitolite-admin
+cp /tmp/user1.pub keydir/user1.pub <span class="c1"># 依照实际帐号命名，不要取 user1, user2</span>
+cp /tmp/user1.pub keydir/user1@machine.pub <span class="c1"># 若相同帐号，則使用 user@machine.pub</span>
+cp /tmp/user2.pub keydir/user2.pub
+git add keydir/user1.pub keydir/user1@machine.pub keydir/user2.pub
+git commit -m <span class="s1">&#39;add user1, user1@machine, user2 public key&#39;</span>
+git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="gitolite-conf">
+<h4>gitolite.conf 配置<a class="headerlink" href="#gitolite-conf" title="永久链接至标题">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 取自 2.3.1 授權文件基本語法
+@admin = jiangxin wangsheng
+
+repo gitolite-admin
+RW+    = jiangxin
+
+repo ossxp/.+
+C       = @admin
+RW     = @all
+
+repo testing
+RW+                   =   @admin
+RW      master        =   junio
+RW+     pu            =   junio
+RW      cogito$        =   pasky
+RW      bw/           =   linus
+-                        =   somebody
+RW      tmp/           =   @all
+RW      refs/tags/v[0-9] =   junio
+
+# 取自 2.3.3 ACL
+repo testing
+RW+   = jiangxin @admin
+RW    = @dev @test
+R      = @all
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>repo 语法
+
+    repo 語法：《權限》 『零個或多個正規表示式批配的引用』 = &lt;user&gt; [&lt;user&gt; ...]
+    每條指令必須指定一個權限，權限可以用下面任何一個權限的關鍵字：C, R, RW, RW+, RWC, RW+C, RWD, RW+D, RWCD, RW+CD
+        C : 建立
+        R : 讀取
+        RW : 讀取 + 寫入
+        RW+ : 讀取 + 寫入 + 對 rewind 的 commit 做強制 Push
+        RWC : 授權指令定義 regex (regex 定義的 branch、tag 等）, 才可以使用此授權指令。
+        RW+C : 同上，C 是允許建立 和 regex 配對的引用 (branch、tag 等）
+        RWD : 授權指令中定義 regex (regex 定義的 branch、tag 等）, 才可以使用此授權指令。
+        RW+D : 同上，D 是允許刪除 和 regex 配對的引用 (branch、tag 等）
+        RWCD : 授權指令中定義 regex (regex 定義的 branch、tag 等）, 才可以使用此授權指令。
+        RW+CD : C 是允許建立 和 regex 配對的引用 (branch、tag 等）, D 是允許刪除 和 regex 配對的引用 (branch、tag 等）
+        - : 此設定為不能寫入，但是可以讀取
+        註：若 regex 不是以 refs/ 開頭，會自動於前面加上 refs/heads/
+
+群组
+
+    @all 代表所有人的意思
+    @myteam user1 user2 : user1, user2 都是屬於 myteam 這個群組
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">gitolite 配置的应通过 gitolite-admin 仓库修改并提交到服务器，如若手动更改了服务器端的配置，如更改仓库的存储位置（仓库位置为 gitolite 用户的家目录）等，
+需运行 gitolite setup/gl-setup 修复。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gitweb">
+<h2>gitweb 配置<a class="headerlink" href="#gitweb" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gitweb
+sudo vim /etc/gitweb.conf
+    <span class="nv">$projectroot</span> <span class="o">=</span> <span class="s2">&quot;/home/git/repositories/&quot;</span><span class="p">;</span>
+    <span class="nv">$projects_list</span> <span class="o">=</span> <span class="s2">&quot;/home/git/projects.list&quot;</span><span class="p">;</span>
+sudo mv /etc/apache2/conf.d/gitweb /etc/apache2/conf-available/gitweb.conf
+    Options +FollowSymLinks +ExecCGI
+sudo a2enconf gitweb
+sudo a2enmod cgi
+sudo apache2ctl restart
+</pre></div>
+</div>
+<p>需主意 gitweb 对 git 的 projectroot 和 projects_list 要有权限。
+可以设置 gitolite 的掩码：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim /var/lib/gitolite3/.gitolite.rc <span class="c1">#$REPO_UMASK = 0027;</span>
+sudo usermod -G gitolite3 www-data
+sudo chmod <span class="m">640</span> /val/lib/gitolite2/projects.list
+</pre></div>
+</div>
+</div>
+<div class="section" id="svn-git">
+<h2>svn 仓库迁移到 git<a class="headerlink" href="#svn-git" title="永久链接至标题">¶</a></h2>
+<p>参考 <a class="reference external" href="http://www.xbc.me/svn-to-git-server/">迁移 SVN 到 Git Server</a> 及 <a class="reference external" href="http://git-scm.com/book/zh/Git-%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F-%E8%BF%81%E7%A7%BB%E5%88%B0-Git">迁移 SVN 到 Git Server (git-scm)</a></p>
+</div>
+<div class="section" id="id7">
+<h2>引用<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://blog.longwin.com.tw/2011/03/linux-gitolite-git-server-2011/">Linux 使用 Gitolite 架設 Git Server</a></li>
+<li><a class="reference external" href="http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitolite">服务器上的 Git - Gitolite</a></li>
+<li><a class="reference external" href="http://www.lucidlynx.com/how-to-install-gitweb-in-ubuntu/">How to install gitweb in Ubuntu</a></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../quant/index.html" class="btn btn-neutral float-right" title="量化投资" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinx-i11n.html" class="btn btn-neutral" title="sphinx 生成本地化的文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

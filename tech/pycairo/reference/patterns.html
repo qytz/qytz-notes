@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pattern &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../../about.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Surfaces" href="surfaces.html" />
+    <link rel="prev" title="Paths" href="paths.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pycairo Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">概览</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="constants.html">模块函数与常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context.html">Cairo Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matrix.html">Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paths.html">Paths</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surfaces.html">Surfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="text.html">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pycairo_c_api.html">Pycairo 的 C API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="../index.html">Pycairo Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>Pattern</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tech/pycairo/reference/patterns.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="pattern">
+<span id="patterns"></span><h1>Pattern<a class="headerlink" href="#pattern" title="永久链接至标题">¶</a></h1>
+<p>Pattern是cairo绘图的颜料，其主要应用时作为所有cairo绘制操作的源，当然也可以用于mask，即画笔。</p>
+<p>一个cairo <em>Pattern</em> 由以下列出的任何一个 <em>PatternType</em> 的构造函数来创建，或者可以隐式的通过
+<em>Context.set_source_&lt;type&gt;()</em> 方法来创建。</p>
+<div class="section" id="class-pattern">
+<h2>class Pattern()<a class="headerlink" href="#class-pattern" title="永久链接至标题">¶</a></h2>
+<p><em>Pattern</em> 是所有其他pattern类继承的抽象基类，不能直接被实例化。</p>
+<dl class="class">
+<dt id="cairo.Pattern">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Pattern</code><a class="headerlink" href="#cairo.Pattern" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="cairo.Pattern.get_extend">
+<code class="descname">get_extend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Pattern.get_extend" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">绘制 <em>Pattern</em> 时当前的扩展模式（ <a class="reference internal" href="constants.html#constants-extend"><span class="std std-ref">EXTEND 属性</span></a> ）。</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<p>获取 <em>Pattern</em> 当前的扩展模式。每种扩展模式的详细信息参考 <a class="reference internal" href="constants.html#constants-extend"><span class="std std-ref">EXTEND 属性</span></a> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Pattern.get_matrix">
+<code class="descname">get_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Pattern.get_matrix" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">存储了 <em>Pattern</em> 的仿射变换矩阵信息的类 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Pattern.set_extend">
+<code class="descname">set_extend</code><span class="sig-paren">(</span><em>extend</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Pattern.set_extend" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>extend</strong> – 描述 <em>Pattern</em> 外围区域如何绘制的 <a class="reference internal" href="constants.html#constants-extend"><span class="std std-ref">EXTEND</span></a> 。</td>
+</tr>
+</tbody>
+</table>
+<p>设置绘制 <em>Pattern</em> 外围区域时使用的模式。</p>
+<p>对于 <a class="reference internal" href="#cairo.SurfacePattern" title="cairo.SurfacePattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurfacePattern</span></code></a> 和 <a class="reference internal" href="constants.html#cairo.EXTEND_PAD" title="cairo.EXTEND_PAD"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.EXTEND_PAD</span></code></a> 默认的模式是 <a class="reference internal" href="constants.html#cairo.EXTEND_NONE" title="cairo.EXTEND_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.EXTEND_NONE</span></code></a> 。
+对于 <a class="reference internal" href="#cairo.Gradient" title="cairo.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a> Pattern 默认的模式时 <a class="reference internal" href="constants.html#cairo.EXTEND_PAD" title="cairo.EXTEND_PAD"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.EXTEND_PAD</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Pattern.set_matrix">
+<code class="descname">set_matrix</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Pattern.set_matrix" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>matrix</strong> – <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 的实例</td>
+</tr>
+</tbody>
+</table>
+<p>设置 <em>Pattern</em> 的变换矩阵为 <em>matrix</em> 。这个矩阵用于从用户空间转换到pattern空间。</p>
+<p>当 <em>Patter</em> 第一次被创建时总是会创建一个唯一的变换矩阵用于其仿射变换，因此
+pattern空间和用户空间从一开始就是不同的。</p>
+<p>重要: 请注意这个变化矩阵的方向是从用户空间到pattern空间，这意味着如果你想要从
+pattern空间到用户空间（即设备空间），那么其坐标变换使用的是 <em>Pattern</em> 矩阵的反转矩阵。</p>
+<p>例如，如果你想要创建一个比之前大一倍的 <em>Pattern</em> ，正确的代码应该是:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">xx</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">yy</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">pattern</span><span class="o">.</span><span class="n">set_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果在上面的代码中使用值2.0代替0.5，会使得 <em>Patter</em> 是原来大小的一半。</p>
+<p>另外，需要注意的时用户空间的讨论仅限于 <a class="reference internal" href="context.html#cairo.Context.set_source" title="cairo.Context.set_source"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context.set_source</span></code></a> 语义范围内。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-solidpattern-pattern">
+<h2>class SolidPattern(<a class="reference internal" href="#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a>)<a class="headerlink" href="#class-solidpattern-pattern" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="cairo.SolidPattern">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">SolidPattern</code><span class="sig-paren">(</span><em>red</em>, <em>green</em>, <em>blue</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SolidPattern" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>red</strong> (<em>float</em>) – 颜色的红色组件的值</li>
+<li><strong>green</strong> (<em>float</em>) – 颜色的绿色组件的值</li>
+<li><strong>blue</strong> (<em>float</em>) – 颜色的蓝色组件的值</li>
+<li><strong>alpha</strong> (<em>float</em>) – 颜色的alpha组件的值</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">一个新的 <em>SolidPattern</em> 的实例</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">没有内存时触发 <em>MemoryError</em> 异常</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>使用参数中的半透明颜色创建一个新的 <em>SolidPattern</em> 。颜色组件为0~1的浮点数。
+如果传递的参数超过这个范围，则使用最接近该值的范围内的值（clamped）。</p>
+<dl class="method">
+<dt id="cairo.SolidPattern.get_rgba">
+<code class="descname">get_rgba</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SolidPattern.get_rgba" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(red, green, blue, alpha) 浮点数元组</td>
+</tr>
+</tbody>
+</table>
+<p>获取 <em>SolidPattern</em> 的颜色。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-surfacepattern-pattern">
+<h2>class SurfacePattern(<a class="reference internal" href="#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a>)<a class="headerlink" href="#class-surfacepattern-pattern" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="cairo.SurfacePattern">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">SurfacePattern</code><span class="sig-paren">(</span><em>surface</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SurfacePattern" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>surface</strong> – cairo <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">使用参数surface新创建的 <em>SurfacePattern</em></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">没有内存时触发 <em>MemoryError</em> 异常</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cairo.SurfacePattern.get_filter">
+<code class="descname">get_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SurfacePattern.get_filter" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前用于调整 <em>SurfacePattern</em> 的 <a class="reference internal" href="constants.html#constants-filter"><span class="std std-ref">FILTER</span></a> 。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.SurfacePattern.get_surface">
+<code class="descname">get_surface</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SurfacePattern.get_surface" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><em>SurfacePattern</em> 的 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">1.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.SurfacePattern.set_filter">
+<code class="descname">set_filter</code><span class="sig-paren">(</span><em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SurfacePattern.set_filter" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>filter</strong> – 用于描述如何调整 <em>Pattern</em> 的 <a class="reference internal" href="constants.html#constants-filter"><span class="std std-ref">FILTER</span></a> 。</td>
+</tr>
+</tbody>
+</table>
+<p>注意：即使你并没有使用 <em>Pattern</em> 时（例如使用 <a class="reference internal" href="context.html#cairo.Context.set_source_surface" title="cairo.Context.set_source_surface"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_source_surface()</span></code></a> 时）也想要控制调整的模式。
+这种情况下使用 <a class="reference internal" href="context.html#cairo.Context.get_source" title="cairo.Context.get_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.get_source()</span></code></a> 来访问 cairo 隐式创建的 pattern 更方便。
+例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">set_source_surface</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">surfacepattern</span><span class="o">.</span><span class="n">set_filter</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">get_source</span><span class="p">(),</span> <span class="n">cairo</span><span class="o">.</span><span class="n">FILTER_NEAREST</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-gradient-pattern">
+<h2>class Gradient(<a class="reference internal" href="#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a>)<a class="headerlink" href="#class-gradient-pattern" title="永久链接至标题">¶</a></h2>
+<p><em>Pattern</em> 是其他pattern类继承的抽象基类，不能直接被实例化。</p>
+<dl class="class">
+<dt id="cairo.Gradient">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Gradient</code><a class="headerlink" href="#cairo.Gradient" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="cairo.Gradient.add_color_stop_rgb">
+<code class="descname">add_color_stop_rgb</code><span class="sig-paren">(</span><em>offset</em>, <em>red</em>, <em>green</em>, <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Gradient.add_color_stop_rgb" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> (<em>float</em>) – [0.0 .. 1.0] 范围内的偏移值</li>
+<li><strong>red</strong> (<em>float</em>) – 颜色的红色组件的值</li>
+<li><strong>green</strong> (<em>float</em>) – 颜色的绿色组件的值</li>
+<li><strong>blue</strong> (<em>float</em>) – 颜色的蓝色组件的值</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>向 <em>Gradient</em> 添加一个不透明的颜色。
+offset 为沿着渐变的控制向量的位置点。例如，线性渐变 <em>LinearGradient’s</em> 的控制向量
+从 (x0,y0) 到 (x1,y1) ，而径向渐变 <em>RadialGradient’s</em> 的控制向量从圆的起点到圆的终点。</p>
+<p>颜色设置方法与 <a class="reference internal" href="context.html#cairo.Context.set_source_rgb" title="cairo.Context.set_source_rgb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_source_rgb()</span></code></a> 相同。</p>
+<p>如果设置了两个（或更多个）点，则所有的停止点会根据添加顺序排序（添加早的点在前）。
+这在想要创建尖锐的颜色渐变（sharp color transition）而非混合（blend）渐变时很有用。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Gradient.add_color_stop_rgba">
+<code class="descname">add_color_stop_rgba</code><span class="sig-paren">(</span><em>offset</em>, <em>red</em>, <em>green</em>, <em>blue</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Gradient.add_color_stop_rgba" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> (<em>float</em>) – [0.0 .. 1.0] 范围内的偏移值</li>
+<li><strong>red</strong> (<em>float</em>) – 颜色的红色组件的值</li>
+<li><strong>green</strong> (<em>float</em>) – 颜色的绿色组件的值</li>
+<li><strong>blue</strong> (<em>float</em>) – 颜色的蓝色组件的值</li>
+<li><strong>alpha</strong> – 颜色的alpha组件的值</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>向 <em>Gradient</em> 添加一个不透明的颜色。 （译注：原文如此，疑有误）
+offset 为沿着渐变的控制向量的位置点。例如，线性渐变 <em>LinearGradient’s</em> 的控制向量
+从 (x0,y0) 到 (x1,y1) ，而径向渐变 <em>RadialGradient’s</em> 的控制向量从圆的起点到圆的终点。</p>
+<p>颜色设置方法与 <a class="reference internal" href="context.html#cairo.Context.set_source_rgb" title="cairo.Context.set_source_rgb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_source_rgb()</span></code></a> 相同。</p>
+<p>如果设置了两个（或更多个）点，则所有的停止点会根据添加顺序排序（添加早的点在前）。
+这在想要创建尖锐的颜色渐变（sharp color transition）而非混合（blend）渐变时很有用。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-lineargradient-gradient">
+<h2>class LinearGradient(<a class="reference internal" href="#cairo.Gradient" title="cairo.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>)<a class="headerlink" href="#class-lineargradient-gradient" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="cairo.LinearGradient">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">LinearGradient</code><span class="sig-paren">(</span><em>x0</em>, <em>y0</em>, <em>x1</em>, <em>y1</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.LinearGradient" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>x0</strong> (<em>float</em>) – 起始点的x坐标</li>
+<li><strong>y0</strong> (<em>float</em>) – 起始点的y坐标</li>
+<li><strong>x1</strong> (<em>float</em>) – 结束点的x坐标</li>
+<li><strong>y1</strong> (<em>float</em>) – 结束点的y坐标</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first"><em>LinearGradient</em></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">没有内存时触发 <em>MemoryError</em> 异常</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>根据 (x0, y0) 和 (x1,y1) 确定的直线创建一个新的 <em>LinearGradient</em> 。
+在使用 <em>Gradient</em> pattern之前，需要使用 <a class="reference internal" href="#cairo.Gradient.add_color_stop_rgb" title="cairo.Gradient.add_color_stop_rgb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gradient.add_color_stop_rgb()</span></code></a>
+或者 <a class="reference internal" href="#cairo.Gradient.add_color_stop_rgba" title="cairo.Gradient.add_color_stop_rgba"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gradient.add_color_stop_rgba()</span></code></a> 定义一系列的停止点。</p>
+<p>注意: 此处的坐标为pattern空间。对于一个新的 <em>Pattern</em> ，pattern空间与用户空间时不同的，
+但是他们之间的关系可以通过 <a class="reference internal" href="#cairo.Pattern.set_matrix" title="cairo.Pattern.set_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pattern.set_matrix()</span></code></a> 改变。</p>
+<dl class="method">
+<dt id="cairo.LinearGradient.get_linear_points">
+<code class="descname">get_linear_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.LinearGradient.get_linear_points" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x0, y0, x1, y1) - 浮点数元组<ul class="simple">
+<li>x0: 第一个点的x坐标</li>
+<li>y0: 第一个点的y坐标</li>
+<li>x1: 第二个点的x坐标</li>
+<li>y1: 第二个点的y坐标</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>获取 <em>LinearGradient</em> 渐变的端点坐标。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-radialgradient-gradient">
+<h2>class RadialGradient(<a class="reference internal" href="#cairo.Gradient" title="cairo.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>)<a class="headerlink" href="#class-radialgradient-gradient" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="cairo.RadialGradient">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">RadialGradient</code><span class="sig-paren">(</span><em>cx0</em>, <em>cy0</em>, <em>radius0</em>, <em>cx1</em>, <em>cy1</em>, <em>radius1</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.RadialGradient" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>cx0</strong> (<em>float</em>) – 起始圆心的x坐标</li>
+<li><strong>cy0</strong> (<em>float</em>) – 起始圆心的y坐标</li>
+<li><strong>radius0</strong> (<em>float</em>) – 起始圆的半径</li>
+<li><strong>cx1</strong> (<em>float</em>) – 终点圆心的x坐标</li>
+<li><strong>cy1</strong> (<em>float</em>) – 终点圆心的y坐标</li>
+<li><strong>radius1</strong> (<em>float</em>) – 终点圆的半径</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">新创建的 <em>RadialGradient</em></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">没有内存时触发 <em>MemoryError</em> 异常</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>在(cx0, cy0, radius0) 和 (cx1, cy1, radius1) 两个圆之间创建一个新的 <em>RadialGradient</em> 径向渐变pattern。
+在使用 <em>Gradient</em> pattern之前，需要使用 <a class="reference internal" href="#cairo.Gradient.add_color_stop_rgb" title="cairo.Gradient.add_color_stop_rgb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gradient.add_color_stop_rgb()</span></code></a>
+或者 <a class="reference internal" href="#cairo.Gradient.add_color_stop_rgba" title="cairo.Gradient.add_color_stop_rgba"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gradient.add_color_stop_rgba()</span></code></a> 定义一系列的停止点。</p>
+<p>注意: 此处的坐标为pattern空间。对于一个新的 <em>Pattern</em> ，pattern空间与用户空间时不同的，
+但是他们之间的关系可以通过 <a class="reference internal" href="#cairo.Pattern.set_matrix" title="cairo.Pattern.set_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pattern.set_matrix()</span></code></a> 改变。</p>
+<dl class="method">
+<dt id="cairo.RadialGradient.get_radial_circles">
+<code class="descname">get_radial_circles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.RadialGradient.get_radial_circles" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x0, y0, r0, x1, y1, r1) - 一个浮点数元组<ul class="simple">
+<li>x0: 起始圆心的x坐标</li>
+<li>y0: 起始圆心的y坐标</li>
+<li>r0: 起始圆的半径</li>
+<li>x1: 终点圆心的x坐标</li>
+<li>y1: 终点圆心的y坐标</li>
+<li>r1: 终点圆的半径</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>获取 <em>RadialGradient</em> 的端点的圆，每个圆以其圆心坐标和半径表示。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="surfaces.html" class="btn btn-neutral float-right" title="Surfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="paths.html" class="btn btn-neutral" title="Paths" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

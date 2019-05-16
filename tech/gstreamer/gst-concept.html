@@ -1,0 +1,705 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GStreamer系列之几个入门概念 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="GStreamer系列之概览" href="gst-playbin.html" />
+    <link rel="prev" title="GStreamer 开发经验" href="index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">GStreamer 开发经验</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GStreamer系列之几个入门概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gst-playbin.html">GStreamer系列之概览</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gst-pipeline.html">GStreamer系列之管道</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">GStreamer 开发经验</a> &raquo;</li>
+        
+      <li>GStreamer系列之几个入门概念</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/gstreamer/gst-concept.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="gstreamer">
+<h1>GStreamer系列之几个入门概念<a class="headerlink" href="#gstreamer" title="永久链接至标题">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="永久链接至标题">¶</a></h2>
+<p>GStreamer是一个多媒体框架，它可以允许你轻易地创建、编辑与播放多媒体文件，这是
+通过创建带有很多特殊的多媒体元素的管道来完成的。</p>
+</div>
+<div class="section" id="pipeline">
+<h2>管道-pipeline<a class="headerlink" href="#pipeline" title="永久链接至标题">¶</a></h2>
+<p>GStreamer的工作方式非常简单，你只需创建一个包含很多元素的管道，这与Linux命令行
+的管道非常类似，例如，一般命令行的管道是这样的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>foo@bar:~$ ps ax | grep &quot;apache&quot; |wc -l
+</pre></div>
+</div>
+<p>这个命令首先捕获一个进程列表然后返回名字包含 “apache” 的进程并传递给 wc 命令并
+统计出行数。我们可以看出每一个使用 <code class="docutils literal notranslate"><span class="pre">|</span></code> 连接，并且 <code class="docutils literal notranslate"><span class="pre">|</span></code> 左边的命令的输出传递
+给其右边的命令作为输入。</p>
+<p>GStreamer的工作方式与此类似，GStreamer中你将很多元素串联起来，每一个元素都完成
+某些特定的事。我们来演示一下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 filesrc location=越单纯越幸福.mp3 ! decodebin ! audioconvert ! alsasink
+</pre></div>
+</div>
+<p>运行这条命令你就可以听到动听的音乐了，当然前提是你的当前目录有这个音乐文件。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gst-launch-1.0</span></code> 可以用来运行 GStreamer 管道，你只需要将需要使用的元素一个一个
+传递给它就可以了，每一个命令使用 <code class="docutils literal notranslate"><span class="pre">!</span></code> 来连接。此处你可以把 <code class="docutils literal notranslate"><span class="pre">!</span></code> 当作命令行里
+的 <code class="docutils literal notranslate"><span class="pre">|</span></code> 。上面那条命令包含了几个元素，我们简单解释一下：
+a. filesrc——这个元素从本地磁盘加载了一个文件，使用该元素时你设置了 <em>location</em>
+属性指向了音乐文件，关于属性我们后边聊。
+b. decodebin——我们需要从 <em>filesrc</em> 解码，因此我们使用了这个元素。这个元素是一个
+聪明的小家伙，它会自动检测文件的类型并在后台构造一些GStreamer元素来解码。因此，
+此处对于 mp3 你可以使用 mad 代替之试一下。
+c. audioconvert——一个声音文件中有各种各样的信息，每种信息传递到喇叭都是不同的，
+因此要使用此元素来做一下转换。
+d. alsasink——这个元素做的事很简单，就是把你的音频使用ALSA传递给你的声卡。</p>
+<p>文章写到这里，我们就可以使用管道来做各种试验了，但首先我们要知道有那些元素可以
+使用啊:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>foo@bar:~$ gst-inspect-1.0
+</pre></div>
+</div>
+<p>这个命令列出了可用的元素，你也可以使用该命令查看某一元素的详细信息，例如 filesrc
+元素:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>foo@bar:~$ gst-inspect-1.0 filesrc
+</pre></div>
+</div>
+<p>下面介绍一些GStreamer的相关术语，一些人可能很快就会对 <em>pad</em>, <em>cap</em> 这些术语搞晕，
+就不要说 <em>bin</em> 和 <em>ghost pad</em> 了。其实这些术语都相当的简单。。。</p>
+</div>
+<div class="section" id="element">
+<h2>元素element<a class="headerlink" href="#element" title="永久链接至标题">¶</a></h2>
+<p>其实我们已经讨论了管道，而元素就在管道上。每一个元素都有很多属性用来设置该元素。
+例如， <em>volume</em> 元素（设置管道的音量）有一个熟悉 <strong>volume</strong> 可以设置音量或者静音。
+当你创建自己的管道时就要给很多的元素设置属性。</p>
+</div>
+<div class="section" id="pad">
+<h2>pad<a class="headerlink" href="#pad" title="永久链接至标题">¶</a></h2>
+<p>每一个元素都有虚拟的插头供数据流入和流出，即pad。如果你把元素看作一个对输入的
+数据做一些处理的黑盒。在盒子的左右两边就是插孔了，你可以插入电缆向盒子传入信息，
+这就是pad要做的事。绝大多数元素有一个输入pad（叫做sink）和一个输出pad(叫做src)。
+因此，我们上面的管道看起来是这样的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[src] ! [sink src] ! [sink src] ! [sink]
+</pre></div>
+</div>
+<p>最左边的元素只有一个src pad用来提供信息（如filesrc）。接下来的几个元素接收信息并
+做一些处理，因此他们有sink和src pad（例如decodebin和audiocovert），最后一个元素
+只接收信息（例如alsasink）。当你使用 <code class="docutils literal notranslate"><span class="pre">gst-inspect-1.0</span></code> 命令查看一个元素的详细
+信息时，就会列出该元素的pad信息。</p>
+<p>注意可能与平时大家认为的概念有些不同的是，src pad是用来发送数据的端点，即数据的
+输出端；而sink pad是用来接收数据的端点，即数据的输入端。</p>
+<p>而且，一般来说，src pad只能连接到sink pad。当然，没有例外的规则是不存在的，
+ghost pad两端就要连接相同类型的pad，具体请参考后面的例子吧。</p>
+</div>
+<div class="section" id="cap">
+<h2>cap<a class="headerlink" href="#cap" title="永久链接至标题">¶</a></h2>
+<p>我们已经了解了pad和从管道第一个元素到最后一个元素的数据流是怎么回事了，那么我们
+来讨论下 <em>cap</em> 。每一个元素都有特定的cap，cap是指该元素可以接收什么样的信息（
+例如是接收音频还是视频）。你可以把cap看成是电源插座上其可以接受什么范围电压的规则。</p>
+</div>
+<div class="section" id="bin">
+<h2>bin<a class="headerlink" href="#bin" title="永久链接至标题">¶</a></h2>
+<p>很多人不理解bin，其实它很简单。bin就是一种便捷的方式，可以把很多个元素放进一个
+容器中。例如你有很多个元素用来解码视频并对其使用一些效果。要使事情变得简单一些，
+你可以把这些元素放进一个bin（就像一个容器）中，以后你就可以使用bin来引用这些元素了。
+这样其实bin变成了一个元素，例如你的管道是 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!</span> <span class="pre">b</span> <span class="pre">!</span> <span class="pre">c</span> <span class="pre">!</span> <span class="pre">d</span></code> ，你可以把他们放进
+mybin，这样当你使用mybin时其实是引用了 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!</span> <span class="pre">b</span> <span class="pre">!</span> <span class="pre">c</span> <span class="pre">!</span> <span class="pre">d</span></code> 。</p>
+</div>
+<div class="section" id="ghost-pad">
+<h2>ghost pad<a class="headerlink" href="#ghost-pad" title="永久链接至标题">¶</a></h2>
+<p>当你创建了一个bin并在里面放置了很多元素时，该bin变成了你自定义的元素，该元素按
+顺序调用里面的元素。要做到这样，你的bin很自然地需要它自己的pad，它自己的pad会挂接
+到bin里面元素的pad上，这就是 <em>ghost pad</em> 了。当你创建一个bin时，你创建了ghost pad
+并告诉他们要去挂接里面哪一个元素。</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="永久链接至标题">¶</a></h2>
+<p>话不多说，上例子。</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gi</span>
+<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;Gst&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="k">import</span> <span class="n">Gst</span><span class="p">,</span> <span class="n">GObject</span><span class="p">,</span> <span class="n">GLib</span>
+<span class="n">GObject</span><span class="o">.</span><span class="n">threads_init</span><span class="p">()</span>
+<span class="n">Gst</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Play</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">ElementFactory</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;audiotestsrc&#39;</span><span class="p">,</span> <span class="s1">&#39;audio&#39;</span><span class="p">)</span>
+        <span class="c1"># set property of element</span>
+        <span class="c1"># self.audiotestsrc.set_property(&#39;freq&#39;, 300)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;freq:</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;freq&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sink</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">ElementFactory</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;alsasink&#39;</span><span class="p">,</span> <span class="s1">&#39;sink&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sink</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sink</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">Gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">PLAYING</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">Play</span><span class="p">()</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">GLib</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>上面这个例子很简单，使用命令行的例子来写:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 audiotestsrc ! alsasink
+gst-launch-1.0 audiotestsrc freq=300 ! alsasink
+</pre></div>
+</div>
+<p>我们把上面的例子加上GUI，让它看起来是一个真正的桌面应用。</p>
+<p>使用Glade构建的应用界面：</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;interface&gt;
+  &lt;!-- interface-requires gtk+ 3.0 --&gt;
+  &lt;object class=&quot;GtkWindow&quot; id=&quot;window1&quot;&gt;
+    &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+    &lt;child&gt;
+      &lt;object class=&quot;GtkBox&quot; id=&quot;box1&quot;&gt;
+        &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+        &lt;property name=&quot;can_focus&quot;&gt;False&lt;/property&gt;
+        &lt;child&gt;
+          &lt;object class=&quot;GtkEntry&quot; id=&quot;entry1&quot;&gt;
+            &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;invisible_char&quot;&gt;•&lt;/property&gt;
+            &lt;property name=&quot;invisible_char_set&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;input_purpose&quot;&gt;alpha&lt;/property&gt;
+            &lt;signal name=&quot;activate&quot; handler=&quot;on_freq_changed&quot; swapped=&quot;no&quot;/&gt;
+          &lt;/object&gt;
+          &lt;packing&gt;
+            &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+            &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;position&quot;&gt;0&lt;/property&gt;
+          &lt;/packing&gt;
+        &lt;/child&gt;
+        &lt;child&gt;
+          &lt;object class=&quot;GtkButton&quot; id=&quot;button1&quot;&gt;
+            &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Play&lt;/property&gt;
+            &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;image_position&quot;&gt;bottom&lt;/property&gt;
+            &lt;signal name=&quot;clicked&quot; handler=&quot;on_play_clicked&quot; swapped=&quot;no&quot;/&gt;
+          &lt;/object&gt;
+          &lt;packing&gt;
+            &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+            &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;position&quot;&gt;1&lt;/property&gt;
+          &lt;/packing&gt;
+        &lt;/child&gt;
+        &lt;child&gt;
+          &lt;object class=&quot;GtkButton&quot; id=&quot;button2&quot;&gt;
+            &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Stop&lt;/property&gt;
+            &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+            &lt;signal name=&quot;clicked&quot; handler=&quot;on_stop_clicked&quot; swapped=&quot;no&quot;/&gt;
+          &lt;/object&gt;
+          &lt;packing&gt;
+            &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+            &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;position&quot;&gt;2&lt;/property&gt;
+          &lt;/packing&gt;
+        &lt;/child&gt;
+        &lt;child&gt;
+          &lt;object class=&quot;GtkButton&quot; id=&quot;button3&quot;&gt;
+            &lt;property name=&quot;label&quot; translatable=&quot;yes&quot;&gt;Quit&lt;/property&gt;
+            &lt;property name=&quot;visible&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;can_focus&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;receives_default&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;halign&quot;&gt;end&lt;/property&gt;
+            &lt;property name=&quot;use_underline&quot;&gt;True&lt;/property&gt;
+            &lt;signal name=&quot;clicked&quot; handler=&quot;on_quit_clicked&quot; swapped=&quot;no&quot;/&gt;
+          &lt;/object&gt;
+          &lt;packing&gt;
+            &lt;property name=&quot;expand&quot;&gt;False&lt;/property&gt;
+            &lt;property name=&quot;fill&quot;&gt;True&lt;/property&gt;
+            &lt;property name=&quot;position&quot;&gt;3&lt;/property&gt;
+          &lt;/packing&gt;
+        &lt;/child&gt;
+      &lt;/object&gt;
+    &lt;/child&gt;
+  &lt;/object&gt;
+&lt;/interface&gt;
+</pre></div>
+</td></tr></table></div>
+<p>程序的处理代码：</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gi</span>
+<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;Gst&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="k">import</span> <span class="n">Gst</span><span class="p">,</span> <span class="n">GObject</span><span class="p">,</span> <span class="n">Gtk</span>
+<span class="n">GObject</span><span class="o">.</span><span class="n">threads_init</span><span class="p">()</span>
+<span class="n">Gst</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Play</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;on_play_clicked&#39;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_play</span><span class="p">,</span>
+                <span class="s1">&#39;on_stop_clicked&#39;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_stop</span><span class="p">,</span>
+                <span class="s1">&#39;on_quit_clicked&#39;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_quit</span><span class="p">,</span>
+                <span class="s1">&#39;on_freq_changed&#39;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_freq_change</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">builder</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">add_from_file</span><span class="p">(</span><span class="s1">&#39;audiotest_gui.glade&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">connect_signals</span><span class="p">(</span><span class="n">handlers</span><span class="p">)</span>
+
+
+        <span class="c1"># Gstreamer gays</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">ElementFactory</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;audiotestsrc&#39;</span><span class="p">,</span> <span class="s1">&#39;audio&#39;</span><span class="p">)</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s1">&#39;freq&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sink</span> <span class="o">=</span> <span class="n">Gst</span><span class="o">.</span><span class="n">ElementFactory</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;alsasink&#39;</span><span class="p">,</span> <span class="s1">&#39;sink&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sink</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sink</span><span class="p">)</span>
+
+        <span class="n">entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s1">&#39;entry1&#39;</span><span class="p">)</span>
+        <span class="n">entry</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">freq</span><span class="p">))</span>
+        <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s1">&#39;window1&#39;</span><span class="p">)</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;delete-event&#39;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_freq_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;freq changde...&#39;</span><span class="p">)</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s1">&#39;entry1&#39;</span><span class="p">)</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">audiotestsrc</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s1">&#39;freq&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">freq</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">on_play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;palying...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">Gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">PLAYING</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stoped.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">Gst</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">NULL</span><span class="p">)</span>
+        <span class="c1">#self.pipeline.set_state(Gst.State.PAUSED)</span>
+        <span class="c1">#self.pipeline.set_state(Gst.State.READY)</span>
+
+    <span class="k">def</span> <span class="nf">on_quit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">()</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">Play</span><span class="p">()</span>
+<span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id1">
+<h2>参考文献<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://www.jonobacon.org/2006/08/28/getting-started-with-gstreamer-with-python/">Getting started with GStreamer with Python</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gst-playbin.html" class="btn btn-neutral float-right" title="GStreamer系列之概览" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="GStreamer 开发经验" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

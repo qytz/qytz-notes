@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>技术笔记 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="The Python GTK+ 3 Tutorial" href="PyGObject-Tutorial/index.html" />
+    <link rel="prev" title="IPython NoteBooks" href="../ipynb/index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">技术笔记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>技术笔记</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>技术笔记<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/install.html">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/introduction.html">从零开始</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/basics.html">基础知识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/layout.html">布局管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/label.html">标签Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/entry.html">Entry输入框</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/button_widgets.html">按钮控件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/progressbar.html">进度条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/spinner.html">Spinner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/treeview.html">树与列表控件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/iconview.html">IconView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/menus.html">菜单</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/clipboard.html">剪贴板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/builder.html">Glade and Gtk.Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/objects.html">对象系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/stock.html">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/gst-concept.html">GStreamer系列之几个入门概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/gst-playbin.html">GStreamer系列之概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/gst-pipeline.html">GStreamer系列之管道</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/overview.html">概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/reference/index.html">Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/pycairo_c_api.html">Pycairo 的 C API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dbus/dbus.html">D-Bus 系列之入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/system-dbus.html">D-Bus系列之权限配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/dbus-get-uid.html">D-Bus系列之获取发送者UID及PID的方法</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html#id1">shell 字符串操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html#id2">数组操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html#id3">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html#js">JS 左移运算符号位的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html#id1">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#id1">步骤概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#configure-scan-configure-ac">修改 configure.scan ==&gt; configure.ac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#autoconf">编写自定义的 Autoconf 宏（一般不需要）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#makefile-am">编写 Makefile.am</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#id8">打包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#id9">一个例子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html#id10">参考链接</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html#id1">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">LDAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id1">LDAP 定义</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id3">LDAP 特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id4">LDAP 结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id6">LDAP 安全</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id8">LDAP 服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#id9">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">系统安全的思考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="security.html#id2">过往</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html#id4">现今</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html#id6">将来</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html#id1">一、VPN 高级选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html#connman">二、关于 connman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html#qt-qml-and-d-bus">四、Qt 、QML and D-Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html#linux">五、Linux 连接管理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html#id1">快速指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html#id2">参考资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-server.html">简易 git 服务器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html#gitolite">简易 gitolite 服务器搭建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html#gitolite-git">使用 gitolite 搭建 git 服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html#gitweb">gitweb 配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html#svn-git">svn 仓库迁移到 git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html#id7">引用</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PyGObject-Tutorial/index.html" class="btn btn-neutral float-right" title="The Python GTK+ 3 Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ipynb/index.html" class="btn btn-neutral" title="IPython NoteBooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,969 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stock Items &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="GStreamer 开发经验" href="../gstreamer/index.html" />
+    <link rel="prev" title="对象系统" href="objects.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Python GTK+ 3 Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">从零开始</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics.html">基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layout.html">布局管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">标签Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry输入框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_widgets.html">按钮控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">进度条</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner.html">Spinner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="treeview.html">树与列表控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iconview.html">IconView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menus.html">菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clipboard.html">剪贴板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html">Glade and Gtk.Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">对象系统</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">The Python GTK+ 3 Tutorial</a> &raquo;</li>
+        
+      <li>Stock Items</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/PyGObject-Tutorial/stock.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="stock-items">
+<span id="id1"></span><h1>Stock Items<a class="headerlink" href="#stock-items" title="永久链接至标题">¶</a></h1>
+<p>Stock items represent commonly-used menu or toolbar items such as “Open” or
+“Exit”. Each stock item is identified by a stock ID; stock IDs are just strings,
+but constants such as <a class="reference internal" href="#Gtk.STOCK_OPEN" title="Gtk.STOCK_OPEN"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.STOCK_OPEN</span></code></a> are provided to avoid typing mistakes
+in the strings.</p>
+<dl class="attribute">
+<dt id="Gtk.STOCK_ABOUT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ABOUT</code><a class="headerlink" href="#Gtk.STOCK_ABOUT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/help-about.png" src="../../_images/help-about.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ADD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ADD</code><a class="headerlink" href="#Gtk.STOCK_ADD" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/list-add.png" src="../../_images/list-add.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_APPLY">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_APPLY</code><a class="headerlink" href="#Gtk.STOCK_APPLY" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-apply.png" src="../../_images/gtk-apply.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_BOLD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_BOLD</code><a class="headerlink" href="#Gtk.STOCK_BOLD" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-text-bold.png" src="../../_images/format-text-bold.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CANCEL">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CANCEL</code><a class="headerlink" href="#Gtk.STOCK_CANCEL" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-cancel.png" src="../../_images/gtk-cancel.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CAPS_LOCK_WARNING">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CAPS_LOCK_WARNING</code><a class="headerlink" href="#Gtk.STOCK_CAPS_LOCK_WARNING" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-caps-lock-warning.png" src="../../_images/gtk-caps-lock-warning.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CDROM">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CDROM</code><a class="headerlink" href="#Gtk.STOCK_CDROM" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/media-optical.png" src="../../_images/media-optical.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CLEAR">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CLEAR</code><a class="headerlink" href="#Gtk.STOCK_CLEAR" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-clear.png" src="../../_images/edit-clear.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CLOSE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CLOSE</code><a class="headerlink" href="#Gtk.STOCK_CLOSE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/window-close.png" src="../../_images/window-close.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_COLOR_PICKER">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_COLOR_PICKER</code><a class="headerlink" href="#Gtk.STOCK_COLOR_PICKER" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-color-picker.png" src="../../_images/gtk-color-picker.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CONNECT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CONNECT</code><a class="headerlink" href="#Gtk.STOCK_CONNECT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-connect.png" src="../../_images/gtk-connect.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CONVERT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CONVERT</code><a class="headerlink" href="#Gtk.STOCK_CONVERT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-convert.png" src="../../_images/gtk-convert.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_COPY">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_COPY</code><a class="headerlink" href="#Gtk.STOCK_COPY" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-copy.png" src="../../_images/edit-copy.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_CUT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_CUT</code><a class="headerlink" href="#Gtk.STOCK_CUT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-cut.png" src="../../_images/edit-cut.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DELETE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DELETE</code><a class="headerlink" href="#Gtk.STOCK_DELETE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-delete.png" src="../../_images/edit-delete.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DIALOG_AUTHENTICATION">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DIALOG_AUTHENTICATION</code><a class="headerlink" href="#Gtk.STOCK_DIALOG_AUTHENTICATION" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-password.png" src="../../_images/dialog-password.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DIALOG_INFO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DIALOG_INFO</code><a class="headerlink" href="#Gtk.STOCK_DIALOG_INFO" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-information.png" src="../../_images/dialog-information.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DIALOG_WARNING">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DIALOG_WARNING</code><a class="headerlink" href="#Gtk.STOCK_DIALOG_WARNING" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-warning.png" src="../../_images/dialog-warning.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DIALOG_ERROR">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DIALOG_ERROR</code><a class="headerlink" href="#Gtk.STOCK_DIALOG_ERROR" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-error.png" src="../../_images/dialog-error.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DIALOG_QUESTION">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DIALOG_QUESTION</code><a class="headerlink" href="#Gtk.STOCK_DIALOG_QUESTION" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-question.png" src="../../_images/dialog-question.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DISCARD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DISCARD</code><a class="headerlink" href="#Gtk.STOCK_DISCARD" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/folder.png" src="../../_images/folder.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DISCONNECT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DISCONNECT</code><a class="headerlink" href="#Gtk.STOCK_DISCONNECT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-disconnect.png" src="../../_images/gtk-disconnect.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DND">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DND</code><a class="headerlink" href="#Gtk.STOCK_DND" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-dnd.png" src="../../_images/gtk-dnd.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_DND_MULTIPLE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_DND_MULTIPLE</code><a class="headerlink" href="#Gtk.STOCK_DND_MULTIPLE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-dnd-multiple.png" src="../../_images/gtk-dnd-multiple.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_EDIT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_EDIT</code><a class="headerlink" href="#Gtk.STOCK_EDIT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-edit.png" src="../../_images/gtk-edit.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_EXECUTE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_EXECUTE</code><a class="headerlink" href="#Gtk.STOCK_EXECUTE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/system-run.png" src="../../_images/system-run.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_FILE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_FILE</code><a class="headerlink" href="#Gtk.STOCK_FILE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/text-x-generic.png" src="../../_images/text-x-generic.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_FIND">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_FIND</code><a class="headerlink" href="#Gtk.STOCK_FIND" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-find.png" src="../../_images/edit-find.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_FIND_AND_REPLACE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_FIND_AND_REPLACE</code><a class="headerlink" href="#Gtk.STOCK_FIND_AND_REPLACE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-find-replace.png" src="../../_images/edit-find-replace.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_FLOPPY">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_FLOPPY</code><a class="headerlink" href="#Gtk.STOCK_FLOPPY" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/media-floppy.png" src="../../_images/media-floppy.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_FULLSCREEN">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_FULLSCREEN</code><a class="headerlink" href="#Gtk.STOCK_FULLSCREEN" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/view-fullscreen.png" src="../../_images/view-fullscreen.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GOTO_BOTTOM">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GOTO_BOTTOM</code><a class="headerlink" href="#Gtk.STOCK_GOTO_BOTTOM" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/go-bottom.png" src="../../_images/go-bottom.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GOTO_FIRST">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GOTO_FIRST</code><a class="headerlink" href="#Gtk.STOCK_GOTO_FIRST" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/go-first-ltr.png" src="../../_images/go-first-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/go-first-rtl.png" src="../../_images/go-first-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GOTO_LAST">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GOTO_LAST</code><a class="headerlink" href="#Gtk.STOCK_GOTO_LAST" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/go-last-ltr.png" src="../../_images/go-last-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/go-last-rtl.png" src="../../_images/go-last-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GOTO_TOP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GOTO_TOP</code><a class="headerlink" href="#Gtk.STOCK_GOTO_TOP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/go-top.png" src="../../_images/go-top.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GO_BACK">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GO_BACK</code><a class="headerlink" href="#Gtk.STOCK_GO_BACK" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/go-previous-ltr.png" src="../../_images/go-previous-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/go-previous-rtl.png" src="../../_images/go-previous-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GO_DOWN">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GO_DOWN</code><a class="headerlink" href="#Gtk.STOCK_GO_DOWN" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/go-down.png" src="../../_images/go-down.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GO_FORWARD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GO_FORWARD</code><a class="headerlink" href="#Gtk.STOCK_GO_FORWARD" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/go-next-ltr.png" src="../../_images/go-next-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/go-next-rtl.png" src="../../_images/go-next-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_GO_UP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_GO_UP</code><a class="headerlink" href="#Gtk.STOCK_GO_UP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/go-up.png" src="../../_images/go-up.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_HARDDISK">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_HARDDISK</code><a class="headerlink" href="#Gtk.STOCK_HARDDISK" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/drive-harddisk.png" src="../../_images/drive-harddisk.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_HELP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_HELP</code><a class="headerlink" href="#Gtk.STOCK_HELP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/help-contents.png" src="../../_images/help-contents.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_HOME">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_HOME</code><a class="headerlink" href="#Gtk.STOCK_HOME" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/go-home.png" src="../../_images/go-home.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_INDEX">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_INDEX</code><a class="headerlink" href="#Gtk.STOCK_INDEX" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-index.png" src="../../_images/gtk-index.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_INDENT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_INDENT</code><a class="headerlink" href="#Gtk.STOCK_INDENT" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/format-indent-more-ltr.png" src="../../_images/format-indent-more-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/format-indent-more-rtl.png" src="../../_images/format-indent-more-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_INFO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_INFO</code><a class="headerlink" href="#Gtk.STOCK_INFO" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/dialog-information.png" src="../../_images/dialog-information.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ITALIC">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ITALIC</code><a class="headerlink" href="#Gtk.STOCK_ITALIC" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-text-italic.png" src="../../_images/format-text-italic.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_JUMP_TO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_JUMP_TO</code><a class="headerlink" href="#Gtk.STOCK_JUMP_TO" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/go-jump-ltr.png" src="../../_images/go-jump-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/go-jump-rtl.png" src="../../_images/go-jump-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_JUSTIFY_CENTER">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_JUSTIFY_CENTER</code><a class="headerlink" href="#Gtk.STOCK_JUSTIFY_CENTER" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-justify-center.png" src="../../_images/format-justify-center.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_JUSTIFY_FILL">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_JUSTIFY_FILL</code><a class="headerlink" href="#Gtk.STOCK_JUSTIFY_FILL" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-justify-fill.png" src="../../_images/format-justify-fill.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_JUSTIFY_LEFT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_JUSTIFY_LEFT</code><a class="headerlink" href="#Gtk.STOCK_JUSTIFY_LEFT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-justify-left.png" src="../../_images/format-justify-left.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_JUSTIFY_RIGHT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_JUSTIFY_RIGHT</code><a class="headerlink" href="#Gtk.STOCK_JUSTIFY_RIGHT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-justify-right.png" src="../../_images/format-justify-right.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_LEAVE_FULLSCREEN">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_LEAVE_FULLSCREEN</code><a class="headerlink" href="#Gtk.STOCK_LEAVE_FULLSCREEN" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/view-restore.png" src="../../_images/view-restore.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MISSING_IMAGE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MISSING_IMAGE</code><a class="headerlink" href="#Gtk.STOCK_MISSING_IMAGE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/image-missing.png" src="../../_images/image-missing.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_FORWARD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_FORWARD</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_FORWARD" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/media-seek-forward-ltr.png" src="../../_images/media-seek-forward-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/media-seek-forward-rtl.png" src="../../_images/media-seek-forward-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_NEXT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_NEXT</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_NEXT" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/media-skip-forward-ltr.png" src="../../_images/media-skip-forward-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/media-skip-forward-rtl.png" src="../../_images/media-skip-forward-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_PAUSE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_PAUSE</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_PAUSE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/media-playback-pause.png" src="../../_images/media-playback-pause.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_PLAY">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_PLAY</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_PLAY" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/media-playback-start-ltr.png" src="../../_images/media-playback-start-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/media-playback-start-rtl.png" src="../../_images/media-playback-start-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_PREVIOUS">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_PREVIOUS</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_PREVIOUS" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/media-skip-backward-ltr.png" src="../../_images/media-skip-backward-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/media-skip-backward-rtl.png" src="../../_images/media-skip-backward-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_RECORD">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_RECORD</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_RECORD" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/media-record.png" src="../../_images/media-record.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_REWIND">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_REWIND</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_REWIND" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/media-seek-backward-ltr.png" src="../../_images/media-seek-backward-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/media-seek-backward-rtl.png" src="../../_images/media-seek-backward-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_MEDIA_STOP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_MEDIA_STOP</code><a class="headerlink" href="#Gtk.STOCK_MEDIA_STOP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/media-playback-stop.png" src="../../_images/media-playback-stop.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_NETWORK">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_NETWORK</code><a class="headerlink" href="#Gtk.STOCK_NETWORK" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/network-idle.png" src="../../_images/network-idle.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_NEW">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_NEW</code><a class="headerlink" href="#Gtk.STOCK_NEW" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-new.png" src="../../_images/document-new.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_NO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_NO</code><a class="headerlink" href="#Gtk.STOCK_NO" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-no.png" src="../../_images/gtk-no.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_OK">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_OK</code><a class="headerlink" href="#Gtk.STOCK_OK" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-ok.png" src="../../_images/gtk-ok.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_OPEN">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_OPEN</code><a class="headerlink" href="#Gtk.STOCK_OPEN" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-open.png" src="../../_images/document-open.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ORIENTATION_PORTRAIT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ORIENTATION_PORTRAIT</code><a class="headerlink" href="#Gtk.STOCK_ORIENTATION_PORTRAIT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-orientation-portrait.png" src="../../_images/gtk-orientation-portrait.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ORIENTATION_LANDSCAPE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ORIENTATION_LANDSCAPE</code><a class="headerlink" href="#Gtk.STOCK_ORIENTATION_LANDSCAPE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-orientation-landscape.png" src="../../_images/gtk-orientation-landscape.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ORIENTATION_REVERSE_LANDSCAPE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ORIENTATION_REVERSE_LANDSCAPE</code><a class="headerlink" href="#Gtk.STOCK_ORIENTATION_REVERSE_LANDSCAPE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-orientation-reverse-landscape.png" src="../../_images/gtk-orientation-reverse-landscape.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ORIENTATION_REVERSE_PORTRAIT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ORIENTATION_REVERSE_PORTRAIT</code><a class="headerlink" href="#Gtk.STOCK_ORIENTATION_REVERSE_PORTRAIT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-orientation-reverse-portrait.png" src="../../_images/gtk-orientation-reverse-portrait.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PAGE_SETUP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PAGE_SETUP</code><a class="headerlink" href="#Gtk.STOCK_PAGE_SETUP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-page-setup.png" src="../../_images/gtk-page-setup.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PASTE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PASTE</code><a class="headerlink" href="#Gtk.STOCK_PASTE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-paste.png" src="../../_images/edit-paste.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PREFERENCES">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PREFERENCES</code><a class="headerlink" href="#Gtk.STOCK_PREFERENCES" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-preferences.png" src="../../_images/gtk-preferences.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT</code><a class="headerlink" href="#Gtk.STOCK_PRINT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-print.png" src="../../_images/document-print.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT_ERROR">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT_ERROR</code><a class="headerlink" href="#Gtk.STOCK_PRINT_ERROR" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/printer-error.png" src="../../_images/printer-error.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT_PAUSED">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT_PAUSED</code><a class="headerlink" href="#Gtk.STOCK_PRINT_PAUSED" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/printer-paused.png" src="../../_images/printer-paused.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT_PREVIEW">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT_PREVIEW</code><a class="headerlink" href="#Gtk.STOCK_PRINT_PREVIEW" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-print-preview.png" src="../../_images/document-print-preview.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT_REPORT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT_REPORT</code><a class="headerlink" href="#Gtk.STOCK_PRINT_REPORT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/printer-info.png" src="../../_images/printer-info.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PRINT_WARNING">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PRINT_WARNING</code><a class="headerlink" href="#Gtk.STOCK_PRINT_WARNING" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/printer-warning.png" src="../../_images/printer-warning.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_PROPERTIES">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_PROPERTIES</code><a class="headerlink" href="#Gtk.STOCK_PROPERTIES" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-properties.png" src="../../_images/document-properties.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_QUIT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_QUIT</code><a class="headerlink" href="#Gtk.STOCK_QUIT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/application-exit.png" src="../../_images/application-exit.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_REDO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_REDO</code><a class="headerlink" href="#Gtk.STOCK_REDO" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/edit-redo-ltr.png" src="../../_images/edit-redo-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/edit-redo-rtl.png" src="../../_images/edit-redo-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_REFRESH">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_REFRESH</code><a class="headerlink" href="#Gtk.STOCK_REFRESH" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/view-refresh.png" src="../../_images/view-refresh.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_REMOVE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_REMOVE</code><a class="headerlink" href="#Gtk.STOCK_REMOVE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/list-remove.png" src="../../_images/list-remove.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_REVERT_TO_SAVED">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_REVERT_TO_SAVED</code><a class="headerlink" href="#Gtk.STOCK_REVERT_TO_SAVED" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/document-revert-ltr.png" src="../../_images/document-revert-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/document-revert-rtl.png" src="../../_images/document-revert-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SAVE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SAVE</code><a class="headerlink" href="#Gtk.STOCK_SAVE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-save.png" src="../../_images/document-save.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SAVE_AS">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SAVE_AS</code><a class="headerlink" href="#Gtk.STOCK_SAVE_AS" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/document-save-as.png" src="../../_images/document-save-as.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SELECT_ALL">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SELECT_ALL</code><a class="headerlink" href="#Gtk.STOCK_SELECT_ALL" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/edit-select-all.png" src="../../_images/edit-select-all.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SELECT_COLOR">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SELECT_COLOR</code><a class="headerlink" href="#Gtk.STOCK_SELECT_COLOR" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-select-color.png" src="../../_images/gtk-select-color.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SELECT_FONT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SELECT_FONT</code><a class="headerlink" href="#Gtk.STOCK_SELECT_FONT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-font.png" src="../../_images/gtk-font.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SORT_ASCENDING">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SORT_ASCENDING</code><a class="headerlink" href="#Gtk.STOCK_SORT_ASCENDING" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/view-sort-ascending.png" src="../../_images/view-sort-ascending.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SORT_DESCENDING">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SORT_DESCENDING</code><a class="headerlink" href="#Gtk.STOCK_SORT_DESCENDING" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/view-sort-descending.png" src="../../_images/view-sort-descending.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_SPELL_CHECK">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_SPELL_CHECK</code><a class="headerlink" href="#Gtk.STOCK_SPELL_CHECK" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/tools-check-spelling.png" src="../../_images/tools-check-spelling.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_STOP">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_STOP</code><a class="headerlink" href="#Gtk.STOCK_STOP" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/process-stop.png" src="../../_images/process-stop.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_STRIKETHROUGH">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_STRIKETHROUGH</code><a class="headerlink" href="#Gtk.STOCK_STRIKETHROUGH" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-text-strikethrough.png" src="../../_images/format-text-strikethrough.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_UNDELETE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_UNDELETE</code><a class="headerlink" href="#Gtk.STOCK_UNDELETE" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/gtk-undelete-ltr.png" src="../../_images/gtk-undelete-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/gtk-undelete-rtl.png" src="../../_images/gtk-undelete-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_UNDERLINE">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_UNDERLINE</code><a class="headerlink" href="#Gtk.STOCK_UNDERLINE" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/format-text-underline.png" src="../../_images/format-text-underline.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_UNDO">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_UNDO</code><a class="headerlink" href="#Gtk.STOCK_UNDO" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/edit-undo-ltr.png" src="../../_images/edit-undo-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/edit-undo-rtl.png" src="../../_images/edit-undo-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_UNINDENT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_UNINDENT</code><a class="headerlink" href="#Gtk.STOCK_UNINDENT" title="永久链接至目标">¶</a></dt>
+<dd><p>LTR variant:</p>
+<img alt="../../_images/format-indent-less-ltr.png" src="../../_images/format-indent-less-ltr.png" />
+<p>RTL variant:</p>
+<img alt="../../_images/format-indent-less-rtl.png" src="../../_images/format-indent-less-rtl.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_YES">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_YES</code><a class="headerlink" href="#Gtk.STOCK_YES" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/gtk-yes.png" src="../../_images/gtk-yes.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ZOOM_100">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ZOOM_100</code><a class="headerlink" href="#Gtk.STOCK_ZOOM_100" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/zoom-original.png" src="../../_images/zoom-original.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ZOOM_FIT">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ZOOM_FIT</code><a class="headerlink" href="#Gtk.STOCK_ZOOM_FIT" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/zoom-fit-best.png" src="../../_images/zoom-fit-best.png" />
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Gtk.STOCK_ZOOM_IN">
+<code class="descclassname">Gtk.</code><code class="descname">STOCK_ZOOM_IN</code><a class="headerlink" href="#Gtk.STOCK_ZOOM_IN" title="永久链接至目标">¶</a></dt>
+<dd><img alt="../../_images/zoom-in.png" src="../../_images/zoom-in.png" />
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gstreamer/index.html" class="btn btn-neutral float-right" title="GStreamer 开发经验" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="objects.html" class="btn btn-neutral" title="对象系统" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

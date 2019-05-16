@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>系统安全的思考 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="VPN 高级选项那些事" href="VPN_Advance_Options.html" />
+    <link rel="prev" title="LDAP" href="ldap.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html">LDAP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">技术笔记</a> &raquo;</li>
+        
+      <li>系统安全的思考</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/security.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>系统安全的思考<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p><strong>世上并没有绝对的安全，只有安全成本的问题。</strong></p>
+<p><strong>真正的安全不过是一种意识。</strong></p>
+<div class="section" id="id2">
+<h2>过往<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>网络安全<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>工作相关，做的一直是跟系统安全相关的东西。</p>
+<p>前几年的时候在做的是网络安全，所谓的网络安全。</p>
+<p>说是网络安全，其实跟安全的关系不是很大，主要还是做网络设备，支持各种协议及功能，
+还要尽可能地提高性能。</p>
+<p>跟安全的那点儿关系就是，在网络设备里面嵌入了部分跟安全相关的功能。</p>
+<p>想来，像访问包过滤（很多厂商也叫 ACL，访问控制列表），NAT 转换这些跟安全的关联性也不大
+吧，他们是更倾向于控制和管理的功能；DPI 协议识别呢？算是个基础功能吧，接下来可以根据
+识别结果做控制与分析，也可以继续深入的做攻击防御。</p>
+<p>那么真正跟安全密切相关的功能有哪些呢？
+MAC/IP 绑定，攻击防护，网页防篡改等，这在网络安全设备像硬件防火墙这些，的功能中，
+着实的算不算主要的功能吧，也不常用。只是说多一个功能就多一个卖点。</p>
+<p>其实网路安全设备很少关注自身的安全，挺多厂商把侧重点放在了性能上面。</p>
+<p>真的有可以提供整体安全方案的厂商吗？我是不信的，至少国内的厂商是这样的吧。
+并不是说这些设备没有必要，确实很多功能还是很好的，但是跟系统安全相差的还是很远的吧。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>现今<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>真正的系统安全<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>换过工作之后负责系统的一个安全模块，对安全有了稍微深入一点的理解。</p>
+<p>安全与易用，在某种程度上会有一些冲突，但这个程度肯定不会很大。</p>
+<p>易用也是一种安全，想用户所想。
+系统遭遇到安全威胁时，用户能想到的，系统帮他去做了，用户没有想到的，
+系统也帮他做好了，系统也帮他做了，这是易用，也是安全。</p>
+<p>因此，系统的正确行为定义也是安全的基础，在威胁出现时不能做出正确响应，就没有安全可言了。</p>
+<p>安全是不能有短板的，不仅要保证数据的安全，还要保证用户输入的安全，传输的安全等等，
+缺了任何一个环节，就像系统有了漏洞一样，攻击者顺着这个漏洞可以获取系统中的很多东西。</p>
+<p>安全的核心工作应该是在后台默默完成的，很少的提示用户，更很少让用户来选择，
+就像武侠小说中的扫地僧，绝大多数时候用户都意识不到他的存在，他只是在后台默默的做着
+自己的工作，他的存在只是为了那突然的攻击出现的时候。</p>
+<p>稳定也是一种安全，我们无法保证每一次的修改都可以做到全系统的测试，而每次修改对系统
+哪些模块有影响又是不完全预知的，尤其是系统的基础架构，略一更改影响面都很大。系统不
+稳定就很容易出问题。</p>
+<p>其实，安全是一种意识，这种意识应该无处不在。
+开发中的安全意识保证我们的系统漏洞更少，系统更稳健。
+如果我们在开发中测试代码随便写，变量不初始化，溢出不检查，系统就很容易被攻击。</p>
+<p>使用中的安全意识保证了我们自己这个系统更加不容易被骗。
+我们自己如果更加的注意自己的隐私不随意泄露，遇到电话 / 网络诈骗时可以多核实，社会
+工程学也不那么容易就获取到我们的电话、邮箱、密码等信息了。</p>
+<p>只要在系统的所有环节做到一般性的防护，就已经比在系统的关键环节做很强的防护但在
+其他环节不防护安全很多了。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>将来<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>系统的安全机制<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>系统还是要提供必要的基础的安全机制供其他的系统组件使用的。</p>
+<p>如果需要系统提供的一些基础功能需要每个系统组件自己实现并维护，轮子重复造不说，
+安全隐患的增加也是很严重的，因为保证这些基础功能的安全变的更加的麻烦。修复起来也很麻烦。</p>
+<p>系统的安全机制做的好，省了很多的麻烦。</p>
+<p>我们需要更加深入的研究与实现系统的安全机制。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="VPN_Advance_Options.html" class="btn btn-neutral float-right" title="VPN 高级选项那些事" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ldap.html" class="btn btn-neutral" title="LDAP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>移动平均线 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="多因子" href="multi_factor.html" />
+    <link rel="prev" title="凯利公式" href="kelly.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech/index.html">技术笔记</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">量化投资</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">量化投资简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantengine.html">量化回测引擎浅谈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kelly.html">凯利公式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">移动平均线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi_factor.html">多因子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">海龟交易法则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apt.html">APT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">量化投资</a> &raquo;</li>
+        
+      <li>移动平均线</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/quant/ma.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>移动平均线<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li>算术平均(MA)</li>
+<li>加权平均(WMA)</li>
+</ul>
+<div class="section" id="ma-dma-ema-sma">
+<h2>ma,dma,ema,sma四函数用法辩析<a class="headerlink" href="#ma-dma-ema-sma" title="永久链接至标题">¶</a></h2>
+<p>先看MA和EMA,首先，它们都是求平均值，这应该没疑问吧；</p>
+<p>MA是简单算术平均，MA(C,2)=(C1+C2)/2;  MA(C,3)=(C1+C2+C3)/3;不分轻重，平均算；</p>
+<p>EMA是指数平滑平均，它真正的指标表达是:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>当日指数平均值 = 平滑系数 *（当日指数值-昨日指数平均值）+ 昨日指数平均值；
+平滑系数=2/（周期单位+1）；
+</pre></div>
+</div>
+<p>由以上指标推导开，得到:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>EMA(C,N)=2*C/(N+1)+(N-1)/(N+1)*昨天的指数收盘平均值；
+仔细看：X=EMA(C,2)=2/3*C+1/3*REF(C,1); EMA(C,3)=2/4*C+2/4*X;
+</pre></div>
+</div>
+<p>所以，它在计算平均值时，考虑了前一日的平均值，平滑系数是定的，它是利用今日的值与前一日的平均值的差，再考虑平滑系数，计算出来的平均值，所以也有叫异同平均的。</p>
+<p>因此，这两个平均算法是不同的，主要是对数组中的数据的权重侧重不同。</p>
+<p>理解了MA，EMA的含义后，就可以理解其用途了，简单的说，当要比较数值与均价的关系时，用MA就可以了，而要比较均价的趋势快慢时，用EMA更稳定；有时，在均价值不重要时，也用EMA来平滑和美观曲线。</p>
+<p>理解了MA和EMA的含义和用途后，后面几个函数就好理解了；</p>
+<p>因为EMA的平滑系数是定的，=2/（周期+1）；如果要改变平滑系数咋办？这就用到了SMA；</p>
+<p>SMA(C,N,M)与EMA的区别就是增加了权重参数M，也就是用M代替EMA平滑系数中的2,这样我们可以根据需要调整当日数值在均价中的权重=M/N。(要求N&gt;M）；</p>
+<p>大家注意，权重系数在EMA与SMA中都是用数值与周期计算出来的小数，假设有一个小数可以直接代表权重，如何办？这就有了DMA；</p>
+<p>DMA(C,A) 中A为权重值，指标如下：X=DMA(C,A)=A*X+(1-A)*X(A小于1），可以发现，DMA与SMA原理是一至的，只是用一个小数直接代替了M/N;</p>
+<p>而在实用中，这个小数最有价值的就是换手率=V/CAPITAL;DMA(C,V/CAPITAL)的直接含义是用换手率作为权重系数，利用当日收盘价在均价中的比重计算均价；</p>
+<p>直观理解就是换手率越大，当日收盘价在均价中的作用越大！</p>
+<p>这样理解应该知道各函数的作用和用途了！</p>
+</div>
+<div class="section" id="id2">
+<h2>双均线金叉和死叉<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>由时间短的均线（如上图蓝色的线）在下方向上穿越时间长一点的均线（如上图黄色的线），为“金叉”，反之为“死叉”。</p>
+<p>MACD称为指数平滑移动平均线，是从双指数移动平均线发展而来的，由快的指数移动平均线（EMA12）减去慢的指数移动平均线（EMA26）得到快线DIF，再用2×（快线DIF-DIF的9日加权移动均线DEA）得到MACD柱。MACD的意义和双移动平均线基本相同，即由快、慢均线的离散、聚合表征当前的多空状态和股价可能的发展变化趋势，但阅读起来更方便。当MACD从负数转向正数，是买的信号。当MACD从正数转向负数，是卖的信号。当MACD以大角度变化，表示快的移动平均线和慢的移动平均线的差距非常迅速的拉开，代表了一个市场大趋势的转变。</p>
+<p>MACD在应用上应先行计算出快速（一般选12日）移动平均值与慢速（一般选26日）移动平均值。以这两个数值作为测量两者（快速与慢速线）间的“差离值”依据。所谓“差离值”（DIF），即12日EMA数值减去26日EMA数值。因此，在持续的涨势中，12日EMA在26日EMA之上。其间的正差离值（+DIF）会愈来愈大。反之在跌势中，差离值可能变负（-DIF），也愈来愈大。 至于行情开始回转，正或负差离值要缩小到一定的程度，才真正是行情反转的信号。MACD的反转信号界定为“差离值”的9日移动平均值（9日EMA）。 在MACD的指数平滑移动平均线计算公式中，都分别加T+1交易日的份量权值，以现在流行的参数12和26为例，其公式如下</p>
+<ul>
+<li><p class="first">12日EMA的计算:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>EMA（12） = 前一日EMA（12） X 11/13 + 今日收盘价 X 2/13
+26日EMA的计算：
+EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
+</pre></div>
+</div>
+</li>
+<li><p class="first">差离值（DIF）的计算:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DIF = EMA（12） - EMA（26） 。
+根据差离值计算其9日的EMA，即离差平均值，是所求的DEA值。为了不与指标原名相混淆，此值又名DEA或DEM。今日DEA = （前一日DEA X 8/10 + 今日DIF X 2/10）
+</pre></div>
+</div>
+</li>
+<li><p class="first">用（DIF-DEA）*2即为MACD柱状图。</p>
+</li>
+</ul>
+<dl class="docutils">
+<dt>故MACD指标是由两线一柱组合起来形成，快速线为DIF，慢速线为DEA，柱状图为MACD。在各类投资中，有以下方法供投资者参考：</dt>
+<dd><ol class="first last arabic simple">
+<li>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)并向上移动时，一般表示为行情处于多头行情中，可以买入开仓或多头持仓；</li>
+<li>当DIF和MACD均小于0(即在图形上表示为它们处于零线以下)并向下移动时，一般表示为行情处于空头行情中，可以卖出开仓或观望。</li>
+<li>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)但都向下移动时，一般表示为行情处于下跌阶段，可以卖出开仓和观望；</li>
+<li>当DIF和MACD均小于0时(即在图形上表示为它们处于零线以下)但向上移动时，一般表示为行情即将上涨，股票将上涨，可以买入开仓或多头持仓。</li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multi_factor.html" class="btn btn-neutral float-right" title="多因子" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="kelly.html" class="btn btn-neutral" title="凯利公式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

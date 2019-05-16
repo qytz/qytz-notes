@@ -1,0 +1,839 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>树与列表控件 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="单元格渲染器（CellRenderers）" href="cellrenderers.html" />
+    <link rel="prev" title="Spinner" href="spinner.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Python GTK+ 3 Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">从零开始</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics.html">基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layout.html">布局管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">标签Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry输入框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_widgets.html">按钮控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">进度条</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner.html">Spinner</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">树与列表控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iconview.html">IconView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menus.html">菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clipboard.html">剪贴板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html">Glade and Gtk.Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">对象系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stock.html">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">The Python GTK+ 3 Tutorial</a> &raquo;</li>
+        
+      <li>树与列表控件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/PyGObject-Tutorial/treeview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="id1">
+<h1>树与列表控件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p><a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 及其相关的控件绝对是用来显示数据的一个及其强大的控件。
+使用时通常与 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 或 <a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> 关联，以提供一种
+显示数据的方法并提供了很多种维护数据的方法，包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li>数据添加、删除或编辑后自动更新；</li>
+<li>鼠标拖拽支持；</li>
+<li>数据排序；</li>
+<li>支持嵌入check box、进度条等控件；</li>
+<li>可重新排序及调整宽度的列</li>
+<li>数据过滤</li>
+</ul>
+</div></blockquote>
+<p>由 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 的强大与灵活自然也就使其变的很复杂。由于需要的函数很多
+对于初级开发者很难掌握其正确的使用。</p>
+<div class="section" id="the-model">
+<h2>The Model(模型)<a class="headerlink" href="#the-model" title="永久链接至标题">¶</a></h2>
+<p>每一个 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 都有一个与之关联的 <a class="reference internal" href="#Gtk.TreeModel" title="Gtk.TreeModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code></a> ，
+TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeModel</cite> 可以被多个
+<a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 使用。例如这样可以允许同一份数据同时被以两种不同的方式显示
+和编辑，或者是两个TreeView分别显示TreeNode数据不同的列，这类似于使用两条SQL 查询
+（或者视图？）就可以从同一个数据库表里取出不同的字段。</p>
+<p>尽管理论上你可以实现你自己的模型，但你通常都是使用
+<a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 或者 <a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> 。
+<a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 包含很多行简单的数据，每一行并没有“子行”，而
+<a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> 则是包含很多行的数据，同时每一行都可以有其孩子行。</p>
+<p>当你构造一个模型的时候，你要指定你的每列数据的类型。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">store</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">ListStore</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面的代码创建了一个列表存储，包含三列，两列类型是字符串，一列是浮点数。</p>
+<p>要向这个模型添加数据使用 <a class="reference internal" href="#Gtk.ListStore.append" title="Gtk.ListStore.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ListStore.append()</span></code></a> 或者
+<a class="reference internal" href="#Gtk.TreeStore.append" title="Gtk.TreeStore.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeStore.append()</span></code></a> ——根据你创建的是那种类型的数据模型。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">treeiter</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span> <span class="s2">&quot;Donald E. Knuth&quot;</span><span class="p">,</span> <span class="mf">25.46</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>这两个方法都是返回一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例，并指向最新插入的行。你可以
+通过调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeMode.get_iter()</span></code> 来取回 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 。</p>
+<p>一旦数据已经被插入你就可以通过tree的迭代器（tree iter）和列索引取回或者修改数据</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Prints value of third column</span>
+<span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">42.15</span>
+</pre></div>
+</div>
+<p>基于Python内建的 <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code> 对象，你可以使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code> 获取行数并使用切片
+操作获取或者他们的值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print number of rows</span>
+<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="c1"># Print all but first column</span>
+<span class="k">print</span> <span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># Print last column</span>
+<span class="k">print</span> <span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Set first two columns</span>
+<span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Donald Ervin Knuth&quot;</span><span class="p">,</span> <span class="mf">41.99</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>迭代一个tree model所有行的方法也很简单。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">store</span><span class="p">:</span>
+    <span class="c1"># Print values of all columns</span>
+    <span class="k">print</span> <span class="n">row</span><span class="p">[:]</span>
+</pre></div>
+</div>
+<p>记住，如果你使用了 <a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> ，上面的代码只会遍历顶层的行，
+但是不会遍历节点的孩子。要遍历所有的行和他们的孩子，使用
+<code class="docutils literal notranslate"><span class="pre">print_tree_store</span></code> 代替。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_tree_store</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
+    <span class="n">rootiter</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">get_iter_first</span><span class="p">()</span>
+    <span class="n">print_rows</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">rootiter</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">print_rows</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">treeiter</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">treeiter</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">indent</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">store</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][:])</span>
+        <span class="k">if</span> <span class="n">store</span><span class="o">.</span><span class="n">iter_has_child</span><span class="p">(</span><span class="n">treeiter</span><span class="p">):</span>
+            <span class="n">childiter</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">iter_children</span><span class="p">(</span><span class="n">treeiter</span><span class="p">)</span>
+            <span class="n">print_rows</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">childiter</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">treeiter</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">iter_next</span><span class="p">(</span><span class="n">treeiter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>除了像上面那样使用list-like方式访问 <a class="reference internal" href="#Gtk.TreeModel" title="Gtk.TreeModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code></a> 中的数据，你也可以使用
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 或者 <a class="reference internal" href="#Gtk.TreePath" title="Gtk.TreePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code></a> 的实例，这两个君代表了一个tree model
+的特定的一行数据。
+你页可以通过调用 <a class="reference internal" href="#Gtk.TreeModel.get_iter" title="Gtk.TreeModel.get_iter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeModel.get_iter()</span></code></a> 将path转换为迭代器（iter）。
+鉴于 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 只包含一层，即节点没有子节点，path实际上就是你要访问的
+一行数据的index。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get path pointing to 6th row in list store</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreePath</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">treeiter</span> <span class="o">=</span> <span class="n">liststore</span><span class="o">.</span><span class="n">get_iter</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="c1"># Get value at 2nd column</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">liststore</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">treeiter</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>对于 <a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> ，path其实就是索引或者字符串的list。字符串的形式是以冒号分割的数字，每一个数字代表那一层的偏移。
+例如，path “0” 代表根节点，path “2:4” 代表第三个节点的第五个孩子。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get path pointing to 5th child of 3rd row in tree store</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreePath</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">treeiter</span> <span class="o">=</span> <span class="n">treestore</span><span class="o">.</span><span class="n">get_iter</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="c1"># Get value at 2nd column</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">treestore</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">treeiter</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#Gtk.TreePath" title="Gtk.TreePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code></a> 的实例可以想list那样访问，例如
+<code class="docutils literal notranslate"><span class="pre">len(treepath)</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">treepath</span></code> 指向的节点的深度，而 <code class="docutils literal notranslate"><span class="pre">treepath【i】</span></code> 则返回第i层的孩子的索引。</p>
+<div class="section" id="treemodel">
+<h3>TreeModel 对象<a class="headerlink" href="#treemodel" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeModel">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeModel</code><a class="headerlink" href="#Gtk.TreeModel" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="Gtk.TreeModel.get_iter">
+<code class="descname">get_iter</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.get_iter" title="永久链接至目标">¶</a></dt>
+<dd><p>返回指向 <em>path</em> 的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例。</p>
+<p><em>path</em> 应该是逗号分割的数字组成的字符串或者数组元组。例如，字符串 “10:4:0” 创建的path有三层，
+指向根节点的第11个孩子，的第五个孩子，的第一个孩子。有点儿绕～～</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeModel.iter_next">
+<code class="descname">iter_next</code><span class="sig-paren">(</span><em>treeiter</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.iter_next" title="永久链接至目标">¶</a></dt>
+<dd><p>返回指向当前level的下一个节点的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例，如果没有下一个则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeModel.iter_previous">
+<code class="descname">iter_previous</code><span class="sig-paren">(</span><em>treeiter</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.iter_previous" title="永久链接至目标">¶</a></dt>
+<dd><p>饭或指向当前level的前一个节点的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例，如果没有前一个节点则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeModel.iter_has_child">
+<code class="descname">iter_has_child</code><span class="sig-paren">(</span><em>treeiter</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.iter_has_child" title="永久链接至目标">¶</a></dt>
+<dd><p>如果 <em>treeiter</em> 有孩子则返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，否则返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeModel.iter_children">
+<code class="descname">iter_children</code><span class="sig-paren">(</span><em>treeiter</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.iter_children" title="永久链接至目标">¶</a></dt>
+<dd><p>返回一个指向treeiter的第一个孩子的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例，或者如果没有孩子则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeModel.get_iter_first">
+<code class="descname">get_iter_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeModel.get_iter_first" title="永久链接至目标">¶</a></dt>
+<dd><p>返回指向树的第一个节点的（path “0” 的那个节点） <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例，或者如果为空树则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="liststore">
+<h3>ListStore 对象<a class="headerlink" href="#liststore" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.ListStore">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">ListStore</code><span class="sig-paren">(</span><em>data_type</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.ListStore" title="永久链接至目标">¶</a></dt>
+<dd><p>创建一个新的 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> ，参数指定每一列的数据类型。添加到ListStore的每一行都要在每一列有相应的数据。</p>
+<p>支持的数据类型包括标准的Python类型和GTK+的类型：</p>
+<ul class="simple">
+<li>str, int, float, long, bool, object</li>
+<li>GObject.GObject</li>
+</ul>
+<dl class="method">
+<dt id="Gtk.ListStore.append">
+<code class="descname">append</code><span class="sig-paren">(</span><span class="optional">[</span><em>row</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.ListStore.append" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<p>向ListStore中添加一个新行。</p>
+<p><em>row</em> 是一个包含每列数据的列表，即 <code class="docutils literal notranslate"><span class="pre">len(store)</span> <span class="pre">==</span> <span class="pre">len(row)</span></code> 。
+如果 <em>row</em> 忽略或者传递 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，则添加一个空行。</p>
+<p>返回指向新添加的行的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="treestore">
+<h3>TreeStore 对象<a class="headerlink" href="#treestore" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeStore">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeStore</code><span class="sig-paren">(</span><em>data_type</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeStore" title="永久链接至目标">¶</a></dt>
+<dd><p>参数与 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 的构造函数一样。</p>
+<dl class="method">
+<dt id="Gtk.TreeStore.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>parent</em><span class="optional">[</span>, <em>row</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeStore.append" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<p>向TreeStore中添加一新行数据。 <em>parent</em> 必须是一个有效的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 。如果
+<em>parent</em> 不为 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，会在 <em>parent</em> 的最后一个孩子后面添加一个新行，否则会在顶层添加一行。</p>
+<p><em>row</em> 是一个包含每列数据的列表，即 <code class="docutils literal notranslate"><span class="pre">len(store)</span> <span class="pre">==</span> <span class="pre">len(row)</span></code> 。
+如果 <em>row</em> 忽略或者传递 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，则添加一个空行。</p>
+<p>返回指向新添加的行的 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的实例。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="treepath">
+<h3>TreePath 对象<a class="headerlink" href="#treepath" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreePath">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreePath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreePath" title="永久链接至目标">¶</a></dt>
+<dd><p>构造一个指向由 <em>path</em> 指定的节点的 <a class="reference internal" href="#Gtk.TreePath" title="Gtk.TreePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code></a> 的实例。</p>
+<p>如果 <em>path</em> 为字符串，则要求是冒号分割的数字列表。例如，字符串 “10:4:0” 创建了一个三层深的path，
+指向根节点的第11个孩子，的第五个孩子，的第一个孩子。又来了。。。</p>
+<p>如果 <em>path</em> 为一个列表list或元组tuple，则要包含节点的索引，
+参照上面的例子，表达式 <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath(&quot;10:4:0&quot;)</span></code> 与 <code class="docutils literal notranslate"><span class="pre">Gtk.TreePath([10,</span> <span class="pre">4,</span> <span class="pre">3])</span></code> 等效。</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="the-view">
+<h2>The View（视图）<a class="headerlink" href="#the-view" title="永久链接至标题">¶</a></h2>
+<p>尽管有很多不同的模型可以选择，但只有一个视图控件。这个视图控件可以与list或者tree store一起工作。
+设置好一个 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 并不是一件困难的事：可以通过构造函数或者调用:meth:<cite>Gtk.TreeView.set_model</cite>
+来创建一个:class:<cite>Gtk.TreeModel</cite> 的实例来获取数据。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreeView</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>一旦 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 控件有了一个模型之后，它还需要知道如何显示这个模型，一般是通过列和单元格渲染器（cell renderer）来完成。</p>
+<p>Cell renderer 用来以一种方式将数据展现在tree model中。GTK+自带了很多的cell renderer，例如：
+<a class="reference internal" href="cellrenderers.html#Gtk.CellRendererText" title="Gtk.CellRendererText"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.CellRendererText</span></code></a> ， <a class="reference internal" href="cellrenderers.html#Gtk.CellRendererPixbuf" title="Gtk.CellRendererPixbuf"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.CellRendererPixbuf</span></code></a> 和
+<a class="reference internal" href="cellrenderers.html#Gtk.CellRendererToggle" title="Gtk.CellRendererToggle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.CellRendererToggle</span></code></a>.
+另外，相对来说很容易自己定制一个renderer。</p>
+<p><a class="reference internal" href="#Gtk.TreeViewColumn" title="Gtk.TreeViewColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn</span></code></a> 是 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 用来在tree iew中组织一列数据的对象。
+一般需要列名作为标签显示给用户，要用那种的单元格渲染器，及从模型中获取哪一些数据这些参数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">renderer</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">CellRendererText</span><span class="p">()</span>
+<span class="n">column</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreeViewColumn</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>要在一列中渲染多列model中的数据的话，你需要创建一个
+<a class="reference internal" href="#Gtk.TreeViewColumn" title="Gtk.TreeViewColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn</span></code></a> 的实例并使用 <a class="reference internal" href="#Gtk.TreeViewColumn.pack_start" title="Gtk.TreeViewColumn.pack_start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn.pack_start()</span></code></a>
+来添加model的列。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">column</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreeViewColumn</span><span class="p">(</span><span class="s2">&quot;Title and Author&quot;</span><span class="p">)</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">CellRendererText</span><span class="p">()</span>
+<span class="n">author</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">CellRendererText</span><span class="p">()</span>
+
+<span class="n">column</span><span class="o">.</span><span class="n">pack_start</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">column</span><span class="o">.</span><span class="n">pack_start</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">column</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">column</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="treeview">
+<h3>TreeView 对象<a class="headerlink" href="#treeview" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeView">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeView</code><span class="sig-paren">(</span><span class="optional">[</span><em>treemodel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView" title="永久链接至目标">¶</a></dt>
+<dd><p>创建一个新的 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 控件，其model初始化为
+<em>treemodel</em> 。 <em>treemodel</em> 必须是一个实现了 <a class="reference internal" href="#Gtk.TreeModel" title="Gtk.TreeModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeModel</span></code></a> 的类，例如
+<a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 或者 <a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> 。如果 <em>treemodel</em>
+忽略了或者传递 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，model保持未设置状态并且你后面需要调用
+<a class="reference internal" href="#Gtk.TreeView.set_model" title="Gtk.TreeView.set_model"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_model()</span></code></a> 来设置。</p>
+<dl class="method">
+<dt id="Gtk.TreeView.set_model">
+<code class="descname">set_model</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.set_model" title="永久链接至目标">¶</a></dt>
+<dd><p>设置tree iew的model。如果之前已经设置了一个model，那么会替换掉原来的，如果 <em>model</em> 为
+<code class="docutils literal notranslate"><span class="pre">None</span></code> ，则会清除掉原来旧的model。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeView.get_model">
+<code class="descname">get_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.get_model" title="永久链接至目标">¶</a></dt>
+<dd><p>返回tree view的model。如果之前没有设置model则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeView.append_column">
+<code class="descname">append_column</code><span class="sig-paren">(</span><em>column</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.append_column" title="永久链接至目标">¶</a></dt>
+<dd><p>添加 <em>column</em> 到列列表中，即添加新的一列吧。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeView.get_selection">
+<code class="descname">get_selection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.get_selection" title="永久链接至目标">¶</a></dt>
+<dd><p>返回与tree view关联的 <a class="reference internal" href="#Gtk.TreeSelection" title="Gtk.TreeSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeSelection</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeView.enable_model_drag_source">
+<code class="descname">enable_model_drag_source</code><span class="sig-paren">(</span><em>start_button_mask</em>, <em>targets</em>, <em>actions</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.enable_model_drag_source" title="永久链接至目标">¶</a></dt>
+<dd><p>参数与 <a class="reference internal" href="drag_and_drop.html#Gtk.Widget.drag_source_set" title="Gtk.Widget.drag_source_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Widget.drag_source_set()</span></code></a> 相同。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeView.enable_model_dest_source">
+<code class="descname">enable_model_dest_source</code><span class="sig-paren">(</span><em>targets</em>, <em>actions</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeView.enable_model_dest_source" title="永久链接至目标">¶</a></dt>
+<dd><p>参数与 <a class="reference internal" href="drag_and_drop.html#Gtk.Widget.drag_dest_set" title="Gtk.Widget.drag_dest_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Widget.drag_dest_set()</span></code></a> 相同。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="treeviewcolumn">
+<h3>TreeViewColumn 对象<a class="headerlink" href="#treeviewcolumn" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeViewColumn">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeViewColumn</code><span class="sig-paren">(</span><em>label</em><span class="optional">[</span>, <em>renderer</em><span class="optional">[</span>, <em>**kwargs</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn" title="永久链接至目标">¶</a></dt>
+<dd><p>创建一个 <a class="reference internal" href="#Gtk.TreeViewColumn" title="Gtk.TreeViewColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn</span></code></a> 。</p>
+<p><em>renderer</em> 为 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.CellRenderer</span></code> 的实例，
+<em>kwargs</em> 键值对指定 <em>renderer</em> 的属性的默认值。这与对每一个键值对调用
+<a class="reference internal" href="#Gtk.TreeViewColumn.pack_start" title="Gtk.TreeViewColumn.pack_start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack_start()</span></code></a> 和 <a class="reference internal" href="#Gtk.TreeViewColumn.add_attribute" title="Gtk.TreeViewColumn.add_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_attribute()</span></code></a> 的效果一样。</p>
+<p>如果 <em>renderer</em> 忽略，你需要手动调用 <a class="reference internal" href="#Gtk.TreeViewColumn.pack_start" title="Gtk.TreeViewColumn.pack_start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack_start()</span></code></a> 或者
+<a class="reference internal" href="#Gtk.TreeViewColumn.pack_end" title="Gtk.TreeViewColumn.pack_end"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pack_end()</span></code></a> 。</p>
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.add_attribute">
+<code class="descname">add_attribute</code><span class="sig-paren">(</span><em>renderer</em>, <em>attribute</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.add_attribute" title="永久链接至目标">¶</a></dt>
+<dd><p>添加一个映射给这一列的属性。</p>
+<p>将value设置给 <em>renderer</em> 的 <em>attribute</em> 属性。例如模型的第二列包含字符串，你可以
+给 <a class="reference internal" href="cellrenderers.html#Gtk.CellRendererText" title="Gtk.CellRendererText"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.CellRendererText</span></code></a> 设置 “text” 属性来获取第二列的值。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.pack_start">
+<code class="descname">pack_start</code><span class="sig-paren">(</span><em>renderer</em>, <em>expand</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.pack_start" title="永久链接至目标">¶</a></dt>
+<dd><p>打包 <em>renderer</em> 到这一列的开始。如果 expand为 <code class="docutils literal notranslate"><span class="pre">False</span></code> ， <em>renderer</em> 只会分配需要的空间的大小。
+如果expand为 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，那未使用的控件会平均的分配给各个单元格。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.pack_end">
+<code class="descname">pack_end</code><span class="sig-paren">(</span><em>renderer</em>, <em>expand</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.pack_end" title="永久链接至目标">¶</a></dt>
+<dd><p>打包 <em>renderer</em> 到这一列的最后。如果 expand为 <code class="docutils literal notranslate"><span class="pre">False</span></code> ， <em>renderer</em> 只会分配需要的空间的大小。
+如果expand为 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，那未使用的控件会平均的分配给各个单元格。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.set_sort_column_id">
+<code class="descname">set_sort_column_id</code><span class="sig-paren">(</span><em>sort_column_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.set_sort_column_id" title="永久链接至目标">¶</a></dt>
+<dd><p>设置模型的哪一列用来给视图的这一列排序，这同时使得本列的列头可以点击。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.get_sort_column_id">
+<code class="descname">get_sort_column_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.get_sort_column_id" title="永久链接至目标">¶</a></dt>
+<dd><p>返回由 <a class="reference internal" href="#Gtk.TreeViewColumn.set_sort_column_id" title="Gtk.TreeViewColumn.set_sort_column_id"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn.set_sort_column_id()</span></code></a> 设置的id。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.set_sort_indicator">
+<code class="descname">set_sort_indicator</code><span class="sig-paren">(</span><em>setting</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.set_sort_indicator" title="永久链接至目标">¶</a></dt>
+<dd><p>设置是否在列头显示一个小箭头。</p>
+<p><em>setting</em> 可以为 <code class="docutils literal notranslate"><span class="pre">True</span></code> （显示提示） 或者 <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.get_sort_indicator">
+<code class="descname">get_sort_indicator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.get_sort_indicator" title="永久链接至目标">¶</a></dt>
+<dd><p>返回 <a class="reference internal" href="#Gtk.TreeViewColumn.set_sort_indicator" title="Gtk.TreeViewColumn.set_sort_indicator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn.set_sort_indicator()</span></code></a> 设置的值。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.set_sort_order">
+<code class="descname">set_sort_order</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.set_sort_order" title="永久链接至目标">¶</a></dt>
+<dd><p>改变本列的排序方式。</p>
+<p><em>order</em> 可以是 <code class="docutils literal notranslate"><span class="pre">Gtk.SortType.ASCENDING</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">Gtk.SortType.DESCENDING</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeViewColumn.get_sort_order">
+<code class="descname">get_sort_order</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeViewColumn.get_sort_order" title="永久链接至目标">¶</a></dt>
+<dd><p>返回 <a class="reference internal" href="#Gtk.TreeViewColumn.set_sort_order" title="Gtk.TreeViewColumn.set_sort_order"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn.set_sort_order()</span></code></a> 设置的值。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="the-selection">
+<h2>The Selection<a class="headerlink" href="#the-selection" title="永久链接至标题">¶</a></h2>
+<p>绝大多数应用不仅需要处理显示数据的问题，也需要从用户那里接受输入事件。
+要接受输入时间，只要创建一个selection对象的引用并且连接到 “changed” 信号。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">get_selection</span><span class="p">()</span>
+<span class="n">select</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span> <span class="n">on_tree_selection_changed</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如下代码获取返回选中行的数据：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_tree_selection_changed</span><span class="p">(</span><span class="n">selection</span><span class="p">):</span>
+    <span class="n">model</span><span class="p">,</span> <span class="n">treeiter</span> <span class="o">=</span> <span class="n">selection</span><span class="o">.</span><span class="n">get_selected</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">treeiter</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;You selected&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">[</span><span class="n">treeiter</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>你可通过调用 <a class="reference internal" href="#Gtk.TreeSelection.set_mode" title="Gtk.TreeSelection.set_mode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeSelection.set_mode()</span></code></a> 来控制哪种选择被允许。
+如果你将mode设置为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.MULTIPLE</span></code> ，那么
+<a class="reference internal" href="#Gtk.TreeSelection.get_selected" title="Gtk.TreeSelection.get_selected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeSelection.get_selected()</span></code></a> 就不能工作了，你需要调用
+<a class="reference internal" href="#Gtk.TreeSelection.get_selected_rows" title="Gtk.TreeSelection.get_selected_rows"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeSelection.get_selected_rows()</span></code></a> 。</p>
+<div class="section" id="treeselection">
+<h3>TreeSelection 对象<a class="headerlink" href="#treeselection" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeSelection">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeSelection</code><a class="headerlink" href="#Gtk.TreeSelection" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="Gtk.TreeSelection.set_mode">
+<code class="descname">set_mode</code><span class="sig-paren">(</span><em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSelection.set_mode" title="永久链接至目标">¶</a></dt>
+<dd><p>type的值为以下其一：</p>
+<ul class="simple">
+<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.NONE</span></code>: 不可选。</li>
+<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.SINGLE</span></code>: 零或一个项目可以选中。</li>
+<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.BROWSE</span></code>: 有且只有一个项目可被选中。
+在某些环境，例如在初始化或搜索操作时，是可能没有项目可以选中的。
+必须选中是强调用户不能取消当前选中的项目——除非选择了一个新的项目。</li>
+<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.MULTIPLE</span></code>: 任意数量的项目可以被选中。
+点击会改变项目的选中状态。Ctrl键可以用来多选，Shift键用来选择一个范围。
+一些控件也允许点击然后拖拽来选择一个范围内的项目。</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeSelection.get_selected">
+<code class="descname">get_selected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSelection.get_selected" title="永久链接至目标">¶</a></dt>
+<dd><p>返回 <code class="docutils literal notranslate"><span class="pre">(model,</span> <span class="pre">treeiter)</span></code> 的元组， <em>model</em> 是当期的模型， <em>treeiter</em> 是
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeIter</span></code> 的一个实例并且指向当前选中的行。如果没有行被选中，
+<em>treeiter</em> 为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+<p>如果选择的模式为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.MULTIPLE</span></code> 此函数将不能工作。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeSelection.get_selected_rows">
+<code class="descname">get_selected_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSelection.get_selected_rows" title="永久链接至目标">¶</a></dt>
+<dd><p>返回所有选中行的 <a class="reference internal" href="#Gtk.TreePath" title="Gtk.TreePath"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreePath</span></code></a> 的实例的列表。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="id2">
+<h2>排序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>排序对于tree view是一个重要的特性，并且标准的实现了
+<a class="reference internal" href="#Gtk.TreeSortable" title="Gtk.TreeSortable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeSortable</span></code></a> 接口的tree model（
+<a class="reference internal" href="#Gtk.TreeStore" title="Gtk.TreeStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeStore</span></code></a> and <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> ）就支持排序。</p>
+<div class="section" id="id3">
+<h3>通过点击列标题排序<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 的列通过调用
+<a class="reference internal" href="#Gtk.TreeViewColumn.set_sort_column_id" title="Gtk.TreeViewColumn.set_sort_column_id"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeViewColumn.set_sort_column_id()</span></code></a> 可以很容易的实现排序。
+之后这一列就可以通过单击标题来排序了。</p>
+<p>首先我们需要一个简单的 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 和其模型 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> 。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">ListStore</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;Benjamin&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;Charles&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;alfred&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;Alfred&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;David&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;charles&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;david&quot;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;benjamin&quot;</span><span class="p">])</span>
+
+<span class="n">treeView</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreeView</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="n">cellRenderer</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">CellRendererText</span><span class="p">()</span>
+<span class="n">column</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">TreeViewColumn</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>下一步就是是能排序。注意 <em>column_id</em> （例子中为 <code class="docutils literal notranslate"><span class="pre">0</span></code> ）指模型中的列而 <strong>不是</strong> 视图中的列。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">column</span><span class="o">.</span><span class="n">set_sort_column_id</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>设置一个定制的排序函数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>当然你也可以定制一个比较函数来改变排序的行为。例子中我们创建一个
+比较函数来实现大小写敏感的排序功能。
+上面的例子排序后的列表像下面这样：:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alfred</span>
+<span class="n">Alfred</span>
+<span class="n">benjamin</span>
+<span class="n">Benjamin</span>
+<span class="n">charles</span>
+<span class="n">Charles</span>
+<span class="n">david</span>
+<span class="n">David</span>
+</pre></div>
+</div>
+<p>大小写敏感的排序排序后的列表像这样：:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alfred</span>
+<span class="n">Benjamin</span>
+<span class="n">Charles</span>
+<span class="n">David</span>
+<span class="n">alfred</span>
+<span class="n">benjamin</span>
+<span class="n">charles</span>
+<span class="n">david</span>
+</pre></div>
+</div>
+<p>首先一个我们需要一个比较函数。这个函数需要两个行，
+并且如果第一个行应该排在前面返回负数，
+如果两个行的比较结果相等返回0，如果第二个行应该排在前面则返回一个正数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span><span class="p">,</span> <span class="n">user_data</span><span class="p">):</span>
+    <span class="n">sort_column</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_sort_column_id</span><span class="p">()</span>
+    <span class="n">value1</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">row1</span><span class="p">,</span> <span class="n">sort_column</span><span class="p">)</span>
+    <span class="n">value2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">row2</span><span class="p">,</span> <span class="n">sort_column</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">value1</span> <span class="o">&lt;</span> <span class="n">value2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">value1</span> <span class="o">==</span> <span class="n">value2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>排序函数需要通过 <a class="reference internal" href="#Gtk.TreeSortable.set_sort_func" title="Gtk.TreeSortable.set_sort_func"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeSortable.set_sort_func()</span></code></a> 来设置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">set_sort_func</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">compare</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="treesortable">
+<h3>TreeSortable 对象<a class="headerlink" href="#treesortable" title="永久链接至标题">¶</a></h3>
+<dl class="class">
+<dt id="Gtk.TreeSortable">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">TreeSortable</code><a class="headerlink" href="#Gtk.TreeSortable" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="Gtk.TreeSortable.set_sort_column_id">
+<code class="descname">set_sort_column_id</code><span class="sig-paren">(</span><em>sort_column_id</em>, <em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSortable.set_sort_column_id" title="永久链接至目标">¶</a></dt>
+<dd><p>设置当前的排序列为 <em>sort_column_id</em> 。</p>
+<p><em>order</em> 可以为 <code class="docutils literal notranslate"><span class="pre">Gtk.SortType.ASCENDING</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">Gtk.SortType.DESCENDING</span></code> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeSortable.get_sort_column_id">
+<code class="descname">get_sort_column_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSortable.get_sort_column_id" title="永久链接至目标">¶</a></dt>
+<dd><p>返回一个包含当前排序列和排序方法的元组。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeSortable.set_sort_func">
+<code class="descname">set_sort_func</code><span class="sig-paren">(</span><em>sort_column_id</em>, <em>sort_func</em>, <em>user_data</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSortable.set_sort_func" title="永久链接至目标">¶</a></dt>
+<dd><p>设置用来通过 <em>sort_column_id</em> 来排序时的比较函数。</p>
+<p><em>user_data</em> 会传递给 <em>sort_func</em> 。</p>
+<p><em>sort_func</em> 是一个原型为 <code class="docutils literal notranslate"><span class="pre">sort_func(model,</span> <span class="pre">iter1,</span> <span class="pre">iter2,</span> <span class="pre">user_data)</span></code> 的函数。
+并且在 <em>iter1</em> 应该排在 <em>iter2</em> 前时返回一个负数，相等时返回0，
+<em>iter2</em> 应该排在  <em>iter1</em> 前时返回一个正数。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.TreeSortable.set_default_sort_func">
+<code class="descname">set_default_sort_func</code><span class="sig-paren">(</span><em>sort_func</em>, <em>user_data</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSortable.set_default_sort_func" title="永久链接至目标">¶</a></dt>
+<dd><p>参见 <a class="reference internal" href="#Gtk.TreeSortable.set_sort_func" title="Gtk.TreeSortable.set_sort_func"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TreeSortable.set_sort_func()</span></code></a> 。用来设置当使用默认的排序列时使用的比较函数。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cellrenderers.html" class="btn btn-neutral float-right" title="单元格渲染器（CellRenderers）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spinner.html" class="btn btn-neutral" title="Spinner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

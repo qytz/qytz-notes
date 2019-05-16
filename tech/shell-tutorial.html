@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>shell 脚本常用操作入门 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="JavaScript 的移位运算与 IP 地址处理" href="js-bit-operate.html" />
+    <link rel="prev" title="D-Bus系列之获取发送者UID及PID的方法" href="dbus/dbus-get-uid.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">技术笔记</a> &raquo;</li>
+        
+      <li>shell 脚本常用操作入门</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/shell-tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="shell">
+<h1>shell 脚本常用操作入门<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>shell 字符串操作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>判断读取字符串值</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">表达式</th>
+<th class="head">含义</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>${var}</td>
+<td>变量 var 的值，与 $var 相同</td>
+</tr>
+<tr class="row-odd"><td>${var-DEFAULT}</td>
+<td>如果 var 没有被声明，那么就以 $DEFAULT 作为其值 *</td>
+</tr>
+<tr class="row-even"><td>${var:-DEFAULT}</td>
+<td>如果 var 没有被声明，或者其值为空，那么就以 $DEFAULT 作为其值 *</td>
+</tr>
+<tr class="row-odd"><td>${var=DEFAULT}</td>
+<td>如果 var 没有被声明，那么就以 $DEFAULT 作为其值 *</td>
+</tr>
+<tr class="row-even"><td>${var:=DEFAULT}</td>
+<td>如果 var 没有被声明，或者其值为空，那么就以 $DEFAULT 作为其值 *</td>
+</tr>
+<tr class="row-odd"><td>${var+OTHER}</td>
+<td>如果 var 声明了，那么其值就是 $OTHER, 否则就为 null 字符串</td>
+</tr>
+<tr class="row-even"><td>${var:+OTHER}</td>
+<td>如果 var 被设置了，那么其值就是 $OTHER, 否则就为 null 字符串</td>
+</tr>
+<tr class="row-odd"><td>${var?ERR_MSG}</td>
+<td>如果 var 没被声明，那么就打印 $ERR_MSG *</td>
+</tr>
+<tr class="row-even"><td>${var:?ERR_MSG}</td>
+<td>如果 var 没被设置，那么就打印 $ERR_MSG *</td>
+</tr>
+<tr class="row-odd"><td>${!varprefix*}</td>
+<td>匹配之前所有以 varprefix 开头进行声明的变量</td>
+</tr>
+<tr class="row-even"><td>${!varprefix&#64;}</td>
+<td>匹配之前所有以 varprefix 开头进行声明的变量</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>字符串操作（长度，读取，替换）</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">表达式</th>
+<th class="head">含义</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>${#string}</td>
+<td>$string 的长度</td>
+</tr>
+<tr class="row-odd"><td>${string:position}</td>
+<td>在 $string 中，从位置 $position 开始提取子串</td>
+</tr>
+<tr class="row-even"><td>${string:position:length}</td>
+<td>在 $string 中，从位置 $position 开始提取长度为 $length 的子串</td>
+</tr>
+<tr class="row-odd"><td>${string#substring}</td>
+<td>从变量 $string 的开头，删除最短匹配 $substring 的子串</td>
+</tr>
+<tr class="row-even"><td>${string##substring}</td>
+<td>从变量 $string 的开头，删除最长匹配 $substring 的子串</td>
+</tr>
+<tr class="row-odd"><td>${string%substring}</td>
+<td>从变量 $string 的结尾，删除最短匹配 $substring 的子串</td>
+</tr>
+<tr class="row-even"><td>${string%%substring}</td>
+<td>从变量 $string 的结尾，删除最长匹配 $substring 的子串</td>
+</tr>
+<tr class="row-odd"><td>${string/substring/replacement}</td>
+<td>使用 $replacement, 来代替第一个匹配的 $substring</td>
+</tr>
+<tr class="row-even"><td>${string//substring/replacement}</td>
+<td>使用 $replacement, 代替所有匹配的 $substring</td>
+</tr>
+<tr class="row-odd"><td>${string/#substring/replacement}</td>
+<td>如果 $string 的前缀匹配 $substring,
+那么就用 $replacement 来代替匹配到的 $substring</td>
+</tr>
+<tr class="row-even"><td>${string/%substring/replacement}</td>
+<td>如果 $string 的后缀匹配 $substring,</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>举例</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/// 取得字符串长度
+<span class="nv">string</span><span class="o">=</span>abc12342341          // 等号二边不要有空格
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">string</span><span class="si">}</span>             // 结果 <span class="m">11</span>
+expr length <span class="nv">$string</span>         // 结果 <span class="m">11</span>
+expr <span class="s2">&quot;</span><span class="nv">$string</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*&quot;</span>       // 结果 <span class="m">11</span> 冒号二边要有空格，这里的：根 match 的用法差不多
+
+/// 字符串所在位置
+expr index <span class="nv">$string</span> <span class="s1">&#39;123&#39;</span>    // 结果 <span class="m">4</span> 字符串对应的下标是从 <span class="m">1</span> 开始的
+<span class="nv">str</span><span class="o">=</span><span class="s2">&quot;abc&quot;</span>
+expr index <span class="nv">$str</span> <span class="s2">&quot;b&quot;</span>  <span class="c1"># 2</span>
+expr index <span class="nv">$str</span> <span class="s2">&quot;x&quot;</span>  <span class="c1"># 0</span>
+expr index <span class="nv">$str</span> <span class="s2">&quot;&quot;</span>   <span class="c1"># 0</span>
+
+/// 字符串截取
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>      //2342341  从第 <span class="m">4</span> 位开始截取后面所有字符串
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">3</span><span class="p">:</span><span class="nv">6</span><span class="si">}</span>    //123423   从第 <span class="m">3</span> 位开始截取后面 <span class="m">6</span> 位
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">: -4</span><span class="si">}</span>    //2341  : 右边有空格   截取后 <span class="m">4</span> 位
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">:(-4)</span><span class="si">}</span>   //2341  同上
+expr substr <span class="nv">$string</span> <span class="m">3</span> <span class="m">3</span>   //123  从第 <span class="m">3</span> 位开始截取后面 <span class="m">3</span> 位
+<span class="nv">str</span><span class="o">=</span><span class="s2">&quot;abcdef&quot;</span>
+expr substr <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> <span class="m">4</span> <span class="m">5</span>  <span class="c1"># 从第四个位置开始取 5 个字符， def</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">:(-6):</span><span class="nv">5</span><span class="si">}</span>        <span class="c1"># 从倒数第二个位置向左提取字符串，abcde</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">:(-4):</span><span class="nv">3</span><span class="si">}</span>      <span class="c1"># 从倒数第二个位置向左提取 6 个字符，cde</span>
+
+/// 匹配显示内容
+expr match <span class="nv">$string</span> <span class="s1">&#39;\([a-c]*[0-9]*\)&#39;</span>  //abc12342341
+expr <span class="nv">$string</span> : <span class="s1">&#39;\([a-c]*[0-9]\)&#39;</span>       //abc1
+expr <span class="nv">$string</span> : <span class="s1">&#39;.*[([0-9][0-9][0-9]\)&#39;</span> //341 显示括号中匹配的内容
+
+/// 截取不匹配的内容
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">#a*3</span><span class="si">}</span>     //42341  从 <span class="nv">$string</span> 左边开始，去掉最短匹配子串
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">#c*3</span><span class="si">}</span>     //abc12342341  这样什么也没有匹配到
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">#*c1*3</span><span class="si">}</span>   //42341  从 <span class="nv">$string</span> 左边开始，去掉最短匹配子串
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">##a*3</span><span class="si">}</span>    //41     从 <span class="nv">$string</span> 左边开始，去掉最长匹配子串
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">%3*1</span><span class="si">}</span>     //abc12342  从 <span class="nv">$string</span> 右边开始，去掉最短匹配子串
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">string</span><span class="p">%%3*1</span><span class="si">}</span>    //abc12     从 <span class="nv">$string</span> 右边开始，去掉最长匹配子串
+<span class="nv">str</span><span class="o">=</span><span class="s2">&quot;abbc,def,ghi,abcjkl&quot;</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">#a*c</span><span class="si">}</span>     <span class="c1"># 输出，def,ghi,abcjkl  一个井号 (#) 表示从左边截取掉最短的匹配 （这里把 abbc 字串去掉）</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">##a*c</span><span class="si">}</span>    <span class="c1"># 输出 jkl，             两个井号 (##) 表示从左边截取掉最长的匹配 （这里把 abbc,def,ghi,abc 字串去掉）</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">#</span><span class="s2">&quot;a*c&quot;</span><span class="si">}</span>   <span class="c1"># 输出 abbc,def,ghi,abcjkl 因为 str 中没有&quot;a*c&quot;子串</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">##</span><span class="s2">&quot;a*c&quot;</span><span class="si">}</span>  <span class="c1"># 输出 abbc,def,ghi,abcjkl 同理</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">#*a*c*</span><span class="si">}</span>   <span class="c1"># 空</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">##*a*c*</span><span class="si">}</span>  <span class="c1"># 空</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">str</span><span class="p">#d*f)     # 输出 abbc,def,ghi,abcjkl,</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">#*d*f</span><span class="si">}</span><span class="p">    # 输出，ghi,abcjkl</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">%a*l</span><span class="si">}</span><span class="p">     # abbc,def,ghi  一个百分号 (%) 表示从右边截取最短的匹配</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">%%b*l</span><span class="si">}</span><span class="p">    # a             两个百分号表示 (%%) 表示从右边截取最长的匹配</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">%a*c</span><span class="si">}</span><span class="p">     # abbc,def,ghi,abcjkl</span>
+
+<span class="p">/// 匹配并且替换</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">string</span><span class="p">/23/bb</span><span class="si">}</span><span class="p">   //abc1bb42341  替换一次</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">string</span><span class="p">//23/bb</span><span class="si">}</span><span class="p">  //abc1bb4bb41  双斜杠替换所有匹配</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">string</span><span class="p">/#abc/bb</span><span class="si">}</span><span class="p"> //bb12342341   #以什么开头来匹配，根 php 中的 ^ 有点像</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">string</span><span class="p">/%41/bb</span><span class="si">}</span><span class="p">  //abc123423bb  % 以什么结尾来匹配，根 php 中的 </span>$<span class="p"> 有点像</span>
+<span class="p">str=</span><span class="s2">&quot;apple, tree, apple tree&quot;</span><span class="p"></span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">/apple/APPLE</span><span class="si">}</span><span class="p">   # 替换第一次出现的 apple</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">//apple/APPLE</span><span class="si">}</span><span class="p">  # 替换所有 apple</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">/#apple/APPLE</span><span class="si">}</span><span class="p">  # 如果字符串 str 以 apple 开头，则用 APPLE 替换它</span>
+<span class="p">echo </span><span class="si">${</span><span class="nv">str</span><span class="p">/%apple/APPLE</span><span class="si">}</span><span class="p">  # 如果字符串 str 以 apple 结尾，则用 APPLE 替换它</span>
+
+<span class="p">/// 比较</span>
+<span class="p">[[ </span><span class="s2">&quot;a.txt&quot;</span><span class="p"> == a* ]]        # 逻辑真 (pattern matching)</span>
+<span class="p">[[ </span><span class="s2">&quot;a.txt&quot;</span><span class="p"> =~ .*</span><span class="se">\.</span><span class="nv">txt</span><span class="p"> ]]   # 逻辑真 (regex matching)</span>
+<span class="p">[[ </span><span class="s2">&quot;abc&quot;</span><span class="p"> == </span><span class="s2">&quot;abc&quot;</span><span class="p"> ]]       # 逻辑真 (string comparision)</span>
+<span class="p">[[ </span><span class="s2">&quot;11&quot;</span><span class="p"> &lt; </span><span class="s2">&quot;2&quot;</span><span class="p"> ]]           # 逻辑真 (string comparision), 按 ascii 值比较</span>
+
+<span class="p">/// 字符串删除</span>
+$<span class="p"> test=</span><span class="s1">&#39;c:/windows/boot.ini&#39;</span><span class="p"></span>
+$<span class="p"> echo </span><span class="si">${</span><span class="nv">test</span><span class="p">#/</span><span class="si">}</span><span class="p"></span>
+<span class="p">c:/windows/boot.ini</span>
+$<span class="p"> echo </span><span class="si">${</span><span class="nv">test</span><span class="p">#*/</span><span class="si">}</span><span class="p"></span>
+<span class="p">windows/boot.ini</span>
+$<span class="p"> echo </span><span class="si">${</span><span class="nv">test</span><span class="p">##*/</span><span class="si">}</span><span class="p"></span>
+<span class="p">boot.ini</span>
+$<span class="p"> echo </span><span class="si">${</span><span class="nv">test</span><span class="p">%/*</span><span class="si">}</span><span class="p"></span>
+<span class="p">c:/windows</span>
+$<span class="p"> echo </span><span class="si">${</span><span class="nv">test</span><span class="p">%%/*</span><span class="si">}</span><span class="p"></span>
+<span class="p">#</span><span class="si">${</span><span class="nv">变量名</span><span class="p">#substring 正则表达式</span><span class="si">}</span><span class="nv">从字符串开头开始配备</span><span class="p"> substring, 删除匹配上的表达式。</span>
+<span class="p">#</span><span class="si">${</span><span class="nv">变量名</span><span class="p"> %substring 正则表达式</span><span class="si">}</span><span class="nv">从字符串结尾开始配备</span><span class="p"> substring, 删除匹配上的表达式。</span>
+<span class="p">#注意：</span><span class="si">${</span><span class="nv">test</span><span class="p">##*/</span><span class="si">}</span><span class="p">,</span><span class="si">${</span><span class="nv">test</span><span class="p">%/*</span><span class="si">}</span><span class="p"> 分别是得到文件名，或者目录地址最简单方法。</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>数组操作<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>声明一个数组</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">declare</span> <span class="o">-</span><span class="n">a</span> <span class="n">array</span>
+</pre></div>
+</div>
+<p>数组赋值</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span> <span class="n">array</span><span class="o">=</span><span class="p">(</span><span class="n">var1</span> <span class="n">var2</span> <span class="n">var3</span> <span class="o">...</span> <span class="n">varN</span><span class="p">)</span>
+<span class="n">B</span><span class="o">.</span> <span class="n">array</span><span class="o">=</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">var1</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">var2</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">var3</span> <span class="o">...</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="n">varN</span><span class="p">)</span>
+<span class="n">C</span><span class="o">.</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">var1</span>
+   <span class="n">arrya</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">var2</span>
+   <span class="o">...</span>
+   <span class="n">array</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="n">varN</span>
+<span class="n">D</span><span class="o">.</span> <span class="n">ARRAY</span><span class="o">=</span><span class="p">()</span>
+   <span class="n">ARRAY</span><span class="o">+=</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+   <span class="n">ARRAY</span><span class="o">+=</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>计算数组元素个数</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${#array[@]}  或者  ${#array[*]}
+</pre></div>
+</div>
+<p>引用数组</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo ${array[n]}
+</pre></div>
+</div>
+<p>遍历数组</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>filename=(`ls`)
+for var in ${filename[@]};do
+    echo $var
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>参考资料<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://justcoding.iteye.com/blog/1963463">linux shell 字符串操作详解 （长度，读取，替换，截取，连接，对比，删除，位置 ）</a></li>
+<li><a class="reference external" href="http://snailwarrior.blog.51cto.com/680306/154704">BASH 数组用法小结</a></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="js-bit-operate.html" class="btn btn-neutral float-right" title="JavaScript 的移位运算与 IP 地址处理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dbus/dbus-get-uid.html" class="btn btn-neutral" title="D-Bus系列之获取发送者UID及PID的方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

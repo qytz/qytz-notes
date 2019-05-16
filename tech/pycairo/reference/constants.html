@@ -1,0 +1,886 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>模块函数与常量 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../../about.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Cairo Context" href="context.html" />
+    <link rel="prev" title="Reference" href="index.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pycairo Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">概览</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">模块函数与常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context.html">Cairo Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matrix.html">Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paths.html">Paths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="patterns.html">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surfaces.html">Surfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="text.html">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pycairo_c_api.html">Pycairo 的 C API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="../index.html">Pycairo Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>模块函数与常量</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tech/pycairo/reference/constants.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="constants">
+<span id="id1"></span><h1>模块函数与常量<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>模块函数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="cairo.cairo_version">
+<code class="descclassname">cairo.</code><code class="descname">cairo_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.cairo_version" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">编码后的版本号</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<p>返回编码为一个整数的底层cairo C库的版本号。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cairo.cairo_version_string">
+<code class="descclassname">cairo.</code><code class="descname">cairo_version_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.cairo_version_string" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">编码后的版本号</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<p>以便于人类阅读的”X.Y.Z”字符串形式返回底层cairo C库的版本号。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>模块常量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="data">
+<dt id="cairo.version">
+<code class="descclassname">cairo.</code><code class="descname">version</code><a class="headerlink" href="#cairo.version" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo的版本，字符串类型。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.version_info">
+<code class="descclassname">cairo.</code><code class="descname">version_info</code><a class="headerlink" href="#cairo.version_info" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo的版本号，元组类型。</p>
+</dd></dl>
+
+<div class="section" id="cairo-has">
+<span id="constants-has"></span><h3>cairo.HAS<a class="headerlink" href="#cairo-has" title="永久链接至标题">¶</a></h3>
+<dl class="data">
+<dt id="cairo.HAS_ATSUI_FONT">
+<code class="descclassname">cairo.</code><code class="descname">HAS_ATSUI_FONT</code><a class="headerlink" href="#cairo.HAS_ATSUI_FONT" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_FT_FONT">
+<code class="descclassname">cairo.</code><code class="descname">HAS_FT_FONT</code><a class="headerlink" href="#cairo.HAS_FT_FONT" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_GLITZ_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_GLITZ_SURFACE</code><a class="headerlink" href="#cairo.HAS_GLITZ_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_IMAGE_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_IMAGE_SURFACE</code><a class="headerlink" href="#cairo.HAS_IMAGE_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_PDF_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_PDF_SURFACE</code><a class="headerlink" href="#cairo.HAS_PDF_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_PNG_FUNCTIONS">
+<code class="descclassname">cairo.</code><code class="descname">HAS_PNG_FUNCTIONS</code><a class="headerlink" href="#cairo.HAS_PNG_FUNCTIONS" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_PS_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_PS_SURFACE</code><a class="headerlink" href="#cairo.HAS_PS_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_SVG_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_SVG_SURFACE</code><a class="headerlink" href="#cairo.HAS_SVG_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_USER_FONT">
+<code class="descclassname">cairo.</code><code class="descname">HAS_USER_FONT</code><a class="headerlink" href="#cairo.HAS_USER_FONT" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_QUARTZ_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_QUARTZ_SURFACE</code><a class="headerlink" href="#cairo.HAS_QUARTZ_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_WIN32_FONT">
+<code class="descclassname">cairo.</code><code class="descname">HAS_WIN32_FONT</code><a class="headerlink" href="#cairo.HAS_WIN32_FONT" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_WIN32_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_WIN32_SURFACE</code><a class="headerlink" href="#cairo.HAS_WIN32_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_XCB_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_XCB_SURFACE</code><a class="headerlink" href="#cairo.HAS_XCB_SURFACE" title="永久链接至目标">¶</a></dt>
+<dt id="cairo.HAS_XLIB_SURFACE">
+<code class="descclassname">cairo.</code><code class="descname">HAS_XLIB_SURFACE</code><a class="headerlink" href="#cairo.HAS_XLIB_SURFACE" title="永久链接至目标">¶</a></dt>
+<dd><p>1 代表底层cairo C库支持该特性，0 代表不支持。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-antialias">
+<span id="constants-antialias"></span><h3>cairo.ANTIALIAS<a class="headerlink" href="#cairo-antialias" title="永久链接至标题">¶</a></h3>
+<p>ANTIALIAS 指定了渲染文本或形状时的抗锯齿类型。</p>
+<dl class="data">
+<dt id="cairo.ANTIALIAS_DEFAULT">
+<code class="descclassname">cairo.</code><code class="descname">ANTIALIAS_DEFAULT</code><a class="headerlink" href="#cairo.ANTIALIAS_DEFAULT" title="永久链接至目标">¶</a></dt>
+<dd><p>针对子系统和目标设备使用默认的抗锯齿。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.ANTIALIAS_NONE">
+<code class="descclassname">cairo.</code><code class="descname">ANTIALIAS_NONE</code><a class="headerlink" href="#cairo.ANTIALIAS_NONE" title="永久链接至目标">¶</a></dt>
+<dd><p>使用双级Alpha遮罩(bilevel alpha mask)。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.ANTIALIAS_GRAY">
+<code class="descclassname">cairo.</code><code class="descname">ANTIALIAS_GRAY</code><a class="headerlink" href="#cairo.ANTIALIAS_GRAY" title="永久链接至目标">¶</a></dt>
+<dd><p>使用单色抗锯齿（例如使用白色背景上黑色文本的灰度）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.ANTIALIAS_SUBPIXEL">
+<code class="descclassname">cairo.</code><code class="descname">ANTIALIAS_SUBPIXEL</code><a class="headerlink" href="#cairo.ANTIALIAS_SUBPIXEL" title="永久链接至目标">¶</a></dt>
+<dd><p>通过利用LCD面板等设备的亚像素渲染特性实现抗锯齿效果。
+（译注：相关内容可以参考  <a class="reference external" href="http://www.xieyidian.com/105a7">亚像素显示</a> ）</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-content">
+<span id="constants-content"></span><h3>cairo.CONTENT<a class="headerlink" href="#cairo-content" title="永久链接至标题">¶</a></h3>
+<p>这些常量用于描述 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> 包含的内容，即颜色信息、alpha信息（半透明vs不透明度），或者两者都有。</p>
+<dl class="data">
+<dt id="cairo.CONTENT_COLOR">
+<code class="descclassname">cairo.</code><code class="descname">CONTENT_COLOR</code><a class="headerlink" href="#cairo.CONTENT_COLOR" title="永久链接至目标">¶</a></dt>
+<dd><p>surface 只包含颜色信息。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.CONTENT_ALPHA">
+<code class="descclassname">cairo.</code><code class="descname">CONTENT_ALPHA</code><a class="headerlink" href="#cairo.CONTENT_ALPHA" title="永久链接至目标">¶</a></dt>
+<dd><p>surface 只包含alpha通道信息。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.CONTENT_COLOR_ALPHA">
+<code class="descclassname">cairo.</code><code class="descname">CONTENT_COLOR_ALPHA</code><a class="headerlink" href="#cairo.CONTENT_COLOR_ALPHA" title="永久链接至目标">¶</a></dt>
+<dd><p>surface 包含颜色和alpha信息。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-extend">
+<span id="constants-extend"></span><h3>cairo.EXTEND<a class="headerlink" href="#cairo-extend" title="永久链接至标题">¶</a></h3>
+<p>这些常量用来描述 <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a> 对于超出pattern正常区域的颜色/alpha如何渲染的问题，
+（例如：超出surface边界或者超出渐变区域边界）。</p>
+<p>对于  <a class="reference internal" href="patterns.html#cairo.SurfacePattern" title="cairo.SurfacePattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurfacePattern</span></code></a> 默认的模式是 <em>EXTEND_NONE</em> ，对于 <a class="reference internal" href="patterns.html#cairo.Gradient" title="cairo.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a> 的pattern，
+默认的模式是 <em>EXTEND_PAD</em> 。</p>
+<dl class="data">
+<dt id="cairo.EXTEND_NONE">
+<code class="descclassname">cairo.</code><code class="descname">EXTEND_NONE</code><a class="headerlink" href="#cairo.EXTEND_NONE" title="永久链接至目标">¶</a></dt>
+<dd><p>超过source pattern边界的像素完全透明。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.EXTEND_REPEAT">
+<code class="descclassname">cairo.</code><code class="descname">EXTEND_REPEAT</code><a class="headerlink" href="#cairo.EXTEND_REPEAT" title="永久链接至目标">¶</a></dt>
+<dd><p>（超出部分）pattern被重复的平铺。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.EXTEND_REFLECT">
+<code class="descclassname">cairo.</code><code class="descname">EXTEND_REFLECT</code><a class="headerlink" href="#cairo.EXTEND_REFLECT" title="永久链接至目标">¶</a></dt>
+<dd><p>pattern通过反射边缘平铺（&gt;=1.6版本实现）。
+the pattern is tiled by reflecting at the edges (Implemented for surface
+patterns since 1.6)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.EXTEND_PAD">
+<code class="descclassname">cairo.</code><code class="descname">EXTEND_PAD</code><a class="headerlink" href="#cairo.EXTEND_PAD" title="永久链接至目标">¶</a></dt>
+<dd><p>超出pattern边界部分的像素直接拷贝与其相邻的边界部分的像素（&gt;=1.2版本，只有&gt;=1.6版本的surface pattern实现）。</p>
+</dd></dl>
+
+<p>未来的版本可能会增加新的模式。</p>
+</div>
+<div class="section" id="cairo-fill-rule">
+<span id="constants-fill-rule"></span><h3>cairo.FILL_RULE<a class="headerlink" href="#cairo-fill-rule" title="永久链接至标题">¶</a></h3>
+<p>这些常量用于选择path填充的模式。对于所有这两种模式，一个点是否被填充取决于：
+从该点向无穷远画一条射线，该射线与path的交叉点。射线的方向任意，只要交叉点不通过path某一段的终点，
+或者与path相切（事实上填充并不是按照这种方式实现的，这只是填充规则的描述）。</p>
+<p>默认的填充规则是 <em>FILL_RULE_WINDING</em> 。</p>
+<dl class="data">
+<dt id="cairo.FILL_RULE_WINDING">
+<code class="descclassname">cairo.</code><code class="descname">FILL_RULE_WINDING</code><a class="headerlink" href="#cairo.FILL_RULE_WINDING" title="永久链接至目标">¶</a></dt>
+<dd><p>如果路径从左向右穿过射线，count+1，如果路径从右向左穿过射线，count-1。
+（左和右由射线的起点看起），如果count最终非0，该点被填充。</p>
+<p>If the path crosses the ray from left-to-right, counts +1. If the path
+crosses the ray from right to left, counts -1. (Left and right are
+determined from the perspective of looking along the ray from the starting
+point.) If the total count is non-zero, the point will be filled.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILL_RULE_EVEN_ODD">
+<code class="descclassname">cairo.</code><code class="descname">FILL_RULE_EVEN_ODD</code><a class="headerlink" href="#cairo.FILL_RULE_EVEN_ODD" title="永久链接至目标">¶</a></dt>
+<dd><p>不考虑方向，统计交叉点的总数，如果总数是奇数，则该点被填充。</p>
+</dd></dl>
+
+<p>未来的版本可能会增加新的模式。</p>
+</div>
+<div class="section" id="cairo-filter">
+<span id="constants-filter"></span><h3>cairo.FILTER<a class="headerlink" href="#cairo-filter" title="永久链接至标题">¶</a></h3>
+<p>这些常量用于描述渲染pattern的像素点时使用的filter。
+函数 <a class="reference internal" href="patterns.html#cairo.SurfacePattern.set_filter" title="cairo.SurfacePattern.set_filter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SurfacePattern.set_filter()</span></code></a> 可以设置pattern要使用的filter。</p>
+<dl class="data">
+<dt id="cairo.FILTER_FAST">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_FAST</code><a class="headerlink" href="#cairo.FILTER_FAST" title="永久链接至目标">¶</a></dt>
+<dd><p>一个高性能的filter，质量与 <em>FILTER_NEAREST</em> 差不多。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILTER_GOOD">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_GOOD</code><a class="headerlink" href="#cairo.FILTER_GOOD" title="永久链接至目标">¶</a></dt>
+<dd><p>性能一般的filter，质量与 <em>FILTER_BILINEAR</em> 差不多。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILTER_BEST">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_BEST</code><a class="headerlink" href="#cairo.FILTER_BEST" title="永久链接至目标">¶</a></dt>
+<dd><p>最高质量的可用的filter，性能可能并不适合交互界面使用。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILTER_NEAREST">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_NEAREST</code><a class="headerlink" href="#cairo.FILTER_NEAREST" title="永久链接至目标">¶</a></dt>
+<dd><p>近邻过滤（Nearest-neighbor filtering）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILTER_BILINEAR">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_BILINEAR</code><a class="headerlink" href="#cairo.FILTER_BILINEAR" title="永久链接至目标">¶</a></dt>
+<dd><p>二维线性差值（Linear interpolation in two dimensions）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FILTER_GAUSSIAN">
+<code class="descclassname">cairo.</code><code class="descname">FILTER_GAUSSIAN</code><a class="headerlink" href="#cairo.FILTER_GAUSSIAN" title="永久链接至目标">¶</a></dt>
+<dd><p>该值当前未实现，当前代码不应该使用。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-font-slant">
+<span id="constants-font-slant"></span><h3>cairo.FONT_SLANT<a class="headerlink" href="#cairo-font-slant" title="永久链接至标题">¶</a></h3>
+<p>这些常量用于描述 <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 的倾斜度。</p>
+<dl class="data">
+<dt id="cairo.FONT_SLANT_NORMAL">
+<code class="descclassname">cairo.</code><code class="descname">FONT_SLANT_NORMAL</code><a class="headerlink" href="#cairo.FONT_SLANT_NORMAL" title="永久链接至目标">¶</a></dt>
+<dd><p>正常的字体风格。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FONT_SLANT_ITALIC">
+<code class="descclassname">cairo.</code><code class="descname">FONT_SLANT_ITALIC</code><a class="headerlink" href="#cairo.FONT_SLANT_ITALIC" title="永久链接至目标">¶</a></dt>
+<dd><p>斜体风格（Italic font style）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FONT_SLANT_OBLIQUE">
+<code class="descclassname">cairo.</code><code class="descname">FONT_SLANT_OBLIQUE</code><a class="headerlink" href="#cairo.FONT_SLANT_OBLIQUE" title="永久链接至目标">¶</a></dt>
+<dd><p>伪斜体风格（Oblique font style）。</p>
+<p>译注：参考 <a class="reference external" href="http://zh.wikipedia.org/wiki/%E4%BC%AA%E6%96%9C%E4%BD%93">伪斜体</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-font-weight">
+<span id="constants-font-weight"></span><h3>cairo.FONT_WEIGHT<a class="headerlink" href="#cairo-font-weight" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述了 <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 的字体的粗细。</p>
+<dl class="data">
+<dt id="cairo.FONT_WEIGHT_NORMAL">
+<code class="descclassname">cairo.</code><code class="descname">FONT_WEIGHT_NORMAL</code><a class="headerlink" href="#cairo.FONT_WEIGHT_NORMAL" title="永久链接至目标">¶</a></dt>
+<dd><p>正常的自体粗细形式。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FONT_WEIGHT_BOLD">
+<code class="descclassname">cairo.</code><code class="descname">FONT_WEIGHT_BOLD</code><a class="headerlink" href="#cairo.FONT_WEIGHT_BOLD" title="永久链接至目标">¶</a></dt>
+<dd><p>粗体形式。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-format">
+<span id="constants-format"></span><h3>cairo.FORMAT<a class="headerlink" href="#cairo-format" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述:class:<cite>ImageSurface</cite> 数据在内存中的格式。</p>
+<p>未来的版本可能会增加新的格式。</p>
+<dl class="data">
+<dt id="cairo.FORMAT_ARGB32">
+<code class="descclassname">cairo.</code><code class="descname">FORMAT_ARGB32</code><a class="headerlink" href="#cairo.FORMAT_ARGB32" title="永久链接至目标">¶</a></dt>
+<dd><p>每个像素32位，高8位描述alpha通道，然后是红、绿、蓝三原色。该32位的值以本地字节序存储。
+最终的渲染会使用预乘过的alpha值（即红色50%透明的值是0x80800000，而不是0x80ff0000）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FORMAT_RGB24">
+<code class="descclassname">cairo.</code><code class="descname">FORMAT_RGB24</code><a class="headerlink" href="#cairo.FORMAT_RGB24" title="永久链接至目标">¶</a></dt>
+<dd><p>每个像素点是一个32位的值，但高8位没有使用，红、绿、蓝三原色依序存储在余下的24位中。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FORMAT_A8">
+<code class="descclassname">cairo.</code><code class="descname">FORMAT_A8</code><a class="headerlink" href="#cairo.FORMAT_A8" title="永久链接至目标">¶</a></dt>
+<dd><p>每个像素点8位——存储alpha通道的值。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FORMAT_A1">
+<code class="descclassname">cairo.</code><code class="descname">FORMAT_A1</code><a class="headerlink" href="#cairo.FORMAT_A1" title="永久链接至目标">¶</a></dt>
+<dd><p>每个像素使用1位，用于存储alpha值。很多像素点一起打包成32位的数，位序按照平台序来定。在大端机器上，
+第一个像素在最高位，在小端机器上第一个像素在最低位。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.FORMAT_RGB16_565">
+<code class="descclassname">cairo.</code><code class="descname">FORMAT_RGB16_565</code><a class="headerlink" href="#cairo.FORMAT_RGB16_565" title="永久链接至目标">¶</a></dt>
+<dd><p>每个像素16位，其中依序红色在高5位，绿色在中间6位，蓝色在低5位。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-hint-metrics">
+<span id="constants-hint-metrics"></span><h3>cairo.HINT_METRICS<a class="headerlink" href="#cairo-hint-metrics" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述是否微调字体规格（hint font metrics），意即量化字体规格，字体在显示设备空间的表示为整数。这样做可以
+提高字母和线段间距的连续性，但是也意味着文字在不同的缩放程度时的布局可能会不同。</p>
+<dl class="data">
+<dt id="cairo.HINT_METRICS_DEFAULT">
+<code class="descclassname">cairo.</code><code class="descname">HINT_METRICS_DEFAULT</code><a class="headerlink" href="#cairo.HINT_METRICS_DEFAULT" title="永久链接至目标">¶</a></dt>
+<dd><p>以字体后端和目标设备默认的方式微调字体。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_METRICS_OFF">
+<code class="descclassname">cairo.</code><code class="descname">HINT_METRICS_OFF</code><a class="headerlink" href="#cairo.HINT_METRICS_OFF" title="永久链接至目标">¶</a></dt>
+<dd><p>不微调字体规格。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_METRICS_ON">
+<code class="descclassname">cairo.</code><code class="descname">HINT_METRICS_ON</code><a class="headerlink" href="#cairo.HINT_METRICS_ON" title="永久链接至目标">¶</a></dt>
+<dd><p>微调字体规格。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-hint-style">
+<span id="constants-hint-style"></span><h3>cairo.HINT_STYLE<a class="headerlink" href="#cairo-hint-style" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述对字体轮廓微调的类型。微调的主要工作是将字体的轮廓过滤映射到像素栅格以提升外观。
+由于微调后的轮廓可能会与原来的稍有不同，因此渲染出来的字体可能并不完全忠实于原来的外形轮廓。
+并不是所有的微调类型被所有字体后端支持。</p>
+<dl class="data">
+<dt id="cairo.HINT_STYLE_DEFAULT">
+<code class="descclassname">cairo.</code><code class="descname">HINT_STYLE_DEFAULT</code><a class="headerlink" href="#cairo.HINT_STYLE_DEFAULT" title="永久链接至目标">¶</a></dt>
+<dd><p>使用字体后端及目标设备的默认类型。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_STYLE_NONE">
+<code class="descclassname">cairo.</code><code class="descname">HINT_STYLE_NONE</code><a class="headerlink" href="#cairo.HINT_STYLE_NONE" title="永久链接至目标">¶</a></dt>
+<dd><p>不微调字体廓量。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_STYLE_SLIGHT">
+<code class="descclassname">cairo.</code><code class="descname">HINT_STYLE_SLIGHT</code><a class="headerlink" href="#cairo.HINT_STYLE_SLIGHT" title="永久链接至目标">¶</a></dt>
+<dd><p>轻微的调整来提高对比度，尽量忠实与原始形状。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_STYLE_MEDIUM">
+<code class="descclassname">cairo.</code><code class="descname">HINT_STYLE_MEDIUM</code><a class="headerlink" href="#cairo.HINT_STYLE_MEDIUM" title="永久链接至目标">¶</a></dt>
+<dd><p>中度的调整在忠实于原始形状与对比度之间尽量折衷。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.HINT_STYLE_FULL">
+<code class="descclassname">cairo.</code><code class="descname">HINT_STYLE_FULL</code><a class="headerlink" href="#cairo.HINT_STYLE_FULL" title="永久链接至目标">¶</a></dt>
+<dd><p>调整轮廓以获取尽可能大的对比度。</p>
+</dd></dl>
+
+<p>为了版本可能会增加新的类型。</p>
+</div>
+<div class="section" id="cairo-line-cap">
+<span id="constants-line-cap"></span><h3>cairo.LINE_CAP<a class="headerlink" href="#cairo-line-cap" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述在一次绘画(stroke)时如何处理路径的端点。</p>
+<p>默认的形式是 <em>LINE_CAP_BUTT</em></p>
+<dl class="data">
+<dt id="cairo.LINE_CAP_BUTT">
+<code class="descclassname">cairo.</code><code class="descname">LINE_CAP_BUTT</code><a class="headerlink" href="#cairo.LINE_CAP_BUTT" title="永久链接至目标">¶</a></dt>
+<dd><p>在开始（结束）点停止线段。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.LINE_CAP_ROUND">
+<code class="descclassname">cairo.</code><code class="descname">LINE_CAP_ROUND</code><a class="headerlink" href="#cairo.LINE_CAP_ROUND" title="永久链接至目标">¶</a></dt>
+<dd><p>在端点增加圆角，圆心就是线段的端点。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.LINE_CAP_SQUARE">
+<code class="descclassname">cairo.</code><code class="descname">LINE_CAP_SQUARE</code><a class="headerlink" href="#cairo.LINE_CAP_SQUARE" title="永久链接至目标">¶</a></dt>
+<dd><p>在端点增加一个正方形，正方形的中心在线段的端点。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-line-join">
+<span id="constants-line-join"></span><h3>cairo.LINE_JOIN<a class="headerlink" href="#cairo-line-join" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述当完成一次绘画时如何渲染两条线段的交叉点。</p>
+<p>默认的样式是 <em>LINE_JOIN_MITER</em></p>
+<dl class="data">
+<dt id="cairo.LINE_JOIN_MITER">
+<code class="descclassname">cairo.</code><code class="descname">LINE_JOIN_MITER</code><a class="headerlink" href="#cairo.LINE_JOIN_MITER" title="永久链接至目标">¶</a></dt>
+<dd><p>圆角的交叉点，参考： <a class="reference internal" href="context.html#cairo.Context.set_miter_limit" title="cairo.Context.set_miter_limit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_miter_limit()</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.LINE_JOIN_ROUND">
+<code class="descclassname">cairo.</code><code class="descname">LINE_JOIN_ROUND</code><a class="headerlink" href="#cairo.LINE_JOIN_ROUND" title="永久链接至目标">¶</a></dt>
+<dd><p>圆角的交叉点，圆心正是交叉点。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.LINE_JOIN_BEVEL">
+<code class="descclassname">cairo.</code><code class="descname">LINE_JOIN_BEVEL</code><a class="headerlink" href="#cairo.LINE_JOIN_BEVEL" title="永久链接至目标">¶</a></dt>
+<dd><p>斜角的交叉点，在一半线宽的位置切掉交叉点的尖角。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-operator">
+<span id="constants-operator"></span><h3>cairo.OPERATOR<a class="headerlink" href="#cairo-operator" title="永久链接至标题">¶</a></h3>
+<p>这些常量用于设置cairo绘画操作的合成操作。</p>
+<p>默认的操作符是 <em>OPERATOR_OVER</em>.</p>
+<p>标记为 <em>unbounded</em> 的操作符即使超出了屏蔽层（mask layer）也会修改，即屏蔽层并不能限制这些效果的范围。
+但是通过clip这样的方式仍然能限制有效的范围。</p>
+<p>为了使事情变的简单，此处只记录了这些操作符在源和目的或者都透明或者都不透明时的行为，
+其实实现对半透明效果也支持。</p>
+<p>要获取每个操作符更加详细的信息，包括其数学原理，请参考： <a class="reference external" href="http://cairographics.org/operators">http://cairographics.org/operators</a>.</p>
+<dl class="data">
+<dt id="cairo.OPERATOR_CLEAR">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_CLEAR</code><a class="headerlink" href="#cairo.OPERATOR_CLEAR" title="永久链接至目标">¶</a></dt>
+<dd><p>完全清除目的层 (bounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_SOURCE">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_SOURCE</code><a class="headerlink" href="#cairo.OPERATOR_SOURCE" title="永久链接至目标">¶</a></dt>
+<dd><p>完全替换目的层(bounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_OVER">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_OVER</code><a class="headerlink" href="#cairo.OPERATOR_OVER" title="永久链接至目标">¶</a></dt>
+<dd><p>在目的层的上面绘制源的内容(bounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_IN">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_IN</code><a class="headerlink" href="#cairo.OPERATOR_IN" title="永久链接至目标">¶</a></dt>
+<dd><p>在目的层有内容的地方绘制源。(unbounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_OUT">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_OUT</code><a class="headerlink" href="#cairo.OPERATOR_OUT" title="永久链接至目标">¶</a></dt>
+<dd><p>在目的层没有内容的地方绘制源。(unbounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_ATOP">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_ATOP</code><a class="headerlink" href="#cairo.OPERATOR_ATOP" title="永久链接至目标">¶</a></dt>
+<dd><p>只在目的层内容的上面绘制源。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_DEST">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_DEST</code><a class="headerlink" href="#cairo.OPERATOR_DEST" title="永久链接至目标">¶</a></dt>
+<dd><p>忽略源。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_DEST_OVER">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_DEST_OVER</code><a class="headerlink" href="#cairo.OPERATOR_DEST_OVER" title="永久链接至目标">¶</a></dt>
+<dd><p>在源上面绘制目的层。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_DEST_IN">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_DEST_IN</code><a class="headerlink" href="#cairo.OPERATOR_DEST_IN" title="永久链接至目标">¶</a></dt>
+<dd><p>只在源有内容的地方保留目的层。(unbounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_DEST_OUT">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_DEST_OUT</code><a class="headerlink" href="#cairo.OPERATOR_DEST_OUT" title="永久链接至目标">¶</a></dt>
+<dd><p>只在源没有内容的地方保留目的层。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_DEST_ATOP">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_DEST_ATOP</code><a class="headerlink" href="#cairo.OPERATOR_DEST_ATOP" title="永久链接至目标">¶</a></dt>
+<dd><p>只保留源有内容的地方的目的层内容。(unbounded)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_XOR">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_XOR</code><a class="headerlink" href="#cairo.OPERATOR_XOR" title="永久链接至目标">¶</a></dt>
+<dd><p>源和目的执行异或操作（只有源或者目的时绘制）。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_ADD">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_ADD</code><a class="headerlink" href="#cairo.OPERATOR_ADD" title="永久链接至目标">¶</a></dt>
+<dd><p>源和目的层累积。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.OPERATOR_SATURATE">
+<code class="descclassname">cairo.</code><code class="descname">OPERATOR_SATURATE</code><a class="headerlink" href="#cairo.OPERATOR_SATURATE" title="永久链接至目标">¶</a></dt>
+<dd><p>与OPERATOR_OVER类似，但是假定源和目的几何上分离（but assuming source and dest are disjoint geometries）。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-path">
+<span id="constants-path"></span><h3>cairo.PATH<a class="headerlink" href="#cairo-path" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述 <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> 的类型。</p>
+<p>These constants are used to describe the type of one portion of a path when
+represented as a <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>.</p>
+<dl class="data">
+<dt id="cairo.PATH_MOVE_TO">
+<code class="descclassname">cairo.</code><code class="descname">PATH_MOVE_TO</code><a class="headerlink" href="#cairo.PATH_MOVE_TO" title="永久链接至目标">¶</a></dt>
+<dd><p>move-to 操作</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.PATH_LINE_TO">
+<code class="descclassname">cairo.</code><code class="descname">PATH_LINE_TO</code><a class="headerlink" href="#cairo.PATH_LINE_TO" title="永久链接至目标">¶</a></dt>
+<dd><p>line-to 操作</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.PATH_CURVE_TO">
+<code class="descclassname">cairo.</code><code class="descname">PATH_CURVE_TO</code><a class="headerlink" href="#cairo.PATH_CURVE_TO" title="永久链接至目标">¶</a></dt>
+<dd><p>curve-to 操作</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.PATH_CLOSE_PATH">
+<code class="descclassname">cairo.</code><code class="descname">PATH_CLOSE_PATH</code><a class="headerlink" href="#cairo.PATH_CLOSE_PATH" title="永久链接至目标">¶</a></dt>
+<dd><p>close-path 操作</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-ps-level">
+<span id="constants-ps-level"></span><h3>cairo.PS_LEVEL<a class="headerlink" href="#cairo-ps-level" title="永久链接至标题">¶</a></h3>
+<p>这些常量描述生成的PostScript文件的版本。注意：只有cairo编译时开启了PS支持时才会定义这些常量。</p>
+<dl class="data">
+<dt id="cairo.PS_LEVEL_2">
+<code class="descclassname">cairo.</code><code class="descname">PS_LEVEL_2</code><a class="headerlink" href="#cairo.PS_LEVEL_2" title="永久链接至目标">¶</a></dt>
+<dd><p>PostScript level 2</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.PS_LEVEL_3">
+<code class="descclassname">cairo.</code><code class="descname">PS_LEVEL_3</code><a class="headerlink" href="#cairo.PS_LEVEL_3" title="永久链接至目标">¶</a></dt>
+<dd><p>PostScript level 3</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cairo-subpixel-order">
+<span id="constants-subpixel-order"></span><h3>cairo.SUBPIXEL_ORDER<a class="headerlink" href="#cairo-subpixel-order" title="永久链接至标题">¶</a></h3>
+<p>亚像素顺序（The subpixel order）描述了在显示设备上开启抗锯齿模式 <a class="reference internal" href="#cairo.ANTIALIAS_SUBPIXEL" title="cairo.ANTIALIAS_SUBPIXEL"><code class="xref py py-data docutils literal notranslate"><span class="pre">ANTIALIAS_SUBPIXEL</span></code></a> 时
+每个像素点色彩元素的顺序。</p>
+<dl class="data">
+<dt id="cairo.SUBPIXEL_ORDER_DEFAULT">
+<code class="descclassname">cairo.</code><code class="descname">SUBPIXEL_ORDER_DEFAULT</code><a class="headerlink" href="#cairo.SUBPIXEL_ORDER_DEFAULT" title="永久链接至目标">¶</a></dt>
+<dd><p>使用目的显示设备默认的亚像素顺序。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.SUBPIXEL_ORDER_RGB">
+<code class="descclassname">cairo.</code><code class="descname">SUBPIXEL_ORDER_RGB</code><a class="headerlink" href="#cairo.SUBPIXEL_ORDER_RGB" title="永久链接至目标">¶</a></dt>
+<dd><p>亚像素按照红色在做的顺序水平排列。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.SUBPIXEL_ORDER_BGR">
+<code class="descclassname">cairo.</code><code class="descname">SUBPIXEL_ORDER_BGR</code><a class="headerlink" href="#cairo.SUBPIXEL_ORDER_BGR" title="永久链接至目标">¶</a></dt>
+<dd><p>亚像素按照蓝像素在做的顺序水平排列。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.SUBPIXEL_ORDER_VRGB">
+<code class="descclassname">cairo.</code><code class="descname">SUBPIXEL_ORDER_VRGB</code><a class="headerlink" href="#cairo.SUBPIXEL_ORDER_VRGB" title="永久链接至目标">¶</a></dt>
+<dd><p>亚像素按照红色在顶的顺序竖直排列。</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="cairo.SUBPIXEL_ORDER_VBGR">
+<code class="descclassname">cairo.</code><code class="descname">SUBPIXEL_ORDER_VBGR</code><a class="headerlink" href="#cairo.SUBPIXEL_ORDER_VBGR" title="永久链接至目标">¶</a></dt>
+<dd><p>亚像素按照蓝色在顶的顺序竖直排列。</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context.html" class="btn btn-neutral float-right" title="Cairo Context" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

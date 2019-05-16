@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>基础知识 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="处理字符串相关问题" href="unicode.html" />
+    <link rel="prev" title="从零开始" href="introduction.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Python GTK+ 3 Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">从零开始</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layout.html">布局管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">标签Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry输入框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_widgets.html">按钮控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">进度条</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner.html">Spinner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="treeview.html">树与列表控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iconview.html">IconView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menus.html">菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clipboard.html">剪贴板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html">Glade and Gtk.Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">对象系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stock.html">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">The Python GTK+ 3 Tutorial</a> &raquo;</li>
+        
+      <li>基础知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/PyGObject-Tutorial/basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="basics">
+<span id="id1"></span><h1>基础知识<a class="headerlink" href="#basics" title="永久链接至标题">¶</a></h1>
+<p>在这一章我们来介绍GTK+中最重要的方面。</p>
+<div class="section" id="signals">
+<span id="id2"></span><h2>主循环与信号<a class="headerlink" href="#signals" title="永久链接至标题">¶</a></h2>
+<p>跟绝大多数的GUI工具包一样，GTK+采用了一个事件驱动的编程模型。当用户什么也不做时，
+GTK+就在主循环里等着输入信息，如果用户执行了某个动作，比如点了下鼠标，主循环马上“醒来”并将事件投递给GTK+。</p>
+<p>当窗口部件收到一个事件时，他们通常会触发一个或多个信号。信号就会通知你的程序说 “某些有意思的事情发生，你赶紧来看看吧” ，
+怎么通知呢，当然是调用你你连接到信号上的函数了。这个函数就是通常所说的 <em>回调函数了</em> 。当你的回调函数被调用，
+你一般会做些操作，比如当一个“打开”按钮“被点击时你一般会打开一个文件选择对话框。
+回调函数执行结束后GTK+就返回到主循环继续等待更多的用户输入了。</p>
+<p>通常的例子类似于这个样子：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">handler_id</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>首先， <em>widget</em> 是一个我们之前创建的窗口部件的实例。
+第二，event就是我们感兴趣的事件，每个窗口部件都有其自己的事件。例如，按钮的 ”clicked“ 事件，意思是按钮被按下时信号就被触发了。
+第三， <em>callback</em> 参数就是回调函数的名字了，其包含相关信号被触发时要执行的代码。
+最后， <em>data</em> 参数包含任何你想传递给回调函数的数据。但是，这个参数完全是可选的，如果你不需要你完全可以忽略。</p>
+<p>这个函数返回一个信号-回调函数的id，当你想断开信号与回调函数的连接时会用到这个id。断开后将要触发及正在触发的该信号都不会再调用该回调函数了。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">widget</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">handler_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>几乎所有的应用程序都会将 “delete-event” 信号与顶层窗口连接。如果用户关闭顶层窗口时该信号就会被触发。
+默认的处理方法只是销毁窗口，但是并不终止程序。将 “delete-event” 与 <code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.main_quit()</span></code> 连接会达到想要的要求。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;delete-event&quot;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>调用 <code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.main_quit()</span></code> 使 <code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.main()</span></code> 中的主循环返回。</p>
+</div>
+<div class="section" id="id3">
+<h2>属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>属性描述了窗口不见的配置和状态信息。每一个窗口部件都有其不同的属性。
+例如，一个按钮有 “label” 属性，该属性包含一个在按钮内部显示的label部件的文本。
+当创建该窗口部件的实例时，你可以通过关键字参数指定这些属性的名字和值。
+要创建一个标签，25度角并且右对齐的显示“Hello World”：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">halign</span><span class="o">=</span><span class="n">Gtk</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当然，这与下面的代码是等价的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Label</span><span class="p">()</span>
+<span class="n">label</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">set_angle</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">label</span><span class="o">.</span><span class="n">set_halign</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">Align</span><span class="o">.</span><span class="n">END</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>除了使用这些get_xxx和set_xxx外你也可以使用&nbsp;<code class="docutils literal notranslate"><span class="pre">widget.get_property(&quot;prop-name&quot;)</span></code>&nbsp;和
+<code class="docutils literal notranslate"><span class="pre">widget.set_property(&quot;prop-name&quot;,&nbsp;value)</span></code> 来获取和设置属性。
+PS：测试了下，显示真的是25度角倾斜的文本，真的很好玩，哈哈～～</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="unicode.html" class="btn btn-neutral float-right" title="处理字符串相关问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="从零开始" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

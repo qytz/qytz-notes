@@ -1,0 +1,693 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Text &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../../about.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="FAQ" href="../faq.html" />
+    <link rel="prev" title="Surfaces" href="surfaces.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pycairo Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">概览</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="constants.html">模块函数与常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context.html">Cairo Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matrix.html">Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paths.html">Paths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="patterns.html">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surfaces.html">Surfaces</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pycairo_c_api.html">Pycairo 的 C API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="../index.html">Pycairo Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>Text</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tech/pycairo/reference/text.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="text">
+<span id="id1"></span><h1>Text<a class="headerlink" href="#text" title="永久链接至标题">¶</a></h1>
+<p>cairo有两种方式可以解析字体：</p>
+<ul class="simple">
+<li>一种是cairo的’玩具’text API。这个玩具API使用UTF-8编码的文本并且其功能仅限制为
+解析从左到右的文本，没有高级特性。这意味着像Hebrew，Arabic和Indic字体
+这些最复杂的字体（script）并不在讨论范围内，也没有字符间距调整或字体位置相关的标记。
+字体的选择也很受限制，同时也不能处理选择的字体并不包含要显示的文本的问题。
+这个API起始真的就是一个玩具，用于测试和演示的目的，任何认真考虑的程序都应该避免使用该API。</li>
+<li>另一种使用cairo底层text API的方式可以访问字形的名字。底层的API需要用户将文本转换为字形
+索引和位置。这其实是一件很麻烦的事最好使用外部库来处理，比如pangocairo，Pango文本布局和解析库的一部分。
+Pango的网站 <a class="reference external" href="http://www.pango.org/">http://www.pango.org/</a></li>
+</ul>
+<div class="section" id="class-fontface">
+<h2>class FontFace()<a class="headerlink" href="#class-fontface" title="永久链接至标题">¶</a></h2>
+<p><em>cairo.FontFace</em> 定义了字体除字体大小和字体矩阵
+（字体矩阵用于改变字体，在不同方向不同的切向或缩放字体）外的所有方面。
+<a class="reference internal" href="context.html#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 可以通过:meth:<cite>Context.set_font_face</cite> 设置 <em>FontFace</em> ，字体
+大小和矩阵可以通过 <a class="reference internal" href="context.html#cairo.Context.set_font_size" title="cairo.Context.set_font_size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_size()</span></code></a> 和 <a class="reference internal" href="context.html#cairo.Context.set_font_matrix" title="cairo.Context.set_font_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_matrix()</span></code></a> 来设置。</p>
+<p>根据使用的字体后端，有多种 <em>FontFace</em> 。</p>
+<dl class="class">
+<dt id="cairo.FontFace">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">FontFace</code><a class="headerlink" href="#cairo.FontFace" title="永久链接至目标">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">这个类不能被直接实例化，是由 <a class="reference internal" href="context.html#cairo.Context.get_font_face" title="cairo.Context.get_font_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.get_font_face()</span></code></a> 返回的。</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="class-freetypefontface-fontface">
+<h2>class FreeTypeFontFace(<a class="reference internal" href="#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a>)<a class="headerlink" href="#class-freetypefontface-fontface" title="永久链接至标题">¶</a></h2>
+<p>FreeType Fonts - 支持FreeType的字体</p>
+<p>FreeType字体后端主要用于GNU/Linux 上的字体渲染，也可以用于其他平台。</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">FreeType 字体在pycairo中没有实现，因为目前并没有提供C API的FreeType（和fontconfig）的开源python绑定，如果有人有兴趣为pycairo添加FreeType支持也可以。</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="class-toyfontface-fontface">
+<h2>class ToyFontFace(<a class="reference internal" href="#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a>)<a class="headerlink" href="#class-toyfontface-fontface" title="永久链接至标题">¶</a></h2>
+<p><em>cairo.ToyFontFace</em> 相比与 <a class="reference internal" href="context.html#cairo.Context.select_font_face" title="cairo.Context.select_font_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.select_font_face()</span></code></a> 可以创建一个独立于context的toy font 。
+class can be used instead of <a class="reference internal" href="context.html#cairo.Context.select_font_face" title="cairo.Context.select_font_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.select_font_face()</span></code></a> to create a toy font independently of a context.</p>
+<dl class="class">
+<dt id="cairo.ToyFontFace">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">ToyFontFace</code><span class="sig-paren">(</span><em>family</em><span class="optional">[</span>, <em>slant</em><span class="optional">[</span>, <em>weight</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ToyFontFace" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>family</strong> (<em>str</em>) – font family名</li>
+<li><strong>slant</strong> – 字体的 <a class="reference internal" href="constants.html#constants-font-slant"><span class="std std-ref">FONT_SLANT</span></a> 属性，
+defaults to <a class="reference internal" href="constants.html#cairo.FONT_SLANT_NORMAL" title="cairo.FONT_SLANT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_SLANT_NORMAL</span></code></a>.</li>
+<li><strong>weight</strong> – 字体的 <a class="reference internal" href="constants.html#constants-font-weight"><span class="std std-ref">FONT_WEIGHT</span></a> 属性，
+defaults to <a class="reference internal" href="constants.html#cairo.FONT_WEIGHT_NORMAL" title="cairo.FONT_WEIGHT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_WEIGHT_NORMAL</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">一个新的 <em>ToyFontFace</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>根据family、slant、weight三元组创建一个 <em>ToyFontFace</em> 。这些font face用于实现’toy’ API。</p>
+<p>如果family 为0长字符串 “”，则使用平台特定的默认family。默认的family可以使用 <a class="reference internal" href="#cairo.ToyFontFace.get_family" title="cairo.ToyFontFace.get_family"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_family()</span></code></a> 来查询。</p>
+<p><a class="reference internal" href="context.html#cairo.Context.select_font_face" title="cairo.Context.select_font_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.select_font_face()</span></code></a> 使用此接口来创建font face，参考该函数以了解toy font face的限制。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.8.4 新版功能.</span></p>
+</div>
+<dl class="method">
+<dt id="cairo.ToyFontFace.get_family">
+<code class="descname">get_family</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ToyFontFace.get_family" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">toy font的family</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">1.8.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ToyFontFace.get_slant">
+<code class="descname">get_slant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ToyFontFace.get_slant" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="constants.html#constants-font-slant"><span class="std std-ref">FONT_SLANT</span></a> 的值</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">1.8.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ToyFontFace.get_weight">
+<code class="descname">get_weight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ToyFontFace.get_weight" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="constants.html#constants-font-weight"><span class="std std-ref">FONT_WEIGHT</span></a> 的值</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">1.8.4 新版功能.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-userfontface-fontface">
+<h2>class UserFontFace(<a class="reference internal" href="#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a>)<a class="headerlink" href="#class-userfontface-fontface" title="永久链接至标题">¶</a></h2>
+<p>user-font 特性允许cairo用户提供字体字形的绘制。这在实现非标准格式的字体时很有用，比如
+SVG字体和Flash字体，但是也可以用于游戏和其他程序来绘制“有意思”的字体。</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">UserFontFace  支持还没有添加到pcairo中。如果你需要在pycairo中使用这个特性，请
+向cairo的邮件列表发送消息或者向pycairo报告bug。</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="class-scaledfont">
+<h2>class ScaledFont()<a class="headerlink" href="#class-scaledfont" title="永久链接至标题">¶</a></h2>
+<p><em>ScaledFont</em> 是一个缩放到特定尺寸和设备解析度的字体，其在使用底层字体很有用，例如
+库或应用想要缓存缩放字体的引用来加速计算。</p>
+<p>根据使用的字体后端，有多种缩放字体。</p>
+<dl class="class">
+<dt id="cairo.ScaledFont">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">ScaledFont</code><span class="sig-paren">(</span><em>font_face</em>, <em>font_matrix</em>, <em>ctm</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>font_face</strong> – <a class="reference internal" href="#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 的实例</li>
+<li><strong>font_matrix</strong> – 字体的字体空间到用户空间转换的矩阵 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 。对于最简单的情况，一个N个点的字体，矩阵
+只是缩放N，但是矩阵也可以用于在不同的轴有不同的缩放以拉伸或改变字体的形状，参考 <a class="reference internal" href="context.html#cairo.Context.set_font_matrix" title="cairo.Context.set_font_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_matrix()</span></code></a> 。</li>
+<li><strong>ctm</strong> – 字体使用的用户空间到设备空间转换的矩阵 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 。</li>
+<li><strong>options</strong> – <a class="reference internal" href="#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a> 实例，用于获取或解析字体。</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>根据 <em>FontFace</em> 和描述字体尺寸及使用环境的矩阵创建一个 <em>ScaledFont</em> 对象。</p>
+<dl class="method">
+<dt id="cairo.ScaledFont.extents">
+<code class="descname">extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.extents" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(ascent, descent, height, max_x_advance, max_y_advance)，一个浮点数元组</td>
+</tr>
+</tbody>
+</table>
+<p>获取 <em>ScaledFont</em> 的metric信息。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.get_ctm">
+<code class="descname">get_ctm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.get_ctm" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo中暂未实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.get_font_face">
+<code class="descname">get_font_face</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.get_font_face" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">使用 <em>ScaledFont</em> 的 <a class="reference internal" href="#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 。</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">1.2 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.get_font_matrix">
+<code class="descname">get_font_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.get_font_matrix" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo中暂未实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.get_font_options">
+<code class="descname">get_font_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.get_font_options" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo中暂未实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.get_scale_matrix">
+<code class="descname">get_scale_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.get_scale_matrix" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">缩放矩阵 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<p>缩放矩阵是字体矩阵和与字体关联的当前转换矩阵ctm的产物，即是从字体空间到设备空间的映射。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.8 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.glyph_extents">
+<code class="descname">glyph_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.glyph_extents" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo中暂未实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.text_extents">
+<code class="descname">text_extents</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.text_extents" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – text</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">(x_bearing, y_bearing, width, height, x_advance, y_advance)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">六个浮点数的元组</td>
+</tr>
+</tbody>
+</table>
+<p>获取文本字符串的范围（extent），该范围使用一个包含文本绘制的范围的用户空间的矩形描述。
+该范围从原点（0,0）开始，因为如果cairo的状态被设置为相同的font face，font matrix，ctm和
+字体选项 <em>ScaledFont</em> ，其将要用 <a class="reference internal" href="context.html#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a> 来绘制。
+另外，x_advance和y_advance的值表示当前点会被 <a class="reference internal" href="context.html#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a> 推进的值。</p>
+<p>as it would be drawn by <a class="reference internal" href="context.html#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a> if the
+cairo graphics state were set to the same font_face, font_matrix, ctm,
+and font_options as <em>ScaledFont</em> .
+Additionally, the x_advance and y_advance values indicate the amount by which the current point would be
+advanced by <a class="reference internal" href="context.html#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a>.</p>
+<p>注意空白字符并未直接体现在矩形的尺寸（宽和高）上，这些字符间接的改变了非空白字符的位置。
+尤其是尾部的空白字符很可能不会影响该矩形的尺寸，尽管他们会印象 x_advance 和 y_advance 的值。</p>
+<div class="versionadded">
+<p><span class="versionmodified">1.2 新版功能.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.ScaledFont.text_to_glyphs">
+<code class="descname">text_to_glyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ScaledFont.text_to_glyphs" title="永久链接至目标">¶</a></dt>
+<dd><p>pycairo中暂未实现。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-fontoptions">
+<h2>class FontOptions()<a class="headerlink" href="#class-fontoptions" title="永久链接至标题">¶</a></h2>
+<p>一个“不透明”的结构，存储了渲染字体时用到的所有选项。</p>
+<p><em>FontOptions</em> 的每个特性可以通过函数 <em>FontOptions.set_&lt;feature_name&gt;</em> 或 <em>FontOptions.get_&lt;feature_name&gt;</em> 被设置或访问，
+例如 <a class="reference internal" href="#cairo.FontOptions.set_antialias" title="cairo.FontOptions.set_antialias"><code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.set_antialias()</span></code></a> 和 <a class="reference internal" href="#cairo.FontOptions.get_antialias" title="cairo.FontOptions.get_antialias"><code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.get_antialias()</span></code></a> 。</p>
+<p>未来可能会为 <em>FontOptions</em> 添加新的特性，因此应该使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.copy()</span></code> 、 <code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.equal()</span></code> 、
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.merge()</span></code> 和 <code class="xref py py-meth docutils literal notranslate"><span class="pre">FontOptions.hash()</span></code> 执行拷贝、检查相等、合并或计算FontOptions hash值的操作。</p>
+<dl class="class">
+<dt id="cairo.FontOptions">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">FontOptions</code><a class="headerlink" href="#cairo.FontOptions" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">一个新分配的 <em>FontOptions</em>.</td>
+</tr>
+</tbody>
+</table>
+<p>分配一个新的 <em>FontOptions</em> 对象，所有的选项被初始化为默认值。</p>
+<dl class="method">
+<dt id="cairo.FontOptions.get_antialias">
+<code class="descname">get_antialias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.get_antialias" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><em>FontOptions</em> 对象的 <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> 模式。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.get_hint_metrics">
+<code class="descname">get_hint_metrics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.get_hint_metrics" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><em>FontOptions</em> 对象的 <a class="reference internal" href="constants.html#constants-hint-metrics"><span class="std std-ref">HINT METRICS</span></a> 模式。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.get_hint_style">
+<code class="descname">get_hint_style</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.get_hint_style" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><em>FontOptions</em> 对象的 <a class="reference internal" href="constants.html#constants-hint-style"><span class="std std-ref">HINT STYLE</span></a> 。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.get_subpixel_order">
+<code class="descname">get_subpixel_order</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.get_subpixel_order" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><em>FontOptions</em> 对象的 <a class="reference internal" href="constants.html#constants-subpixel-order"><span class="std std-ref">SUBPIXEL_ORDER</span></a> 。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.set_antialias">
+<code class="descname">set_antialias</code><span class="sig-paren">(</span><em>antialias</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.set_antialias" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>antialias</strong> – <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> 模式。</td>
+</tr>
+</tbody>
+</table>
+<p>这个选项设置了渲染字体时抗锯齿的类型。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.set_hint_metrics">
+<code class="descname">set_hint_metrics</code><span class="sig-paren">(</span><em>hint_metrics</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.set_hint_metrics" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>hint_metrics</strong> – <a class="reference internal" href="constants.html#constants-hint-metrics"><span class="std std-ref">HINT METRICS</span></a> 模式。</td>
+</tr>
+</tbody>
+</table>
+<p>这个选项控制 metrics 在设备单元是否被量化为整数。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.set_hint_style">
+<code class="descname">set_hint_style</code><span class="sig-paren">(</span><em>hint_style</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.set_hint_style" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>hint_style</strong> – <a class="reference internal" href="constants.html#constants-hint-style"><span class="std std-ref">HINT STYLE</span></a></td>
+</tr>
+</tbody>
+</table>
+<p>这个选项控制是否使字体轮廓适配像素网格，如果是，时优化字体显示更忠实于原字体或者使用更高的对比度。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.FontOptions.set_subpixel_order">
+<code class="descname">set_subpixel_order</code><span class="sig-paren">(</span><em>subpixel_order</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.FontOptions.set_subpixel_order" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>subpixel_order</strong> – <a class="reference internal" href="constants.html#constants-subpixel-order"><span class="std std-ref">SUBPIXEL_ORDER</span></a></td>
+</tr>
+</tbody>
+</table>
+<p>亚像素顺序描述使用亚像素抗锯齿模式 <a class="reference internal" href="constants.html#cairo.ANTIALIAS_SUBPIXEL" title="cairo.ANTIALIAS_SUBPIXEL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.ANTIALIAS_SUBPIXEL</span></code></a> 渲染时显示设备中每个像素中原色颜色的顺序。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="surfaces.html" class="btn btn-neutral" title="Surfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

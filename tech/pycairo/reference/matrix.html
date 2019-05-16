@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Matrix &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../../about.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Paths" href="paths.html" />
+    <link rel="prev" title="Exceptions" href="exceptions.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Pycairo Documentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../overview.html">概览</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="constants.html">模块函数与常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="context.html">Cairo Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paths.html">Paths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="patterns.html">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surfaces.html">Surfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="text.html">Text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pycairo_c_api.html">Pycairo 的 C API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="../index.html">Pycairo Documentation</a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>Matrix</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/tech/pycairo/reference/matrix.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="matrix">
+<span id="id1"></span><h1>Matrix<a class="headerlink" href="#matrix" title="永久链接至标题">¶</a></h1>
+<div class="section" id="class-matrix">
+<h2>class Matrix()<a class="headerlink" href="#class-matrix" title="永久链接至标题">¶</a></h2>
+<p><em>Matrix</em> 在cairo中被广泛的用于不同坐标系统间的转换。一个 <em>Matrix</em> 代表一个仿射变换，例如
+缩放、旋转、剪辑（shear）或以上几种的组合。点 (x, y) 的转换通过如下方式给出:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_new</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">xy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x0</span>
+<span class="n">y_new</span> <span class="o">=</span> <span class="n">yx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y0</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="context.html#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前转换矩阵CTX即 <em>Matrix</em> ，定义了从用户空间坐标到设备空间坐标的转换。</p>
+<p>一些标准的Python操作可以被用于矩阵 matrix:</p>
+<p>读取矩阵 <em>Matrix</em> 的值:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span><span class="p">,</span> <span class="n">yx</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">matrix</span>
+</pre></div>
+</div>
+<p>两个矩阵相乘:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix3</span> <span class="o">=</span> <span class="n">matrix1</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">matrix2</span><span class="p">)</span>
+<span class="c1"># or equivalently</span>
+<span class="n">matrix3</span> <span class="o">=</span> <span class="n">matrix1</span> <span class="o">*</span> <span class="n">matrix2</span>
+</pre></div>
+</div>
+<p>比较两个矩阵:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix1</span> <span class="o">==</span> <span class="n">matrix2</span>
+<span class="n">matrix1</span> <span class="o">!=</span> <span class="n">matrix2</span>
+</pre></div>
+</div>
+<p>更多矩阵转换相关的内容请参考 <a class="reference external" href="http://www.cairographics.org/matrix_transform">http://www.cairographics.org/matrix_transform</a>
+（译注，矩阵相关的文章 <a class="reference external" href="http://blog.csdn.net/xiaojidan2011/article/details/8213873">http://blog.csdn.net/xiaojidan2011/article/details/8213873</a> ）</p>
+<dl class="class">
+<dt id="cairo.Matrix">
+<em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Matrix</code><span class="sig-paren">(</span><em>xx = 1.0</em>, <em>yx = 0.0</em>, <em>xy = 0.0</em>, <em>yy = 1.0</em>, <em>x0 = 0.0</em>, <em>y0 = 0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xx</strong> (<em>float</em>) – 仿射变换的xx组件</li>
+<li><strong>yx</strong> (<em>float</em>) – 仿射变换的yx组件</li>
+<li><strong>xy</strong> (<em>float</em>) – 仿射变换的xy组件</li>
+<li><strong>yy</strong> (<em>float</em>) – 仿射变换的yy组件</li>
+<li><strong>x0</strong> (<em>float</em>) – 仿射变换的X组件</li>
+<li><strong>y0</strong> (<em>float</em>) – 仿射变换的Y组件</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>使用 <em>xx, yx, xy, yy, x0, y0</em> 定义的仿射变换创建一个矩阵 <em>Matrix</em> 。仿射变换的公式如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_new</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">xy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x0</span>
+<span class="n">y_new</span> <span class="o">=</span> <span class="n">yx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y0</span>
+</pre></div>
+</div>
+<p>创建一个新的独立的矩阵:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Matrix</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>要创建一个在X和Y轴变换(translates by)tx和ty的矩阵，可以向下面这样:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">tx</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="n">ty</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>要创建一个在X和Y轴缩放(scale by)tx和ty的矩阵，可以向下面这样:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">xx</span><span class="o">=</span><span class="n">sy</span><span class="p">,</span> <span class="n">yy</span><span class="o">=</span><span class="n">sy</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="classmethod">
+<dt id="cairo.Matrix.init_rotate">
+<em class="property">classmethod </em><code class="descname">init_rotate</code><span class="sig-paren">(</span><em>radians</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.init_rotate" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>radians</strong> (<em>float</em>) – 旋转的角度，单位为弧度。旋转的方向从正X轴到正Y轴为正向的角度。
+再考虑到cairo中轴默认的方向，正角度为时钟旋转的方向。</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">设置旋转角度为 <em>radians</em> 的新的 <em>Matrix</em> 。</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.invert">
+<code class="descname">invert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.invert" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">如果 <em>Matrix</em> 有逆矩阵（inverse），修改 <em>Matrix</em> 为其逆矩阵并返回None。</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">如果 <em>Matrix</em> 没有逆矩阵触发 <a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> 异常。</td>
+</tr>
+</tbody>
+</table>
+<p>将矩阵 <em>Matrix</em> 转换为其逆矩阵，并不是所有的转换矩阵都有逆矩阵，如果
+那么本函数会失败。
+（if the matrix collapses points
+together (it is <em>degenerate</em>), then it has no inverse and this function
+will fail.）</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.multiply">
+<code class="descname">multiply</code><span class="sig-paren">(</span><em>matrix2</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.multiply" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>matrix2</strong> (<a class="reference internal" href="#cairo.Matrix" title="cairo.Matrix"><em>cairo.Matrix</em></a>) – 另一个矩阵</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">一个新的 <em>Matrix</em></td>
+</tr>
+</tbody>
+</table>
+<p>两个仿射矩阵 <em>Matrix</em> 和 <em>matrix2</em> 相乘。新矩阵产生的效果为先将第一个矩阵变换 <em>Matrix</em> 作用于坐标再
+将第二个矩阵 <em>matrix2</em> 作用于坐标。</p>
+<p>结果与 <em>Matrix</em> 或 <em>matrix2</em> 不相同也是可以接受的。</p>
+<p>It is allowable for result to be identical to either <em>Matrix</em> or <em>matrix2</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>radians</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.rotate" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>radians</strong> (<em>float</em>) – 旋转的角度，单位为弧度。旋转的方向从正X轴到正Y轴为正向的角度。
+再考虑到cairo中轴默认的方向，正角度为时钟旋转的方向。</td>
+</tr>
+</tbody>
+</table>
+<p>初始化 <em>Matrix</em> 为一个旋转 <em>radians</em> 弧度的一个转换。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>sx</em>, <em>sy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.scale" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sx</strong> (<em>float</em>) – X方向的缩放因子</li>
+<li><strong>sy</strong> (<em>float</em>) – Y方向的缩放因子</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>对 <em>Matrix</em> 中的转换应用 <em>sx, sy</em> 缩放。新的转换的效果为首先以 <em>sx</em> 和 <em>sy</em> 缩放坐标，
+然后对坐标应用原来的转换。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.transform_distance">
+<code class="descname">transform_distance</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.transform_distance" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>dx</strong> (<em>float</em>) – 空间向量的X组件</li>
+<li><strong>dy</strong> (<em>float</em>) – 空间向量的Y组件</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">转换后的空间向量 (dx,dy)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>使用矩阵 <em>Matrix</em> 转换空间向量 <em>(dx,dy)</em> 。其类似于
+<a class="reference internal" href="#cairo.Matrix.transform_point" title="cairo.Matrix.transform_point"><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_point()</span></code></a> ，但是转换的转换组件被忽略。
+（except that the translation components of
+the transformation are ignored.）
+返回的向量是如此计算得出的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dx2</span> <span class="o">=</span> <span class="n">dx1</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">dy1</span> <span class="o">*</span> <span class="n">c</span>
+<span class="n">dy2</span> <span class="o">=</span> <span class="n">dx1</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">dy1</span> <span class="o">*</span> <span class="n">d</span>
+</pre></div>
+</div>
+<p>仿射变换是位置不变的，因此相同的向量总是转换为相同的向量。如果 <em>(x1,y1)</em>
+转换为 <em>(x2,y2)</em> 那么对于所有的 <em>x1</em> 和 <em>x2</em> <em>(x1+dx1,y1+dy1)</em> 会转换为 <em>(x1+dx2,y1+dy2)</em> 。</p>
+<p>Affine transformations are position invariant, so the same vector always
+transforms to the same vector. If <em>(x1,y1)</em> transforms to <em>(x2,y2)</em> then
+<em>(x1+dx1,y1+dy1)</em> will transform to <em>(x1+dx2,y1+dy2)</em> for all values
+of <em>x1</em> and <em>x2</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.transform_point">
+<code class="descname">transform_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.transform_point" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>float</em>) – 点的X坐标</li>
+<li><strong>y</strong> (<em>float</em>) – 点的Y坐标</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">转换后的点 (x,y)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>使用 <em>Matrix</em> 转换点 <em>(x, y)</em> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cairo.Matrix.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>tx</em>, <em>ty</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Matrix.translate" title="永久链接至目标">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tx</strong> (<em>float</em>) – X方向转换的数量</li>
+<li><strong>ty</strong> (<em>float</em>) – Y方向转换的数量</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>对 <em>Matrix</em> 的转换应用 <em>tx, ty</em> 转换。新的转换的效果为先以  <em>tx</em> 和 <em>ty</em> 转换坐标，再
+应用原来的变换。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="paths.html" class="btn btn-neutral float-right" title="Paths" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exceptions.html" class="btn btn-neutral" title="Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Glade and Gtk.Builder &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="对象系统" href="objects.html" />
+    <link rel="prev" title="拖拽支持" href="drag_and_drop.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Python GTK+ 3 Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">从零开始</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics.html">基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layout.html">布局管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">标签Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry输入框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_widgets.html">按钮控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">进度条</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner.html">Spinner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="treeview.html">树与列表控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iconview.html">IconView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menus.html">菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clipboard.html">剪贴板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Glade and Gtk.Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objects.html">对象系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stock.html">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">The Python GTK+ 3 Tutorial</a> &raquo;</li>
+        
+      <li>Glade and Gtk.Builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/PyGObject-Tutorial/builder.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="glade-and-gtk-builder">
+<h1>Glade and Gtk.Builder<a class="headerlink" href="#glade-and-gtk-builder" title="永久链接至标题">¶</a></h1>
+<p><a class="reference internal" href="#Gtk.Builder" title="Gtk.Builder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Builder</span></code></a> 可以让你不用写一行的代码就可以设计界面。这是通过使用一个
+XML文件来描述界面然后在运行时通过Builder类加载此XML描述文件并自动创建对象来实现的。
+<a class="reference external" href="http://glade.gnome.org/">Glade</a> 应用可以使你不需要手动编写XML文件而以一种
+WYSIWYG(所见即所得)的方式来设计界面。</p>
+<p>这种方式有很多优点：</p>
+<ul class="simple">
+<li>写更少的代码。</li>
+<li>UI 更加容易改变，因此可以改进UI。</li>
+<li>没有编程经验的设计师可以创建并编辑UI。</li>
+<li>UI的描述与正在使用的编程语言相互独立。</li>
+</ul>
+<p>仍然需要用户对界面修改的代码，但是 <a class="reference internal" href="#Gtk.Builder" title="Gtk.Builder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Builder</span></code></a> 允许你集中注意力实现程序的功能。</p>
+<div class="section" id="id1">
+<h2>创建并加载 .glade 文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>首先你需要下载并安装Glade。有 <a class="reference external" href="https://live.gnome.org/Glade/Tutorials">很多关于Glade的教程</a> ，
+因此这里不再详细介绍。让我们开始创建一个带有一个按钮的窗口并保存其为 <em>example.glade</em> 。
+最终的XML文件看起来像下面这样：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;interface&gt;</span>
+  <span class="c">&lt;!-- interface-requires gtk+ 3.0 --&gt;</span>
+  <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;GtkWindow&quot;</span> <span class="na">id=</span><span class="s">&quot;window1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;can_focus&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;child&gt;</span>
+      <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;GtkButton&quot;</span> <span class="na">id=</span><span class="s">&quot;button1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">translatable=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>button<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;use_action_appearance&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;can_focus&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;receives_default&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;use_action_appearance&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+      <span class="nt">&lt;/object&gt;</span>
+    <span class="nt">&lt;/child&gt;</span>
+  <span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/interface&gt;</span>
+</pre></div>
+</div>
+<p>要在Python中加载这个文件我们需要一个 <a class="reference internal" href="#Gtk.Builder" title="Gtk.Builder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Builder</span></code></a> 对象。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_from_file</span><span class="p">(</span><span class="s2">&quot;example.glade&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>第二行加载所有 <em>example.glade</em> 定义的对象到Buildeer对象中。</p>
+<p>当然也可以只加载一部分对象。下载的代码只加载了tuple中指定的对象(及其孩子对象)。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># we don&#39;t really have two buttons here, this is just an example</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_objects_from_file</span><span class="p">(</span><span class="s2">&quot;example.glade&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;button1&quot;</span><span class="p">,</span> <span class="s2">&quot;button2&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>这两种方法也可以在字符串中加载对象。他们对应的函数为
+<a class="reference internal" href="#Gtk.Builder.add_from_string" title="Gtk.Builder.add_from_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.add_from_string()</span></code></a> 和 <a class="reference internal" href="#Gtk.Builder.add_objects_from_string" title="Gtk.Builder.add_objects_from_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.add_objects_from_string()</span></code></a> ，
+他们从参数中取得XML字符串而不是文件名。</p>
+</div>
+<div class="section" id="id3">
+<h2>访问控件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>现在我们想要显示的窗口和按钮都加载进来了。因此要在该窗口上调用
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Window.show_all()</span></code> 方法，但是我们如何访问我们的对象呢？</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;window1&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>每一个控件都可以通过 <a class="reference internal" href="#Gtk.Builder.get_object" title="Gtk.Builder.get_object"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.get_object()</span></code></a> 方法和控件的 <em>id</em> 来获取。哈哈，真简单。</p>
+<p>当然也可以加载所有对象到一个列表中</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="o">.</span><span class="n">get_objects</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>连接信号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>Glade 也使得定义你想要连接到你代码里的函数的信号成为可能，并却这不需要从builder
+加载每一个对象并且手动去连接信号。要做的第一件事就是在Glade中声明信号的名字。
+例子中我们在按钮按下时关闭窗口，所以我们给窗口的 “delete-event” 信号设置处理函数
+“onDeleteWindow” ， “pressed” 信号设置处理函数 “onButtonPressed” 。
+现在XML文件看起来像下面这个样子：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;interface&gt;</span>
+  <span class="c">&lt;!-- interface-requires gtk+ 3.0 --&gt;</span>
+  <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;GtkWindow&quot;</span> <span class="na">id=</span><span class="s">&quot;window1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;can_focus&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;signal</span> <span class="na">name=</span><span class="s">&quot;delete-event&quot;</span> <span class="na">handler=</span><span class="s">&quot;onDeleteWindow&quot;</span> <span class="na">swapped=</span><span class="s">&quot;no&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;child&gt;</span>
+      <span class="nt">&lt;object</span> <span class="na">class=</span><span class="s">&quot;GtkButton&quot;</span> <span class="na">id=</span><span class="s">&quot;button1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">translatable=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>button<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;use_action_appearance&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;can_focus&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;receives_default&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;use_action_appearance&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;signal</span> <span class="na">name=</span><span class="s">&quot;pressed&quot;</span> <span class="na">handler=</span><span class="s">&quot;onButtonPressed&quot;</span> <span class="na">swapped=</span><span class="s">&quot;no&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/object&gt;</span>
+    <span class="nt">&lt;/child&gt;</span>
+  <span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/interface&gt;</span>
+</pre></div>
+</div>
+<p>现在我们要在代码中定义处理函数。 <em>onDeleteWindow</em> 应该简单地调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.main_quit()</span></code> 。
+当按钮按下时我们可能想要打印字符串 “Hello World!” ，因此我们定义的函数看起来像：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">button</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
+</div>
+<p>接下来，我们要连接信号和处理函数。最简单的方法是定义一个带有名字到处理函数的映射
+<em>dict</em> 并传递给 <a class="reference internal" href="#Gtk.Builder.connect_signals" title="Gtk.Builder.connect_signals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.connect_signals()</span></code></a> 方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">handlers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;onDeleteWindow&quot;</span><span class="p">:</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">,</span>
+    <span class="s2">&quot;onButtonPressed&quot;</span><span class="p">:</span> <span class="n">hello</span>
+<span class="p">}</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">connect_signals</span><span class="p">(</span><span class="n">handlers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>一种可选的方法是创建一个包含要调用的函数的类，在我们的例子中最终的代码片段如下：</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Handler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">onDeleteWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">onButtonPressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;Hello World!&#39;</span>
+
+<span class="n">builder</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_from_file</span><span class="p">(</span><span class="s1">&#39;builder_example.glade&#39;</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">connect_signals</span><span class="p">(</span><span class="n">Handler</span><span class="p">())</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="builder">
+<h2>Builder 对象<a class="headerlink" href="#builder" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="Gtk.Builder">
+<em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">Builder</code><a class="headerlink" href="#Gtk.Builder" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="Gtk.Builder.add_from_file">
+<code class="descname">add_from_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.add_from_file" title="永久链接至目标">¶</a></dt>
+<dd><p>加载并解析给定的文件并合并到builder当前的内容。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.add_from_string">
+<code class="descname">add_from_string</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.add_from_string" title="永久链接至目标">¶</a></dt>
+<dd><p>解析给定的字符串并合并到builder当前的内容。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.add_objects_from_file">
+<code class="descname">add_objects_from_file</code><span class="sig-paren">(</span><em>filename</em>, <em>object_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.add_objects_from_file" title="永久链接至目标">¶</a></dt>
+<dd><p>与 <a class="reference internal" href="#Gtk.Builder.add_from_file" title="Gtk.Builder.add_from_file"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.add_from_file()</span></code></a> 一样，但是只加载 <em>object_ids</em> 列表给定的对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.add_objects_from_string">
+<code class="descname">add_objects_from_string</code><span class="sig-paren">(</span><em>filename</em>, <em>object_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.add_objects_from_string" title="永久链接至目标">¶</a></dt>
+<dd><p>与 <a class="reference internal" href="#Gtk.Builder.add_from_string" title="Gtk.Builder.add_from_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Builder.add_from_string()</span></code></a> 一样，但是只加载 <em>object_ids</em> 列表指定的对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.get_object">
+<code class="descname">get_object</code><span class="sig-paren">(</span><em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.get_object" title="永久链接至目标">¶</a></dt>
+<dd><p>从由builder加载的对象中获取 <em>object_id</em> 指定的控件。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.get_objects">
+<code class="descname">get_objects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.get_objects" title="永久链接至目标">¶</a></dt>
+<dd><p>返回所有加载的对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Gtk.Builder.connect_signals">
+<code class="descname">connect_signals</code><span class="sig-paren">(</span><em>handler_object</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Builder.connect_signals" title="永久链接至目标">¶</a></dt>
+<dd><p>连接信号到 <em>handler_object</em> 指定的方法。 <em>handler_object</em> 可以为任何包含
+界面描述文件中指定的信号处理函数名字键或属性的对象，例如一个类或者字典。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="永久链接至标题">¶</a></h2>
+<p>The final code of the example</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="k">import</span> <span class="n">Gtk</span>
+
+<span class="k">class</span> <span class="nc">Handler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">onDeleteWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">onButtonPressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;Hello World!&#39;</span>
+
+<span class="n">builder</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">add_from_file</span><span class="p">(</span><span class="s1">&#39;builder_example.glade&#39;</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">connect_signals</span><span class="p">(</span><span class="n">Handler</span><span class="p">())</span>
+
+<span class="n">win</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s1">&#39;window1&#39;</span><span class="p">)</span>
+<span class="n">win</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
+<span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="objects.html" class="btn btn-neutral float-right" title="对象系统" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="drag_and_drop.html" class="btn btn-neutral" title="拖拽支持" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

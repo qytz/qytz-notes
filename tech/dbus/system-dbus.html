@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>D-Bus系列之权限配置文件 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="D-Bus系列之获取发送者UID及PID的方法" href="dbus-get-uid.html" />
+    <link rel="prev" title="D-Bus 系列之入门" href="dbus.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">D-Bus 使用</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dbus.html">D-Bus 系列之入门</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">D-Bus系列之权限配置文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dbus-get-uid.html">D-Bus系列之获取发送者UID及PID的方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">D-Bus 使用</a> &raquo;</li>
+        
+      <li>D-Bus系列之权限配置文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/dbus/system-dbus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="d-bus">
+<h1>D-Bus系列之权限配置文件<a class="headerlink" href="#d-bus" title="永久链接至标题">¶</a></h1>
+<p>D-Bus配置文件
+D-Bus消息守护进程的配置文件配置了总线的类型，资源限制，安全参数等。
+配置文件的格式并不是标准的一部分，也不保证向后兼容。。。</p>
+<p>标准的系统总线和每会话总线在”/etc/dbus-1/system.conf” and “/etc/dbus-1/session.conf”，这两个文件
+会包含system-local.conf或session-local.conf，因此你自己的配置应该放在单独的local文件中。</p>
+<dl class="docutils">
+<dt>该配置文件的格式就是一个xml文档，且必须有如下类型声明：</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;!DOCTYPE busconfig PUBLIC “-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN”</dt>
+<dd>“<a class="reference external" href="http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd</a>”&gt;</dd>
+</dl>
+</dd>
+</dl>
+<p>&lt;busconfig&gt;
+根元素</p>
+<p>&lt;type&gt;
+一般为system或session。</p>
+<p>&lt;include&gt;
+在当前位置包含该文件，如果是相对目录，则应为相对于当前配置文件所在目录，&lt;include&gt;有一个选项”ignore_missing=(yes|no)”，默认为no</p>
+<p>&lt;includedir&gt;
+在当前位置包含该目录所有的配置文件，目录中文件的包含顺序不定，且只有以”.conf”结尾的文件才会被包含。</p>
+<p>&lt;user&gt;
+daemon运行的用户，可以为用户名或uid，如果守护进程无法切换到该用户就会自动退出，如果有多个&lt;user&gt;配置项，会采用最后一个。</p>
+<p>&lt;fork&gt;
+进程成为一个真正的守护进程。</p>
+<p>&lt;keep_umask&gt;
+若存在，守护进程在fork时会保留原来的umask。</p>
+<p>&lt;listen&gt;
+总线监听的地址，地址为包含传输地址加参数/选项的标准D-Bus格式，例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">listen</span><span class="o">&gt;</span><span class="n">unix</span><span class="p">:</span><span class="n">path</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">foo</span><span class="o">&lt;/</span><span class="n">listen</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">listen</span><span class="o">&gt;</span><span class="n">tcp</span><span class="p">:</span><span class="n">host</span><span class="o">=</span><span class="n">localhost</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="mi">1234</span><span class="o">&lt;/</span><span class="n">listen</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>&lt;auth&gt;
+指定授权机制。如果不存在，所有已知的机制都被允许。如果有多项配置，则所有列出的机制都被允许。</p>
+<p>&lt;servicedir&gt;
+添加扫描.service文件的目录，Service用于告诉总线如何自动启动一个程序，主要用于每用户的session bus。</p>
+<p>&lt;standard_session_servicedirs/&gt; 等效于设定一系列的&lt;servicedir/&gt;元素， <a class="reference external" href="http://freedesktop.org/wiki/Standards/basedir-spec">“XDG Base Directory Specification”</a></p>
+<p>&lt;standard_system_servicedirs/&gt;
+设定标准的系统级service搜索目录，默认为/usr/share/dbus-1/system-services，
+只用于/etc/dbus-1/system.conf.定义的系统级总线，放在其他配置文件中无效。</p>
+<p>&lt;servicehelper/&gt;
+设定setuid helper，使用设置的用户启动系统服务的守护进程，一般来说应该是dbus-daemon-launch-helper。
+该选项仅用于系统总线。</p>
+<p>&lt;limit&gt;
+资源限制一般用于系统总线。
+设置资源限制，例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;max_message_size&quot;</span><span class="o">&gt;</span><span class="mi">64</span><span class="o">&lt;/</span><span class="n">limit</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">limit</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;max_completed_connections&quot;</span><span class="o">&gt;</span><span class="mi">512</span><span class="o">&lt;/</span><span class="n">limit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>可用的限制名有:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;max_incoming_bytes&quot;</span>         <span class="p">:</span> <span class="n">total</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">messages</span>
+                               <span class="n">incoming</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">single</span> <span class="n">connection</span>
+<span class="s2">&quot;max_incoming_unix_fds&quot;</span>      <span class="p">:</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">unix</span> <span class="n">fds</span> <span class="n">of</span> <span class="n">messages</span>
+                               <span class="n">incoming</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">single</span> <span class="n">connection</span>
+<span class="s2">&quot;max_outgoing_bytes&quot;</span>         <span class="p">:</span> <span class="n">total</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">messages</span>
+                               <span class="n">queued</span> <span class="n">up</span> <span class="k">for</span> <span class="n">a</span> <span class="n">single</span> <span class="n">connection</span>
+<span class="s2">&quot;max_outgoing_unix_fds&quot;</span>      <span class="p">:</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">unix</span> <span class="n">fds</span> <span class="n">of</span> <span class="n">messages</span>
+                               <span class="n">queued</span> <span class="n">up</span> <span class="k">for</span> <span class="n">a</span> <span class="n">single</span> <span class="n">connection</span>
+<span class="s2">&quot;max_message_size&quot;</span>           <span class="p">:</span> <span class="nb">max</span> <span class="n">size</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span> <span class="n">message</span> <span class="ow">in</span>
+                               <span class="nb">bytes</span>
+<span class="s2">&quot;max_message_unix_fds&quot;</span>       <span class="p">:</span> <span class="nb">max</span> <span class="n">unix</span> <span class="n">fds</span> <span class="n">of</span> <span class="n">a</span> <span class="n">single</span> <span class="n">message</span>
+<span class="s2">&quot;service_start_timeout&quot;</span>      <span class="p">:</span> <span class="n">milliseconds</span> <span class="p">(</span><span class="n">thousandths</span><span class="p">)</span> <span class="n">until</span>
+                               <span class="n">a</span> <span class="n">started</span> <span class="n">service</span> <span class="n">has</span> <span class="n">to</span> <span class="n">connect</span>
+<span class="s2">&quot;auth_timeout&quot;</span>               <span class="p">:</span> <span class="n">milliseconds</span> <span class="p">(</span><span class="n">thousandths</span><span class="p">)</span> <span class="n">a</span>
+                               <span class="n">connection</span> <span class="ow">is</span> <span class="n">given</span> <span class="n">to</span>
+                               <span class="n">authenticate</span>
+<span class="s2">&quot;max_completed_connections&quot;</span>  <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">authenticated</span> <span class="n">connections</span>
+<span class="s2">&quot;max_incomplete_connections&quot;</span> <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">unauthenticated</span>
+                               <span class="n">connections</span>
+<span class="s2">&quot;max_connections_per_user&quot;</span>   <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">completed</span> <span class="n">connections</span> <span class="kn">from</span>
+                               <span class="nn">the</span> <span class="n">same</span> <span class="n">user</span>
+<span class="s2">&quot;max_pending_service_starts&quot;</span> <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">service</span> <span class="n">launches</span> <span class="ow">in</span>
+                               <span class="n">progress</span> <span class="n">at</span> <span class="n">the</span> <span class="n">same</span> <span class="n">time</span>
+<span class="s2">&quot;max_names_per_connection&quot;</span>   <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">names</span> <span class="n">a</span> <span class="n">single</span>
+                               <span class="n">connection</span> <span class="n">can</span> <span class="n">own</span>
+<span class="s2">&quot;max_match_rules_per_connection&quot;</span><span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">match</span> <span class="n">rules</span> <span class="k">for</span> <span class="n">a</span> <span class="n">single</span>
+                                  <span class="n">connection</span>
+<span class="s2">&quot;max_replies_per_connection&quot;</span> <span class="p">:</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">pending</span> <span class="n">method</span>
+                               <span class="n">replies</span> <span class="n">per</span> <span class="n">connection</span>
+                               <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">calls</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">progress</span><span class="p">)</span>
+<span class="s2">&quot;reply_timeout&quot;</span>              <span class="p">:</span> <span class="n">milliseconds</span> <span class="p">(</span><span class="n">thousandths</span><span class="p">)</span>
+                               <span class="n">until</span> <span class="n">a</span> <span class="n">method</span> <span class="n">call</span> <span class="n">times</span> <span class="n">out</span>
+</pre></div>
+</div>
+<p>&lt;policy&gt;
+定义用于一组特定连接的安全策略，策略由&lt;allow&gt;和&lt;deny&gt;元素组成。
+策略一般用于系统总线，模拟防火墙的功能来只允许期望的连接。
+当前系统总线的默认策略会阻止发送方法调用和获取总线名字，其他的如消息回复、信号等是默认允许的。</p>
+<p>通常来说，最好是保证系统服务尽可能的小，目标程序在自己的进程中运行并且提供一个总线名字来提供服务。
+&lt;allow&gt;规则使得程序可以设置总线名字，&lt;send_destination&gt;允许一些或所有的uid访问我们的服务。</p>
+<p>&lt;policy&gt;元素可以有下面四个属性中的一个：
+context=”(default|mandatory)”
+at_console=”(true|false)”
+user=”username or userid”
+group=”group name or gid”</p>
+<p>策略以下面的规则应用到连接：
+- 所有 context=”default” 的策略被应用
+- 所有 group=”connection’s user’s group” 的策略以不定的顺序被应用
+- 所有 user=”connection’s auth user” 的策略以不定顺序被应用
+- 所有 at_console=”true” 的策略被应用
+- 所有 at_console=”false” 的策略被应用
+- 所有 context=”mandatory” 的策略被应用
+后应用的策略会覆盖前面的策略。</p>
+<p>&lt;allow&gt;和&lt;deny&gt;出现在&lt;policy&gt;元素下面，&lt;deny&gt;禁止一些动作，而&lt;allow&gt;则创建上面&lt;deny&gt;元素的一些例外。
+这两个元素可用的属性包括：</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>send_interface=”interface_name”</dt>
+<dd><p class="first">send_member=”method_or_signal_name”
+send_error=”error_name”
+send_destination=”name”
+send_type=”method_call” | “method_return” | “signal” | “error”
+send_path=”/path/name”</p>
+<p>receive_interface=”interface_name”
+receive_member=”method_or_signal_name”
+receive_error=”error_name”
+receive_sender=”name”
+receive_type=”method_call” | “method_return” | “signal” | “error”
+receive_path=”/path/name”</p>
+<p>send_requested_reply=”true” | “false”
+receive_requested_reply=”true” | “false”</p>
+<p>eavesdrop=”true” | “false”</p>
+<p class="last">own=”name”
+own_prefix=”name”
+user=”username”
+group=”groupname”</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>send_destination跟receive_sender是指发送到目的为或者收到来自于该名字的owner，而不是该名字。因此
+如果一个连接有三个服务A、B、C，如果拒绝发送到A，那么发送到B和C也不行。
+其他的send_*和receive_*则匹配消息头的字段。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dbus-get-uid.html" class="btn btn-neutral float-right" title="D-Bus系列之获取发送者UID及PID的方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dbus.html" class="btn btn-neutral" title="D-Bus 系列之入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

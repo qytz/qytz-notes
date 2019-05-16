@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VPN 高级选项那些事 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="sphinx 生成本地化的文档" href="sphinx-i11n.html" />
+    <link rel="prev" title="系统安全的思考" href="security.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">系统安全的思考</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">技术笔记</a> &raquo;</li>
+        
+      <li>VPN 高级选项那些事</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/VPN_Advance_Options.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="vpn">
+<h1>VPN 高级选项那些事<a class="headerlink" href="#vpn" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>一、VPN 高级选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>VPN 高级选项有哪些，都是什么意思<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>DNS 搜索域</dt>
+<dd><p class="first">These are for the mechanism for going from a machine name to a Fully Qualified Domain Name.</p>
+<p>DNS searches can only look at a Fully Qualified Domain Name, such as mymachine.example.com. But, it’s a pain to type out mymachine.example.com, you want to be able to just type mymachine.</p>
+<p>Using Search Domains is the mechanism to do this. If you type a name that does not end with a period, it knows it needs to add the search domains for the lookup. So, lets say your Search Domains list was: example.org, example.com</p>
+<p>mymachine</p>
+<p>would try first mymachine.example.org, not find it, then try mymachine.example.com, found it, now done.</p>
+<p>mymachine.example.com</p>
+<p>would try mymachine.example.com.example.org (remember, it doesn’t end with a period, still adds domains), fail, then mymachine.example.com.example.com, not find it, fall back to mymachine.example.com, found it, now done</p>
+<p>mymachine.example.com. Ends with a period, no searching, just do mymachine.example.com</p>
+<p>Soooo…..</p>
+<p>If you have your own DNS domain such as example.com, put it there. If not, ignore it. It really is more corporate than a home setting.</p>
+<p class="last">参考 <a class="reference external" href="http://superuser.com/questions/184361/what-is-the-search-domains-field-for-in-the-tcp-ip-dns-settings-control-panel">What is the “Search Domains” field for in the tcp/ip DNS settings control panel/preference pane for?&gt;</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>DNS 服务器</dt>
+<dd><p class="first">域名系统（英文：Domain Name System，縮寫：DNS）是因特网的一项服务。它作为将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网。DNS 使用 TCP 和 UDP 端口 53。当前，对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符。</p>
+<p class="last">参考 <a class="reference external" href="http://zh.wikipedia.org/zh/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">域名系统</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>转发路线</dt>
+<dd><p class="first last">即转发路由，因 DNS 服务器不提供任何服务，因此所有的请求都需要经过转发才能到达可以响应请求的服务器，转发路线即配置发往哪些地址请求的需经过 VPN 转发。</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>为什么需要这些选项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>这些选项其实只是一些基础的网络参数，因此所有的网络连接（包括 VPN）都需要这些选项。但是并不是所有的网络连接都需要手动配置这些参数。那么为什么 VPN 更加的需要配置这些参数呢？</p>
+<p>VPN 是一种常用于连接中、大型企业或团体与团体间的私人网络的通讯方法。虚拟私人网络的讯息透过公用的网络架构（例如：互联网）来传送内联网的网络讯息。这种技术可以用不安全的网络（例如：互联网）來傳送可靠、安全的訊息。『摘自 <a class="reference external" href="http://zh.wikipedia.org/zh/%E8%99%9B%E6%93%AC%E7%A7%81%E4%BA%BA%E7%B6%B2%E8%B7%AF">维基百科</a> ]</p>
+<p>DNS 请求呢？在未配置 VPN 之前，我们使用的是不安全网络上的 DNS 服务器，如果连接到 VPN 之后我们仍然连接不安全网络上的 DNS 服务器，如何保证我们的数据安全？
+DNS 搜索域是一个方便使用的选项。</p>
+<p>路由则指定了哪些数据是需要 VPN 网络来保护的，如果不指定，或者系统中所有的流量都经过 VPN，但是 VPN 连接到的私有网络并不能提供不安全网络中所有的网络请求；或者
+系统中所有的流量都不经过 VPN 服务器，连接 VPN 干嘛，当摆设吗？</p>
+<p>由此可见，这些网络高级选项在 VPN 的配置中还是很有必要的。</p>
+</div>
+</div>
+<div class="section" id="connman">
+<h2>二、关于 connman<a class="headerlink" href="#connman" title="永久链接至标题">¶</a></h2>
+<p>使用 connman 管理系统网络连接的例子并不多，网络上相关的资料也很少。
+万幸的是，connman 自带的文档 (doc 目录）大概可以把 connman 的设计原则和使用方法解释清除了。
+以下内容及为参考该文档及源代码以及本人的推测得来的，不一定准确。</p>
+<div class="section" id="id5">
+<h3>connman 是如何管理所有连接的<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>src/provider.c  -- 管理 connman 中每一个（不是每一种）连接，保存连接。
+src/service.c   -- 管理连接服务。
+src/task.c  -- connman 中对连接的代码，负责创建与维护真正的连接进程。
+</pre></div>
+</div>
+<p>这几个代码文件大概实现了 connman 连接管理的框架，但是新建连接后还需要设置很多的网络参数，
+等等，正是这一部分使得 connman 显得更加的复杂。</p>
+</div>
+<div class="section" id="connman-dns">
+<h3>connman 是如何管理网络参数的（路由、DNS 等）<a class="headerlink" href="#connman-dns" title="永久链接至标题">¶</a></h3>
+<p>connman 中对网络参数的管理是基于连接的，即每个连接都有不同的网络参数配置，该连接生效时 connman 会根据
+连接属性更新系统的网络参数。</p>
+<p>connman 封装了很多对系统网络参数修改的 API，如下列举部分：:</p>
+<blockquote>
+<div>src/inet.c  – 实现对系统路由的配置
+src/ipconfig.c  – 实现对系统地址的配置
+src/resolver.c  – 实现对系统 DNS 的配置，connman 有选项支持 dns 代理</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">connman-vpn 与上述描述并不完全一致。
+当然，vpn 连接也是由 connman_task 创建具体的任务来连接的，但是。
+vpn/vpn-manager.c 提供新建 / 删除 VPN 连接的功能 (create/remove/get_connections…)。
+vpn/vpn-provider.c 提供了 vpn 连接 / 断开功能 (do_connect/do_disconnect…)。
+vpn 连接建立 / 删除时会发送 ConnectionAdded/ConnectionRemoved 信号，
+vpn 连接时会发送 PropertyChanged 信号。
+connman 的 vpn 插件会监听这些信号，在新建 / 删除 vpn 连接时会在 connman 进程中建立该连接的 provider 及 service。
+connman 监听到 PropertyChanged 信号时会根据属性设置系统当前的网络参数（dns 等）。</p>
+</div>
+<p>推荐文档阅读顺序：
+vpn-overview.txt -&gt; vpn-manager-api.txt -&gt; vpn-connection-api.txt</p>
+</div>
+</div>
+<div class="section" id="qt-qml-and-d-bus">
+<h2>四、Qt 、QML and D-Bus<a class="headerlink" href="#qt-qml-and-d-bus" title="永久链接至标题">¶</a></h2>
+<p>Connman 是以 daemon 进程在系统后台运行的，要访问 Connman 提供的服务，只能通过进程间通信类似的机制。
+事实上 Connman 提供的服务都是以 D-Bus 方法即信号作为 API 接口的。</p>
+<p>例如，新建 / 删除 VPN、连接 VPN 的接口如下：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="nf">create</span><span class="p">(</span><span class="n">DBusConnection</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="n">msg</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="nf">remove</span><span class="p">(</span><span class="n">DBusConnection</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="n">msg</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="k">static</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="nf">do_connect</span><span class="p">(</span><span class="n">DBusConnection</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span> <span class="n">DBusMessage</span> <span class="o">*</span><span class="n">msg</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="qt-d-bus">
+<h3>Qt 对 D-Bus 的支持<a class="headerlink" href="#qt-d-bus" title="永久链接至标题">¶</a></h3>
+<p>Qt 对 D-Bus 的支持算是基本完善，该有的都可以有，不该有的可能会可以有。（：D）</p>
+<p>可以通过 Qt 中 D-Bus 相关的库函数创建 D-Bus 服务，或者使用别人提供的服务。对发送接收数据类型的支持也比较完整，不仅能够
+收发基本的整数、字符串等，复杂的字典、数组等自然也不在话下。</p>
+<p>但是 Qt 对 DBUS_TYPE_STRUCT 的支持需要稍多做一些工作，下面的章节会有介绍。</p>
+</div>
+<div class="section" id="qml-d-bus">
+<h3>QML 对 D-Bus 的支持<a class="headerlink" href="#qml-d-bus" title="永久链接至标题">¶</a></h3>
+<p>很遗憾，QML 原生并不支持 D-Bus，但是可以通过两种变通的途径使用。
+第一是，在 C++ 代码中封装调用 D-Bus 的接口，并注册到 QML 中。
+第二种，是采用非 QT 官方的插件，实现，例如： <a class="reference external" href="https://github.com/nemomobile/nemo-qml-plugin-dbus">Nemo Mobile D-Bus QML Plugin</a></p>
+<p>好吧，其实是一种，第二种其实同样是 C++ 代码中封装了调用 D-Bus 的接口，但是除此之外，还有什么办法可以扩展 QML 不支持的功能吗？</p>
+</div>
+<div class="section" id="qt-d-bus-dbus-type-struct">
+<h3>Qt 对 D-Bus 中 DBUS_TYPE_STRUCT 的支持<a class="headerlink" href="#qt-d-bus-dbus-type-struct" title="永久链接至标题">¶</a></h3>
+<p>Qt 有自己的类型系统，不知是该庆幸还是该懊恼。
+Qt 的类型系统极大的丰富了我们的精神文化生活，噢不，是极大的方便了我们的开发，QVariant，信号 / 槽（QObject）等等。
+但是这样一来我们自己定义的类型却无法使用这些方便的特性，而且 Qt D-Bus 也不支持自定义类型的发送与接收。</p>
+<p>幸运的是，上帝在关上这扇门的时候悄悄给我们开了一扇窗，我们可以将自己定义的类型注册到 Qt 的元类型系统中去，
+这样我们自己定义的类型也可以使用 Qt 提供的很多方便的特性了，最重要的是我们自定义的结构也可以通过 Qt 的 D-Bus 接口发送与接收了。</p>
+<p>创建方法在此不表，无非是在适当的地方增加几次调用：:</p>
+<blockquote>
+<div>Q_DECLARE_METATYPE(Type)；
+int qRegisterMetaType(const char * typeName)；
+int qDBusRegisterMetaType()；</div></blockquote>
+<p>详情参看如下链接：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://qtdocs.sourceforge.net/index.php/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89Qt%E7%B1%BB%E5%9E%8B">创建自定义 Qt 类型</a></li>
+<li><a class="reference external" href="http://www.qtcentre.org/threads/26871-Problems-with-marshalling-a-struct-to-Qt-DBus">Problems with marshalling a struct to Qt/DBus</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>五、Linux 连接管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>都有哪些连接管理实现<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>Android：<a class="reference external" href="http://developer.android.com/reference/android/net/ConnectivityManager.html">ConnectivityManager</a></li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a></dt>
+<dd>NetworkManager is a set of co-operative tools that make networking simple and straightforward. Whether Wi-Fi, wired, bond, bridge, 3G, or Bluetooth, NetworkManager allows you to quickly move from one network to another: once a network has been configured and joined, it can be detected and re-joined automatically the next time its available.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://01.org/zh/connman?langredirect=1">ConnMan</a></dt>
+<dd>ConnMan is a daemon for managing Internet connections within embedded device and integrates a vast range of communication features usually split between many daemons such as DHCP, DNS and NTP. The result of this consolidation is low memory consumption with a fast, coherent, synchronized reaction to changing network conditions.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>为什么需要连接管理<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>几乎所有的现代操作系统都有统一的连接管理，这是为什么呢？
+其实这个问题我也不知道。所以，下面的内容纯属揣测，如有不对恳请指正。</p>
+<p>大概是有两个原因吧，我想。
+一是便于用户的配置，试想，用户连接上一个新的网络（有线、无线、VPN 等）后，要手动的去修改 DNS、路由、地址等信息，
+肯定是不可原谅的，或者进一步，需要在不同的位置分别通过不用的程序去配置不同的网络参数，少改了一项网络可就不正常了哦。</p>
+<p>二是便于网络的管理，如果每种连接自己管自己的网络配置，可是这些配置的生效可是在一个系统上的，于是每个程序都去修改
+DNS 配置，路由，地址等信息，你确保不会改乱？</p>
+<p>其实反观其他子系统，声音肯定要在所有要播放 / 录制声音的程序后面有一个 daemon 来负责系统的混音及播放工作，不可能每个程序各播各的，你肯定不原因听到那种声音的。
+显示子系统不可能是每个想要在屏幕上显示东西的程序自己向屏幕上写吧，这样我显示了一个窗口，你显示了一个通知，我有显示了一个文档，你确定用户能够看得请？所以还是需要有显示管理器在后面跑的。</p>
+<p>同理，系统的网络配置大家一起改，你确定不会改乱？
+这大概是一个趋势吧，只有一种或者两种网络连接的时候，我可以随便改，要是系统有很多种连接类型，可就不能胡来了。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinx-i11n.html" class="btn btn-neutral float-right" title="sphinx 生成本地化的文档" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="security.html" class="btn btn-neutral" title="系统安全的思考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

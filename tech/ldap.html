@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LDAP &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="系统安全的思考" href="security.html" />
+    <link rel="prev" title="mysql绿色启动方法" href="mysql-green-start.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyGObject-Tutorial/index.html">The Python GTK+ 3 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">技术笔记</a> &raquo;</li>
+        
+      <li>LDAP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tech/ldap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="ldap">
+<h1>LDAP<a class="headerlink" href="#ldap" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>LDAP 定义<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>本文不打算重复 LDAP 的标准定义，仅谈一下自己的理解。</p>
+<p>LDAP 译为轻量级目录访问协议，一般网上经常拿其与关系型数据库做类比并比较他们的不同。</p>
+<p>事实上，LDAP 既不是数据库也不是存储数据的方法，而是用来访问数据的方法。LDAP 可以访问的
+是存储在目录信息树（Directory Information Tree (DIT)）中的数据。</p>
+<p>目录信息树存储数据的方法与关系型数据库非常的不同。关系型数据库的数据是存储在某一数据库
+的某一数据表中的某以记录内的，因此数据库中定位一条记录数据需要三个要素：数据库、
+数据表、记录号；目录信息树存储数据的方式是树状结构，定位一条数据的方法是从树根到叶子节点
+的唯一路径，数据就存储在叶子节点中。</p>
+<p>由此可见，LDAP 与关系型数据库类比其实是两种数据存储与访问方式的类比。</p>
+<div class="section" id="id2">
+<h3>LDAP 是访问目录信息树中数据的协议<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>事实上，LDAP 仅定义了访问协议，数据的真实存储方式并不在 LDAP 的考量范围内，即只要提供了
+目录访问接口的数据都可以通过 LDAP 协议来访问，如果关系型数据库实现了该接口也是可以通过
+LDAP 协议来反问的。从这个角度来讲，确实不应该将 LDAP 与关系型数据库做类比。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>LDAP 特性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>且 LDAP 对数据的读取和查询做了优化，并不适用于经常变动的数据。</p>
+<p>LDAP 不定义客户端和服务端的工作方式，但会定义客户端和服务端的通信方式，
+另外，LDAP 还会定义 LDAP 数据库的访问权限及服务端数据的格式和属性。</p>
+<p>LDAP 有三种基本的通信机制：没有处理的匿名访问；基本的用户名、密码形式的认证；使用 SASL、SSL 的安全认证方式。LDAP 和很多其他协议一样，基于 tcp/ip 协议通信，注重服务的可用性、信息的保密性等等。部署了 LDAP 的应用不会直接访问目录中的内容，一般通过函数调用或者 API，应用可以通过定义的 C、Java 的 API 进行访问，Java 应用的访问方式为 JNDI(Java Naming and Directory Interface)。</p>
+</div>
+<div class="section" id="id4">
+<h2>LDAP 结构<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>目录信息树<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>目录信息树以目录条目（entry）来存储和组织数据，每一个目录条目通常描述一个对象（例如：一个人），
+目录条目有一个唯一名（DN，distinguished name）进行标识。DN 由一系列的相对唯一名（RDN，relative distinguished name）来标识。每一个目录条目由一或多个属性来描述该条目，例如描述人的条目有一个
+电话号码的属性。</p>
+<p>引用一张 <a class="reference external" href="http://www.redbooks.ibm.com/abstracts/sg244986.html">Understanding LDAP
+Design and Implementation</a> 的图示，</p>
+<img alt="ldap dir info tree" src="../_images/ldap_dit.png" />
+<p>目录条目根据他们在目录信息树中的位置命名，上图底部的目录条目的 DN 唯一名是：:</p>
+<blockquote>
+<div>cn=John Smith,ou=people,o=ibm,c=us.
+The organizational group people has the DN of ou=people,o=ibm,c=us.</div></blockquote>
+<p>LDAP 的查询等操作语句在这里就不介绍了，有需求的可以在参考资料中找。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>LDAP 安全<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>LDAP 安全相关的资料请参考 <a class="reference external" href="http://drops.wooyun.org/tips/967">LDAP 注入与防御剖析</a></p>
+</div>
+<div class="section" id="id8">
+<h2>LDAP 服务器配置<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>请参考 <a class="reference external" href="http://wiki.jabbercn.org/index.php?title=XEP-0216&amp;oldid=115">OpenLDAP 管理员指南</a></p>
+</div>
+<div class="section" id="id9">
+<h2>参考资料<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://drops.wooyun.org/tips/967">LDAP 注入与防御剖析</a></li>
+<li><a class="reference external" href="http://www.redbooks.ibm.com/abstracts/sg244986.html">Understanding LDAP Design and Implementation</a></li>
+<li><a class="reference external" href="http://wiki.jabbercn.org/index.php?title=XEP-0216&amp;oldid=115">OpenLDAP 管理员指南</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="security.html" class="btn btn-neutral float-right" title="系统安全的思考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mysql-green-start.html" class="btn btn-neutral" title="mysql绿色启动方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

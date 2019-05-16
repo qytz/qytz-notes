@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>对象系统 &mdash; qytz-notes 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Stock Items" href="stock.html" />
+    <link rel="prev" title="Glade and Gtk.Builder" href="builder.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> qytz-notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code/index.html">开源代码阅读笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipynb/index.html">IPython NoteBooks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">技术笔记</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Python GTK+ 3 Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">从零开始</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics.html">基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unicode.html">处理字符串相关问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layout.html">布局管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label.html">标签Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entry.html">Entry输入框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_widgets.html">按钮控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">进度条</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spinner.html">Spinner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="treeview.html">树与列表控件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cellrenderers.html">单元格渲染器（CellRenderers）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="combobox.html">组合框（ComboBox）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iconview.html">IconView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textview.html">Multiline Text Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="menus.html">菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogs.html">对话框（Dialog）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clipboard.html">剪贴板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drag_and_drop.html">拖拽支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builder.html">Glade and Gtk.Builder</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">对象系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stock.html">Stock Items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gstreamer/index.html">GStreamer 开发经验</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pycairo/index.html">Pycairo Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbus/index.html">D-Bus 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-tutorial.html">shell 脚本常用操作入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../js-bit-operate.html">JavaScript 的移位运算与 IP 地址处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto-make-conf.html">automake 和 autoconf 使用简明教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-bytes-decode.html">Python 3 Bytes.decode 遇到的问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chmod-t.html">Linux粘滞位说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysql-green-start.html">mysql绿色启动方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap.html">LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security.html">系统安全的思考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPN_Advance_Options.html">VPN 高级选项那些事</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx-i11n.html">sphinx 生成本地化的文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git-server.html">简易 git 服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quant/index.html">量化投资</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../throughts/index.html">瞎想</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于我</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">联系</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">qytz-notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">技术笔记</a> &raquo;</li>
+        
+          <li><a href="index.html">The Python GTK+ 3 Tutorial</a> &raquo;</li>
+        
+      <li>对象系统</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tech/PyGObject-Tutorial/objects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="objects">
+<span id="id1"></span><h1>对象系统<a class="headerlink" href="#objects" title="永久链接至标题">¶</a></h1>
+<p>GObject 是基础类型提供了Gtk+对象系统需要的所有属性和方法。 <a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a>
+提供了构造和析构对象的方法，属性访问方法和信号支持。</p>
+<p>本节将要介绍Python实现的GObject一些重要的方面。</p>
+<div class="section" id="gobject-gobject">
+<h2>从GObject.GObject继承<a class="headerlink" href="#gobject-gobject" title="永久链接至标题">¶</a></h2>
+<p>一个原生的GObject可以通过 <a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a> 访问，但通常很少直接实例化，而是
+使用继承后的类。 <a class="reference internal" href="drag_and_drop.html#Gtk.Widget" title="Gtk.Widget"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Widget</span></code></a> 就是一个继承自 <a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a> 的类。
+创建一个继承类来创建一个新的如设置对话框的新控件通常很有趣。</p>
+<p>要从 <a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a> 继承，你必须在你的构造函数中调用
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">GObject.GObject.__init__()</span></code> ，例如如果你的类继承自 <a class="reference internal" href="button_widgets.html#Gtk.Button" title="Gtk.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Button</span></code></a> ，则必须
+调用 <code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.Button.__init__()</span></code> ， 就像下面这样。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span>
+
+<span class="k">class</span> <span class="nc">MyObject</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>信号<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>信号可以随意的连接到程序相关的事件，可以有任意多个收听者。例如， 在GTK+里面，每一个
+用户事件(按键或鼠标移动) 从X server接收后产生一个GTK+事件在给的的对象实例上触发信号。</p>
+<p>每一个信号都与其可以触发的类型一起在类型系统里面注册：当类型的使用者注册信号触发
+时的回调函数时，要链接信号到给定类型的实例。</p>
+<div class="section" id="id3">
+<h3>接收信号<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>参考 <a class="reference internal" href="basics.html#signals"><span class="std std-ref">主循环与信号</span></a></p>
+</div>
+<div class="section" id="id4">
+<h3>创建新的信号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>可以通过添加信号到 <a class="reference internal" href="#GObject.GObject.__gsignals__" title="GObject.GObject.__gsignals__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GObject.GObject.__gsignals__</span></code></a> 字典中创建新的信号。</p>
+<p>当创建新的信号时也可以定义一个处理方法，该方法会在每次信号触发时调用，叫做 do_signal_name 。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyObject</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">):</span>
+    <span class="n">__gsignals__</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;my_signal&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">SIGNAL_RUN_FIRST</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span>
+                      <span class="p">(</span><span class="nb">int</span><span class="p">,))</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">do_my_signal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&quot;class method for `my_signal&#39; called with argument&quot;</span><span class="p">,</span> <span class="n">arg</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#GObject.SIGNAL_RUN_FIRST" title="GObject.SIGNAL_RUN_FIRST"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_FIRST</span></code></a> 指示在信号触发的第一阶段调用对象方法
+(此处:meth:<cite>do_my_signal</cite>)。也可以设置为 <a class="reference internal" href="#GObject.SIGNAL_RUN_LAST" title="GObject.SIGNAL_RUN_LAST"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_LAST</span></code></a> (
+方法在信号触发的第三阶段调用)和 <a class="reference internal" href="#GObject.SIGNAL_RUN_CLEANUP" title="GObject.SIGNAL_RUN_CLEANUP"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_CLEANUP</span></code></a> (在信号触发
+的最后一个阶段调用)。</p>
+<p>第二个参数， <code class="docutils literal notranslate"><span class="pre">None</span></code> 指示信号的返回类型，通常为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+<p><code class="docutils literal notranslate"><span class="pre">(int,)</span></code> 指示信号的参数，此处信号只接收一个参数，类型为 int 。参数类型列表必须
+以逗号结束。</p>
+<p>信号可以使用 <a class="reference internal" href="#GObject.GObject.emit" title="GObject.GObject.emit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GObject.GObject.emit()</span></code></a> 触发。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_obj</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s2">&quot;my_signal&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span> <span class="c1"># emit the signal &quot;my_signal&quot;, with the</span>
+                             <span class="c1"># argument 42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>属性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>GObject一个很好的特性就是其对于对象属性的get/set方法。每一个继承自 <a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a>
+的类都可以定义新的属性，每一个属性作为一个类型永远不会改变(例如 str, float, int等)。
+例如 <a class="reference internal" href="button_widgets.html#Gtk.Button" title="Gtk.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Button</span></code></a> 的 “label” 属性包含了按钮的文本。</p>
+<div class="section" id="id6">
+<h3>使用已有的属性<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p><a class="reference internal" href="#GObject.GObject" title="GObject.GObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">GObject.GObject</span></code></a> 提供了多个很有用的函数来管理已有的属性，
+<a class="reference internal" href="#GObject.GObject.get_property" title="GObject.GObject.get_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">GObject.GObject.get_property()</span></code></a> 和 <a class="reference internal" href="#GObject.GObject.set_property" title="GObject.GObject.set_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">GObject.GObject.set_property()</span></code></a> 。</p>
+<p>一些属性也有他们相应的函数，叫做getter和setter。对于按钮的 “label” 属性，有两个函数
+来获取和设置该属性， <code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.Button.get_label()</span></code> 和 <a class="reference internal" href="button_widgets.html#Gtk.Button.set_label" title="Gtk.Button.set_label"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.Button.set_label()</span></code></a> 。</p>
+</div>
+<div class="section" id="id7">
+<h3>创建新的属性<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>属性通过名字和类型定义，即使python是动态类型的，一旦定义你也不能改变属性的类型。
+属性可以通过 <code class="xref py py-func docutils literal notranslate"><span class="pre">GObject.property()</span></code> 创建。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span>
+
+<span class="k">class</span> <span class="nc">MyObject</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">):</span>
+
+    <span class="n">foo</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+    <span class="n">property_float</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果你想让某些属性只读不可写，属性也可以为只读的。要这样做，你可以给属性定义添加
+一些标志flags，来控制读写权限。标志有 <a class="reference internal" href="#GObject.PARAM_READABLE" title="GObject.PARAM_READABLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.PARAM_READABLE</span></code></a> (只能通过
+外部代码读取)， <a class="reference internal" href="#GObject.PARAM_WRITABLE" title="GObject.PARAM_WRITABLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.PARAM_WRITABLE</span></code></a> (只可写)，
+<a class="reference internal" href="#GObject.PARAM_READWRITE" title="GObject.PARAM_READWRITE"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.PARAM_READWRITE</span></code></a> (public):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">PARAM_READABLE</span><span class="p">)</span> <span class="c1"># won&#39;t be writable</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">GObject</span><span class="o">.</span><span class="n">PARAM_WRITABLE</span><span class="p">)</span> <span class="c1"># won&#39;t be readable</span>
+</pre></div>
+</div>
+<p>你也可以通过 <code class="xref py py-func docutils literal notranslate"><span class="pre">GObject.property()</span></code> 与函数修饰符创建新的函数来定义只读属性。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span>
+
+<span class="k">class</span> <span class="nc">MyObject</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@GObject.property</span>
+    <span class="k">def</span> <span class="nf">readonly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;This is read-only.&#39;</span>
+</pre></div>
+</div>
+<p>你可以使用以下代码获取该属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_object</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">my_object</span><span class="o">.</span><span class="n">readonly</span>
+<span class="k">print</span> <span class="n">my_object</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s2">&quot;readonly&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>也有定义数值类型属性的最大值和最小值的方法，需要使用更加复杂的形式：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">GObject</span>
+
+<span class="k">class</span> <span class="nc">MyObject</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">):</span>
+
+    <span class="n">__gproperties__</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;int-prop&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="c1"># type</span>
+                     <span class="s2">&quot;integer prop&quot;</span><span class="p">,</span> <span class="c1"># nick</span>
+                     <span class="s2">&quot;A property that contains an integer&quot;</span><span class="p">,</span> <span class="c1"># blurb</span>
+                     <span class="mi">1</span><span class="p">,</span> <span class="c1"># min</span>
+                     <span class="mi">5</span><span class="p">,</span> <span class="c1"># max</span>
+                     <span class="mi">2</span><span class="p">,</span> <span class="c1"># default</span>
+                     <span class="n">GObject</span><span class="o">.</span><span class="n">PARAM_READWRITE</span> <span class="c1"># flags</span>
+                    <span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">int_prop</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">do_get_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;int-prop&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">int_prop</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="s1">&#39;unknown property </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">prop</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">do_set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;int-prop&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">int_prop</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="s1">&#39;unknown property </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">prop</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>属性必须通过 <a class="reference internal" href="#GObject.GObject.__gproperties__" title="GObject.GObject.__gproperties__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GObject.GObject.__gproperties__</span></code></a> 字典定义，并通过
+do_get_property 和 do_set_property 来处理。</p>
+</div>
+<div class="section" id="id8">
+<h3>监视属性<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>当属性被修改时，会触发一个信号， “notify::property_name” ：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_object</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">on_notify_foo</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">gparamstring</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;foo changed&quot;</span>
+
+<span class="n">my_object</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;notify::foo&quot;</span><span class="p">,</span> <span class="n">on_notify_foo</span><span class="p">)</span>
+
+<span class="n">my_object</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span> <span class="c1"># on_notify_foo will be called</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="GObject.GObject">
+<em class="property">class </em><code class="descclassname">GObject.</code><code class="descname">GObject</code><a class="headerlink" href="#GObject.GObject" title="永久链接至目标">¶</a></dt>
+<dd><dl class="method">
+<dt id="GObject.GObject.get_property">
+<code class="descname">get_property</code><span class="sig-paren">(</span><em>property_name</em><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.get_property" title="永久链接至目标">¶</a></dt>
+<dd><p>获取属性的值。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.set_property">
+<code class="descname">set_property</code><span class="sig-paren">(</span><em>property_name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.set_property" title="永久链接至目标">¶</a></dt>
+<dd><p>设置属性 <em>property_name</em> 的值为 <em>value</em> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>signal_name</em>, <em>...</em><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.emit" title="永久链接至目标">¶</a></dt>
+<dd><p>触发信号 <em>signal_name</em> 。信号的参数必须在后面传递，例如，如果你的信号类型
+为 <code class="docutils literal notranslate"><span class="pre">(int,)</span></code> ，则要像下面这样触发:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">signal_name</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.freeze_notify">
+<code class="descname">freeze_notify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.freeze_notify" title="永久链接至目标">¶</a></dt>
+<dd><p>本函数会冻结所有 “notify::” 信号(这些信号会在属性改变时触发) 指导
+<a class="reference internal" href="#GObject.GObject.thaw_notify" title="GObject.GObject.thaw_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">thaw_notify()</span></code></a> 被调用。</p>
+<p>建议调用 <a class="reference internal" href="#GObject.GObject.freeze_notify" title="GObject.GObject.freeze_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freeze_notify()</span></code></a> 时使用 <em>with</em> 语句，这样可以确保 <a class="reference internal" href="#GObject.GObject.thaw_notify" title="GObject.GObject.thaw_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">thaw_notify()</span></code></a>
+在语句块的最后被调用:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">an_object</span><span class="o">.</span><span class="n">freeze_notify</span><span class="p">():</span>
+    <span class="c1"># Do your work here</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.thaw_notify">
+<code class="descname">thaw_notify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.thaw_notify" title="永久链接至目标">¶</a></dt>
+<dd><p>解冻所有的被 <a class="reference internal" href="#GObject.GObject.freeze_notify" title="GObject.GObject.freeze_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freeze_notify()</span></code></a> 冻结的 “notify::” 信号。</p>
+<p>建议不要明确地调用 <a class="reference internal" href="#GObject.GObject.thaw_notify" title="GObject.GObject.thaw_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">thaw_notify()</span></code></a> 而是 <em>with</em> 语句与
+<a class="reference internal" href="#GObject.GObject.freeze_notify" title="GObject.GObject.freeze_notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">freeze_notify()</span></code></a> 一起使用。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.handler_block">
+<code class="descname">handler_block</code><span class="sig-paren">(</span><em>handler_id</em><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.handler_block" title="永久链接至目标">¶</a></dt>
+<dd><p>阻塞实例的处理函数 <em>handler_id</em> 因此在任何信号触发之时都不会被调用，直到
+<a class="reference internal" href="#GObject.GObject.handler_unblock" title="GObject.GObject.handler_unblock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_unblock()</span></code></a> 被调用。因此 “阻塞” 一个信号处理函数意味着临时
+关闭它，信号处理函数必须与之前阻塞次数相同的取消阻塞才能被再次激活。</p>
+<p>建议 <a class="reference internal" href="#GObject.GObject.handler_block" title="GObject.GObject.handler_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_block()</span></code></a> 与 <em>with</em> 语句一起使用，这样会在语句块的最后
+隐式调用 <a class="reference internal" href="#GObject.GObject.handler_unblock" title="GObject.GObject.handler_unblock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_unblock()</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">an_object</span><span class="o">.</span><span class="n">handler_block</span><span class="p">(</span><span class="n">handler_id</span><span class="p">):</span>
+    <span class="c1"># Do your work here</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="GObject.GObject.handler_unblock">
+<code class="descname">handler_unblock</code><span class="sig-paren">(</span><em>handler_id</em><span class="sig-paren">)</span><a class="headerlink" href="#GObject.GObject.handler_unblock" title="永久链接至目标">¶</a></dt>
+<dd><p>取消 <a class="reference internal" href="#GObject.GObject.handler_block" title="GObject.GObject.handler_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_block()</span></code></a> 的效果。阻塞后的处理函数会在信号被触发时略过，
+并且直到取消阻塞相同次数之前不会被调用。</p>
+<p>建议不要直接调用 <a class="reference internal" href="#GObject.GObject.handler_unblock" title="GObject.GObject.handler_unblock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_unblock()</span></code></a> 而是与 <em>with</em> 语句一起使用
+<a class="reference internal" href="#GObject.GObject.handler_block" title="GObject.GObject.handler_block"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handler_block()</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.GObject.__gsignals__">
+<code class="descname">__gsignals__</code><a class="headerlink" href="#GObject.GObject.__gsignals__" title="永久链接至目标">¶</a></dt>
+<dd><p>一个继承类可以定义新信号的字典。</p>
+<p>字典中的每一个元素都是一个新的信号。key为信号的名字，值为一个元组，如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">SIGNAL_RUN_FIRST</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#GObject.SIGNAL_RUN_FIRST" title="GObject.SIGNAL_RUN_FIRST"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_FIRST</span></code></a> 可以被替换为
+<a class="reference internal" href="#GObject.SIGNAL_RUN_LAST" title="GObject.SIGNAL_RUN_LAST"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_LAST</span></code></a> 或者 <a class="reference internal" href="#GObject.SIGNAL_RUN_CLEANUP" title="GObject.SIGNAL_RUN_CLEANUP"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.SIGNAL_RUN_CLEANUP</span></code></a> 。
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 为信号的返回类型。 <code class="docutils literal notranslate"><span class="pre">(int,)</span></code> 为参数的列表，必须以逗号结尾。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.GObject.__gproperties__">
+<code class="descname">__gproperties__</code><a class="headerlink" href="#GObject.GObject.__gproperties__" title="永久链接至目标">¶</a></dt>
+<dd><p><a class="reference internal" href="#GObject.GObject.__gproperties__" title="GObject.GObject.__gproperties__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__gproperties__</span></code></a> 字典是一个可以定义你的对象属性的属性。这并不是建议
+的方式定义新属性，上面提到的方法更加的简洁。本方法的优点是可以对属性作更多
+的设置，像数值类型的最大值与最小值之类。</p>
+<p>key 为属性的名字。</p>
+<p>value 为描述属性的元组。
+元组中元素的数目依赖于第一个元素，但一般至少都会包含下面的元素。</p>
+<blockquote>
+<div><p>第一个元素为属性的类型(例如 <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> 等)。</p>
+<p>第二个元素是属性的小名(昵称)，即对属性简短描述的字符串。这通常用于有
+很强内省能力的程序，像GUI builder <a class="reference external" href="http://glade.gnome.org/">Glade</a> 。</p>
+<p>第三个是属性的描述或导语，即另一个更长的，描述属性的字符串。也是给
+<a class="reference external" href="http://glade.gnome.org/">Glade</a> 及类似程序使用的。</p>
+<p>最后一个为属性的标志flags: :<a class="reference internal" href="#GObject.PARAM_READABLE" title="GObject.PARAM_READABLE"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.PARAM_READABLE</span></code></a> ，
+::const::<cite>GObject.PARAM_WRITABLE</cite>， <a class="reference internal" href="#GObject.PARAM_READWRITE" title="GObject.PARAM_READWRITE"><code class="xref py py-const docutils literal notranslate"><span class="pre">GObject.PARAM_READWRITE</span></code></a> 。
+稍后我们会看到，这并不见得是第四个参数。</p>
+</div></blockquote>
+<p>元组的长度依赖于属性的类型(元组的地一个元素)。具体包括下面的情形：</p>
+<blockquote>
+<div><p>如果类型为 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">str</span></code> ，第四个元素为属性的默认值。</p>
+<p>如果类型为 <code class="docutils literal notranslate"><span class="pre">int</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">float</span></code> ，第四个元素是可接收的最小值，第五个
+为可接收的最大值，第六个为其默认值。</p>
+<p>如果类型不是上面这些，则没有额外的元素。</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.SIGNAL_RUN_FIRST">
+<code class="descclassname">GObject.</code><code class="descname">SIGNAL_RUN_FIRST</code><a class="headerlink" href="#GObject.SIGNAL_RUN_FIRST" title="永久链接至目标">¶</a></dt>
+<dd><p>在信号触发第一阶段调用处理方法。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.SIGNAL_RUN_LAST">
+<code class="descclassname">GObject.</code><code class="descname">SIGNAL_RUN_LAST</code><a class="headerlink" href="#GObject.SIGNAL_RUN_LAST" title="永久链接至目标">¶</a></dt>
+<dd><p>在信号触发第三阶段调用处理方法。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.SIGNAL_RUN_CLEANUP">
+<code class="descclassname">GObject.</code><code class="descname">SIGNAL_RUN_CLEANUP</code><a class="headerlink" href="#GObject.SIGNAL_RUN_CLEANUP" title="永久链接至目标">¶</a></dt>
+<dd><p>在信号触发最后一个阶段调用处理方法。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.PARAM_READABLE">
+<code class="descclassname">GObject.</code><code class="descname">PARAM_READABLE</code><a class="headerlink" href="#GObject.PARAM_READABLE" title="永久链接至目标">¶</a></dt>
+<dd><p>属性只读。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.PARAM_WRITABLE">
+<code class="descclassname">GObject.</code><code class="descname">PARAM_WRITABLE</code><a class="headerlink" href="#GObject.PARAM_WRITABLE" title="永久链接至目标">¶</a></dt>
+<dd><p>属性只写。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="GObject.PARAM_READWRITE">
+<code class="descclassname">GObject.</code><code class="descname">PARAM_READWRITE</code><a class="headerlink" href="#GObject.PARAM_READWRITE" title="永久链接至目标">¶</a></dt>
+<dd><p>属性可读可写。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="stock.html" class="btn btn-neutral float-right" title="Stock Items" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="builder.html" class="btn btn-neutral" title="Glade and Gtk.Builder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, qytz(lennyh).
+      最后更新于 2019 年 05 月 16 日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
