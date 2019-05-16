@@ -45,6 +45,8 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  gh-pages   to make HTML files for gh-pages and push"
+	@echo "  markdown   to make markdown files"
+	@echo "  jeklly     to make jeklly files"
 
 .PHONY: clean
 clean:
@@ -225,6 +227,18 @@ dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
+.PHONY: markdown
+markdown:
+	$(SPHINXBUILD) -b markdown $(ALLSPHINXOPTS) $(BUILDDIR)/markdown
+	@echo
+	@echo "Build finished. The markdown pages are in $(BUILDDIR)/markdown."
+
+.PHONY: jekyll
+jekyll:
+	$(SPHINXBUILD) -b jekyll $(ALLSPHINXOPTS) $(BUILDDIR)/jekyll
+	@echo
+	@echo "Build finished. The jekyll pages are in $(BUILDDIR)/jekyll."
 
 .PHONY: gh-pages
 gh-pages:
