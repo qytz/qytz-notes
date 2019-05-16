@@ -1,5 +1,6 @@
-ipython==5.1.0
-python-dateutil==2.5.3
-pytz==2017.2
-Sphinx==1.5.5
-tornado==4.4.1
+ipython
+python-dateutil
+pytz
+Sphinx
+tornado
+recommonmark

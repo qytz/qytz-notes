@@ -12,11 +12,14 @@ Contents:
    :maxdepth: 2
    :titlesonly:
 
-   quant/index
    python/index
-   tech/index
+   code/index
    ipynb/index
+   tech/index
+   quant/index
+   throughts/index
 
+   about
 
 
 Indices and tables
