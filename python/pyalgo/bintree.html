@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="哈希" href="hash.html" />
     <link rel="prev" title="二分法" href="dichotomy.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -204,10 +207,10 @@
 <p>二叉树的性质：</p>
 <blockquote>
 <div><ul class="simple">
-<li>若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
-<li>任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
-<li>任意节点的左、右子树也分别为二叉树。</li>
-<li>没有键值相等的节点（no duplicate nodes）。</li>
+<li><p>若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</p></li>
+<li><p>任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</p></li>
+<li><p>任意节点的左、右子树也分别为二叉树。</p></li>
+<li><p>没有键值相等的节点（no duplicate nodes）。</p></li>
 </ul>
 </div></blockquote>
 <p>二叉查找树相比于其他数据结构的优势在于查找、插入的时间复杂度较低。二叉查找树是基础性数据结构，用于构建更为抽象的数据结构，如集合、multiset、关联数组等。</p>
@@ -365,9 +368,9 @@
 <p>得到要删除节点下的子节点数目后，需要进行三种情况的判断</p>
 <blockquote>
 <div><ul class="simple">
-<li>如果没有子节点，直接删除</li>
-<li>如果有一个子节点，要将下一个子节点上移到当前节点，即替换之</li>
-<li>如果有两个子节点，要对自己点的数据进行判断，并从新安排节点排序</li>
+<li><p>如果没有子节点，直接删除</p></li>
+<li><p>如果有一个子节点，要将下一个子节点上移到当前节点，即替换之</p></li>
+<li><p>如果有两个子节点，要对自己点的数据进行判断，并从新安排节点排序</p></li>
 </ul>
 </div></blockquote>
 <p>root.delete(1)</p>
@@ -390,7 +393,7 @@
         <a href="hash.html" class="btn btn-neutral float-right" title="哈希" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dichotomy.html" class="btn btn-neutral" title="二分法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dichotomy.html" class="btn btn-neutral float-left" title="二分法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -399,8 +402,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -417,33 +422,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Reference" href="reference/index.html" />
     <link rel="prev" title="Pycairo Documentation" href="index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -213,9 +216,9 @@
 <p>Pycairo 绑定被设计为与cairo的C语言API尽可能的接近，只在某些明显可以以更加 ‘Pythonic’ 化方式实现的地方稍有改变。</p>
 <p>Pycairo 绑定的特性：</p>
 <ul class="simple">
-<li>提供一个面向对象的接口。</li>
-<li>调用 Pycairo_Check_Status()  函数来检查cairo操作的状态，在适当的时候发送异常。</li>
-<li>提供C API以供其他Python extension使用。</li>
+<li><p>提供一个面向对象的接口。</p></li>
+<li><p>调用 Pycairo_Check_Status()  函数来检查cairo操作的状态，在适当的时候发送异常。</p></li>
+<li><p>提供C API以供其他Python extension使用。</p></li>
 </ul>
 <p>Pycairo 绑定并没有提供cairo_reference(), cairo_destroy(), cairo_surface_reference(), cairo_surface_destroy()
 (以及用于Surface和pattern的等价的函数)cairo 的这些C函数，因为对象的构造和销毁由Pycairo来处理。</p>
@@ -238,7 +241,7 @@
         <a href="reference/index.html" class="btn btn-neutral float-right" title="Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Pycairo Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Pycairo Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -247,8 +250,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -265,33 +270,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

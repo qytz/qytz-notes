@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="从零开始" href="introduction.html" />
     <link rel="prev" title="The Python GTK+ 3 Tutorial" href="index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -232,9 +235,9 @@
 <div class="section" id="id2">
 <h2>依赖<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li>GTK+3</li>
-<li>Python 2 (2.6或更高) 或 Python 3 (3.1或更高)</li>
-<li>gobject-introspection</li>
+<li><p>GTK+3</p></li>
+<li><p>Python 2 (2.6或更高) 或 Python 3 (3.1或更高)</p></li>
+<li><p>gobject-introspection</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
@@ -245,8 +248,8 @@
 <div class="section" id="id4">
 <h2>从源代码安装<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>从源代码安装PyGObject的最简单方法就是使用 <a class="reference external" href="https://live.gnome.org/Jhbuild">JHBuild</a> 。其就是为了简化源码包的编译及检测
-哪些依赖包要以怎样的顺序来编译而设计的。要安装JHBuild，请移步至：&nbsp;<a class="reference external" href="http://library.gnome.org/devel/jhbuild/unstable/">JHBuild manual</a> 。
-一旦你成功的安装了JHBuild，从 <a class="footnote-reference" href="#id7" id="id5">[1]</a> 下载最新的配置文件，并将其拷贝至JHBuild的模块目录，
+哪些依赖包要以怎样的顺序来编译而设计的。要安装JHBuild，请移步至： <a class="reference external" href="http://library.gnome.org/devel/jhbuild/unstable/">JHBuild manual</a> 。
+一旦你成功的安装了JHBuild，从 <a class="footnote-reference brackets" href="#id7" id="id5">1</a> 下载最新的配置文件，并将其拷贝至JHBuild的模块目录，
 重命名以 <cite>.modules</cite> 后缀结尾。然后将示例文件—— <cite>sample-tarball.jhbuildrc</cite> 拷贝至 <cite>~/.jhbuildrc</cite> 。
 如果你完成了上述步骤，测试下你的编译环境是否可以正常运行:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ jhbuild sanitycheck
@@ -267,12 +270,11 @@
 </pre></div>
 </div>
 <p>Ps：哎，这年头应该没有人真的从源代码来编译这个玩意吧，故以上代码未验证，翻译页可能不准确，请见谅。</p>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td><a class="reference external" href="http://download.gnome.org/teams/releng/">http://download.gnome.org/teams/releng/</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p><a class="reference external" href="http://download.gnome.org/teams/releng/">http://download.gnome.org/teams/releng/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -287,7 +289,7 @@
         <a href="introduction.html" class="btn btn-neutral float-right" title="从零开始" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="The Python GTK+ 3 Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="The Python GTK+ 3 Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -296,8 +298,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -314,33 +318,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

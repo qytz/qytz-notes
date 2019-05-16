@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="菜单" href="menus.html" />
     <link rel="prev" title="IconView" href="iconview.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -276,10 +279,10 @@
 <dd><p>设置文本的额默认对齐方式。</p>
 <p><em>justification</em> 的值可以是下列之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.LEFT</span></code>: 文本左对齐。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.RIGHT</span></code>: 文本右对齐。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.CENTER</span></code>: 文本居中对齐。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.FILL</span></code>: 文本占满整行。</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.LEFT</span></code>: 文本左对齐。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.RIGHT</span></code>: 文本右对齐。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.CENTER</span></code>: 文本居中对齐。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Justification.FILL</span></code>: 文本占满整行。</p></li>
 </ul>
 </dd></dl>
 
@@ -289,11 +292,11 @@
 <dd><p>设置view是否自动断行。</p>
 <p><em>wrap_mode</em> 的值可以是下列之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.NONE</span></code>: 不自动断行，文本域会一直随着文本变宽。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.CHAR</span></code>: 自动断行，可以光标可以出现的地方断行（通常字符之间）。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.WORD</span></code>: 自动断行，可以在单词之间断行。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.WORD_CHAR</span></code>: 自动断行，可以在单词之间断行，但如果
-空间不够时Wrap text, 也可以在 <a class="reference external" href="http://developer.gnome.org/pango/stable/pango-Text-Processing.html#pango-get-log-attrs">graphemes</a> 出断行。</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.NONE</span></code>: 不自动断行，文本域会一直随着文本变宽。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.CHAR</span></code>: 自动断行，可以光标可以出现的地方断行（通常字符之间）。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.WORD</span></code>: 自动断行，可以在单词之间断行。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.WrapMode.WORD_CHAR</span></code>: 自动断行，可以在单词之间断行，但如果
+空间不够时Wrap text, 也可以在 <a class="reference external" href="http://developer.gnome.org/pango/stable/pango-Text-Processing.html#pango-get-log-attrs">graphemes</a> 出断行。</p></li>
 </ul>
 </dd></dl>
 
@@ -447,12 +450,12 @@ iterator迭代器代表了文本buffer中两个字符之间的一个位置。迭
 <dd><p>向前搜索 <em>needle</em> 。搜索在达到limit后不会再继续。</p>
 <p><em>flags</em> 可以为下列之一，或者他们的组合（通过或操作符 <code class="docutils literal notranslate"><span class="pre">|</span></code> ）。</p>
 <ul class="simple">
-<li>0: 精确匹配</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.VISIBLE_ONLY</span></code>: 匹配可能在 <em>needle</em> 中间穿插
-有不可见字符，即 <em>needle</em> 为匹配到的字符串的可能不连续的子序列。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.TEXT_ONLY</span></code>: 匹配可能包含图像pixbuf或者子空间
-混合在匹配到的范围内。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.CASE_INSENSITIVE</span></code>: 匹配忽略大小写。</li>
+<li><p>0: 精确匹配</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.VISIBLE_ONLY</span></code>: 匹配可能在 <em>needle</em> 中间穿插
+有不可见字符，即 <em>needle</em> 为匹配到的字符串的可能不连续的子序列。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.TEXT_ONLY</span></code>: 匹配可能包含图像pixbuf或者子空间
+混合在匹配到的范围内。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TextSearchFlags.CASE_INSENSITIVE</span></code>: 匹配忽略大小写。</p></li>
 </ul>
 <p>返回包含指向开始与匹配到的文本后边的 <a class="reference internal" href="#Gtk.TextIter" title="Gtk.TextIter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TextIter</span></code></a> 的元组。如果
 没有找到，则返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
@@ -500,15 +503,15 @@ tag由 <code class="xref py py-class docutils literal notranslate"><span class="
 <p>以下列出一些应用到文本的通常使用的风格：</p>
 <blockquote>
 <div><ul class="simple">
-<li>背景颜色(“foreground” property)</li>
-<li>前景颜色(“background” property)</li>
-<li>下划线(“underline” property)</li>
-<li>粗体(“weight” property)</li>
-<li>斜提(“style” property)</li>
-<li>删除线(“strikethrough” property)</li>
-<li>对齐(“justification” property)</li>
-<li>大小(“size” and “size-points” properties)</li>
-<li>自动换行(“wrap-mode” property)</li>
+<li><p>背景颜色(“foreground” property)</p></li>
+<li><p>前景颜色(“background” property)</p></li>
+<li><p>下划线(“underline” property)</p></li>
+<li><p>粗体(“weight” property)</p></li>
+<li><p>斜提(“style” property)</p></li>
+<li><p>删除线(“strikethrough” property)</p></li>
+<li><p>对齐(“justification” property)</p></li>
+<li><p>大小(“size” and “size-points” properties)</p></li>
+<li><p>自动换行(“wrap-mode” property)</p></li>
 </ul>
 </div></blockquote>
 <p>你也可以使用 <a class="reference internal" href="#Gtk.TextBuffer.remove_tag" title="Gtk.TextBuffer.remove_tag"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.TextBuffer.remove_tag()</span></code></a> 删除某个特定的tag，或者使用
@@ -914,7 +917,7 @@ tag由 <code class="xref py py-class docutils literal notranslate"><span class="
         <a href="menus.html" class="btn btn-neutral float-right" title="菜单" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="iconview.html" class="btn btn-neutral" title="IconView" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="iconview.html" class="btn btn-neutral float-left" title="IconView" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -923,8 +926,10 @@ tag由 <code class="xref py py-class docutils literal notranslate"><span class="
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -941,33 +946,16 @@ tag由 <code class="xref py py-class docutils literal notranslate"><span class="
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

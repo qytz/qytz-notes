@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../../about.html" />
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="next" title="Text" href="text.html" />
     <link rel="prev" title="Pattern" href="patterns.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -242,30 +245,26 @@ retained for the next page.  Use <a class="reference internal" href="#cairo.Surf
 empty page after the emission.</p>
 <p><a class="reference internal" href="context.html#cairo.Context.copy_page" title="cairo.Context.copy_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_page()</span></code></a> is a convenience function for this.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Surface.create_similar">
 <code class="descname">create_similar</code><span class="sig-paren">(</span><em>content</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.create_similar" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>content</strong> – the <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> for the new
-surface</li>
-<li><strong>width</strong> (<em>int</em>) – width of the new surface, (in device-space units)</li>
-<li><strong>height</strong> – height of the new surface (in device-space units)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content</strong> – the <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> for the new
+surface</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of the new surface, (in device-space units)</p></li>
+<li><p><strong>height</strong> – height of the new surface (in device-space units)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">a newly allocated <em>Surface</em>.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a newly allocated <em>Surface</em>.</p>
+</dd>
+</dl>
 <p>Create a <em>Surface</em> that is as compatible as possible with the existing
 surface. For example the new surface will have the same fallback
 resolution and <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a>. Generally, the new surface will
@@ -299,77 +298,67 @@ support direct access, then this function does nothing.</p>
 <dl class="method">
 <dt id="cairo.Surface.get_content">
 <code class="descname">get_content</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.get_content" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">The <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> type of <em>Surface</em>,
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> type of <em>Surface</em>,
 which indicates whether the <em>Surface</em> contains color and/or alpha
-information.</td>
-</tr>
-</tbody>
-</table>
+information.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Surface.get_device_offset">
 <code class="descname">get_device_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.get_device_offset" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x_offset, y_offset) a tuple of float<ul class="simple">
-<li>x_offset: the offset in the X direction, in device units</li>
-<li>y_offset: the offset in the Y direction, in device units</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><p>(x_offset, y_offset) a tuple of float</p>
+<ul class="simple">
+<li><p>x_offset: the offset in the X direction, in device units</p></li>
+<li><p>y_offset: the offset in the Y direction, in device units</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+</dl>
 <p>This method returns the previous device offset set by
 <a class="reference internal" href="#cairo.Surface.set_device_offset" title="cairo.Surface.set_device_offset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_device_offset()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Surface.get_fallback_resolution">
 <code class="descname">get_fallback_resolution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.get_fallback_resolution" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x_pixels_per_inch, y_pixels_per_inch) a tuple of float<ul class="simple">
-<li>x_pixels_per_inch: horizontal pixels per inch</li>
-<li>y_pixels_per_inch: vertical pixels per inch</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><p>(x_pixels_per_inch, y_pixels_per_inch) a tuple of float</p>
+<ul class="simple">
+<li><p>x_pixels_per_inch: horizontal pixels per inch</p></li>
+<li><p>y_pixels_per_inch: vertical pixels per inch</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+</dl>
 <p>This method returns the previous fallback resolution set by
 <a class="reference internal" href="#cairo.Surface.set_fallback_resolution" title="cairo.Surface.set_fallback_resolution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_fallback_resolution()</span></code></a>, or default fallback resolution if
 never set.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.8 新版功能.</span></p>
+<p><span class="versionmodified added">1.8 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Surface.get_font_options">
 <code class="descname">get_font_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.get_font_options" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">a <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a></td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>a <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a></p>
+</dd>
+</dl>
 <p>Retrieves the default font rendering options for the <em>Surface</em>. This
 allows display surfaces to report the correct subpixel order for
 rendering on them, print surfaces to disable hinting of metrics and so
@@ -387,20 +376,16 @@ must call <a class="reference internal" href="#cairo.Surface.flush" title="cairo
 <dl class="method">
 <dt id="cairo.Surface.mark_dirty_rectangle">
 <code class="descname">mark_dirty_rectangle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.mark_dirty_rectangle" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>int</em>) – X coordinate of dirty rectangle</li>
-<li><strong>y</strong> (<em>int</em>) – Y coordinate of dirty rectangle</li>
-<li><strong>width</strong> (<em>int</em>) – width of dirty rectangle</li>
-<li><strong>height</strong> (<em>int</em>) – height of dirty rectangle</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – X coordinate of dirty rectangle</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Y coordinate of dirty rectangle</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of dirty rectangle</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – height of dirty rectangle</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Like <a class="reference internal" href="#cairo.Surface.mark_dirty" title="cairo.Surface.mark_dirty"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_dirty()</span></code></a>, but drawing has been done only to the
 specified rectangle, so that cairo can retain cached contents for other
 parts of the surface.</p>
@@ -411,18 +396,14 @@ make sure that future cairo calls have the clip set that they expect.</p>
 <dl class="method">
 <dt id="cairo.Surface.set_device_offset">
 <code class="descname">set_device_offset</code><span class="sig-paren">(</span><em>x_offset</em>, <em>y_offset</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.set_device_offset" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x_offset</strong> (<em>float</em>) – the offset in the X direction, in device units</li>
-<li><strong>y_offset</strong> (<em>float</em>) – the offset in the Y direction, in device units</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_offset</strong> (<em>float</em>) – the offset in the X direction, in device units</p></li>
+<li><p><strong>y_offset</strong> (<em>float</em>) – the offset in the Y direction, in device units</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Sets an offset that is added to the device coordinates determined by the
 CTM when drawing to <em>Surface</em>. One use case for this function is when we
 want to create a <em>Surface</em> that redirects drawing for a portion of an
@@ -437,18 +418,14 @@ surface in a source pattern.</p>
 <dl class="method">
 <dt id="cairo.Surface.set_fallback_resolution">
 <code class="descname">set_fallback_resolution</code><span class="sig-paren">(</span><em>x_pixels_per_inch</em>, <em>y_pixels_per_inch</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.set_fallback_resolution" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x_pixels_per_inch</strong> (<em>float</em>) – horizontal setting for pixels per inch</li>
-<li><strong>y_pixels_per_inch</strong> (<em>float</em>) – vertical setting for pixels per inch</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_pixels_per_inch</strong> (<em>float</em>) – horizontal setting for pixels per inch</p></li>
+<li><p><strong>y_pixels_per_inch</strong> (<em>float</em>) – vertical setting for pixels per inch</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Set the horizontal and vertical resolution for image fallbacks.</p>
 <p>When certain operations aren’t supported natively by a backend, cairo
 will fallback by rendering operations to an image and then overlaying
@@ -468,7 +445,7 @@ than one fallback resolution in effect on a single page.</p>
 <p>The default fallback resoultion is 300 pixels per inch in both
 dimensions.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -480,26 +457,22 @@ pages. Use <a class="reference internal" href="#cairo.Surface.copy_page" title="
 <p>There is a convenience function for this that takes a
 <a class="reference internal" href="context.html#cairo.Context.show_page" title="cairo.Context.show_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_page()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Surface.write_to_png">
 <code class="descname">write_to_png</code><span class="sig-paren">(</span><em>fobj</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Surface.write_to_png" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><p class="first"><strong>fobj</strong> (<em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – the file to write to</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><em>MemoryError</em> if memory could not be allocated for the operation</p>
-<p class="last"><em>IOError</em> if an I/O error occurs while attempting to write the file</p>
-</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>fobj</strong> (<em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – the file to write to</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><em>MemoryError</em> if memory could not be allocated for the operation</p>
+<p><em>IOError</em> if an I/O error occurs while attempting to write the file</p>
+</dd>
+</dl>
 <p>Writes the contents of <em>Surface</em> to <em>fobj</em> as a PNG image.</p>
 </dd></dl>
 
@@ -514,25 +487,21 @@ those defined in <a class="reference internal" href="constants.html#constants-fo
 <dl class="class">
 <dt id="cairo.ImageSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">ImageSurface</code><span class="sig-paren">(</span><em>format</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>format</strong> – <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> of pixels in the surface to create</li>
-<li><strong>width</strong> – width of the surface, in pixels</li>
-<li><strong>height</strong> – height of the surface, in pixels</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> of pixels in the surface to create</p></li>
+<li><p><strong>width</strong> – width of the surface, in pixels</p></li>
+<li><p><strong>height</strong> – height of the surface, in pixels</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">a new <em>ImageSurface</em></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><em>MemoryError</em> in case of no memory</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a new <em>ImageSurface</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><em>MemoryError</em> in case of no memory</p>
+</dd>
+</dl>
 <p>Creates an <em>ImageSurface</em> of the specified format and dimensions. Initially
 the surface contents are all 0. (Specifically, within each pixel, each
 color or alpha channel belonging to format will be 0. The contents of bits
@@ -546,41 +515,35 @@ within a pixel, but not belonging to the given format are undefined).</p>
 <dl class="classmethod">
 <dt id="cairo.ImageSurface.create_from_png">
 <em class="property">classmethod </em><code class="descname">create_from_png</code><span class="sig-paren">(</span><em>fobj</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.create_from_png" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>fobj</strong> – a filename, file, or file-like object of the PNG to load.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">a new <em>ImageSurface</em> initialized the contents to the given
-PNG file.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>fobj</strong> – a filename, file, or file-like object of the PNG to load.</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a new <em>ImageSurface</em> initialized the contents to the given
+PNG file.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="cairo.ImageSurface.format_stride_for_width">
 <em class="property">static </em><code class="descname">format_stride_for_width</code><span class="sig-paren">(</span><em>format</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.format_stride_for_width" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>format</strong> – a cairo <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> value</li>
-<li><strong>width</strong> – the desired width of an <em>ImageSurface</em> to be created.</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – a cairo <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> value</p></li>
+<li><p><strong>width</strong> – the desired width of an <em>ImageSurface</em> to be created.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">the appropriate stride to use given the desired format and
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>the appropriate stride to use given the desired format and
 width, or -1 if either the format is invalid or the width too large.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <p>This method provides a stride value that will respect all alignment
 requirements of the accelerated image-rendering code within
 cairo. Typical usage will be of the form:</p>
@@ -589,7 +552,7 @@ cairo. Typical usage will be of the form:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -602,56 +565,44 @@ cairo. Typical usage will be of the form:</p>
 <dl class="method">
 <dt id="cairo.ImageSurface.get_format">
 <code class="descname">get_format</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.get_format" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> of the <em>ImageSurface</em>.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the <a class="reference internal" href="constants.html#constants-format"><span class="std std-ref">FORMAT</span></a> of the <em>ImageSurface</em>.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.ImageSurface.get_height">
 <code class="descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.get_height" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the height of the <em>ImageSurface</em> in pixels.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the height of the <em>ImageSurface</em> in pixels.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.ImageSurface.get_stride">
 <code class="descname">get_stride</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.get_stride" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the stride of the <em>ImageSurface</em> in bytes. The stride is the distance in bytes from the beginning of one row of the image data to the beginning of the next row.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the stride of the <em>ImageSurface</em> in bytes. The stride is the distance in bytes from the beginning of one row of the image data to the beginning of the next row.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.ImageSurface.get_width">
 <code class="descname">get_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.ImageSurface.get_width" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the width of the <em>ImageSurface</em> in pixels.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the width of the <em>ImageSurface</em> in pixels.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -664,48 +615,40 @@ multi-page vector surface backend.</p>
 <dl class="class">
 <dt id="cairo.PDFSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">PDFSurface</code><span class="sig-paren">(</span><em>fobj</em>, <em>width_in_points</em>, <em>height_in_points</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PDFSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>PDFSurface</em> that may be queried and used as a source, without generating a temporary file.</li>
-<li><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points
-(1 point == 1/72.0 inch)</li>
-<li><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points
-(1 point == 1/72.0 inch)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>PDFSurface</em> that may be queried and used as a source, without generating a temporary file.</p></li>
+<li><p><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points
+(1 point == 1/72.0 inch)</p></li>
+<li><p><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points
+(1 point == 1/72.0 inch)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">a new <em>PDFSurface</em> of the specified size in points to be written
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a new <em>PDFSurface</em> of the specified size in points to be written
 to <em>fobj</em>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><em>MemoryError</em> in case of no memory</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><em>MemoryError</em> in case of no memory</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 <dl class="method">
 <dt id="cairo.PDFSurface.set_size">
 <code class="descname">set_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PDFSurface.set_size" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>width_in_points</strong> (<em>float</em>) – new surface width, in points
-(1 point == 1/72.0 inch)</li>
-<li><strong>height_in_points</strong> (<em>float</em>) – new surface height, in points
-(1 point == 1/72.0 inch)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width_in_points</strong> (<em>float</em>) – new surface width, in points
+(1 point == 1/72.0 inch)</p></li>
+<li><p><strong>height_in_points</strong> (<em>float</em>) – new surface height, in points
+(1 point == 1/72.0 inch)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Changes the size of a <em>PDFSurface</em> for the current (and subsequent) pages.</p>
 <p>This function should only be called before any drawing operations have
 been performed on the current page. The simplest way to do this is to
@@ -713,7 +656,7 @@ call this function immediately after creating the surface or immediately
 after completing a page with either <a class="reference internal" href="context.html#cairo.Context.show_page" title="cairo.Context.show_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_page()</span></code></a> or
 <a class="reference internal" href="context.html#cairo.Context.copy_page" title="cairo.Context.copy_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_page()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -727,28 +670,24 @@ is a multi-page vector surface backend.</p>
 <dl class="class">
 <dt id="cairo.PSSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">PSSurface</code><span class="sig-paren">(</span><em>fobj</em>, <em>width_in_points</em>, <em>height_in_points</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>PSSurface</em> that may be queried and used as a source, without generating a temporary file.</li>
-<li><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points
-(1 point == 1/72.0 inch)</li>
-<li><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points
-(1 point == 1/72.0 inch)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>PSSurface</em> that may be queried and used as a source, without generating a temporary file.</p></li>
+<li><p><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points
+(1 point == 1/72.0 inch)</p></li>
+<li><p><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points
+(1 point == 1/72.0 inch)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">a new <em>PDFSurface</em> of the specified size in points to be written
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a new <em>PDFSurface</em> of the specified size in points to be written
 to <em>fobj</em>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><em>MemoryError</em> in case of no memory</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><em>MemoryError</em> in case of no memory</p>
+</dd>
+</dl>
 <p>Note that the size of individual pages of the PostScript output can
 vary. See <a class="reference internal" href="#cairo.PSSurface.set_size" title="cairo.PSSurface.set_size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_size()</span></code></a>.</p>
 <dl class="method">
@@ -762,7 +701,7 @@ should be called after any call to <a class="reference internal" href="#cairo.PS
 before any drawing is performed to the surface.</p>
 <p>See <a class="reference internal" href="#cairo.PSSurface.dsc_comment" title="cairo.PSSurface.dsc_comment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dsc_comment()</span></code></a> for more details.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -776,21 +715,18 @@ called before any call to <a class="reference internal" href="#cairo.PSSurface.d
 drawing is performed to the surface.</p>
 <p>See <a class="reference internal" href="#cairo.PSSurface.dsc_comment" title="cairo.PSSurface.dsc_comment"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dsc_comment()</span></code></a> for more details.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.PSSurface.dsc_comment">
 <code class="descname">dsc_comment</code><span class="sig-paren">(</span><em>comment</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.dsc_comment" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>comment</strong> (<em>str</em>) – a comment string to be emitted into the PostScript output</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>comment</strong> (<em>str</em>) – a comment string to be emitted into the PostScript output</p>
+</dd>
+</dl>
 <p>Emit a comment into the PostScript output for the given surface.</p>
 <p>The comment is expected to conform to the PostScript Language
 Document Structuring Conventions (DSC). Please see that manual for
@@ -857,62 +793,56 @@ the following comments:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.PSSurface.get_eps">
 <code class="descname">get_eps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.get_eps" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">True iff the <em>PSSurface</em> will output Encapsulated PostScript.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>True iff the <em>PSSurface</em> will output Encapsulated PostScript.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="cairo.PSSurface.ps_level_to_string">
 <em class="property">static </em><code class="descname">ps_level_to_string</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.ps_level_to_string" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>level</strong> – a <a class="reference internal" href="constants.html#constants-ps-level"><span class="std std-ref">PS_LEVEL</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">the string associated to given level.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">str</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if <em>level</em> isn’t valid.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>level</strong> – a <a class="reference internal" href="constants.html#constants-ps-level"><span class="std std-ref">PS_LEVEL</span></a></p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>the string associated to given level.</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if <em>level</em> isn’t valid.</p>
+</dd>
+</dl>
 <p>Get the string representation of the given <em>level</em>.  See
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">ps_get_levels()</span></code> for a way to get the list of valid level
 ids.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.PSSurface.restrict_to_level">
 <code class="descname">restrict_to_level</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.restrict_to_level" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>level</strong> – a <a class="reference internal" href="constants.html#constants-ps-level"><span class="std std-ref">PS_LEVEL</span></a></td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>level</strong> – a <a class="reference internal" href="constants.html#constants-ps-level"><span class="std std-ref">PS_LEVEL</span></a></p>
+</dd>
+</dl>
 <p>Restricts the generated PostSript file to <em>level</em>. See
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">ps_get_levels()</span></code> for a list of available level values that
 can be used here.</p>
@@ -920,21 +850,18 @@ can be used here.</p>
 been performed on the given surface. The simplest way to do this is to
 call this function immediately after creating the surface.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.PSSurface.set_eps">
 <code class="descname">set_eps</code><span class="sig-paren">(</span><em>eps</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.set_eps" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>eps</strong> (<em>bool</em>) – True to output EPS format PostScript</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>bool</em>) – True to output EPS format PostScript</p>
+</dd>
+</dl>
 <p>If <em>eps</em> is True, the PostScript surface will output Encapsulated
 PostScript.</p>
 <p>This function should only be called before any drawing operations have
@@ -942,25 +869,21 @@ been performed on the current page. The simplest way to do this is to
 call this function immediately after creating the surface. An
 Encapsulated PostScript file should never contain more than one page.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.PSSurface.set_size">
 <code class="descname">set_size</code><span class="sig-paren">(</span><em>width_in_points</em>, <em>height_in_points</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.PSSurface.set_size" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>width_in_points</strong> (<em>float</em>) – new surface width, in points (1 point == 1/72.0 inch)</li>
-<li><strong>height_in_points</strong> (<em>float</em>) – new surface height, in points (1 point == 1/72.0 inch)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width_in_points</strong> (<em>float</em>) – new surface width, in points (1 point == 1/72.0 inch)</p></li>
+<li><p><strong>height_in_points</strong> (<em>float</em>) – new surface height, in points (1 point == 1/72.0 inch)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Changes the size of a PostScript surface for the current (and
 subsequent) pages.</p>
 <p>This function should only be called before any drawing operations
@@ -969,7 +892,7 @@ this is to call this function immediately after creating the
 surface or immediately after completing a page with either
 <a class="reference internal" href="context.html#cairo.Context.show_page" title="cairo.Context.show_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_page()</span></code></a> or <a class="reference internal" href="context.html#cairo.Context.copy_page" title="cairo.Context.copy_page"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_page()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -983,25 +906,21 @@ multi-page vector surface backend</p>
 <dl class="class">
 <dt id="cairo.SVGSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">SVGSurface</code><span class="sig-paren">(</span><em>fobj</em>, <em>width_in_points</em>, <em>height_in_points</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SVGSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>SVGSurface</em> that may be queried and used as a source, without generating a temporary file.</li>
-<li><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points (1 point == 1/72.0 inch)</li>
-<li><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points (1 point == 1/72.0 inch)</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fobj</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>file</em><em> or </em><em>file-like object</em>) – a filename or writable file object. None may be used to specify no output. This will generate a <em>SVGSurface</em> that may be queried and used as a source, without generating a temporary file.</p></li>
+<li><p><strong>width_in_points</strong> (<em>float</em>) – width of the surface, in points (1 point == 1/72.0 inch)</p></li>
+<li><p><strong>height_in_points</strong> (<em>float</em>) – height of the surface, in points (1 point == 1/72.0 inch)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">a new <em>SVGSurface</em> of the specified size in points to be written to <em>fobj</em>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><em>MemoryError</em> in case of no memory</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>a new <em>SVGSurface</em> of the specified size in points to be written to <em>fobj</em>.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><em>MemoryError</em> in case of no memory</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="cairo.SVGSurface.get_versions">
 <code class="descname">get_versions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.SVGSurface.get_versions" title="永久链接至目标">¶</a></dt>
@@ -1030,16 +949,14 @@ Windows windows, bitmaps, and printing device contexts.</p>
 <dl class="class">
 <dt id="cairo.Win32Surface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Win32Surface</code><span class="sig-paren">(</span><em>hdc</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Win32Surface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>hdc</strong> (<em>int</em>) – the DC to create a surface for</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">the newly created surface</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>hdc</strong> (<em>int</em>) – the DC to create a surface for</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>the newly created surface</p>
+</dd>
+</dl>
 <p>Creates a cairo surface that targets the given DC. The DC will be queried
 for its initial clip extents, and this will be used as the size of the
 cairo surface. The resulting surface will always be of format
@@ -1053,16 +970,14 @@ cairo.FORMAT_RGB24, see <a class="reference internal" href="constants.html#const
 <dl class="class">
 <dt id="cairo.Win32PrintingSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Win32PrintingSurface</code><span class="sig-paren">(</span><em>hdc</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Win32PrintingSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>hdc</strong> (<em>int</em>) – the DC to create a surface for</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">the newly created surface</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>hdc</strong> (<em>int</em>) – the DC to create a surface for</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>the newly created surface</p>
+</dd>
+</dl>
 <p>Creates a cairo surface that targets the given DC. The DC will be queried
 for its initial clip extents, and this will be used as the size of the
 cairo surface. The DC should be a printing DC; antialiasing will be
@@ -1082,43 +997,35 @@ extension if it is available.</p>
 <dl class="class">
 <dt id="cairo.XCBSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">XCBSurface</code><a class="headerlink" href="#cairo.XCBSurface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>connection</strong> – an XCB connection</li>
-<li><strong>drawable</strong> – a X drawable</li>
-<li><strong>visualtype</strong> – a X visualtype</li>
-<li><strong>width</strong> – The surface width</li>
-<li><strong>height</strong> – The surface height</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection</strong> – an XCB connection</p></li>
+<li><p><strong>drawable</strong> – a X drawable</p></li>
+<li><p><strong>visualtype</strong> – a X visualtype</p></li>
+<li><p><strong>width</strong> – The surface width</p></li>
+<li><p><strong>height</strong> – The surface height</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Creates a cairo surface that targets the given drawable (pixmap or window).</p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">This methods works using xpyb.</p>
+<p class="admonition-title">注解</p>
+<p>This methods works using xpyb.</p>
 </div>
 <dl class="method">
 <dt id="cairo.XCBSurface.set_size">
 <code class="descname">set_size</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.XCBSurface.set_size" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>width</strong> – The width of the surface</li>
-<li><strong>height</strong> – The height of the surface</li>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – The width of the surface</p></li>
+<li><p><strong>height</strong> – The height of the surface</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Informs cairo of the new size of the X Drawable underlying the surface. For a surface created
 for a Window (rather than a Pixmap), this function must be called each time the size of the
 window changes. (For a subwindow, you are normally resizing the window yourself, but for a
@@ -1138,8 +1045,8 @@ if it is available.</p>
 <dt id="cairo.XlibSurface">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">XlibSurface</code><a class="headerlink" href="#cairo.XlibSurface" title="永久链接至目标">¶</a></dt>
 <dd><div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last"><em>XlibSurface</em> cannot be instantiated directly because Python
+<p class="admonition-title">注解</p>
+<p><em>XlibSurface</em> cannot be instantiated directly because Python
 interaction with Xlib would require open source Python bindings to Xlib
 which provided a C API.
 However, an <em>XlibSurface</em> instance can be returned from a function call
@@ -1148,48 +1055,39 @@ when using pygtk <a class="reference external" href="http://www.pygtk.org/">http
 <dl class="method">
 <dt id="cairo.XlibSurface.get_depth">
 <code class="descname">get_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.XlibSurface.get_depth" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the number of bits used to represent each pixel value.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the number of bits used to represent each pixel value.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.XlibSurface.get_height">
 <code class="descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.XlibSurface.get_height" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the height of the X Drawable underlying the surface in pixels.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the height of the X Drawable underlying the surface in pixels.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.XlibSurface.get_width">
 <code class="descname">get_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.XlibSurface.get_width" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the width of the X Drawable underlying the surface in pixels.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the width of the X Drawable underlying the surface in pixels.</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -1209,7 +1107,7 @@ when using pygtk <a class="reference external" href="http://www.pygtk.org/">http
         <a href="text.html" class="btn btn-neutral float-right" title="Text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="patterns.html" class="btn btn-neutral" title="Pattern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="patterns.html" class="btn btn-neutral float-left" title="Pattern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1218,8 +1116,10 @@ when using pygtk <a class="reference external" href="http://www.pygtk.org/">http
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -1236,33 +1136,16 @@ when using pygtk <a class="reference external" href="http://www.pygtk.org/">http
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

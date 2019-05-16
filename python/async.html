@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Python算法笔记" href="pyalgo/index.html" />
     <link rel="prev" title="离线环境下Python运行环境配置指南" href="python_offline_runtime.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -194,9 +197,9 @@
 <p>Pyhton 3 的 <cite>asyncio</cite> 模块引入了 <cite>coroutine</cite> <cite>Future</cite> <cite>Task</cite> 三个新概念，要使用 <cite>asyncio</cite> 模块进行异步程序开发，就必须要先了解这三个概念。</p>
 <blockquote>
 <div><ul class="simple">
-<li><cite>coroutine</cite> 译为协程，是 <cite>asyncio</cite> 事件循环的最小调度单位，类比于操作系统中的进程与线程，是 <cite>asyncio</cite> 事件循环中的最小调度单位。</li>
-<li><cite>Future</cite> 暂时没有明确的翻译，类比于js中的 <cite>promise</cite> ，用于等待一个未来发生的事件，常见于 io 操作，用于封装回调函数中的异步执行部分。</li>
-<li><cite>Task</cite> 是 <cite>Future</cite> 的子类，用于调度 <cite>coroutine</cite> 的执行。</li>
+<li><p><cite>coroutine</cite> 译为协程，是 <cite>asyncio</cite> 事件循环的最小调度单位，类比于操作系统中的进程与线程，是 <cite>asyncio</cite> 事件循环中的最小调度单位。</p></li>
+<li><p><cite>Future</cite> 暂时没有明确的翻译，类比于js中的 <cite>promise</cite> ，用于等待一个未来发生的事件，常见于 io 操作，用于封装回调函数中的异步执行部分。</p></li>
+<li><p><cite>Task</cite> 是 <cite>Future</cite> 的子类，用于调度 <cite>coroutine</cite> 的执行。</p></li>
 </ul>
 </div></blockquote>
 <p><cite>Future</cite> 是异步操作中的核心概念，封装了一个 <cite>coroutine</cite> 中的异步操作，常见于 io 等待。 <cite>coroutine</cite> 是一个静态概念，处在未执行状态，执行状态的 <cite>coroutine</cite> 就是 <cite>Task</cite> 。</p>
@@ -212,8 +215,8 @@
 <p>像调用其他函数一样调用一个 <cite>coroutine</cite> 并不会执行，只会返回一个 <cite>coroutine</cite> 对象。调度这个 <cite>coroutine</cite> 对象的方法包括：</p>
 <blockquote>
 <div><ul class="simple">
-<li>在其他协程中调用: await coroutine / yield from coroutine – await 应该优先使用。</li>
-<li>使用 <cite>ensure_future()</cite> 或 <cite>AbstractEventLoop.create_task()</cite> 方法来调度协程执行</li>
+<li><p>在其他协程中调用: await coroutine / yield from coroutine – await 应该优先使用。</p></li>
+<li><p>使用 <cite>ensure_future()</cite> 或 <cite>AbstractEventLoop.create_task()</cite> 方法来调度协程执行</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -243,7 +246,7 @@
         <a href="pyalgo/index.html" class="btn btn-neutral float-right" title="Python算法笔记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="python_offline_runtime.html" class="btn btn-neutral" title="离线环境下Python运行环境配置指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python_offline_runtime.html" class="btn btn-neutral float-left" title="离线环境下Python运行环境配置指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -252,8 +255,10 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -270,33 +275,16 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

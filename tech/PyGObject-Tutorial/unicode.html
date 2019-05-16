@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="布局管理" href="layout.html" />
     <link rel="prev" title="基础知识" href="basics.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -237,8 +240,8 @@ U+0041, U+0042, U+0043, and U+00C9这些码位来表示的。码位是一个从0
 <p>之前有提到（有吗？），把字符串作为系列字符的列表来理解很抽象。为了将这抽象而无语的表示转换成一系列的字节表示，
 Unicode字符串必须要被 <strong>编码</strong> 。最简单的ASCII编码方法是这样的：</p>
 <ol class="arabic simple">
-<li>如果码位小于128，每个字节的值即与码位的值相同。</li>
-<li>如果码位大于等于128，这个Unicode字符串就不能按照ASCII来编码了。（Python在这种情况下会产生 <code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeEncodeError</span></code>&nbsp;异常。）</li>
+<li><p>如果码位小于128，每个字节的值即与码位的值相同。</p></li>
+<li><p>如果码位大于等于128，这个Unicode字符串就不能按照ASCII来编码了。（Python在这种情况下会产生 <code class="xref py py-exc docutils literal notranslate"><span class="pre">UnicodeEncodeError</span></code> 异常。）</p></li>
 </ol>
 <p>尽管ASCII编码很简单，但其只能编码128个不同的字符，对我们亚洲那里够呢。
 那么其中最常用的解决了这个问题的编码方法就是UTF-8了（可以处理所有Unicode码位）。
@@ -248,7 +251,7 @@ UTF代表”Unicode Transformation Format”，而 ‘8’ 则指这种编码方
 <h2>Python 2<a class="headerlink" href="#python-2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="python-2-x-unicode">
 <h3>Python 2.x 中的Unicode支持<a class="headerlink" href="#python-2-x-unicode" title="永久链接至标题">¶</a></h3>
-<p>Python 2 中有两种不同类型的对象可以用来表示字符串： <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>&nbsp;和 <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> 。
+<p>Python 2 中有两种不同类型的对象可以用来表示字符串： <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 和 <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> 。
 后者的实例用来表示Unicode字符串，而 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 则是字节表示（即编码后的字符串）。
 Python 中表示Unicode字符串为16位或者32位的整数，
 这依赖于Python解释器是怎样被编译的。Unicode字符串可以使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">unicode.encode()</span></code> 被编码为八位的字符串:</p>
@@ -304,7 +307,7 @@ Python 中表示Unicode字符串为16位或者32位的整数，
 </pre></div>
 </div>
 <p>注意最后的警告。尽管我们以一个unicode实例作为参数来调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_text()</span></code> ，
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.get_text()</span></code> 总是返回一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 实例。因此， <code class="docutils literal notranslate"><span class="pre">txt</span></code>&nbsp;和&nbsp;<code class="docutils literal notranslate"><span class="pre">unicode_string</span></code> 并 <strong>不</strong> 相等。</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.get_text()</span></code> 总是返回一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 实例。因此， <code class="docutils literal notranslate"><span class="pre">txt</span></code> 和 <code class="docutils literal notranslate"><span class="pre">unicode_string</span></code> 并 <strong>不</strong> 相等。</p>
 <p>如果你要使用gettext来国际化你的程序，这尤其重要。对所有语言你需要确保
 <a class="reference external" href="http://docs.python.org/library/gettext.html">gettext</a> 会返回UTF-8编码的字符串。
 通常建议不要在GTK+程序中使用 <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> 对象，而是只使用UTF-8编码的 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 对象，
@@ -324,7 +327,7 @@ Python 中表示Unicode字符串为16位或者32位的整数，
 <p>自从Python 3.0开始，所有的字符串都以 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 类型的实例来存储为Unicode了。
 编码后的字符串则是以二进制形式为 <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> 类型的实例。从概念上来讲， <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 代表 <em>文本</em> ，
 而 <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> 则代表 <em>数据</em> 。使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code> 将 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 转换为 <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> 。
-使用:meth:<cite>bytes.decode</cite>&nbsp;将 <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> 转换为 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 。
+使用:meth:<cite>bytes.decode</cite> 将 <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> 转换为 <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> 。
 当然，也就不能再混淆Unicode字符串和编码后的字符串了，因为这样会产生 <code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Fu</span><span class="se">\u00df</span><span class="s2">b</span><span class="se">\u00e4</span><span class="s2">lle&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot; sind rund&quot;</span>
@@ -379,7 +382,7 @@ PyGObject会自动的编码为/解码为UTF-8。字符串或者 <em>文本</em> 
         <a href="layout.html" class="btn btn-neutral float-right" title="布局管理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="basics.html" class="btn btn-neutral" title="基础知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="basics.html" class="btn btn-neutral float-left" title="基础知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -388,8 +391,10 @@ PyGObject会自动的编码为/解码为UTF-8。字符串或者 <em>文本</em> 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -406,33 +411,16 @@ PyGObject会自动的编码为/解码为UTF-8。字符串或者 <em>文本</em> 
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="标签Label" href="label.html" />
     <link rel="prev" title="处理字符串相关问题" href="unicode.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -248,7 +251,7 @@
 <em class="property">class </em><code class="descclassname">Gtk.</code><code class="descname">Box</code><span class="sig-paren">(</span><span class="optional">[</span><em>homogenous</em><span class="optional">[</span>, <em>spacing</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Box" title="永久链接至目标">¶</a></dt>
 <dd><p><a class="reference internal" href="#Gtk.Box" title="Gtk.Box"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Box</span></code></a> 的矩形区域被组织为或者是单行或者是单列的子窗口部件——这依赖于
 “orientation”属性被设置为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Orientation.HORIZONTAL</span></code> 或者 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Orientation.VERTICAL</span></code> 。
-如果 <em>homogeneous</em> 属性为 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，盒子中所有的部件大小将相同，它们的大小由最大的那个部件决定。如果不设置，默认为&nbsp;<code class="docutils literal notranslate"><span class="pre">False</span></code> 。
+如果 <em>homogeneous</em> 属性为 <code class="docutils literal notranslate"><span class="pre">True</span></code> ，盒子中所有的部件大小将相同，它们的大小由最大的那个部件决定。如果不设置，默认为 <code class="docutils literal notranslate"><span class="pre">False</span></code> 。
 <em>spacing</em> 指子窗口部件之间默认的像素值。如果忽略，则不填充空白，即 <em>spacing</em> 为0。
 默认子窗口部件被组织为一行，即“orientation”属性为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.Orientation.HORIZONTAL</span></code> 。
 <a class="reference internal" href="#Gtk.Box" title="Gtk.Box"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Box</span></code></a> 使用了 <em>打包（packing）</em> 的概念。打包指将一个窗口部件的一个引用添加到一个 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Container</span></code> 容器中。
@@ -377,7 +380,7 @@
 <dt id="Gtk.Grid.attach">
 <code class="descname">attach</code><span class="sig-paren">(</span><em>child</em>, <em>left</em>, <em>top</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Grid.attach" title="永久链接至目标">¶</a></dt>
 <dd><p>向网格中添加一个孩子。</p>
-<p>孩子的位置根据单元格左边（ <em>left</em> ）和上边（ <em>top</em> ）单元格的书目来决定，孩子的大小（占用几个单元格）由 <em>width</em>&nbsp;和 <em>height</em> 来决定。</p>
+<p>孩子的位置根据单元格左边（ <em>left</em> ）和上边（ <em>top</em> ）单元格的书目来决定，孩子的大小（占用几个单元格）由 <em>width</em> 和 <em>height</em> 来决定。</p>
 </dd></dl>
 
 <dl class="method">
@@ -385,10 +388,10 @@
 <code class="descname">attach_next_to</code><span class="sig-paren">(</span><em>child</em>, <em>sibling</em>, <em>side</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.Grid.attach_next_to" title="永久链接至目标">¶</a></dt>
 <dd><p>挨着其 <em>兄弟（sibling）</em> 添加一个 <em>child</em> ， <em>side</em> 决定添加到该兄弟的哪一边，可以是以下其中之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.LEFT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.RIGHT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.TOP</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.BOTTOM</span></code></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.LEFT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.RIGHT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.TOP</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.PositionType.BOTTOM</span></code></p></li>
 </ul>
 <p><em>Width</em> 和 <em>height</em> 决定了孩子可以占用几个单元格。</p>
 </dd></dl>
@@ -478,7 +481,7 @@ Note that with these calls, the last row and last column do not get any spacing.
 <div class="section" id="table-objects">
 <h3>Table Objects<a class="headerlink" href="#table-objects" title="永久链接至标题">¶</a></h3>
 <div class="deprecated">
-<p><span class="versionmodified">3.4 版后已移除: </span>Use <a class="reference internal" href="#Gtk.Grid" title="Gtk.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Grid</span></code></a> instead.</p>
+<p><span class="versionmodified deprecated">3.4 版后已移除: </span>Use <a class="reference internal" href="#Gtk.Grid" title="Gtk.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Grid</span></code></a> instead.</p>
 </div>
 <dl class="class">
 <dt id="Gtk.Table">
@@ -513,12 +516,12 @@ top row of our 2 x 2 table, you’d use</p>
 <p><em>xoptions</em> and <em>yoptions</em> are used to specify packing options and may be
 bitwise ORed together to allow multiple options. These options are:</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.EXPAND</span></code>: The widget should expand to take up
-any extra space in its container that has been allocated.</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.FILL</span></code>: The widget will expand to use all the
-room available.</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.SHRINK</span></code>: Reduce size allocated to the widget
-to prevent it from moving off screen.</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.EXPAND</span></code>: The widget should expand to take up
+any extra space in its container that has been allocated.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.FILL</span></code>: The widget will expand to use all the
+room available.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.AttachOptions.SHRINK</span></code>: Reduce size allocated to the widget
+to prevent it from moving off screen.</p></li>
 </ul>
 <p>If omitted, <em>xoptions</em> and <em>yoptions</em> defaults to
 <code class="docutils literal notranslate"><span class="pre">Gtk.AttachOptions.EXPAND</span> <span class="pre">|</span> <span class="pre">Gtk.AttachOptions.FILL</span></code>.</p>
@@ -630,7 +633,7 @@ following column.</p>
         <a href="label.html" class="btn btn-neutral float-right" title="标签Label" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="unicode.html" class="btn btn-neutral" title="处理字符串相关问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="unicode.html" class="btn btn-neutral float-left" title="处理字符串相关问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -639,8 +642,10 @@ following column.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -657,33 +662,16 @@ following column.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

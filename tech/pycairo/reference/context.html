@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../../about.html" />
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="next" title="Exceptions" href="exceptions.html" />
     <link rel="prev" title="模块函数与常量" href="constants.html" /> 
-
-  
-  <script src="../../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -231,31 +234,27 @@
 <dl class="class">
 <dt id="cairo.Context">
 <em class="property">class </em><code class="descclassname">cairo.</code><code class="descname">Context</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>target</strong> – 上下文的目标 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">一个新分配的上下文</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">没有内存时产生 <em>MemoryError</em> 异常</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>target</strong> – 上下文的目标 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>一个新分配的上下文</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>没有内存时产生 <em>MemoryError</em> 异常</p>
+</dd>
+</dl>
 <p>创建一个新的 <em>Context</em> ，所有的状态参数设置为默认值，并以 <em>target</em> 作为目地surface，目的surface应该使用
 后端特定的函数来构建，比如： <a class="reference internal" href="surfaces.html#cairo.ImageSurface" title="cairo.ImageSurface"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageSurface</span></code></a> （或者其他的cairo后端surface的构造函数）</p>
 <dl class="method">
 <dt id="cairo.Context.append_path">
 <code class="descname">append_path</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.append_path" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>path</strong> – <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> to be appended</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>path</strong> – <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> to be appended</p>
+</dd>
+</dl>
 <p>将 <em>path</em> 添加到当前的路径path。 <em>path</em> 可以是由
 <a class="reference internal" href="#cairo.Context.copy_path" title="cairo.Context.copy_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_path()</span></code></a> 或者 <a class="reference internal" href="#cairo.Context.copy_path_flat" title="cairo.Context.copy_path_flat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_path_flat()</span></code></a> 返回，也可能是手动构建的（使用C语言）。</p>
 </dd></dl>
@@ -263,21 +262,17 @@
 <dl class="method">
 <dt id="cairo.Context.arc">
 <code class="descname">arc</code><span class="sig-paren">(</span><em>xc</em>, <em>yc</em>, <em>radius</em>, <em>angle1</em>, <em>angle2</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.arc" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>xc</strong> (<em>float</em>) – 圆心的X坐标</li>
-<li><strong>yc</strong> (<em>float</em>) – 圆心的Y坐标</li>
-<li><strong>radius</strong> (<em>float</em>) – 圆的半径</li>
-<li><strong>angle1</strong> (<em>float</em>) – 起始角度，以弧度表示</li>
-<li><strong>angle2</strong> (<em>float</em>) – 结束角度，以弧度表示</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xc</strong> (<em>float</em>) – 圆心的X坐标</p></li>
+<li><p><strong>yc</strong> (<em>float</em>) – 圆心的Y坐标</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – 圆的半径</p></li>
+<li><p><strong>angle1</strong> (<em>float</em>) – 起始角度，以弧度表示</p></li>
+<li><p><strong>angle2</strong> (<em>float</em>) – 结束角度，以弧度表示</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>以给定的半径 <em>radius</em> 在当前的path路径上添加一个圆弧。圆弧以(<em>xc, yc</em>)为圆心，以 <em>angle1</em> 角度为起始点，
 按照角度增加的方向直到 <em>angle2</em> 结束，如果 <em>angle2</em> 小于 <em>angle1</em> ，则会绘制整个的圆（角度增长 2*PI 直到大于 <em>angle1</em> ）。</p>
 <p>如果有一个当前的点，那么一条从当前点到圆弧起点的线段会添加到路径。
@@ -301,21 +296,17 @@ X轴方向到Y轴正方向的方向增长，因此在默认的转换矩阵（def
 <dl class="method">
 <dt id="cairo.Context.arc_negative">
 <code class="descname">arc_negative</code><span class="sig-paren">(</span><em>xc</em>, <em>yc</em>, <em>radius</em>, <em>angle1</em>, <em>angle2</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.arc_negative" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>xc</strong> (<em>float</em>) – 圆弧圆心X坐标</li>
-<li><strong>yc</strong> (<em>float</em>) – 圆弧圆心Y坐标</li>
-<li><strong>radius</strong> (<em>float</em>) – 圆弧的半径</li>
-<li><strong>angle1</strong> (<em>float</em>) – 圆弧的起始角度</li>
-<li><strong>angle2</strong> (<em>float</em>) – 圆弧的结束角度</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xc</strong> (<em>float</em>) – 圆弧圆心X坐标</p></li>
+<li><p><strong>yc</strong> (<em>float</em>) – 圆弧圆心Y坐标</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – 圆弧的半径</p></li>
+<li><p><strong>angle1</strong> (<em>float</em>) – 圆弧的起始角度</p></li>
+<li><p><strong>angle2</strong> (<em>float</em>) – 圆弧的结束角度</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>以给定的半径 <em>radius</em> 在当前的path路径上添加一个圆弧。圆弧以(<em>xc, yc</em>)为圆心，以 <em>angle1</em> 角度为起始点，
 按照角度减小的方向直到 <em>angle2</em> 结束，如果 <em>angle2</em> 大于 <em>angle1</em> ，则会绘制整个的圆（角度减小 2*PI 直到小于 <em>angle1</em> ）。</p>
 <p>详细信息参考 <a class="reference internal" href="#cairo.Context.arc" title="cairo.Context.arc"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.arc()</span></code></a> 。这两个函数唯一的不同在于两个角度间圆弧的方向。</p>
@@ -338,25 +329,23 @@ X轴方向到Y轴正方向的方向增长，因此在默认的转换矩阵（def
 <dl class="method">
 <dt id="cairo.Context.clip_extents">
 <code class="descname">clip_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.clip_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x1, y1, x2, y2)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float, float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(x1, y1, x2, y2)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float, float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x1</em>: 返回范围的左边界</li>
-<li><em>y1</em>: 返回范围的顶部边界</li>
-<li><em>x2</em>: 返回范围的右边界</li>
-<li><em>y2</em>: 返回范围的底部边界</li>
+<li><p><em>x1</em>: 返回范围的左边界</p></li>
+<li><p><em>y1</em>: 返回范围的顶部边界</p></li>
+<li><p><em>x2</em>: 返回范围的右边界</p></li>
+<li><p><em>y2</em>: 返回范围的底部边界</p></li>
 </ul>
 <p>计算覆盖当前裁切区域的一个边界范围的坐标。</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.4 新版功能.</span></p>
+<p><span class="versionmodified added">1.4 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -394,20 +383,18 @@ X轴方向到Y轴正方向的方向增长，因此在默认的转换矩阵（def
 <dl class="method">
 <dt id="cairo.Context.copy_clip_rectangle_list">
 <code class="descname">copy_clip_rectangle_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.copy_clip_rectangle_list" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前裁切区域的矩形坐标列表</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">四个浮点数的元组的列表</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前裁切区域的矩形坐标列表</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>四个浮点数的元组的列表</p>
+</dd>
+</dl>
 <p>(列表中的 status 可能是 %CAIRO_STATUS_CLIP_NOT_REPRESENTABLE ，意指裁切区域不能用一个用户态矩形（user-space rectangles）代表。
 status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.4 新版功能.</span></p>
+<p><span class="versionmodified added">1.4 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -422,32 +409,28 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.copy_path">
 <code class="descname">copy_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.copy_path" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">没有内存时触发 <em>MemoryError</em> 异常</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>没有内存时触发 <em>MemoryError</em> 异常</p>
+</dd>
+</dl>
 <p>创建当前路径的一个拷贝并且以  <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> 返回给用户。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.copy_path_flat">
 <code class="descname">copy_path_flat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.copy_path_flat" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">没有内存时触发 <em>MemoryError</em> 异常</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>没有内存时触发 <em>MemoryError</em> 异常</p>
+</dd>
+</dl>
 <p>获取当前路径的一个 flattened 的拷贝并且以 <a class="reference internal" href="paths.html#cairo.Path" title="cairo.Path"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a> 返回给用户。</p>
 <p>本函数与 <a class="reference internal" href="#cairo.Context.copy_path" title="cairo.Context.copy_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.copy_path()</span></code></a> 类似，但是路径中所有的曲线都以分段线性的方式被线性化
 （使用当前的容错值，current tolerance value）。即结果肯定不含有CAIRO_PATH_CURVE_TO类型的元素，
@@ -477,48 +460,40 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.device_to_user">
 <code class="descname">device_to_user</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.device_to_user" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>float</em>) – 坐标的X值</li>
-<li><strong>y</strong> (<em>float</em>) – 坐标的Y值</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – 坐标的X值</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – 坐标的Y值</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">(x, y)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>(x, y)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
 <p>通过将给定点乘以前转换矩阵（current transformation matrix，CTM）的逆矩阵将设备空间的坐标转换为用户空间的坐标。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.device_to_user_distance">
 <code class="descname">device_to_user_distance</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.device_to_user_distance" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dx</strong> (<em>float</em>) – 距离向量的X值</li>
-<li><strong>dy</strong> (<em>float</em>) – 距离向量的Y值</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>float</em>) – 距离向量的X值</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – 距离向量的Y值</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">(dx, dy)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>(dx, dy)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
 <p>将设备空间的距离向量转换到用户空间。
 本函数与 <a class="reference internal" href="#cairo.Context.device_to_user" title="cairo.Context.device_to_user"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.device_to_user()</span></code></a> 类似，但是CTM的逆矩阵的转换相关部分（translation components）会被忽略。</p>
 </dd></dl>
@@ -534,21 +509,19 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.fill_extents">
 <code class="descname">fill_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.fill_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x1, y1, x2, y2)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float, float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(x1, y1, x2, y2)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float, float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x1</em>: 返回填充延展区域的左边界</li>
-<li><em>y1</em>: 返回填充延展区域的上边界</li>
-<li><em>x2</em>: 返回填充延展区域的右边界</li>
-<li><em>y2</em>: 返回填充延展区域的下边界</li>
+<li><p><em>x1</em>: 返回填充延展区域的左边界</p></li>
+<li><p><em>y1</em>: 返回填充延展区域的上边界</p></li>
+<li><p><em>x2</em>: 返回填充延展区域的右边界</p></li>
+<li><p><em>y2</em>: 返回填充延展区域的下边界</p></li>
 </ul>
 <p>计算当前路径的 <a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.fill()</span></code></a> 操作会影响（即填充）的区域的边界盒子的用户空间坐标。
 如果当前路径为空，则返回一个空的矩形(0,0,0,0)，surface区域和裁切并未考虑在内（Surface dimensions and）。</p>
@@ -571,48 +544,41 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.font_extents">
 <code class="descname">font_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.font_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(ascent, descent, height, max_x_advance, max_y_advance)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float, float, float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(ascent, descent, height, max_x_advance, max_y_advance)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float, float, float, float)</p>
+</dd>
+</dl>
 <p>获取当前选择字体的延展区域（extents）。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_antialias">
 <code class="descname">get_antialias</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_antialias" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的 <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> 模式（由 <a class="reference internal" href="#cairo.Context.set_antialias" title="cairo.Context.set_antialias"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_antialias()</span></code></a> 设置）。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的 <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> 模式（由 <a class="reference internal" href="#cairo.Context.set_antialias" title="cairo.Context.set_antialias"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_antialias()</span></code></a> 设置）。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_current_point">
 <code class="descname">get_current_point</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_current_point" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x, y)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(x, y)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x</em>: 当前点的X坐标</li>
-<li><em>y</em>: 当前点的Y坐标</li>
+<li><p><em>x</em>: 当前点的X坐标</p></li>
+<li><p><em>y</em>: 当前点的Y坐标</p></li>
 </ul>
 <p>获取当前路径的当前点，理论上来讲就是路径目前的终点。</p>
 <p>返回当前点的用户态坐标。如果没有当前点，或者 <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 处在一个错误的状态，
@@ -635,96 +601,80 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.get_dash">
 <code class="descname">get_dash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_dash" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(dashes, offset)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(tuple, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(dashes, offset)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(tuple, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>dashes</em>: dash数组</li>
-<li><em>offset</em>: 当前dash的偏移值。</li>
+<li><p><em>dashes</em>: dash数组</p></li>
+<li><p><em>offset</em>: 当前dash的偏移值。</p></li>
 </ul>
 <p>获取当前的dash数组。</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.4 新版功能.</span></p>
+<p><span class="versionmodified added">1.4 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_dash_count">
 <code class="descname">get_dash_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_dash_count" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">dash数组的长度，如果dash数组没有被设置则返回0。</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>dash数组的长度，如果dash数组没有被设置则返回0。</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 <p>参考 <a class="reference internal" href="#cairo.Context.set_dash" title="cairo.Context.set_dash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_dash()</span></code></a> 和 <a class="reference internal" href="#cairo.Context.get_dash" title="cairo.Context.get_dash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.get_dash()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.4 新版功能.</span></p>
+<p><span class="versionmodified added">1.4 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_fill_rule">
 <code class="descname">get_fill_rule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_fill_rule" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的 <a class="reference internal" href="constants.html#constants-fill-rule"><span class="std std-ref">FILL RULE</span></a> （由 <a class="reference internal" href="#cairo.Context.set_fill_rule" title="cairo.Context.set_fill_rule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_fill_rule()</span></code></a> 函数设置）。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的 <a class="reference internal" href="constants.html#constants-fill-rule"><span class="std std-ref">FILL RULE</span></a> （由 <a class="reference internal" href="#cairo.Context.set_fill_rule" title="cairo.Context.set_fill_rule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_fill_rule()</span></code></a> 函数设置）。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_font_face">
 <code class="descname">get_font_face</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_font_face" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> 。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_font_matrix">
 <code class="descname">get_font_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_font_matrix" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> 。</p>
+</dd>
+</dl>
 <p>参考 <a class="reference internal" href="#cairo.Context.set_font_matrix" title="cairo.Context.set_font_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_matrix()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_font_options">
 <code class="descname">get_font_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_font_options" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a> 。</p>
+</dd>
+</dl>
 <p>获取 <a class="reference internal" href="#cairo.Context.set_font_options" title="cairo.Context.set_font_options"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_options()</span></code></a> 设置的字体渲染选项。
 注意返回的选项并不包含从底层surface继承的选项；从字面意思来看返回的就是
 传递给 <a class="reference internal" href="#cairo.Context.set_font_options" title="cairo.Context.set_font_options"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_font_options()</span></code></a>  的选项。</p>
@@ -733,62 +683,51 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.get_group_target">
 <code class="descname">get_group_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_group_target" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">the target <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>the target <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a>.</p>
+</dd>
+</dl>
 <p>返回 <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前目的 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> ，或者是传递给 <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的
 原来的目的，或者是最近调用 <a class="reference internal" href="#cairo.Context.push_group" title="cairo.Context.push_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group()</span></code></a> 或者 <a class="reference internal" href="#cairo.Context.push_group_with_content" title="cairo.Context.push_group_with_content"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group_with_content()</span></code></a>
 设置的当前组的目的surface。</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_line_cap">
 <code class="descname">get_line_cap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_line_cap" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的 <a class="reference internal" href="constants.html#constants-line-cap"><span class="std std-ref">LINE_CAP</span></a> 风格，由 <a class="reference internal" href="#cairo.Context.set_line_cap" title="cairo.Context.set_line_cap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_cap()</span></code></a> 设置。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的 <a class="reference internal" href="constants.html#constants-line-cap"><span class="std std-ref">LINE_CAP</span></a> 风格，由 <a class="reference internal" href="#cairo.Context.set_line_cap" title="cairo.Context.set_line_cap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_cap()</span></code></a> 设置。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_line_join">
 <code class="descname">get_line_join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_line_join" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的 <a class="reference internal" href="constants.html#constants-line-join"><span class="std std-ref">LINE_JOIN</span></a> 风格，由
-<a class="reference internal" href="#cairo.Context.set_line_join" title="cairo.Context.set_line_join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_join()</span></code></a> 设置。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的 <a class="reference internal" href="constants.html#constants-line-join"><span class="std std-ref">LINE_JOIN</span></a> 风格，由
+<a class="reference internal" href="#cairo.Context.set_line_join" title="cairo.Context.set_line_join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_join()</span></code></a> 设置。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_line_width">
 <code class="descname">get_line_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_line_width" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的线宽</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的线宽</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 <p>本函数返回由 <a class="reference internal" href="#cairo.Context.set_line_width" title="cairo.Context.set_line_width"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_width()</span></code></a> 设置的当前的线宽。
 注意即使CTM在调用 <a class="reference internal" href="#cairo.Context.set_line_width" title="cairo.Context.set_line_width"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_width()</span></code></a> 之后已经被改变，返回的值也不变。</p>
 </dd></dl>
@@ -796,124 +735,101 @@ status 也可能是指代其他错误的值。——pycairo中未实现）</p>
 <dl class="method">
 <dt id="cairo.Context.get_matrix">
 <code class="descname">get_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_matrix" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前转换矩阵 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> (CTM)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前转换矩阵 <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> (CTM)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_miter_limit">
 <code class="descname">get_miter_limit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_miter_limit" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的斜切限制，由
-<a class="reference internal" href="#cairo.Context.set_miter_limit" title="cairo.Context.set_miter_limit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_miter_limit()</span></code></a> 设置。</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的斜切限制，由
+<a class="reference internal" href="#cairo.Context.set_miter_limit" title="cairo.Context.set_miter_limit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_miter_limit()</span></code></a> 设置。</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_operator">
 <code class="descname">get_operator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_operator" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前合成操作 <a class="reference internal" href="constants.html#constants-operator"><span class="std std-ref">OPERATOR</span></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前合成操作 <a class="reference internal" href="constants.html#constants-operator"><span class="std std-ref">OPERATOR</span></a> 。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_scaled_font">
 <code class="descname">get_scaled_font</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_scaled_font" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 当前的 <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a> 。</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.4 新版功能.</span></p>
+<p><span class="versionmodified added">1.4 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_source">
 <code class="descname">get_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_source" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前pattern源 <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的当前pattern源 <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a> 。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_target">
 <code class="descname">get_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_target" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的目的surface <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> 的目的surface <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> 。</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.get_tolerance">
 <code class="descname">get_tolerance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.get_tolerance" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">当前的容错值（the current tolerance value），由
-<a class="reference internal" href="#cairo.Context.set_tolerance" title="cairo.Context.set_tolerance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_tolerance()</span></code></a> 设置。</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>当前的容错值（the current tolerance value），由
+<a class="reference internal" href="#cairo.Context.set_tolerance" title="cairo.Context.set_tolerance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_tolerance()</span></code></a> 设置。</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.glyph_extents">
 <code class="descname">glyph_extents</code><span class="sig-paren">(</span><em>glyphs</em><span class="optional">[</span>, <em>num_glyphs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.glyph_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs</li>
-<li><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to measure, defaults to using all</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs</p></li>
+<li><p><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to measure, defaults to using all</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">x_bearing, y_bearing, width, height, x_advance, y_advance</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">6-tuple of float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>x_bearing, y_bearing, width, height, x_advance, y_advance</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>6-tuple of float</p>
+</dd>
+</dl>
 <p>Gets the extents for an array of glyphs. The extents describe a
 user-space rectangle that encloses the “inked” portion of the glyphs,
 (as they would be drawn by <a class="reference internal" href="#cairo.Context.show_glyphs" title="cairo.Context.show_glyphs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_glyphs()</span></code></a>). Additionally,
@@ -926,18 +842,14 @@ rectangle (extents.width and extents.height).</p>
 <dl class="method">
 <dt id="cairo.Context.glyph_path">
 <code class="descname">glyph_path</code><span class="sig-paren">(</span><em>glyphs</em><span class="optional">[</span>, <em>num_glyphs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.glyph_path" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs to show</li>
-<li><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to show, defaults to showing all</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs to show</p></li>
+<li><p><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to show, defaults to showing all</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Adds closed paths for the glyphs to the current path. The generated path
 if filled, achieves an effect similar to that of
 <a class="reference internal" href="#cairo.Context.show_glyphs" title="cairo.Context.show_glyphs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_glyphs()</span></code></a>.</p>
@@ -946,12 +858,12 @@ if filled, achieves an effect similar to that of
 <dl class="method">
 <dt id="cairo.Context.has_current_point">
 <code class="descname">has_current_point</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.has_current_point" title="永久链接至目标">¶</a></dt>
-<dd><dl class="docutils">
-<dt>returns: True iff a current point is defined on the current path.</dt>
-<dd>See <a class="reference internal" href="#cairo.Context.get_current_point" title="cairo.Context.get_current_point"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.get_current_point()</span></code></a> for details on the current point.</dd>
+<dd><dl class="simple">
+<dt>returns: True iff a current point is defined on the current path.</dt><dd><p>See <a class="reference internal" href="#cairo.Context.get_current_point" title="cairo.Context.get_current_point"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.get_current_point()</span></code></a> for details on the current point.</p>
+</dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -967,22 +879,18 @@ device-space unit.</p>
 <dl class="method">
 <dt id="cairo.Context.in_fill">
 <code class="descname">in_fill</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.in_fill" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>float</em>) – 测试点的X坐标</li>
-<li><strong>y</strong> (<em>float</em>) – 测试点的Y坐标</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – 测试点的X坐标</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – 测试点的Y坐标</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">如果该点在当前路径的 <a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.fill()</span></code></a> 操作的影响区域内返回True，
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>如果该点在当前路径的 <a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.fill()</span></code></a> 操作的影响区域内返回True，
 surface的尺寸和裁切并没有考虑在内。</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>参考 <a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.fill()</span></code></a> ， <a class="reference internal" href="#cairo.Context.set_fill_rule" title="cairo.Context.set_fill_rule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_fill_rule()</span></code></a> 和
 <a class="reference internal" href="#cairo.Context.fill_preserve" title="cairo.Context.fill_preserve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.fill_preserve()</span></code></a> 。</p>
 </dd></dl>
@@ -990,24 +898,20 @@ surface的尺寸和裁切并没有考虑在内。</p>
 <dl class="method">
 <dt id="cairo.Context.in_stroke">
 <code class="descname">in_stroke</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.in_stroke" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>float</em>) – X coordinate of the point to test</li>
-<li><strong>y</strong> (<em>float</em>) – Y coordinate of the point to test</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X coordinate of the point to test</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y coordinate of the point to test</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">True iff the point is inside the area that would be affected
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>True iff the point is inside the area that would be affected
 by a <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.stroke()</span></code></a> operation given the current path and
 stroking parameters. Surface dimensions and clipping are not taken
 into account.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>See <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.stroke()</span></code></a>, <a class="reference internal" href="#cairo.Context.set_line_width" title="cairo.Context.set_line_width"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_width()</span></code></a>,
 <a class="reference internal" href="#cairo.Context.set_line_join" title="cairo.Context.set_line_join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_join()</span></code></a>, <a class="reference internal" href="#cairo.Context.set_line_cap" title="cairo.Context.set_line_cap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_line_cap()</span></code></a>,
 <a class="reference internal" href="#cairo.Context.set_dash" title="cairo.Context.set_dash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.set_dash()</span></code></a>, and <a class="reference internal" href="#cairo.Context.stroke_preserve" title="cairo.Context.stroke_preserve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.stroke_preserve()</span></code></a>.</p>
@@ -1016,18 +920,14 @@ into account.</p>
 <dl class="method">
 <dt id="cairo.Context.line_to">
 <code class="descname">line_to</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.line_to" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – the X coordinate of the end of the new line</li>
-<li><strong>y</strong> (<em>float</em>) – the Y coordinate of the end of the new line</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – the X coordinate of the end of the new line</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – the Y coordinate of the end of the new line</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Adds a line to the path from the current point to position <em>(x, y)</em> in
 user-space coordinates. After this call the current point will be <em>(x,
 y)</em>.</p>
@@ -1038,14 +938,11 @@ this function will behave as <code class="docutils literal notranslate"><span cl
 <dl class="method">
 <dt id="cairo.Context.mask">
 <code class="descname">mask</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.mask" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>pattern</strong> – a <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a></td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>pattern</strong> – a <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a></p>
+</dd>
+</dl>
 <p>A drawing operator that paints the current source using the alpha
 channel of <em>pattern</em> as a mask. (Opaque areas of <em>pattern</em> are painted
 with the source, transparent areas are not painted.)</p>
@@ -1054,19 +951,15 @@ with the source, transparent areas are not painted.)</p>
 <dl class="method">
 <dt id="cairo.Context.mask_surface">
 <code class="descname">mask_surface</code><span class="sig-paren">(</span><em>surface</em>, <em>x=0.0</em>, <em>y=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.mask_surface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface</strong> – a <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></li>
-<li><strong>x</strong> (<em>float</em>) – X coordinate at which to place the origin of <em>surface</em></li>
-<li><strong>y</strong> (<em>float</em>) – Y coordinate at which to place the origin of <em>surface</em></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> – a <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a></p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X coordinate at which to place the origin of <em>surface</em></p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y coordinate at which to place the origin of <em>surface</em></p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>A drawing operator that paints the current source using the alpha
 channel of <em>surface</em> as a mask. (Opaque areas of <em>surface</em> are painted
 with the source, transparent areas are not painted.)</p>
@@ -1075,18 +968,14 @@ with the source, transparent areas are not painted.)</p>
 <dl class="method">
 <dt id="cairo.Context.move_to">
 <code class="descname">move_to</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.move_to" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – the X coordinate of the new position</li>
-<li><strong>y</strong> (<em>float</em>) – the Y coordinate of the new position</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – the X coordinate of the new position</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – the Y coordinate of the new position</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Begin a new sub-path. After this call the current point will be <em>(x,
 y)</em>.</p>
 </dd></dl>
@@ -1110,7 +999,7 @@ new sub-path with one of the <a class="reference internal" href="#cairo.Context.
 things easier as it is no longer necessary to manually compute the arc’s
 initial coordinates for a call to <a class="reference internal" href="#cairo.Context.move_to" title="cairo.Context.move_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.move_to()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -1124,14 +1013,11 @@ current clip region.</p>
 <dl class="method">
 <dt id="cairo.Context.paint_with_alpha">
 <code class="descname">paint_with_alpha</code><span class="sig-paren">(</span><em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.paint_with_alpha" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>alpha</strong> (<em>float</em>) – alpha value, between 0 (transparent) and 1 (opaque)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>alpha</strong> (<em>float</em>) – alpha value, between 0 (transparent) and 1 (opaque)</p>
+</dd>
+</dl>
 <p>A drawing operator that paints the current source everywhere within the
 current clip region using a mask of constant alpha value <em>alpha</em>. The
 effect is similar to <a class="reference internal" href="#cairo.Context.paint" title="cairo.Context.paint"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.paint()</span></code></a>, but the drawing is faded out
@@ -1141,21 +1027,19 @@ using the alpha value.</p>
 <dl class="method">
 <dt id="cairo.Context.path_extents">
 <code class="descname">path_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.path_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x1, y1, x2, y2)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float, float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(x1, y1, x2, y2)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float, float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x1</em>: left of the resulting extents</li>
-<li><em>y1</em>: top of the resulting extents</li>
-<li><em>x2</em>: right of the resulting extents</li>
-<li><em>y2</em>: bottom of the resulting extents</li>
+<li><p><em>x1</em>: left of the resulting extents</p></li>
+<li><p><em>y1</em>: top of the resulting extents</p></li>
+<li><p><em>x2</em>: right of the resulting extents</p></li>
+<li><p><em>y2</em>: bottom of the resulting extents</p></li>
 </ul>
 <p>Computes a bounding box in user-space coordinates covering the points on
 the current path. If the current path is empty, returns an empty
@@ -1175,22 +1059,19 @@ will be considered as contributing to the extents. However, a lone
 <a class="reference internal" href="#cairo.Context.move_to" title="cairo.Context.move_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.move_to()</span></code></a> will not contribute to the results of
 <a class="reference internal" href="#cairo.Context.path_extents" title="cairo.Context.path_extents"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.path_extents()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.6 新版功能.</span></p>
+<p><span class="versionmodified added">1.6 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.pop_group">
 <code class="descname">pop_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.pop_group" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">a newly created <a class="reference internal" href="patterns.html#cairo.SurfacePattern" title="cairo.SurfacePattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurfacePattern</span></code></a> containing the results
-of all drawing operations performed to the group.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>a newly created <a class="reference internal" href="patterns.html#cairo.SurfacePattern" title="cairo.SurfacePattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">SurfacePattern</span></code></a> containing the results
+of all drawing operations performed to the group.</p>
+</dd>
+</dl>
 <p>Terminates the redirection begun by a call to <a class="reference internal" href="#cairo.Context.push_group" title="cairo.Context.push_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group()</span></code></a>
 or <a class="reference internal" href="#cairo.Context.push_group_with_content" title="cairo.Context.push_group_with_content"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group_with_content()</span></code></a> and returns a new pattern
 containing the results of all drawing operations performed to the group.</p>
@@ -1199,7 +1080,7 @@ containing the results of all drawing operations performed to the group.</p>
 <a class="reference internal" href="#cairo.Context.push_group" title="cairo.Context.push_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group()</span></code></a> function), so that any changes to the graphics
 state will not be visible outside the group.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -1222,7 +1103,7 @@ the short-lived pointer to the pattern.</p>
 <a class="reference internal" href="#cairo.Context.push_group" title="cairo.Context.push_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group()</span></code></a> function), so that any changes to the graphics
 state will not be visible outside the group.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
@@ -1260,22 +1141,19 @@ under the stroke:</p>
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.push_group_with_content">
 <code class="descname">push_group_with_content</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.push_group_with_content" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>content</strong> – a <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> indicating the
-type of group that will be created</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>content</strong> – a <a class="reference internal" href="constants.html#constants-content"><span class="std std-ref">CONTENT</span></a> indicating the
+type of group that will be created</p>
+</dd>
+</dl>
 <p>Temporarily redirects drawing to an intermediate surface known as a
 group. The redirection lasts until the group is completed by a call to
 <a class="reference internal" href="#cairo.Context.pop_group" title="cairo.Context.pop_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.pop_group()</span></code></a> or <a class="reference internal" href="#cairo.Context.pop_group_to_source" title="cairo.Context.pop_group_to_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.pop_group_to_source()</span></code></a>. These
@@ -1286,27 +1164,23 @@ this content type is the only distinction between this function and
 <a class="reference internal" href="#cairo.Context.push_group" title="cairo.Context.push_group"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.push_group()</span></code></a> which you should see for a more detailed
 description of group rendering.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.rectangle">
 <code class="descname">rectangle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.rectangle" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – the X coordinate of the top left corner of the rectangle</li>
-<li><strong>y</strong> (<em>float</em>) – the Y coordinate to the top left corner of the rectangle</li>
-<li><strong>width</strong> (<em>float</em>) – the width of the rectangle</li>
-<li><strong>height</strong> (<em>float</em>) – the height of the rectangle</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – the X coordinate of the top left corner of the rectangle</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – the Y coordinate to the top left corner of the rectangle</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – the width of the rectangle</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – the height of the rectangle</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Adds a closed sub-path rectangle of the given size to the current path
 at position <em>(x, y)</em> in user-space coordinates.</p>
 <p>This function is logically equivalent to:</p>
@@ -1322,25 +1196,21 @@ at position <em>(x, y)</em> in user-space coordinates.</p>
 <dl class="method">
 <dt id="cairo.Context.rel_curve_to">
 <code class="descname">rel_curve_to</code><span class="sig-paren">(</span><em>dx1</em>, <em>dy1</em>, <em>dx2</em>, <em>dy2</em>, <em>dx3</em>, <em>dy4</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.rel_curve_to" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dx1</strong> (<em>float</em>) – the X offset to the first control point</li>
-<li><strong>dy1</strong> (<em>float</em>) – the Y offset to the first control point</li>
-<li><strong>dx2</strong> (<em>float</em>) – the X offset to the second control point</li>
-<li><strong>dy2</strong> (<em>float</em>) – the Y offset to the second control point</li>
-<li><strong>dx3</strong> (<em>float</em>) – the X offset to the end of the curve</li>
-<li><strong>dy3</strong> (<em>float</em>) – the Y offset to the end of the curve</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx1</strong> (<em>float</em>) – the X offset to the first control point</p></li>
+<li><p><strong>dy1</strong> (<em>float</em>) – the Y offset to the first control point</p></li>
+<li><p><strong>dx2</strong> (<em>float</em>) – the X offset to the second control point</p></li>
+<li><p><strong>dy2</strong> (<em>float</em>) – the Y offset to the second control point</p></li>
+<li><p><strong>dx3</strong> (<em>float</em>) – the X offset to the end of the curve</p></li>
+<li><p><strong>dy3</strong> (<em>float</em>) – the Y offset to the end of the curve</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
+</dd>
+</dl>
 <p>Relative-coordinate version of <a class="reference internal" href="#cairo.Context.curve_to" title="cairo.Context.curve_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.curve_to()</span></code></a>. All
 offsets are relative to the current point. Adds a cubic Bézier spline to
 the path from the current point to a point offset from the current point
@@ -1355,21 +1225,17 @@ the control points. After this call the current point will be offset by
 <dl class="method">
 <dt id="cairo.Context.rel_line_to">
 <code class="descname">rel_line_to</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.rel_line_to" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dx</strong> (<em>float</em>) – the X offset to the end of the new line</li>
-<li><strong>dy</strong> (<em>float</em>) – the Y offset to the end of the new line</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>float</em>) – the X offset to the end of the new line</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – the Y offset to the end of the new line</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
+</dd>
+</dl>
 <p>Relative-coordinate version of <a class="reference internal" href="#cairo.Context.line_to" title="cairo.Context.line_to"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.line_to()</span></code></a>. Adds a line to
 the path from the current point to a point that is offset from the
 current point by <em>(dx, dy)</em> in user space. After this call the current
@@ -1381,21 +1247,17 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">ctx.l
 <dl class="method">
 <dt id="cairo.Context.rel_move_to">
 <code class="descname">rel_move_to</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.rel_move_to" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dx</strong> (<em>float</em>) – the X offset</li>
-<li><strong>dy</strong> (<em>float</em>) – the Y offset</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>float</em>) – the X offset</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – the Y offset</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if called with no current point.</p>
+</dd>
+</dl>
 <p>Begin a new sub-path. After this call the current point will offset by
 <em>(dx, dy)</em>.</p>
 <p>Given a current point of (x, y), <code class="docutils literal notranslate"><span class="pre">ctx.rel_move_to(dx,</span> <span class="pre">dy)</span></code> is logically
@@ -1427,15 +1289,12 @@ region.</p>
 <dl class="method">
 <dt id="cairo.Context.rotate">
 <code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.rotate" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>angle</strong> (<em>float</em>) – angle (in radians) by which the user-space axes will be
-rotated</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) – angle (in radians) by which the user-space axes will be
+rotated</p>
+</dd>
+</dl>
 <p>Modifies the current transformation matrix (CTM) by rotating the
 user-space axes by <em>angle</em> radians. The rotation of the axes takes places
 after any existing transformation of user space. The rotation direction
@@ -1457,18 +1316,14 @@ internal stack of saved states. When <a class="reference internal" href="#cairo.
 <dl class="method">
 <dt id="cairo.Context.scale">
 <code class="descname">scale</code><span class="sig-paren">(</span><em>sx</em>, <em>sy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.scale" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>sx</strong> (<em>float</em>) – scale factor for the X dimension</li>
-<li><strong>sy</strong> (<em>float</em>) – scale factor for the Y dimension</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sx</strong> (<em>float</em>) – scale factor for the X dimension</p></li>
+<li><p><strong>sy</strong> (<em>float</em>) – scale factor for the Y dimension</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Modifies the current transformation matrix (CTM) by scaling the X and Y
 user-space axes by <em>sx</em> and <em>sy</em> respectively. The scaling of the axes
 takes place after any existing transformation of user space.</p>
@@ -1477,21 +1332,17 @@ takes place after any existing transformation of user space.</p>
 <dl class="method">
 <dt id="cairo.Context.select_font_face">
 <code class="descname">select_font_face</code><span class="sig-paren">(</span><em>family</em><span class="optional">[</span>, <em>slant</em><span class="optional">[</span>, <em>weight</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.select_font_face" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>family</strong> (<em>str</em>) – a font family name</li>
-<li><strong>slant</strong> – the <a class="reference internal" href="constants.html#constants-font-slant"><span class="std std-ref">FONT_SLANT</span></a> of the font,
-defaults to <a class="reference internal" href="constants.html#cairo.FONT_SLANT_NORMAL" title="cairo.FONT_SLANT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_SLANT_NORMAL</span></code></a>.</li>
-<li><strong>weight</strong> – the <a class="reference internal" href="constants.html#constants-font-weight"><span class="std std-ref">FONT_WEIGHT</span></a> of the
-font, defaults to <a class="reference internal" href="constants.html#cairo.FONT_WEIGHT_NORMAL" title="cairo.FONT_WEIGHT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_WEIGHT_NORMAL</span></code></a>.</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>family</strong> (<em>str</em>) – a font family name</p></li>
+<li><p><strong>slant</strong> – the <a class="reference internal" href="constants.html#constants-font-slant"><span class="std std-ref">FONT_SLANT</span></a> of the font,
+defaults to <a class="reference internal" href="constants.html#cairo.FONT_SLANT_NORMAL" title="cairo.FONT_SLANT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_SLANT_NORMAL</span></code></a>.</p></li>
+<li><p><strong>weight</strong> – the <a class="reference internal" href="constants.html#constants-font-weight"><span class="std std-ref">FONT_WEIGHT</span></a> of the
+font, defaults to <a class="reference internal" href="constants.html#cairo.FONT_WEIGHT_NORMAL" title="cairo.FONT_WEIGHT_NORMAL"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FONT_WEIGHT_NORMAL</span></code></a>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Note: The <a class="reference internal" href="#cairo.Context.select_font_face" title="cairo.Context.select_font_face"><code class="xref py py-meth docutils literal notranslate"><span class="pre">select_font_face()</span></code></a> function call is part of what the
 cairo designers call the “toy” text API. It is convenient for short
 demos and simple programs, but it is not expected to be adequate for
@@ -1526,14 +1377,11 @@ followed by <a class="reference internal" href="#cairo.Context.set_font_face" ti
 <dl class="method">
 <dt id="cairo.Context.set_antialias">
 <code class="descname">set_antialias</code><span class="sig-paren">(</span><em>antialias</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_antialias" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>antialias</strong> – the new <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> mode</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>antialias</strong> – the new <a class="reference internal" href="constants.html#constants-antialias"><span class="std std-ref">ANTIALIAS</span></a> mode</p>
+</dd>
+</dl>
 <p>Set the antialiasing mode of the rasterizer used for drawing shapes.
 This value is a hint, and a particular backend may or may not support a
 particular value.  At the current time, no backend supports
@@ -1545,24 +1393,20 @@ particular value.  At the current time, no backend supports
 <dl class="method">
 <dt id="cairo.Context.set_dash">
 <code class="descname">set_dash</code><span class="sig-paren">(</span><em>dashes</em><span class="optional">[</span>, <em>offset=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_dash" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dashes</strong> (<em>sequence of float</em>) – a sequence specifying alternate lengths of on and off
-stroke portions.</li>
-<li><strong>offset</strong> (<em>int</em>) – an offset into the dash pattern at which the stroke
-should start, defaults to 0.</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dashes</strong> (<em>sequence of float</em>) – a sequence specifying alternate lengths of on and off
+stroke portions.</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – an offset into the dash pattern at which the stroke
+should start, defaults to 0.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if any value in <em>dashes</em> is negative, or if
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#cairo.cairo.Error" title="cairo.cairo.Error"><code class="xref py py-exc docutils literal notranslate"><span class="pre">cairo.Error</span></code></a> if any value in <em>dashes</em> is negative, or if
 all values are 0.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Sets the dash pattern to be used by <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke()</span></code></a>. A dash pattern is
 specified by <em>dashes</em> - a sequence of positive values. Each value
 provides the length of alternate “on” and “off” portions of the
@@ -1584,31 +1428,25 @@ value in <em>dashes</em>.</p>
 <dl class="method">
 <dt id="cairo.Context.set_fill_rule">
 <code class="descname">set_fill_rule</code><span class="sig-paren">(</span><em>fill_rule</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_fill_rule" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>fill_rule</strong> – 要设置的 <a class="reference internal" href="constants.html#constants-fill-rule"><span class="std std-ref">FILL RULE</span></a> 。填充规则用于
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>fill_rule</strong> – 要设置的 <a class="reference internal" href="constants.html#constants-fill-rule"><span class="std std-ref">FILL RULE</span></a> 。填充规则用于
 决定一个区域是属于还是不属于一个复杂的路径（潜在的自相交等）。当前的填充规则会影响
-<a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fill()</span></code></a> 和 <a class="reference internal" href="#cairo.Context.clip" title="cairo.Context.clip"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clip()</span></code></a> 。</td>
-</tr>
-</tbody>
-</table>
+<a class="reference internal" href="#cairo.Context.fill" title="cairo.Context.fill"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fill()</span></code></a> 和 <a class="reference internal" href="#cairo.Context.clip" title="cairo.Context.clip"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clip()</span></code></a> 。</p>
+</dd>
+</dl>
 <p>默认的填充规则是 <a class="reference internal" href="constants.html#cairo.FILL_RULE_WINDING" title="cairo.FILL_RULE_WINDING"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.FILL_RULE_WINDING</span></code></a> 。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.set_font_face">
 <code class="descname">set_font_face</code><span class="sig-paren">(</span><em>font_face</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_font_face" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>font_face</strong> – a <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a>, or None to restore to the
-default <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a></td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>font_face</strong> – a <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a>, or None to restore to the
+default <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a></p>
+</dd>
+</dl>
 <p>Replaces the current <a class="reference internal" href="text.html#cairo.FontFace" title="cairo.FontFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontFace</span></code></a> object in the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>
 with <em>font_face</em>.</p>
 </dd></dl>
@@ -1616,15 +1454,12 @@ with <em>font_face</em>.</p>
 <dl class="method">
 <dt id="cairo.Context.set_font_matrix">
 <code class="descname">set_font_matrix</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_font_matrix" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>matrix</strong> – a <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> describing a transform to be applied to
-the current font.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>matrix</strong> – a <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> describing a transform to be applied to
+the current font.</p>
+</dd>
+</dl>
 <p>Sets the current font matrix to <em>matrix</em>. The font matrix gives a
 transformation from the design space of the font (in this space, the
 em-square is 1 unit by 1 unit) to user space. Normally, a simple scale
@@ -1635,14 +1470,11 @@ be used to shear the font or stretch it unequally along the two axes</p>
 <dl class="method">
 <dt id="cairo.Context.set_font_options">
 <code class="descname">set_font_options</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_font_options" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>options</strong> – <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a> to use</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>options</strong> – <a class="reference internal" href="text.html#cairo.FontOptions" title="cairo.FontOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontOptions</span></code></a> to use</p>
+</dd>
+</dl>
 <p>Sets a set of custom font rendering options for the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>.
 Rendering options are derived by merging these options with the options
 derived from underlying surface; if the value in <em>options</em> has a default
@@ -1653,14 +1485,11 @@ surface is used.</p>
 <dl class="method">
 <dt id="cairo.Context.set_font_size">
 <code class="descname">set_font_size</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_font_size" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>size</strong> (<em>float</em>) – the new font size, in user space units</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>float</em>) – the new font size, in user space units</p>
+</dd>
+</dl>
 <p>Sets the current font matrix to a scale by a factor of <em>size</em>, replacing
 any font matrix previously set with <a class="reference internal" href="#cairo.Context.set_font_size" title="cairo.Context.set_font_size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font_size()</span></code></a> or
 <a class="reference internal" href="#cairo.Context.set_font_matrix" title="cairo.Context.set_font_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font_matrix()</span></code></a>. This results in a font size of <em>size</em> user
@@ -1674,14 +1503,11 @@ size is 10.0.</p>
 <dl class="method">
 <dt id="cairo.Context.set_line_cap">
 <code class="descname">set_line_cap</code><span class="sig-paren">(</span><em>line_cap</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_line_cap" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>line_cap</strong> – a <a class="reference internal" href="constants.html#constants-line-cap"><span class="std std-ref">LINE_CAP</span></a> style</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>line_cap</strong> – a <a class="reference internal" href="constants.html#constants-line-cap"><span class="std std-ref">LINE_CAP</span></a> style</p>
+</dd>
+</dl>
 <p>Sets the current line cap style within the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>.</p>
 <p>As with the other stroke parameters, the current line cap style is
 examined by <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke()</span></code></a>, <a class="reference internal" href="#cairo.Context.stroke_extents" title="cairo.Context.stroke_extents"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke_extents()</span></code></a>, and
@@ -1693,14 +1519,11 @@ construction.</p>
 <dl class="method">
 <dt id="cairo.Context.set_line_join">
 <code class="descname">set_line_join</code><span class="sig-paren">(</span><em>line_join</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_line_join" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>line_join</strong> – a <a class="reference internal" href="constants.html#constants-line-join"><span class="std std-ref">LINE_JOIN</span></a> style</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>line_join</strong> – a <a class="reference internal" href="constants.html#constants-line-join"><span class="std std-ref">LINE_JOIN</span></a> style</p>
+</dd>
+</dl>
 <p>Sets the current line join style within the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>.</p>
 <p>As with the other stroke parameters, the current line join style is
 examined by <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke()</span></code></a>, <a class="reference internal" href="#cairo.Context.stroke_extents" title="cairo.Context.stroke_extents"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke_extents()</span></code></a>, and
@@ -1712,14 +1535,11 @@ construction.</p>
 <dl class="method">
 <dt id="cairo.Context.set_line_width">
 <code class="descname">set_line_width</code><span class="sig-paren">(</span><em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_line_width" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>width</strong> (<em>float</em>) – a line width</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>width</strong> (<em>float</em>) – a line width</p>
+</dd>
+</dl>
 <p>Sets the current line width within the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>. The line width
 value specifies the diameter of a pen that is circular in user space,
 (though device-space pen may be an ellipse in general due to
@@ -1742,15 +1562,12 @@ construction.</p>
 <dl class="method">
 <dt id="cairo.Context.set_matrix">
 <code class="descname">set_matrix</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_matrix" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>matrix</strong> – a transformation <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> from user space to
-device space.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>matrix</strong> – a transformation <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> from user space to
+device space.</p>
+</dd>
+</dl>
 <p>Modifies the current transformation matrix (CTM) by setting it equal to
 <em>matrix</em>.</p>
 </dd></dl>
@@ -1758,14 +1575,11 @@ device space.</td>
 <dl class="method">
 <dt id="cairo.Context.set_miter_limit">
 <code class="descname">set_miter_limit</code><span class="sig-paren">(</span><em>limit</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_miter_limit" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>limit</strong> – miter limit to set</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>limit</strong> – miter limit to set</p>
+</dd>
+</dl>
 <p>Sets the current miter limit within the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a>.</p>
 <p>If the current line join style is set to <a class="reference internal" href="constants.html#cairo.LINE_JOIN_MITER" title="cairo.LINE_JOIN_MITER"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.LINE_JOIN_MITER</span></code></a>
 (see <a class="reference internal" href="#cairo.Context.set_line_join" title="cairo.Context.set_line_join"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_line_join()</span></code></a>), the miter limit is used to determine
@@ -1789,51 +1603,42 @@ and a miter limit of 1.414 makes the cutoff at 90 degrees.</p>
 <dl class="method">
 <dt id="cairo.Context.set_operator">
 <code class="descname">set_operator</code><span class="sig-paren">(</span><em>op</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_operator" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>op</strong> – the compositing <a class="reference internal" href="constants.html#constants-operator"><span class="std std-ref">OPERATOR</span></a> to set
-for use in all drawing operations.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>op</strong> – the compositing <a class="reference internal" href="constants.html#constants-operator"><span class="std std-ref">OPERATOR</span></a> to set
+for use in all drawing operations.</p>
+</dd>
+</dl>
 <p>The default operator is <a class="reference internal" href="constants.html#cairo.OPERATOR_OVER" title="cairo.OPERATOR_OVER"><code class="xref py py-data docutils literal notranslate"><span class="pre">cairo.OPERATOR_OVER</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.set_scaled_font">
 <code class="descname">set_scaled_font</code><span class="sig-paren">(</span><em>scaled_font</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_scaled_font" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>scaled_font</strong> – a <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a></td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>scaled_font</strong> – a <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a></p>
+</dd>
+</dl>
 <p>Replaces the current font face, font matrix, and font options in the
 <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> with those of the <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a>. Except for some
 translation, the current CTM of the <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> should be the same
 as that of the <a class="reference internal" href="text.html#cairo.ScaledFont" title="cairo.ScaledFont"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaledFont</span></code></a>, which can be accessed using
 <a class="reference internal" href="text.html#cairo.ScaledFont.get_ctm" title="cairo.ScaledFont.get_ctm"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ScaledFont.get_ctm()</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">1.2 新版功能.</span></p>
+<p><span class="versionmodified added">1.2 新版功能.</span></p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cairo.Context.set_source">
 <code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_source" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>source</strong> – a <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a> to be used as the source for
-subsequent drawing operations.</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>source</strong> – a <a class="reference internal" href="patterns.html#cairo.Pattern" title="cairo.Pattern"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code></a> to be used as the source for
+subsequent drawing operations.</p>
+</dd>
+</dl>
 <p>Sets the source pattern within <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> to <em>source</em>. This
 pattern will then be used for any subsequent drawing operation until a
 new source pattern is set.</p>
@@ -1848,19 +1653,15 @@ affect the source pattern. See <a class="reference internal" href="patterns.html
 <dl class="method">
 <dt id="cairo.Context.set_source_rgb">
 <code class="descname">set_source_rgb</code><span class="sig-paren">(</span><em>red</em>, <em>green</em>, <em>blue</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_source_rgb" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>red</strong> (<em>float</em>) – red component of color</li>
-<li><strong>green</strong> (<em>float</em>) – green component of color</li>
-<li><strong>blue</strong> (<em>float</em>) – blue component of color</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> (<em>float</em>) – red component of color</p></li>
+<li><p><strong>green</strong> (<em>float</em>) – green component of color</p></li>
+<li><p><strong>blue</strong> (<em>float</em>) – blue component of color</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Sets the source pattern within <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> to an opaque color. This
 opaque color will then be used for any subsequent drawing operation
 until a new source pattern is set.</p>
@@ -1874,20 +1675,16 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">set_s
 <dl class="method">
 <dt id="cairo.Context.set_source_rgba">
 <code class="descname">set_source_rgba</code><span class="sig-paren">(</span><em>red</em>, <em>green</em>, <em>blue</em><span class="optional">[</span>, <em>alpha=1.0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_source_rgba" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>red</strong> (<em>float</em>) – red component of color</li>
-<li><strong>green</strong> (<em>float</em>) – green component of color</li>
-<li><strong>blue</strong> (<em>float</em>) – blue component of color</li>
-<li><strong>alpha</strong> (<em>float</em>) – alpha component of color</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>red</strong> (<em>float</em>) – red component of color</p></li>
+<li><p><strong>green</strong> (<em>float</em>) – green component of color</p></li>
+<li><p><strong>blue</strong> (<em>float</em>) – blue component of color</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – alpha component of color</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Sets the source pattern within <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> to a translucent
 color. This color will then be used for any subsequent drawing operation
 until a new source pattern is set.</p>
@@ -1901,19 +1698,15 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">set_s
 <dl class="method">
 <dt id="cairo.Context.set_source_surface">
 <code class="descname">set_source_surface</code><span class="sig-paren">(</span><em>surface</em><span class="optional">[</span>, <em>x=0.0</em><span class="optional">[</span>, <em>y=0.0</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_source_surface" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>surface</strong> – a <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> to be used to set the source pattern</li>
-<li><strong>x</strong> (<em>float</em>) – User-space X coordinate for surface origin</li>
-<li><strong>y</strong> (<em>float</em>) – User-space Y coordinate for surface origin</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> – a <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> to be used to set the source pattern</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – User-space X coordinate for surface origin</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – User-space Y coordinate for surface origin</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>This is a convenience function for creating a pattern from a
 <a class="reference internal" href="surfaces.html#cairo.Surface" title="cairo.Surface"><code class="xref py py-class docutils literal notranslate"><span class="pre">Surface</span></code></a> and setting it as the source in <a class="reference internal" href="#cairo.Context" title="cairo.Context"><code class="xref py py-class docutils literal notranslate"><span class="pre">Context</span></code></a> with
 <a class="reference internal" href="#cairo.Context.set_source" title="cairo.Context.set_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_source()</span></code></a>.</p>
@@ -1933,14 +1726,11 @@ modified if desired, (eg. to create a repeating pattern with
 <dl class="method">
 <dt id="cairo.Context.set_tolerance">
 <code class="descname">set_tolerance</code><span class="sig-paren">(</span><em>tolerance</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.set_tolerance" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>tolerance</strong> (<em>float</em>) – the tolerance, in device units (typically pixels)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>tolerance</strong> (<em>float</em>) – the tolerance, in device units (typically pixels)</p>
+</dd>
+</dl>
 <p>Sets the tolerance used when converting paths into trapezoids.  Curved
 segments of the path will be subdivided until the maximum deviation
 between the original path and the polygonal approximation is less than
@@ -1955,19 +1745,15 @@ restricted to the smallest representable internal value.</p>
 <dl class="method">
 <dt id="cairo.Context.show_glyphs">
 <code class="descname">show_glyphs</code><span class="sig-paren">(</span><em>glyphs</em><span class="optional">[</span>, <em>num_glyphs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.show_glyphs" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs to show</li>
-<li><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to show, defaults to showing all
-glyphs</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphs</strong> (<em>a sequence of</em><em> (</em><em>int</em><em>, </em><em>float</em><em>, </em><em>float</em><em>)</em>) – glyphs to show</p></li>
+<li><p><strong>num_glyphs</strong> (<em>int</em>) – number of glyphs to show, defaults to showing all
+glyphs</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>A drawing operator that generates the shape from an array of glyphs,
 rendered according to the current font face, font size (font matrix),
 and font options.</p>
@@ -1985,14 +1771,11 @@ pages. Use <a class="reference internal" href="#cairo.Context.copy_page" title="
 <dl class="method">
 <dt id="cairo.Context.show_text">
 <code class="descname">show_text</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.show_text" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – text</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – text</p>
+</dd>
+</dl>
 <p>A drawing operator that generates the shape from a string of text,
 rendered according to the current font_face, font_size (font_matrix),
 and font_options.</p>
@@ -2042,21 +1825,19 @@ to be drawn in the case of either degenerate segments or sub-paths.</p>
 <dl class="method">
 <dt id="cairo.Context.stroke_extents">
 <code class="descname">stroke_extents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.stroke_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">(x1, y1, x2, y2)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回类型:</th><td class="field-body">(float, float, float, float)</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>(x1, y1, x2, y2)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>(float, float, float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x1</em>: left of the resulting extents</li>
-<li><em>y1</em>: top of the resulting extents</li>
-<li><em>x2</em>: right of the resulting extents</li>
-<li><em>y2</em>: bottom of the resulting extents</li>
+<li><p><em>x1</em>: left of the resulting extents</p></li>
+<li><p><em>y1</em>: top of the resulting extents</p></li>
+<li><p><em>x2</em>: right of the resulting extents</p></li>
+<li><p><em>y2</em>: bottom of the resulting extents</p></li>
 </ul>
 <p>Computes a bounding box in user coordinates covering the area that would
 be affected, (the “inked” area), by a <a class="reference internal" href="#cairo.Context.stroke" title="cairo.Context.stroke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stroke()</span></code></a> operation given
@@ -2089,18 +1870,17 @@ cairo context.</p>
 <dl class="method">
 <dt id="cairo.Context.text_extents">
 <code class="descname">text_extents</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.text_extents" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – text to get extents for</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">x_bearing, y_bearing, width, height, x_advance, y_advance</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body">6-tuple of float</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – text to get extents for</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>x_bearing, y_bearing, width, height, x_advance, y_advance</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>6-tuple of float</p>
+</dd>
+</dl>
 <p>Gets the extents for a string of text. The extents describe a user-space
 rectangle that encloses the “inked” portion of the text, (as it would be
 drawn by <a class="reference internal" href="#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a>). Additionally, the x_advance and
@@ -2117,14 +1897,11 @@ y_advance values.</p>
 <dl class="method">
 <dt id="cairo.Context.text_path">
 <code class="descname">text_path</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.text_path" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – text</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – text</p>
+</dd>
+</dl>
 <p>Adds closed paths for text to the current path. The generated path if
 filled, achieves an effect similar to that of <a class="reference internal" href="#cairo.Context.show_text" title="cairo.Context.show_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.show_text()</span></code></a>.</p>
 <p>Text conversion and positioning is done similar to
@@ -2145,15 +1922,12 @@ text path API in cairo.</p>
 <dl class="method">
 <dt id="cairo.Context.transform">
 <code class="descname">transform</code><span class="sig-paren">(</span><em>matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.transform" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><strong>matrix</strong> – a transformation <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> to be applied to the
-user-space axes</td>
-</tr>
-</tbody>
-</table>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>matrix</strong> – a transformation <a class="reference internal" href="matrix.html#cairo.Matrix" title="cairo.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> to be applied to the
+user-space axes</p>
+</dd>
+</dl>
 <p>Modifies the current transformation matrix (CTM) by applying <em>matrix</em> as
 an additional transformation. The new transformation of user space takes
 place after any existing transformation.</p>
@@ -2162,18 +1936,14 @@ place after any existing transformation.</p>
 <dl class="method">
 <dt id="cairo.Context.translate">
 <code class="descname">translate</code><span class="sig-paren">(</span><em>tx</em>, <em>ty</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.translate" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tx</strong> (<em>float</em>) – amount to translate in the X direction</li>
-<li><strong>ty</strong> (<em>float</em>) – amount to translate in the Y direction</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> (<em>float</em>) – amount to translate in the X direction</p></li>
+<li><p><strong>ty</strong> (<em>float</em>) – amount to translate in the Y direction</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Modifies the current transformation matrix (CTM) by translating the
 user-space origin by <em>(tx, ty)</em>. This offset is interpreted as a
 user-space coordinate according to the CTM in place before the new call
@@ -2184,27 +1954,23 @@ origin takes place after any existing transformation.</p>
 <dl class="method">
 <dt id="cairo.Context.user_to_device">
 <code class="descname">user_to_device</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.user_to_device" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>float</em>) – X value of coordinate</li>
-<li><strong>y</strong> (<em>float</em>) – Y value of coordinate</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X value of coordinate</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y value of coordinate</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">(x, y)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>(x, y)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>x</em>: X value of coordinate</li>
-<li><em>y</em>: Y value of coordinate</li>
+<li><p><em>x</em>: X value of coordinate</p></li>
+<li><p><em>y</em>: Y value of coordinate</p></li>
 </ul>
 <p>Transform a coordinate from user space to device space by multiplying
 the given point by the current transformation matrix (CTM).</p>
@@ -2213,27 +1979,23 @@ the given point by the current transformation matrix (CTM).</p>
 <dl class="method">
 <dt id="cairo.Context.user_to_device_distance">
 <code class="descname">user_to_device_distance</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cairo.Context.user_to_device_distance" title="永久链接至目标">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
-<li><strong>dx</strong> (<em>float</em>) – X value of a distance vector</li>
-<li><strong>dy</strong> (<em>float</em>) – Y value of a distance vector</li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>float</em>) – X value of a distance vector</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – Y value of a distance vector</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first">(dx, dy)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返回类型:</th><td class="field-body"><p class="first last">(float, float)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>(dx, dy)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
 <ul class="simple">
-<li><em>dx</em>: X value of a distance vector</li>
-<li><em>dy</em>: Y value of a distance vector</li>
+<li><p><em>dx</em>: X value of a distance vector</p></li>
+<li><p><em>dy</em>: Y value of a distance vector</p></li>
 </ul>
 <p>Transform a distance vector from user space to device space. This
 function is similar to <a class="reference internal" href="#cairo.Context.user_to_device" title="cairo.Context.user_to_device"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Context.user_to_device()</span></code></a> except that the
@@ -2257,7 +2019,7 @@ translation components of the CTM will be ignored when transforming
         <a href="exceptions.html" class="btn btn-neutral float-right" title="Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="constants.html" class="btn btn-neutral" title="模块函数与常量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="constants.html" class="btn btn-neutral float-left" title="模块函数与常量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2266,8 +2028,10 @@ translation components of the CTM will be ignored when transforming
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -2284,33 +2048,16 @@ translation components of the CTM will be ignored when transforming
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="凯利公式" href="kelly.html" />
     <link rel="prev" title="量化投资简介" href="overview.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -200,10 +203,10 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。</p>
 <p>常见的事件有：</p>
 <blockquote>
 <div><ul class="simple">
-<li>on_init</li>
-<li>on_day_start</li>
-<li>on_bar</li>
-<li>on_day_end</li>
+<li><p>on_init</p></li>
+<li><p>on_day_start</p></li>
+<li><p>on_bar</p></li>
+<li><p>on_day_end</p></li>
 </ul>
 </div></blockquote>
 <p>当然真实的交易引擎中还有很多其他事件，但最重要的就是这几类事件。</p>
@@ -213,8 +216,8 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。</p>
 <p>当然在 RQAlpha 中也可以通过在 AbstractEventSource 的 event 函数（事件生成器）产生多种类型数据的事件，但实现起来略显麻烦。
 而且官方实现中的两个例子（ SimulationEventSource/RealtimeEventSource ）也是只有行情数据的事件源。</p>
 <p>其他模块的实现类似，在此就不多写了，还是多看代码吧，看代码的过程中画了两个简单的结构图，供参考。</p>
-<img alt="../_images/RQAlpha.svg" src="../_images/RQAlpha.svg" /><img alt="../_images/PyAlgoTrade.svg" src="../_images/PyAlgoTrade.svg" /><p><a class="reference download internal" href="../_downloads/RQAlpha.xmind" download=""><code class="xref download docutils literal notranslate"><span class="pre">RQAlpha</span></code></a>
-<a class="reference download internal" href="../_downloads/PyAlgoTrade.xmind" download=""><code class="xref download docutils literal notranslate"><span class="pre">PyAlgoTrade</span></code></a></p>
+<img alt="../_images/RQAlpha.svg" src="../_images/RQAlpha.svg" /><img alt="../_images/PyAlgoTrade.svg" src="../_images/PyAlgoTrade.svg" /><p><a class="reference download internal" download="" href="../_downloads/9304ef85fdfcabbf6cda6617f14a336e/RQAlpha.xmind"><code class="xref download docutils literal notranslate"><span class="pre">RQAlpha</span></code></a>
+<a class="reference download internal" download="" href="../_downloads/cb4e236a1704801e15c07177db71239e/PyAlgoTrade.xmind"><code class="xref download docutils literal notranslate"><span class="pre">PyAlgoTrade</span></code></a></p>
 </div>
 
 
@@ -228,7 +231,7 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。</p>
         <a href="kelly.html" class="btn btn-neutral float-right" title="凯利公式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="overview.html" class="btn btn-neutral" title="量化投资简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="量化投资简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -237,8 +240,10 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -255,33 +260,16 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

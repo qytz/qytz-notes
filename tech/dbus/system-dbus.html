@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="D-Bus系列之获取发送者UID及PID的方法" href="dbus-get-uid.html" />
     <link rel="prev" title="D-Bus 系列之入门" href="dbus.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -213,11 +216,10 @@ D-Bus消息守护进程的配置文件配置了总线的类型，资源限制，
 配置文件的格式并不是标准的一部分，也不保证向后兼容。。。</p>
 <p>标准的系统总线和每会话总线在”/etc/dbus-1/system.conf” and “/etc/dbus-1/session.conf”，这两个文件
 会包含system-local.conf或session-local.conf，因此你自己的配置应该放在单独的local文件中。</p>
-<dl class="docutils">
-<dt>该配置文件的格式就是一个xml文档，且必须有如下类型声明：</dt>
-<dd><dl class="first last docutils">
-<dt>&lt;!DOCTYPE busconfig PUBLIC “-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN”</dt>
-<dd>“<a class="reference external" href="http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd</a>”&gt;</dd>
+<dl class="simple">
+<dt>该配置文件的格式就是一个xml文档，且必须有如下类型声明：</dt><dd><dl class="simple">
+<dt>&lt;!DOCTYPE busconfig PUBLIC “-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN”</dt><dd><p>“<a class="reference external" href="http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd</a>”&gt;</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -316,9 +318,8 @@ group=”group name or gid”</p>
 <p>&lt;allow&gt;和&lt;deny&gt;出现在&lt;policy&gt;元素下面，&lt;deny&gt;禁止一些动作，而&lt;allow&gt;则创建上面&lt;deny&gt;元素的一些例外。
 这两个元素可用的属性包括：</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>send_interface=”interface_name”</dt>
-<dd><p class="first">send_member=”method_or_signal_name”
+<div><dl>
+<dt>send_interface=”interface_name”</dt><dd><p>send_member=”method_or_signal_name”
 send_error=”error_name”
 send_destination=”name”
 send_type=”method_call” | “method_return” | “signal” | “error”
@@ -332,7 +333,7 @@ receive_path=”/path/name”</p>
 <p>send_requested_reply=”true” | “false”
 receive_requested_reply=”true” | “false”</p>
 <p>eavesdrop=”true” | “false”</p>
-<p class="last">own=”name”
+<p>own=”name”
 own_prefix=”name”
 user=”username”
 group=”groupname”</p>
@@ -355,7 +356,7 @@ group=”groupname”</p>
         <a href="dbus-get-uid.html" class="btn btn-neutral float-right" title="D-Bus系列之获取发送者UID及PID的方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dbus.html" class="btn btn-neutral" title="D-Bus 系列之入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dbus.html" class="btn btn-neutral float-left" title="D-Bus 系列之入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -364,8 +365,10 @@ group=”groupname”</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -382,33 +385,16 @@ group=”groupname”</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

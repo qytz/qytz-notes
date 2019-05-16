@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="D-Bus 使用" href="../dbus/index.html" />
     <link rel="prev" title="FAQ" href="faq.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -295,47 +298,47 @@ cairo_t * <code class="descname">PycairoContext_GET</code><span class="sig-paren
 
 <dl class="function">
 <dt id="c.PycairoContext_FromContext">
-PyObject * <code class="descname">PycairoContext_FromContext</code><span class="sig-paren">(</span>cairo_t<em>&nbsp;*ctx</em>, PyTypeObject<em>&nbsp;*type</em>, PyObject<em>&nbsp;*base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoContext_FromContext" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoContext_FromContext</code><span class="sig-paren">(</span>cairo_t<em> *ctx</em>, PyTypeObject<em> *type</em>, PyObject<em> *base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoContext_FromContext" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoFontFace_FromFontFace">
-PyObject * <code class="descname">PycairoFontFace_FromFontFace</code><span class="sig-paren">(</span>cairo_font_face_t<em>&nbsp;*font_face</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoFontFace_FromFontFace" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoFontFace_FromFontFace</code><span class="sig-paren">(</span>cairo_font_face_t<em> *font_face</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoFontFace_FromFontFace" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoFontOptions_FromFontOptions">
-PyObject * <code class="descname">PycairoFontOptions_FromFontOptions</code><span class="sig-paren">(</span>cairo_font_options_t<em>&nbsp;*font_options</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoFontOptions_FromFontOptions" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoFontOptions_FromFontOptions</code><span class="sig-paren">(</span>cairo_font_options_t<em> *font_options</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoFontOptions_FromFontOptions" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoMatrix_FromMatrix">
-PyObject * <code class="descname">PycairoMatrix_FromMatrix</code><span class="sig-paren">(</span>const cairo_matrix_t<em>&nbsp;*matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoMatrix_FromMatrix" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoMatrix_FromMatrix</code><span class="sig-paren">(</span>const cairo_matrix_t<em> *matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoMatrix_FromMatrix" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoPath_FromPath">
-PyObject * <code class="descname">PycairoPath_FromPath</code><span class="sig-paren">(</span>cairo_path_t<em>&nbsp;*path</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoPath_FromPath" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoPath_FromPath</code><span class="sig-paren">(</span>cairo_path_t<em> *path</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoPath_FromPath" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoPattern_FromPattern">
-PyObject * <code class="descname">PycairoPattern_FromPattern</code><span class="sig-paren">(</span>cairo_pattern_t<em>&nbsp;*pattern</em>, PyObject<em>&nbsp;*base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoPattern_FromPattern" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoPattern_FromPattern</code><span class="sig-paren">(</span>cairo_pattern_t<em> *pattern</em>, PyObject<em> *base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoPattern_FromPattern" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoScaledFont_FromScaledFont">
-PyObject * <code class="descname">PycairoScaledFont_FromScaledFont</code><span class="sig-paren">(</span>cairo_scaled_font_t<em>&nbsp;*scaled_font</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoScaledFont_FromScaledFont" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoScaledFont_FromScaledFont</code><span class="sig-paren">(</span>cairo_scaled_font_t<em> *scaled_font</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoScaledFont_FromScaledFont" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoSurface_FromSurface">
-PyObject * <code class="descname">PycairoSurface_FromSurface</code><span class="sig-paren">(</span>cairo_surface_t<em>&nbsp;*surface</em>, PyObject<em>&nbsp;*base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoSurface_FromSurface" title="永久链接至目标">¶</a></dt>
+PyObject * <code class="descname">PycairoSurface_FromSurface</code><span class="sig-paren">(</span>cairo_surface_t<em> *surface</em>, PyObject<em> *base</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoSurface_FromSurface" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="c.PycairoCheck_Status">
-int <code class="descname">PycairoCheck_Status</code><span class="sig-paren">(</span>cairo_status_t<em>&nbsp;status</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoCheck_Status" title="永久链接至目标">¶</a></dt>
+int <code class="descname">PycairoCheck_Status</code><span class="sig-paren">(</span>cairo_status_t<em> status</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PycairoCheck_Status" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -352,7 +355,7 @@ int <code class="descname">PycairoCheck_Status</code><span class="sig-paren">(</
         <a href="../dbus/index.html" class="btn btn-neutral float-right" title="D-Bus 使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="faq.html" class="btn btn-neutral" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -361,8 +364,10 @@ int <code class="descname">PycairoCheck_Status</code><span class="sig-paren">(</
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -379,33 +384,16 @@ int <code class="descname">PycairoCheck_Status</code><span class="sig-paren">(</
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

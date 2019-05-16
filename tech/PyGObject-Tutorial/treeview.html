@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="单元格渲染器（CellRenderers）" href="cellrenderers.html" />
     <link rel="prev" title="Spinner" href="spinner.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -232,12 +235,12 @@
 显示数据的方法并提供了很多种维护数据的方法，包括：</p>
 <blockquote>
 <div><ul class="simple">
-<li>数据添加、删除或编辑后自动更新；</li>
-<li>鼠标拖拽支持；</li>
-<li>数据排序；</li>
-<li>支持嵌入check box、进度条等控件；</li>
-<li>可重新排序及调整宽度的列</li>
-<li>数据过滤</li>
+<li><p>数据添加、删除或编辑后自动更新；</p></li>
+<li><p>鼠标拖拽支持；</p></li>
+<li><p>数据排序；</p></li>
+<li><p>支持嵌入check box、进度条等控件；</p></li>
+<li><p>可重新排序及调整宽度的列</p></li>
+<li><p>数据过滤</p></li>
 </ul>
 </div></blockquote>
 <p>由 <a class="reference internal" href="#Gtk.TreeView" title="Gtk.TreeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.TreeView</span></code></a> 的强大与灵活自然也就使其变的很复杂。由于需要的函数很多
@@ -382,8 +385,8 @@ TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeM
 <dd><p>创建一个新的 <a class="reference internal" href="#Gtk.ListStore" title="Gtk.ListStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ListStore</span></code></a> ，参数指定每一列的数据类型。添加到ListStore的每一行都要在每一列有相应的数据。</p>
 <p>支持的数据类型包括标准的Python类型和GTK+的类型：</p>
 <ul class="simple">
-<li>str, int, float, long, bool, object</li>
-<li>GObject.GObject</li>
+<li><p>str, int, float, long, bool, object</p></li>
+<li><p>GObject.GObject</p></li>
 </ul>
 <dl class="method">
 <dt id="Gtk.ListStore.append">
@@ -621,14 +624,14 @@ TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeM
 <code class="descname">set_mode</code><span class="sig-paren">(</span><em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#Gtk.TreeSelection.set_mode" title="永久链接至目标">¶</a></dt>
 <dd><p>type的值为以下其一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.NONE</span></code>: 不可选。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.SINGLE</span></code>: 零或一个项目可以选中。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.BROWSE</span></code>: 有且只有一个项目可被选中。
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.NONE</span></code>: 不可选。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.SINGLE</span></code>: 零或一个项目可以选中。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.BROWSE</span></code>: 有且只有一个项目可被选中。
 在某些环境，例如在初始化或搜索操作时，是可能没有项目可以选中的。
-必须选中是强调用户不能取消当前选中的项目——除非选择了一个新的项目。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.MULTIPLE</span></code>: 任意数量的项目可以被选中。
+必须选中是强调用户不能取消当前选中的项目——除非选择了一个新的项目。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.SelectionMode.MULTIPLE</span></code>: 任意数量的项目可以被选中。
 点击会改变项目的选中状态。Ctrl键可以用来多选，Shift键用来选择一个范围。
-一些控件也允许点击然后拖拽来选择一个范围内的项目。</li>
+一些控件也允许点击然后拖拽来选择一个范围内的项目。</p></li>
 </ul>
 </dd></dl>
 
@@ -780,7 +783,7 @@ TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeM
         <a href="cellrenderers.html" class="btn btn-neutral float-right" title="单元格渲染器（CellRenderers）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="spinner.html" class="btn btn-neutral" title="Spinner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="spinner.html" class="btn btn-neutral float-left" title="Spinner" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -789,8 +792,10 @@ TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeM
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -807,33 +812,16 @@ TreeMode包含要显示给TreeView的数据。而每一个 class:<cite>Gtk.TreeM
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

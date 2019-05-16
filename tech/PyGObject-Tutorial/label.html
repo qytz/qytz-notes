@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Entry输入框" href="entry.html" />
     <link rel="prev" title="布局管理" href="layout.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -235,7 +238,7 @@
 <p>标签文本可以通过 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_justify()</span></code> 方法来设置对齐方式。当然你可以自动换行——只要调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_line_wrap()</span></code> 。</p>
 <p><a class="reference internal" href="#Gtk.Label" title="Gtk.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Label</span></code></a> 支持一种简单的格式，例如允许你使某些文本显示为粗体、某种颜色或者更大号。
 你可以通过使用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_markup()</span></code> 设置标签内容来实现这些效果，
-这个函数使用Pango标记语言的语法  <a class="footnote-reference" href="#pango" id="id1">[1]</a> 。例如， <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;bold&nbsp;text&lt;/b&gt;&nbsp;and&nbsp;&lt;s&gt;strikethrough&nbsp;text&lt;/s&gt;</span></code> 。
+这个函数使用Pango标记语言的语法  <a class="footnote-reference brackets" href="#pango" id="id1">1</a> 。例如， <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;bold</span><span class="pre">text&lt;/b&gt;</span><span class="pre">and</span><span class="pre">&lt;s&gt;strikethrough</span><span class="pre">text&lt;/s&gt;</span></code> 。
 另外， <a class="reference internal" href="#Gtk.Label" title="Gtk.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Label</span></code></a> 也支持可以点开的超链接。超链接的标记借用了HTML的方法，使用带有href和taitle属性的a标记。
 GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。Title作为该链接的提示信息。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span><span class="o">.</span><span class="n">set_markup</span><span class="p">(</span><span class="s2">&quot;Go to &lt;a href=</span><span class="se">\&quot;</span><span class="s2">http://www.gtk.org</span><span class="se">\&quot;</span><span class="s2"> title=</span><span class="se">\&quot;</span><span class="s2">Our website</span><span class="se">\&quot;</span><span class="s2">&gt;GTK+ website&lt;/a&gt; for more&quot;</span><span class="p">)</span>
@@ -259,9 +262,8 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
 <p>创建了一个新的标签，内容为 <em>text</em> 。</p>
 </dd></dl>
 
-<dl class="docutils">
-<dt>　　如果 <em>text</em> 里的字符前面加一下划线，那这些字符即被强调。如果你需要一个下划线字符就要用 ‘__’ 。第一个下划线代表键盘快捷键（助记符）。</dt>
-<dd><p class="first">助记符的按键可以用来激活另一个窗口控件，这个窗口控件是自动选择的，或者你也可以调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_mnemonic_widget()</span></code> 来修改。</p>
+<dl>
+<dt>　　如果 <em>text</em> 里的字符前面加一下划线，那这些字符即被强调。如果你需要一个下划线字符就要用 ‘__’ 。第一个下划线代表键盘快捷键（助记符）。</dt><dd><p>助记符的按键可以用来激活另一个窗口控件，这个窗口控件是自动选择的，或者你也可以调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_mnemonic_widget()</span></code> 来修改。</p>
 <p>如果没有调用 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Label.set_mnemonic_widget()</span></code> ，则 <a class="reference internal" href="#Gtk.Label" title="Gtk.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Label</span></code></a> 标签的第一个可被激活的祖先会被选择作为助记符控件。
 例如，如果标签是在一个按钮活在个一个菜单项里，那么按钮或菜单项就会自动成为助记符控件并且会自动被助记符激活。</p>
 <dl class="method">
@@ -308,7 +310,7 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
 <code class="descname">set_text_with_mnemonic</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#set_text_with_mnemonic" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
-<p class="last">参照 <code class="xref py py-meth docutils literal notranslate"><span class="pre">new_with_mnemonic()</span></code> 。</p>
+<p>参照 <code class="xref py py-meth docutils literal notranslate"><span class="pre">new_with_mnemonic()</span></code> 。</p>
 </dd>
 </dl>
 </div>
@@ -466,12 +468,11 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
 <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
-<table class="docutils footnote" frame="void" id="pango" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Pango Markup Syntax, <a class="reference external" href="http://developer.gnome.org/pango/stable/PangoMarkupFormat.html">http://developer.gnome.org/pango/stable/PangoMarkupFormat.html</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="pango"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Pango Markup Syntax, <a class="reference external" href="http://developer.gnome.org/pango/stable/PangoMarkupFormat.html">http://developer.gnome.org/pango/stable/PangoMarkupFormat.html</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -486,7 +487,7 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
         <a href="entry.html" class="btn btn-neutral float-right" title="Entry输入框" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="layout.html" class="btn btn-neutral" title="布局管理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="layout.html" class="btn btn-neutral float-left" title="布局管理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -495,8 +496,10 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -513,33 +516,16 @@ GTK+呈现的超链接与浏览器中很相似——带有颜色和下划线。T
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

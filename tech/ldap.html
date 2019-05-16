@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="系统安全的思考" href="security.html" />
     <link rel="prev" title="mysql绿色启动方法" href="mysql-green-start.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -238,8 +241,9 @@ Design and Implementation</a> 的图示，</p>
 <img alt="ldap dir info tree" src="../_images/ldap_dit.png" />
 <p>目录条目根据他们在目录信息树中的位置命名，上图底部的目录条目的 DN 唯一名是：:</p>
 <blockquote>
-<div>cn=John Smith,ou=people,o=ibm,c=us.
-The organizational group people has the DN of ou=people,o=ibm,c=us.</div></blockquote>
+<div><p>cn=John Smith,ou=people,o=ibm,c=us.
+The organizational group people has the DN of ou=people,o=ibm,c=us.</p>
+</div></blockquote>
 <p>LDAP 的查询等操作语句在这里就不介绍了，有需求的可以在参考资料中找。</p>
 </div>
 </div>
@@ -254,9 +258,9 @@ The organizational group people has the DN of ou=people,o=ibm,c=us.</div></block
 <div class="section" id="id9">
 <h2>参考资料<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://drops.wooyun.org/tips/967">LDAP 注入与防御剖析</a></li>
-<li><a class="reference external" href="http://www.redbooks.ibm.com/abstracts/sg244986.html">Understanding LDAP Design and Implementation</a></li>
-<li><a class="reference external" href="http://wiki.jabbercn.org/index.php?title=XEP-0216&amp;oldid=115">OpenLDAP 管理员指南</a></li>
+<li><p><a class="reference external" href="http://drops.wooyun.org/tips/967">LDAP 注入与防御剖析</a></p></li>
+<li><p><a class="reference external" href="http://www.redbooks.ibm.com/abstracts/sg244986.html">Understanding LDAP Design and Implementation</a></p></li>
+<li><p><a class="reference external" href="http://wiki.jabbercn.org/index.php?title=XEP-0216&amp;oldid=115">OpenLDAP 管理员指南</a></p></li>
 </ul>
 </div>
 </div>
@@ -272,7 +276,7 @@ The organizational group people has the DN of ou=people,o=ibm,c=us.</div></block
         <a href="security.html" class="btn btn-neutral float-right" title="系统安全的思考" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mysql-green-start.html" class="btn btn-neutral" title="mysql绿色启动方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mysql-green-start.html" class="btn btn-neutral float-left" title="mysql绿色启动方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,8 +285,10 @@ The organizational group people has the DN of ou=people,o=ibm,c=us.</div></block
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -299,33 +305,16 @@ The organizational group people has the DN of ou=people,o=ibm,c=us.</div></block
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

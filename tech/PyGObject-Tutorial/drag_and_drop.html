@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Glade and Gtk.Builder" href="builder.html" />
     <link rel="prev" title="剪贴板" href="clipboard.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -228,8 +231,8 @@
 <div class="section" id="id1">
 <h1>拖拽支持<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">低于3.0.3版本的PyGObject有一个bug使得拖拽功能不正确，因此下面的例子要求
+<p class="admonition-title">注解</p>
+<p>低于3.0.3版本的PyGObject有一个bug使得拖拽功能不正确，因此下面的例子要求
 PyGObject 的版本大于等于3.0.3。</p>
 </div>
 <p>要在控件间设置拖拽功能，首先要使用 <a class="reference internal" href="#Gtk.Widget.drag_source_set" title="Gtk.Widget.drag_source_set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.Widget.drag_source_set()</span></code></a> 选择一个
@@ -317,10 +320,10 @@ PyGObject 的版本大于等于3.0.3。</p>
 <p><em>target</em> 为一个字符串描述了目的节点描述的数据的类型。</p>
 <p><em>flags</em> 控制数据在拖拽源/目的之间传递的条件，为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags</span></code> 的组合：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.SAME_APP</span></code> - 只在相同程序间传递。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.SAME_WIDGET</span></code> - 只在相同控件间传递。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.OTHER_APP</span></code> - 只在不同程序间传递。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.OTHER_WIDGET</span></code> - 只在不同控件间传递。</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.SAME_APP</span></code> - 只在相同程序间传递。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.SAME_WIDGET</span></code> - 只在相同控件间传递。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.OTHER_APP</span></code> - 只在不同程序间传递。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.TargetFlags.OTHER_WIDGET</span></code> - 只在不同控件间传递。</p></li>
 </ul>
 <p><em>info</em> 为应用程序ID，可以用来决定在一次拖拽操作中不同的数据片。</p>
 </dd></dl>
@@ -357,59 +360,59 @@ PyGObject 的版本大于等于3.0.3。</p>
 </div>
 <div class="section" id="drag-signals">
 <span id="id3"></span><h2>拖拽源信号<a class="headerlink" href="#drag-signals" title="永久链接至标题">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="20%" />
-<col width="46%" />
-<col width="35%" />
+<col style="width: 20%" />
+<col style="width: 46%" />
+<col style="width: 35%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">名字</th>
-<th class="head">触发时机</th>
-<th class="head">通常目的</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>名字</p></th>
+<th class="head"><p>触发时机</p></th>
+<th class="head"><p>通常目的</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>drag-data-get</td>
-<td>拖拽目地请求数据时</td>
-<td>在拖拽源与目的间传递数据</td>
+<tbody>
+<tr class="row-even"><td><p>drag-data-get</p></td>
+<td><p>拖拽目地请求数据时</p></td>
+<td><p>在拖拽源与目的间传递数据</p></td>
 </tr>
-<tr class="row-odd"><td>drag-data-delete</td>
-<td>action为 Gdk.DragAction.MOVE 的拖拽操作完成</td>
-<td>完成 ‘move’ 操作时删除源数据</td>
+<tr class="row-odd"><td><p>drag-data-delete</p></td>
+<td><p>action为 Gdk.DragAction.MOVE 的拖拽操作完成</p></td>
+<td><p>完成 ‘move’ 操作时删除源数据</p></td>
 </tr>
-<tr class="row-even"><td>drag-data-end</td>
-<td>拖拽完成</td>
-<td>撤销任何拖拽开始后的动作</td>
+<tr class="row-even"><td><p>drag-data-end</p></td>
+<td><p>拖拽完成</p></td>
+<td><p>撤销任何拖拽开始后的动作</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="drag-destination-signals">
 <h2>Drag Destination Signals<a class="headerlink" href="#drag-destination-signals" title="永久链接至标题">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="26%" />
-<col width="32%" />
-<col width="42%" />
+<col style="width: 26%" />
+<col style="width: 32%" />
+<col style="width: 42%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">名字</th>
-<th class="head" colspan="2">触发时机                | 通常目的</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>名字</p></th>
+<th class="head" colspan="2"><p>触发时机                | 通常目的</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>drag-motion</td>
-<td>拖拽图标移动到目地区域</td>
-<td>只允许拖拽到指定的区域</td>
+<tbody>
+<tr class="row-even"><td><p>drag-motion</p></td>
+<td><p>拖拽图标移动到目地区域</p></td>
+<td><p>只允许拖拽到指定的区域</p></td>
 </tr>
-<tr class="row-odd"><td>drag-drop</td>
-<td>在目地区域释放了图标</td>
-<td>只允许在指定的区域释放数据</td>
+<tr class="row-odd"><td><p>drag-drop</p></td>
+<td><p>在目地区域释放了图标</p></td>
+<td><p>只允许在指定的区域释放数据</p></td>
 </tr>
-<tr class="row-even"><td>drag-data-received</td>
-<td>拖拽目地收到了数据</td>
-<td>在源与目地之间传递数据</td>
+<tr class="row-even"><td><p>drag-data-received</p></td>
+<td><p>拖拽目地收到了数据</p></td>
+<td><p>在源与目地之间传递数据</p></td>
 </tr>
 </tbody>
 </table>
@@ -640,7 +643,7 @@ PyGObject 的版本大于等于3.0.3。</p>
         <a href="builder.html" class="btn btn-neutral float-right" title="Glade and Gtk.Builder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="clipboard.html" class="btn btn-neutral" title="剪贴板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="clipboard.html" class="btn btn-neutral float-left" title="剪贴板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -649,8 +652,10 @@ PyGObject 的版本大于等于3.0.3。</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -667,33 +672,16 @@ PyGObject 的版本大于等于3.0.3。</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

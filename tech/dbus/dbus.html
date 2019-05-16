@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="D-Bus系列之权限配置文件" href="system-dbus.html" />
     <link rel="prev" title="D-Bus 使用" href="index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -209,8 +212,8 @@
 <div class="section" id="d-bus">
 <h1>D-Bus 系列之入门<a class="headerlink" href="#d-bus" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">本文整理自 <a class="reference external" href="http://blog.csdn.net/flowingflying/article/details/5410820">D-Bus 学习系列文章</a></p>
+<p class="admonition-title">注解</p>
+<p>本文整理自 <a class="reference external" href="http://blog.csdn.net/flowingflying/article/details/5410820">D-Bus 学习系列文章</a></p>
 </div>
 <div class="section" id="id2">
 <h2>背景知识<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -230,9 +233,9 @@ D-Bus 不和低层的 IPC 直接竞争，比如 sockets, shared memory or messag
 <p>D-Bus 是一个为应用程序间通信的消息总线系统，用于进程之间的通信。它是个 3 层架构的 IPC 系统，包括：</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>函数库 libdbus ，用于两个应用程序互相联系和交互消息。</li>
-<li>一个基于 libdbus 构造的消息总线守护进程，可同时与多个应用程序相连，并能把来自一个应用程序的消息路由到 0 或者多个其他程序。</li>
-<li>基于特定应用程序框架的封装库或捆绑（wrapper libraries or bindings ）。例如，libdbus-glib 和 libdbus-qt，还有绑定在其他语言，例如 Python 的。大多数开发者都是使用这些封装库的 API，因为它们简化了 D-Bus 编程细节。libdbus 被有意设计成为更高层次绑定的底层后端（low-level backend ）。大部分 libdbus 的 API 仅仅是为了用来实现绑定。</li>
+<li><p>函数库 libdbus ，用于两个应用程序互相联系和交互消息。</p></li>
+<li><p>一个基于 libdbus 构造的消息总线守护进程，可同时与多个应用程序相连，并能把来自一个应用程序的消息路由到 0 或者多个其他程序。</p></li>
+<li><p>基于特定应用程序框架的封装库或捆绑（wrapper libraries or bindings ）。例如，libdbus-glib 和 libdbus-qt，还有绑定在其他语言，例如 Python 的。大多数开发者都是使用这些封装库的 API，因为它们简化了 D-Bus 编程细节。libdbus 被有意设计成为更高层次绑定的底层后端（low-level backend ）。大部分 libdbus 的 API 仅仅是为了用来实现绑定。</p></li>
 </ol>
 </div></blockquote>
 <p>在 D-Bus 中，“bus”是核心的概念，它是一个通道：不同的程序可以通过这个通道做些操作，比如方法调用、发送信号和监听特定的信号。</p>
@@ -240,11 +243,11 @@ D-Bus 不和低层的 IPC 直接竞争，比如 sockets, shared memory or messag
 从开发者的角度来看，D-BUS 是易于使用的。有线协议容易理解，客户机程序库以直观的方式对其进行包装。D-Bus 的主要目的是提供如下的一些更高层的功能：</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>结构化的名字空间</li>
-<li>独立于架构的数据格式</li>
-<li>支持消息中的大部分通用数据元素</li>
-<li>带有异常处理的通用远程调用接口</li>
-<li>支持广播类型的通信</li>
+<li><p>结构化的名字空间</p></li>
+<li><p>独立于架构的数据格式</p></li>
+<li><p>支持消息中的大部分通用数据元素</p></li>
+<li><p>带有异常处理的通用远程调用接口</p></li>
+<li><p>支持广播类型的通信</p></li>
 </ol>
 </div></blockquote>
 <p>Bus daemon 是一个特殊的进程：这个进程可以从一个进程传递消息给另外一个进程。
@@ -254,65 +257,66 @@ D-Bus 的点对点是经过 bus daemon 抽象过的，由 bus daemon 来完成�
 D-Bus 发送消息通常包含如下步骤（正常情况下）：</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>创建和发送消息 给后台 bus daemon 进程，这个过程中会有两个上下文的切换</li>
-<li>后台 bus daemon 进程会处理该消息，并转发给目标进程，这也会引起上下文的切换</li>
-<li>目标程序接收到消息，然后根据消息的种类，做不同的响应：要么给个确认、要么应答、还有就是忽略它。最后一种情况对于“通知”类型的消息而言，前两种都会引起进一步的上 下文切换。</li>
+<li><p>创建和发送消息 给后台 bus daemon 进程，这个过程中会有两个上下文的切换</p></li>
+<li><p>后台 bus daemon 进程会处理该消息，并转发给目标进程，这也会引起上下文的切换</p></li>
+<li><p>目标程序接收到消息，然后根据消息的种类，做不同的响应：要么给个确认、要么应答、还有就是忽略它。最后一种情况对于“通知”类型的消息而言，前两种都会引起进一步的上 下文切换。</p></li>
 </ol>
 </div></blockquote>
 <p>在一台机器上总线守护有多个实例 (instance)。这些总线之间都是相互独立的。</p>
-<dl class="docutils">
-<dt><em>一个持久的系统总线（system bus）</em></dt>
-<dd>它在引导时就会启动。这个总线由操作系统和后台进程使用，安全性非常好，以使得任意的应用程序不能欺骗系统事件。
+<dl class="simple">
+<dt><em>一个持久的系统总线（system bus）</em></dt><dd><p>它在引导时就会启动。这个总线由操作系统和后台进程使用，安全性非常好，以使得任意的应用程序不能欺骗系统事件。
 它是桌面会话和操作系统的通信，这里操作系统一般而言包括内核和系统守护进程。
-这种通道的最常用的方面就是发送系统消息，比如：插入一个新的存储设备；有新的网络连接；等等。</dd>
-<dt><em>还将有很多会话总线（session buses）</em></dt>
-<dd>这些总线当用户登录后启动，属于那个用户私有。它是用户的应用程序用来通信的一个会话总线。
-同一个桌面会话中两个桌面应用程序的通信，可使得桌面会话作为整体集成在一起以解决进程生命周期的相关问题。 这在 GNOME 和 KDE 桌面中大量使用。</dd>
+这种通道的最常用的方面就是发送系统消息，比如：插入一个新的存储设备；有新的网络连接；等等。</p>
+</dd>
+<dt><em>还将有很多会话总线（session buses）</em></dt><dd><p>这些总线当用户登录后启动，属于那个用户私有。它是用户的应用程序用来通信的一个会话总线。
+同一个桌面会话中两个桌面应用程序的通信，可使得桌面会话作为整体集成在一起以解决进程生命周期的相关问题。 这在 GNOME 和 KDE 桌面中大量使用。</p>
+</dd>
 </dl>
 <p>综上原因，如果你准备在不同的进程之间传递大量的 数据，D-Bus 可能不是最有效的方法，最有效的方法是使用共享内存，但是对共享内存的管理也是相当复杂的。</p>
 </div>
 <div class="section" id="id4">
 <h2>D-Bus 编程经常涉及的一些概念<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><em>地址</em></dt>
-<dd>连接建立有 server 和 client，对于 bus daemon，应用就是 client，daemon 是 server。
+<dl class="simple">
+<dt><em>地址</em></dt><dd><p>连接建立有 server 和 client，对于 bus daemon，应用就是 client，daemon 是 server。
 一个 D-Bus 的地址是指 server 用于监听，client 用于连接的地方，例如 unix:path=/tmp/abcedf 标识 server 将在路径 /tmp/abcedf 的 UNIX domain socket 监听。
 地址可以是指定的 TCP/IP socket 或者其他在或者将在 D-Bus 协议中定义的传输方式。
-如果使用 bus daemon，libdbus 将通过读取环境变量自动获取 session bus damon 的地址，通过检查一个指定的 UNIX domain socket 路径获取 system bus 的地址。如果使用 D-bus，但不是 daemon，需要定义那个应用是 server，那个是 client，并定义一套机制是他们认可 server 的地址，这不是通常的做法。</dd>
-<dt><em>Bus Names 总线名字</em></dt>
-<dd>当一个应用连接到 bus daemon，daemon 立即会分配一个名字给这个连接，称为 unique connection name，
+如果使用 bus daemon，libdbus 将通过读取环境变量自动获取 session bus damon 的地址，通过检查一个指定的 UNIX domain socket 路径获取 system bus 的地址。如果使用 D-bus，但不是 daemon，需要定义那个应用是 server，那个是 client，并定义一套机制是他们认可 server 的地址，这不是通常的做法。</p>
+</dd>
+<dt><em>Bus Names 总线名字</em></dt><dd><p>当一个应用连接到 bus daemon，daemon 立即会分配一个名字给这个连接，称为 unique connection name，
 这个唯一标识的名字以冒号：开头，例如：34-907，这个名字在 daemon 的整个生命周期是唯一的。
 但是这种名字总是临时分配，无法确定的，也难以记忆，因此应用可以要求有另外一个名字 well-known name 来对应这个唯一标识，就像我们使用域名来对应 IP 地址一样。
 例如可以使用 com.mycompany 来映射：34-907。应用程序可能会要求拥有额外的周知名字（well-known name）。
 例如，你可以写一个规范来定义一个名字叫做 com.mycompany.TextEditor。
 应用程序就可以发送消息到这个总线名字，对象，和接口以执行方法调用。
 当一个应用结束或者崩溃是，OS kernel 会关闭它的总线连接。总线发送 notification 消息告诉其他应用，这个应用的名字已经失去他的 owner。
-当检测到这类 notification 时，应用可以知道其他应用的生命周期。这种方式也可用于只有一个实例的应用，即不开启同样的两个应用的情况。</dd>
-<dt><em>原生对象和对象路径</em></dt>
-<dd>所有使用 D-BUS 的应用程序都包含一些对象，当经由一个 D-BUS 连接受到一条消息时，该消息是被发往一个对象而不是整个应用程序。
+当检测到这类 notification 时，应用可以知道其他应用的生命周期。这种方式也可用于只有一个实例的应用，即不开启同样的两个应用的情况。</p>
+</dd>
+<dt><em>原生对象和对象路径</em></dt><dd><p>所有使用 D-BUS 的应用程序都包含一些对象，当经由一个 D-BUS 连接受到一条消息时，该消息是被发往一个对象而不是整个应用程序。
 在开发中程序框架定义着这样的对象，例如 JAVA，GObject，QObject 等等，在 D-Bus 中成为 native object。
 对于底层的 D-Bus 协议，即 libdbus API，并不理会这些 native object，它们使用的是一个叫做 object path 的概念。
 通过 object path，高层编程可以为对象实例进行命名，并允许远程应用引用它们。
 这些名字看起来像是文件系统路径，易读的路径名是受鼓励的做法，但也允许使用诸如“/com/mycompany/c5yo817y0c1y1c5b”等，只要它可以为你的应用程序所用。
 Namespacing 的对象路径以开发者所有的域名开始（如 /org/kde）以避免系统不同代码模块互相干扰。
 简单地说：一个应用创建对象实例进行 D-Bus 的通信，这些对象实例都有一个名字，命名方式类似于路径，
-例如 /com/mycompany，这个名字在全局（session 或者 system）是唯一的，用于消息的路由。</dd>
-<dt><em>Proxies 代理</em></dt>
-<dd>代理对象用来表示其他远程的 remote object。
-当我们触发了 proxy 对象的 method 时，将会在 D-Bus 上发送一个 method_call 的消息，并等待答复，根据答复返回。使用非常方便，就像调用一个本地的对象。</dd>
-<dt><em>接口 Interface</em></dt>
-<dd>每一个对象支持一个或者多个接口，接口是一组方法和信号，接口定义一个对象实体的类型。
-D-Bus 对接口的命名方式，类似 org.freedesktop.Introspectable。开发人员通常将使用编程语言类的的名字作为接口名字。</dd>
-<dt><em>方法和信号 Methods and Signals</em></dt>
-<dd>每一个对象有两类成员：方法和信号。方法就是 JAVA 中同样概念，方法是一段函数代码，带有输入和输出。信号是广播给所有兴趣的其他实体，信号可以带有数据 payload。
+例如 /com/mycompany，这个名字在全局（session 或者 system）是唯一的，用于消息的路由。</p>
+</dd>
+<dt><em>Proxies 代理</em></dt><dd><p>代理对象用来表示其他远程的 remote object。
+当我们触发了 proxy 对象的 method 时，将会在 D-Bus 上发送一个 method_call 的消息，并等待答复，根据答复返回。使用非常方便，就像调用一个本地的对象。</p>
+</dd>
+<dt><em>接口 Interface</em></dt><dd><p>每一个对象支持一个或者多个接口，接口是一组方法和信号，接口定义一个对象实体的类型。
+D-Bus 对接口的命名方式，类似 org.freedesktop.Introspectable。开发人员通常将使用编程语言类的的名字作为接口名字。</p>
+</dd>
+<dt><em>方法和信号 Methods and Signals</em></dt><dd><p>每一个对象有两类成员：方法和信号。方法就是 JAVA 中同样概念，方法是一段函数代码，带有输入和输出。信号是广播给所有兴趣的其他实体，信号可以带有数据 payload。
 在 D-BUS 中有四种类型的消息：方法调用（method calls）、方法返回（method returns）、信号（signals）和错误（errors）。
 要执行 D-BUS 对象的方法，您需要向对象发送一个方法调用消息。
 它将完成一些处理（就是执行了对象中的 Method，Method 是可以带有输入参数的。）并返回，返回消息或者错误消息。
-信号的不同之处在于它们不返回任何内容：既没有“信号返回”消息，也没有任何类型的错误消息。</dd>
+信号的不同之处在于它们不返回任何内容：既没有“信号返回”消息，也没有任何类型的错误消息。</p>
+</dd>
 </dl>
 <p>通过上面的描述，我们可以获得下面的视图：:</p>
 <blockquote>
-<div>Address –&gt; [Bus Name] –&gt; Path –&gt; Interface –&gt; Method</div></blockquote>
+<div><p>Address –&gt; [Bus Name] –&gt; Path –&gt; Interface –&gt; Method</p>
+</div></blockquote>
 <p>bus name 不是必要的，它只在 daemon 的情况下用于路由，点对点的直接连接是不需要的。
 简单地说 ：Address 是 D-Bus 中 server 用来监听 client 的地址，当一个 client 连接上 D-Bus，通常是 Daemo 的方式，这个 client 就有了一个 Bus Name。
 其他应用可以根据消息中所带的 Bus Name，来判断和哪个应用相关。
@@ -336,14 +340,14 @@ a. Method call 消息：将触发对象的一个 method
 他们的处理过程如下：</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>如果提供 proxy，通过触发本地一个对象的方法从而触发另一个进程的远端对象的方法。应用调用 proxy 的一个方法，proxy 构造一个 method call 消息发送到远端进程。</li>
-<li>对于底层的 API，不使用 proxy，应用需要自己构造 method call 消息。</li>
-<li>一个 method call 消息包含：远端进程的 bus name，方法名字，方法的参数，远端进程中 object path，可选的接口名字。</li>
-<li>method call 消息发送到 bus daemon</li>
-<li>bus daemon 查看目的地的 bus name。如果一个进程对应这个名字，bus daemon 将 method call 消息发送到该进程中。如果没有发现匹配，bus daemon 创建一个 error 消息作为应答返回。</li>
-<li>进程接收后将 method call 消息分拆。对于简单的底层 API 情况，将立即执行方法，并发送一个 method reply 消息给 bus daemon。对于高层的 API，将检查对象 path，interface 和 method，触发一个 native object 的方法，并将返回值封装在一个 method reply 消息中。</li>
-<li>bus daemon 收到 method reply 消息，将其转发到原来的进程中</li>
-<li>进程查看 method reply 消息，获取返回值。这个响应也可以标识一个 error 的残生。当使用高级的捆绑，method reply 消息将转换为 proxy 方法的返回值或者一个 exception。</li>
+<li><p>如果提供 proxy，通过触发本地一个对象的方法从而触发另一个进程的远端对象的方法。应用调用 proxy 的一个方法，proxy 构造一个 method call 消息发送到远端进程。</p></li>
+<li><p>对于底层的 API，不使用 proxy，应用需要自己构造 method call 消息。</p></li>
+<li><p>一个 method call 消息包含：远端进程的 bus name，方法名字，方法的参数，远端进程中 object path，可选的接口名字。</p></li>
+<li><p>method call 消息发送到 bus daemon</p></li>
+<li><p>bus daemon 查看目的地的 bus name。如果一个进程对应这个名字，bus daemon 将 method call 消息发送到该进程中。如果没有发现匹配，bus daemon 创建一个 error 消息作为应答返回。</p></li>
+<li><p>进程接收后将 method call 消息分拆。对于简单的底层 API 情况，将立即执行方法，并发送一个 method reply 消息给 bus daemon。对于高层的 API，将检查对象 path，interface 和 method，触发一个 native object 的方法，并将返回值封装在一个 method reply 消息中。</p></li>
+<li><p>bus daemon 收到 method reply 消息，将其转发到原来的进程中</p></li>
+<li><p>进程查看 method reply 消息，获取返回值。这个响应也可以标识一个 error 的残生。当使用高级的捆绑，method reply 消息将转换为 proxy 方法的返回值或者一个 exception。</p></li>
 </ol>
 </div></blockquote>
 <p>Bus daemon 保证 message 的顺序，不会乱序。例如我们发送两个 method call 消息到同一个接受方，他们将按顺序接受。接收方并不要求一定按顺序回复。消息有一个序列号了匹配收发消息。</p>
@@ -354,11 +358,11 @@ a. Method call 消息：将触发对象的一个 method
 <p>处理流程如下：</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li>一个 signal 消息发送到 bus daemon。</li>
-<li>signal 消息包含发布该信号的 interface 名字，signal 的名字，进程的 bus 名字，以及参数。</li>
-<li>任何进程都可以注册的匹配条件（match rules) 表明它所感兴趣的 signal。总线有个注册 match rules 列表。</li>
-<li>bus daemon 检查那些进程对该信号有兴趣，将信号消息发送到这些进程中。</li>
-<li>收到信号的进程决定如何处理。如果使用高层的捆绑，一个 porxy 对象将会释放一个 native 的信号。如果使用底层的 API，进程需要检查信号的发送方和信号的名字决定如何进行处理。</li>
+<li><p>一个 signal 消息发送到 bus daemon。</p></li>
+<li><p>signal 消息包含发布该信号的 interface 名字，signal 的名字，进程的 bus 名字，以及参数。</p></li>
+<li><p>任何进程都可以注册的匹配条件（match rules) 表明它所感兴趣的 signal。总线有个注册 match rules 列表。</p></li>
+<li><p>bus daemon 检查那些进程对该信号有兴趣，将信号消息发送到这些进程中。</p></li>
+<li><p>收到信号的进程决定如何处理。如果使用高层的捆绑，一个 porxy 对象将会释放一个 native 的信号。如果使用底层的 API，进程需要检查信号的发送方和信号的名字决定如何进行处理。</p></li>
 </ol>
 </div></blockquote>
 <p>Introspection
@@ -1518,15 +1522,15 @@ a. Method call 消息：将触发对象的一个 method
 <h2>其他参考资料<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
 <p>缓存版：</p>
 <ol class="arabic simple">
-<li><a class="reference download internal" href="../../_downloads/qtdbus.pdf" download=""><code class="xref download docutils literal notranslate"><span class="pre">Nokia</span> <span class="pre">D-Bus</span> <span class="pre">page</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/qt-dbus-example.pdf" download=""><code class="xref download docutils literal notranslate"><span class="pre">KDE</span> <span class="pre">Base</span> <span class="pre">D-Bus</span> <span class="pre">example</span></code></a></li>
-<li><a class="reference download internal" href="../../_downloads/qt-dbus-telepathy.pdf" download=""><code class="xref download docutils literal notranslate"><span class="pre">telepathy</span> <span class="pre">D-Bus</span> <span class="pre">page</span></code></a></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/507de934e71629efb893746e2579ff87/qtdbus.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Nokia</span> <span class="pre">D-Bus</span> <span class="pre">page</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/71f8ae1e8d4c77161b2b0c607c74407b/qt-dbus-example.pdf"><code class="xref download docutils literal notranslate"><span class="pre">KDE</span> <span class="pre">Base</span> <span class="pre">D-Bus</span> <span class="pre">example</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/d1d595dd04ab3a4be443e4551820b010/qt-dbus-telepathy.pdf"><code class="xref download docutils literal notranslate"><span class="pre">telepathy</span> <span class="pre">D-Bus</span> <span class="pre">page</span></code></a></p></li>
 </ol>
 <p>原始链接</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="http://developer.nokia.com/community/wiki/QtDbus_quick_tutorial">Nokia D-Bus page</a></li>
-<li><a class="reference external" href="http://techbase.kde.org/Development/Tutorials/D-Bus/CustomTypes?setlang=zh-cn#Generate_Adaptor_and_Interface_classes">KDE Base D-Bus example</a></li>
-<li><a class="reference external" href="http://telepathy.freedesktop.org/doc/book/sect.basics.dbus.html">telepathy D-Bus page</a></li>
+<li><p><a class="reference external" href="http://developer.nokia.com/community/wiki/QtDbus_quick_tutorial">Nokia D-Bus page</a></p></li>
+<li><p><a class="reference external" href="http://techbase.kde.org/Development/Tutorials/D-Bus/CustomTypes?setlang=zh-cn#Generate_Adaptor_and_Interface_classes">KDE Base D-Bus example</a></p></li>
+<li><p><a class="reference external" href="http://telepathy.freedesktop.org/doc/book/sect.basics.dbus.html">telepathy D-Bus page</a></p></li>
 </ol>
 </div>
 </div>
@@ -1542,7 +1546,7 @@ a. Method call 消息：将触发对象的一个 method
         <a href="system-dbus.html" class="btn btn-neutral float-right" title="D-Bus系列之权限配置文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="D-Bus 使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="D-Bus 使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1551,8 +1555,10 @@ a. Method call 消息：将触发对象的一个 method
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -1569,33 +1575,16 @@ a. Method call 消息：将触发对象的一个 method
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

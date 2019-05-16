@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="sphinx 生成本地化的文档" href="sphinx-i11n.html" />
     <link rel="prev" title="系统安全的思考" href="security.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -206,9 +209,8 @@
 <div class="section" id="id2">
 <h3>VPN 高级选项有哪些，都是什么意思<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <ul>
-<li><dl class="first docutils">
-<dt>DNS 搜索域</dt>
-<dd><p class="first">These are for the mechanism for going from a machine name to a Fully Qualified Domain Name.</p>
+<li><dl>
+<dt>DNS 搜索域</dt><dd><p>These are for the mechanism for going from a machine name to a Fully Qualified Domain Name.</p>
 <p>DNS searches can only look at a Fully Qualified Domain Name, such as mymachine.example.com. But, it’s a pain to type out mymachine.example.com, you want to be able to just type mymachine.</p>
 <p>Using Search Domains is the mechanism to do this. If you type a name that does not end with a period, it knows it needs to add the search domains for the lookup. So, lets say your Search Domains list was: example.org, example.com</p>
 <p>mymachine</p>
@@ -218,20 +220,18 @@
 <p>mymachine.example.com. Ends with a period, no searching, just do mymachine.example.com</p>
 <p>Soooo…..</p>
 <p>If you have your own DNS domain such as example.com, put it there. If not, ignore it. It really is more corporate than a home setting.</p>
-<p class="last">参考 <a class="reference external" href="http://superuser.com/questions/184361/what-is-the-search-domains-field-for-in-the-tcp-ip-dns-settings-control-panel">What is the “Search Domains” field for in the tcp/ip DNS settings control panel/preference pane for?&gt;</a></p>
+<p>参考 <a class="reference external" href="http://superuser.com/questions/184361/what-is-the-search-domains-field-for-in-the-tcp-ip-dns-settings-control-panel">What is the “Search Domains” field for in the tcp/ip DNS settings control panel/preference pane for?&gt;</a></p>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>DNS 服务器</dt>
-<dd><p class="first">域名系统（英文：Domain Name System，縮寫：DNS）是因特网的一项服务。它作为将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网。DNS 使用 TCP 和 UDP 端口 53。当前，对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符。</p>
-<p class="last">参考 <a class="reference external" href="http://zh.wikipedia.org/zh/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">域名系统</a></p>
+<li><dl>
+<dt>DNS 服务器</dt><dd><p>域名系统（英文：Domain Name System，縮寫：DNS）是因特网的一项服务。它作为将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便的访问互联网。DNS 使用 TCP 和 UDP 端口 53。当前，对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符。</p>
+<p>参考 <a class="reference external" href="http://zh.wikipedia.org/zh/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">域名系统</a></p>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>转发路线</dt>
-<dd><p class="first last">即转发路由，因 DNS 服务器不提供任何服务，因此所有的请求都需要经过转发才能到达可以响应请求的服务器，转发路线即配置发往哪些地址请求的需经过 VPN 转发。</p>
+<li><dl class="simple">
+<dt>转发路线</dt><dd><p>即转发路由，因 DNS 服务器不提供任何服务，因此所有的请求都需要经过转发才能到达可以响应请求的服务器，转发路线即配置发往哪些地址请求的需经过 VPN 转发。</p>
 </dd>
 </dl>
 </li>
@@ -269,12 +269,13 @@ src/task.c  -- connman 中对连接的代码，负责创建与维护真正的连
 连接属性更新系统的网络参数。</p>
 <p>connman 封装了很多对系统网络参数修改的 API，如下列举部分：:</p>
 <blockquote>
-<div>src/inet.c  – 实现对系统路由的配置
+<div><p>src/inet.c  – 实现对系统路由的配置
 src/ipconfig.c  – 实现对系统地址的配置
-src/resolver.c  – 实现对系统 DNS 的配置，connman 有选项支持 dns 代理</div></blockquote>
+src/resolver.c  – 实现对系统 DNS 的配置，connman 有选项支持 dns 代理</p>
+</div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">connman-vpn 与上述描述并不完全一致。
+<p class="admonition-title">注解</p>
+<p>connman-vpn 与上述描述并不完全一致。
 当然，vpn 连接也是由 connman_task 创建具体的任务来连接的，但是。
 vpn/vpn-manager.c 提供新建 / 删除 VPN 连接的功能 (create/remove/get_connections…)。
 vpn/vpn-provider.c 提供了 vpn 连接 / 断开功能 (do_connect/do_disconnect…)。
@@ -320,13 +321,14 @@ Qt 的类型系统极大的丰富了我们的精神文化生活，噢不，是�
 这样我们自己定义的类型也可以使用 Qt 提供的很多方便的特性了，最重要的是我们自定义的结构也可以通过 Qt 的 D-Bus 接口发送与接收了。</p>
 <p>创建方法在此不表，无非是在适当的地方增加几次调用：:</p>
 <blockquote>
-<div>Q_DECLARE_METATYPE(Type)；
+<div><p>Q_DECLARE_METATYPE(Type)；
 int qRegisterMetaType(const char * typeName)；
-int qDBusRegisterMetaType()；</div></blockquote>
+int qDBusRegisterMetaType()；</p>
+</div></blockquote>
 <p>详情参看如下链接：</p>
 <ul class="simple">
-<li><a class="reference external" href="http://qtdocs.sourceforge.net/index.php/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89Qt%E7%B1%BB%E5%9E%8B">创建自定义 Qt 类型</a></li>
-<li><a class="reference external" href="http://www.qtcentre.org/threads/26871-Problems-with-marshalling-a-struct-to-Qt-DBus">Problems with marshalling a struct to Qt/DBus</a></li>
+<li><p><a class="reference external" href="http://qtdocs.sourceforge.net/index.php/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89Qt%E7%B1%BB%E5%9E%8B">创建自定义 Qt 类型</a></p></li>
+<li><p><a class="reference external" href="http://www.qtcentre.org/threads/26871-Problems-with-marshalling-a-struct-to-Qt-DBus">Problems with marshalling a struct to Qt/DBus</a></p></li>
 </ul>
 </div>
 </div>
@@ -335,15 +337,15 @@ int qDBusRegisterMetaType()；</div></blockquote>
 <div class="section" id="id6">
 <h3>都有哪些连接管理实现<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li>Android：<a class="reference external" href="http://developer.android.com/reference/android/net/ConnectivityManager.html">ConnectivityManager</a></li>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a></dt>
-<dd>NetworkManager is a set of co-operative tools that make networking simple and straightforward. Whether Wi-Fi, wired, bond, bridge, 3G, or Bluetooth, NetworkManager allows you to quickly move from one network to another: once a network has been configured and joined, it can be detected and re-joined automatically the next time its available.</dd>
+<li><p>Android：<a class="reference external" href="http://developer.android.com/reference/android/net/ConnectivityManager.html">ConnectivityManager</a></p></li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://wiki.gnome.org/Projects/NetworkManager">NetworkManager</a></dt><dd><p>NetworkManager is a set of co-operative tools that make networking simple and straightforward. Whether Wi-Fi, wired, bond, bridge, 3G, or Bluetooth, NetworkManager allows you to quickly move from one network to another: once a network has been configured and joined, it can be detected and re-joined automatically the next time its available.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><a class="reference external" href="https://01.org/zh/connman?langredirect=1">ConnMan</a></dt>
-<dd>ConnMan is a daemon for managing Internet connections within embedded device and integrates a vast range of communication features usually split between many daemons such as DHCP, DNS and NTP. The result of this consolidation is low memory consumption with a fast, coherent, synchronized reaction to changing network conditions.</dd>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://01.org/zh/connman?langredirect=1">ConnMan</a></dt><dd><p>ConnMan is a daemon for managing Internet connections within embedded device and integrates a vast range of communication features usually split between many daemons such as DHCP, DNS and NTP. The result of this consolidation is low memory consumption with a fast, coherent, synchronized reaction to changing network conditions.</p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -376,7 +378,7 @@ DNS 配置，路由，地址等信息，你确保不会改乱？</p>
         <a href="sphinx-i11n.html" class="btn btn-neutral float-right" title="sphinx 生成本地化的文档" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="security.html" class="btn btn-neutral" title="系统安全的思考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="security.html" class="btn btn-neutral float-left" title="系统安全的思考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -385,8 +387,10 @@ DNS 配置，路由，地址等信息，你确保不会改乱？</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -403,33 +407,16 @@ DNS 配置，路由，地址等信息，你确保不会改乱？</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

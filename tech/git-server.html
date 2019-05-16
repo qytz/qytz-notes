@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="量化投资" href="../quant/index.html" />
     <link rel="prev" title="sphinx 生成本地化的文档" href="sphinx-i11n.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -207,21 +210,21 @@
 <h3>服务器搭建<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <p>步骤如下</p>
 <ol class="arabic simple">
-<li>创建 git 用户</li>
+<li><p>创建 git 用户</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo adduser git
 su - git
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>添加 ssh 公钥</li>
+<li><p>添加 ssh 公钥</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir .ssh
 cat /tmp/id_rsa.lenny.pub &gt;&gt; ~/.ssh/authorized_keys
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>在任何 git 用户可读写的位置新建 git 裸仓库</li>
+<li><p>在任何 git 用户可读写的位置新建 git 裸仓库</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir project.git
 <span class="nb">cd</span> project.git
@@ -328,8 +331,8 @@ R      = @all
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">gitolite 配置的应通过 gitolite-admin 仓库修改并提交到服务器，如若手动更改了服务器端的配置，如更改仓库的存储位置（仓库位置为 gitolite 用户的家目录）等，
+<p class="admonition-title">注解</p>
+<p>gitolite 配置的应通过 gitolite-admin 仓库修改并提交到服务器，如若手动更改了服务器端的配置，如更改仓库的存储位置（仓库位置为 gitolite 用户的家目录）等，
 需运行 gitolite setup/gl-setup 修复。</p>
 </div>
 </div>
@@ -363,9 +366,9 @@ sudo chmod <span class="m">640</span> /val/lib/gitolite2/projects.list
 <div class="section" id="id7">
 <h2>引用<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="http://blog.longwin.com.tw/2011/03/linux-gitolite-git-server-2011/">Linux 使用 Gitolite 架設 Git Server</a></li>
-<li><a class="reference external" href="http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitolite">服务器上的 Git - Gitolite</a></li>
-<li><a class="reference external" href="http://www.lucidlynx.com/how-to-install-gitweb-in-ubuntu/">How to install gitweb in Ubuntu</a></li>
+<li><p><a class="reference external" href="http://blog.longwin.com.tw/2011/03/linux-gitolite-git-server-2011/">Linux 使用 Gitolite 架設 Git Server</a></p></li>
+<li><p><a class="reference external" href="http://git-scm.com/book/zh/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-Gitolite">服务器上的 Git - Gitolite</a></p></li>
+<li><p><a class="reference external" href="http://www.lucidlynx.com/how-to-install-gitweb-in-ubuntu/">How to install gitweb in Ubuntu</a></p></li>
 </ol>
 </div>
 </div>
@@ -381,7 +384,7 @@ sudo chmod <span class="m">640</span> /val/lib/gitolite2/projects.list
         <a href="../quant/index.html" class="btn btn-neutral float-right" title="量化投资" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sphinx-i11n.html" class="btn btn-neutral" title="sphinx 生成本地化的文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sphinx-i11n.html" class="btn btn-neutral float-left" title="sphinx 生成本地化的文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -390,8 +393,10 @@ sudo chmod <span class="m">640</span> /val/lib/gitolite2/projects.list
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -408,33 +413,16 @@ sudo chmod <span class="m">640</span> /val/lib/gitolite2/projects.list
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

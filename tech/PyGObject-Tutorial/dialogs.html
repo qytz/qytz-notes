@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="剪贴板" href="clipboard.html" />
     <link rel="prev" title="菜单" href="menus.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -273,17 +276,17 @@
 并传递 <em>response_id</em> ，按钮会被添加都对话框活动区域的最后。</p>
 <p><em>response_id</em> 可以为任何正整数或者以下 <code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ResponseType</span></code> 预定义的值：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.NONE</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.REJECT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.ACCEPT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.DELETE_EVENT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.OK</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.CANCEL</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.CLOSE</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.YES</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.NO</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.APPLY</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.HELP</span></code></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.NONE</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.REJECT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.ACCEPT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.DELETE_EVENT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.OK</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.CANCEL</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.CLOSE</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.YES</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.NO</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.APPLY</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.HELP</span></code></p></li>
 </ul>
 <p>创建的按钮控件会被返回，但通常用不到。</p>
 </dd></dl>
@@ -428,20 +431,20 @@
 和/或 设置为与其父窗口一起销毁(<code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.DialogFlags.DESTROY_WITH_PARENT</span></code>) 。</p>
 <p><em>message_type</em> 可以设置为以下之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.INFO</span></code>: 提示消息</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.WARNING</span></code>: 非致命警告信息</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.QUESTION</span></code>: 需要用户选择的问题消息</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.ERROR</span></code>: 致命的错误</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.OTHER</span></code>: 非以上的，不会获取图标</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.INFO</span></code>: 提示消息</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.WARNING</span></code>: 非致命警告信息</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.QUESTION</span></code>: 需要用户选择的问题消息</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.ERROR</span></code>: 致命的错误</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.MessageType.OTHER</span></code>: 非以上的，不会获取图标</p></li>
 </ul>
 <p>也可以给消息对话框设置多种的按钮，来从用户获取不同的响应，可以使用以下值之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.NONE</span></code>: 没有按钮</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.OK</span></code>: 确定按钮</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.CLOSE</span></code>: 关闭按钮</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.CANCEL</span></code>: 取消按钮</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.YES_NO</span></code>: 是和否按钮</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.OK_CANCEL</span></code>: 确定和取消按钮</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.NONE</span></code>: 没有按钮</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.OK</span></code>: 确定按钮</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.CLOSE</span></code>: 关闭按钮</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.CANCEL</span></code>: 取消按钮</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.YES_NO</span></code>: 是和否按钮</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ButtonsType.OK_CANCEL</span></code>: 确定和取消按钮</p></li>
 </ul>
 <p>最后， <em>message_format</em> 是用户要看到的文本信息。</p>
 <p>所有参数都是可选的，也可以用作key-word关键字参数。</p>
@@ -613,13 +616,13 @@
 <p>当创建 <a class="reference internal" href="#Gtk.FileChooserDialog" title="Gtk.FileChooserDialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.FileChooserDialog</span></code></a> 时你需要定义对话框的目的：</p>
 <blockquote>
 <div><ul class="simple">
-<li>要选择一个用于打开的问，用于文件/打开命令，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.OPEN</span></code></li>
-<li>要第一次保存一个文件，用于文件/保存命令，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code> ，
-并使用 <a class="reference internal" href="#Gtk.FileChooser.set_current_name" title="Gtk.FileChooser.set_current_name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_current_name()</span></code></a> 指定一个建议的名字例如 “Untitled”</li>
-<li>要保存一个文件为不同的名字，用于文件/另存为命令，使用
+<li><p>要选择一个用于打开的问，用于文件/打开命令，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.OPEN</span></code></p></li>
+<li><p>要第一次保存一个文件，用于文件/保存命令，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code> ，
+并使用 <a class="reference internal" href="#Gtk.FileChooser.set_current_name" title="Gtk.FileChooser.set_current_name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_current_name()</span></code></a> 指定一个建议的名字例如 “Untitled”</p></li>
+<li><p>要保存一个文件为不同的名字，用于文件/另存为命令，使用
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code> ，并且通过
-<a class="reference internal" href="#Gtk.FileChooser.set_filename" title="Gtk.FileChooser.set_filename"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_filename()</span></code></a> 设置已存在的文件的名字。</li>
-<li>要选择一个文件夹而不是文件，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SELECT_FOLDER</span></code>.</li>
+<a class="reference internal" href="#Gtk.FileChooser.set_filename" title="Gtk.FileChooser.set_filename"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_filename()</span></code></a> 设置已存在的文件的名字。</p></li>
+<li><p>要选择一个文件夹而不是文件，使用 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SELECT_FOLDER</span></code>.</p></li>
 </ul>
 </div></blockquote>
 <p><a class="reference internal" href="#Gtk.FileChooserDialog" title="Gtk.FileChooserDialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.FileChooserDialog</span></code></a> 继承自 <a class="reference internal" href="#Gtk.Dialog" title="Gtk.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Dialog</span></code></a> ，因此按钮也有响应id如
@@ -628,10 +631,10 @@
 你可以使用自定义的响应id，文件选择对话框应该至少包含以下id的按钮之一：</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.ACCEPT</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.OK</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.YES</span></code></li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.APPLY</span></code></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.ACCEPT</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.OK</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.YES</span></code></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.ResponseType.APPLY</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>当用户完成文件的选择，你的程序可以获取选择的文件的文件名(<a class="reference internal" href="#Gtk.FileChooser.get_filename" title="Gtk.FileChooser.get_filename"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.get_filename()</span></code></a>)
@@ -642,11 +645,11 @@
 <p><a class="reference internal" href="#Gtk.FileChooser" title="Gtk.FileChooser"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.FileChooser</span></code></a> 也支持各种选项使得文件和目录更加的可配置和访问。</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="#Gtk.FileChooser.set_local_only" title="Gtk.FileChooser.set_local_only"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_local_only()</span></code></a>: 只有本地文件可以选择。</li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.show_hidden()</span></code>: 显示隐藏文件。</li>
-<li><a class="reference internal" href="#Gtk.FileChooser.set_do_overwrite_confirmation" title="Gtk.FileChooser.set_do_overwrite_confirmation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_do_overwrite_confirmation()</span></code></a>: 如果文件选择对话框
+<li><p><a class="reference internal" href="#Gtk.FileChooser.set_local_only" title="Gtk.FileChooser.set_local_only"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_local_only()</span></code></a>: 只有本地文件可以选择。</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.show_hidden()</span></code>: 显示隐藏文件。</p></li>
+<li><p><a class="reference internal" href="#Gtk.FileChooser.set_do_overwrite_confirmation" title="Gtk.FileChooser.set_do_overwrite_confirmation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.set_do_overwrite_confirmation()</span></code></a>: 如果文件选择对话框
 被配置为 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code> 模式，当用户输入的文件名已存在
-时，会显示一个确认对话框。</li>
+时，会显示一个确认对话框。</p></li>
 </ul>
 </div></blockquote>
 <p>另外，你可以通过创建 <a class="reference internal" href="#Gtk.FileFilter" title="Gtk.FileFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.FileFilter</span></code></a> 对象并调用 <a class="reference internal" href="#Gtk.FileChooser.add_filter" title="Gtk.FileChooser.add_filter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.FileChooser.add_filter()</span></code></a>
@@ -661,10 +664,10 @@ of the file chooser.</p>
 为 <em>parent</em> 。</p>
 <p><em>action</em> 可以为一下之一：</p>
 <ul class="simple">
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.OPEN</span></code>: 只允许用回选择一个已经存在的文件。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code>: 允许用户使用一个已经存在的文件的名字或者输入一个新的文件名。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SELECT_FOLDER</span></code>: 允许用户选择一个已经存在的目录。</li>
-<li><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.CREATE_FOLDER</span></code>: 允许用户命名一个新的或已经存在的目录。</li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.OPEN</span></code>: 只允许用回选择一个已经存在的文件。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SAVE</span></code>: 允许用户使用一个已经存在的文件的名字或者输入一个新的文件名。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.SELECT_FOLDER</span></code>: 允许用户选择一个已经存在的目录。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Gtk.FileChooserAction.CREATE_FOLDER</span></code>: 允许用户命名一个新的或已经存在的目录。</p></li>
 </ul>
 <p><em>buttons</em> 参数与 <a class="reference internal" href="#Gtk.Dialog" title="Gtk.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Dialog</span></code></a> 的格式一样。</p>
 </dd></dl>
@@ -934,7 +937,7 @@ of the file chooser.</p>
         <a href="clipboard.html" class="btn btn-neutral float-right" title="剪贴板" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="menus.html" class="btn btn-neutral" title="菜单" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="menus.html" class="btn btn-neutral float-left" title="菜单" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -943,8 +946,10 @@ of the file chooser.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -961,33 +966,16 @@ of the file chooser.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

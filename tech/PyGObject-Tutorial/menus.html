@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../../about.html" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="对话框（Dialog）" href="dialogs.html" />
     <link rel="prev" title="Multiline Text Editor" href="textview.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -242,10 +245,10 @@
 都应该由这两个action group组合而成。</p>
 <p>不同的类代表了action不同的种类:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#Gtk.Action" title="Gtk.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Action</span></code></a>: 一个可以通过菜单或工具条项目触发的action。</li>
-<li><a class="reference internal" href="#Gtk.ToggleAction" title="Gtk.ToggleAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ToggleAction</span></code></a>: 一个可以通过在两种状态间切换触发的action。</li>
-<li><a class="reference internal" href="#Gtk.RadioAction" title="Gtk.RadioAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.RadioAction</span></code></a>: 在一组中只有一个可以激活的action。</li>
-<li><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.RecentAction</span></code>: 代表一个最近使用文件的列表的action。</li>
+<li><p><a class="reference internal" href="#Gtk.Action" title="Gtk.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Action</span></code></a>: 一个可以通过菜单或工具条项目触发的action。</p></li>
+<li><p><a class="reference internal" href="#Gtk.ToggleAction" title="Gtk.ToggleAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ToggleAction</span></code></a>: 一个可以通过在两种状态间切换触发的action。</p></li>
+<li><p><a class="reference internal" href="#Gtk.RadioAction" title="Gtk.RadioAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.RadioAction</span></code></a>: 在一组中只有一个可以激活的action。</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.RecentAction</span></code>: 代表一个最近使用文件的列表的action。</p></li>
 </ul>
 <p>action代表用户可以执行的操作及其如何呈现的一些信息。这些信息包括name（不是用来显示），
 label（用于显示），加速键，label是否引用 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> ，提到信息及
@@ -253,9 +256,9 @@ action被激活时的回调函数。</p>
 <p>要创建action，你可以直接调用构造函数，或者通过调用 <a class="reference internal" href="#Gtk.ActionGroup.add_action" title="Gtk.ActionGroup.add_action"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_action()</span></code></a> 或
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGrou.add_action_with_accel()</span></code> 或以下便捷函数之一将action加入到action group中：</p>
 <ul class="simple">
-<li><a class="reference internal" href="#Gtk.ActionGroup.add_actions" title="Gtk.ActionGroup.add_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_actions()</span></code></a>,</li>
-<li><a class="reference internal" href="#Gtk.ActionGroup.add_toggle_actions" title="Gtk.ActionGroup.add_toggle_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_toggle_actions()</span></code></a></li>
-<li><a class="reference internal" href="#Gtk.ActionGroup.add_radio_actions" title="Gtk.ActionGroup.add_radio_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_radio_actions()</span></code></a> 。</li>
+<li><p><a class="reference internal" href="#Gtk.ActionGroup.add_actions" title="Gtk.ActionGroup.add_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_actions()</span></code></a>,</p></li>
+<li><p><a class="reference internal" href="#Gtk.ActionGroup.add_toggle_actions" title="Gtk.ActionGroup.add_toggle_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_toggle_actions()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#Gtk.ActionGroup.add_radio_actions" title="Gtk.ActionGroup.add_radio_actions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Gtk.ActionGroup.add_radio_actions()</span></code></a> 。</p></li>
 </ul>
 <p>注意你必须指定菜单项和子菜单的action。</p>
 <div class="section" id="action">
@@ -322,12 +325,12 @@ action被激活时的回调函数。</p>
 <dd><p>这是一个便捷函数用来创建多个 <a class="reference internal" href="#Gtk.Action" title="Gtk.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Action</span></code></a> 对象并将他们加入到action group中。</p>
 <p><em>entries</em> 是一个包含一到六个以下元素的元组的列表：</p>
 <ul class="simple">
-<li>action的name(必须的)</li>
-<li>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action激活时调用的回调函数。(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
+<li><p>action的name(必须的)</p></li>
+<li><p>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action激活时调用的回调函数。(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 <p>aciton 的 “activate” 信号会与回调函数连接。</p>
 <p>如果 <em>user_data</em> 不为 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，将会传递给毁掉函数（如果回调函数指定）。</p>
@@ -339,13 +342,13 @@ action被激活时的回调函数。</p>
 <dd><p>创建多个 <a class="reference internal" href="#Gtk.ToggleAction" title="Gtk.ToggleAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.ToggleAction</span></code></a> 对象被添加到本组中的便捷函数。</p>
 <p><em>entries</em> 是一个包含一到七个以下元素的元组的列表：</p>
 <ul class="simple">
-<li>action的name(必须的)</li>
-<li>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action激活时调用的回调函数。(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>一个表示本toggle action是否激活的布尔值。(默认为 <code class="docutils literal notranslate"><span class="pre">False</span></code>)</li>
+<li><p>action的name(必须的)</p></li>
+<li><p>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action激活时调用的回调函数。(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>一个表示本toggle action是否激活的布尔值。(默认为 <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 <p>aciton 的 “activate” 信号会与回调函数连接。</p>
 <p>如果 <em>user_data</em> 不为 <code class="docutils literal notranslate"><span class="pre">None</span></code> ，将会传递给毁掉函数（如果回调函数指定）。</p>
@@ -357,12 +360,12 @@ action被激活时的回调函数。</p>
 <dd><p>创建多个 <a class="reference internal" href="#Gtk.RadioAction" title="Gtk.RadioAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.RadioAction</span></code></a> 并添加到本组中的便捷函数。</p>
 <p><em>entries</em> 是一个包含一到六个以下元素的元组的列表：</p>
 <ul class="simple">
-<li>action的name(必须的)</li>
-<li>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</li>
-<li>radio action 的值 (默认为 0)</li>
+<li><p>action的name(必须的)</p></li>
+<li><p>action 的 <a class="reference internal" href="stock.html#stock-items"><span class="std std-ref">stock item</span></a> (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的lable (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的加速键，格式为 <a class="reference internal" href="#Gtk.accelerator_parse" title="Gtk.accelerator_parse"><code class="xref py py-func docutils literal notranslate"><span class="pre">Gtk.accelerator_parse()</span></code></a> 可以识别的格式(默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>action 的提示信息。 (默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p>radio action 的值 (默认为 0)</p></li>
 </ul>
 <p><em>value</em> 指定应该被激活的radio action。</p>
 <p>如何 <em>on_change</em> 指定，其会被连接到第一个radio action的 “changed” 信号。</p>
@@ -778,7 +781,7 @@ XML中不包含name或者action属性的元素(例如 &lt;popup&gt;)可以通过
         <a href="dialogs.html" class="btn btn-neutral float-right" title="对话框（Dialog）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="textview.html" class="btn btn-neutral" title="Multiline Text Editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="textview.html" class="btn btn-neutral float-left" title="Multiline Text Editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -787,8 +790,10 @@ XML中不包含name或者action属性的元素(例如 &lt;popup&gt;)可以通过
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -805,33 +810,16 @@ XML中不包含name或者action属性的元素(例如 &lt;popup&gt;)可以通过
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

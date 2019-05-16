@@ -17,35 +17,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fix_rtd_width.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="author" title="关于这些文档" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="多因子" href="multi_factor.html" />
     <link rel="prev" title="凯利公式" href="kelly.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -194,8 +197,8 @@
 <div class="section" id="id1">
 <h1>移动平均线<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <ul class="simple">
-<li>算术平均(MA)</li>
-<li>加权平均(WMA)</li>
+<li><p>算术平均(MA)</p></li>
+<li><p>加权平均(WMA)</p></li>
 </ul>
 <div class="section" id="ma-dma-ema-sma">
 <h2>ma,dma,ema,sma四函数用法辩析<a class="headerlink" href="#ma-dma-ema-sma" title="永久链接至标题">¶</a></h2>
@@ -229,29 +232,27 @@
 <p>MACD称为指数平滑移动平均线，是从双指数移动平均线发展而来的，由快的指数移动平均线（EMA12）减去慢的指数移动平均线（EMA26）得到快线DIF，再用2×（快线DIF-DIF的9日加权移动均线DEA）得到MACD柱。MACD的意义和双移动平均线基本相同，即由快、慢均线的离散、聚合表征当前的多空状态和股价可能的发展变化趋势，但阅读起来更方便。当MACD从负数转向正数，是买的信号。当MACD从正数转向负数，是卖的信号。当MACD以大角度变化，表示快的移动平均线和慢的移动平均线的差距非常迅速的拉开，代表了一个市场大趋势的转变。</p>
 <p>MACD在应用上应先行计算出快速（一般选12日）移动平均值与慢速（一般选26日）移动平均值。以这两个数值作为测量两者（快速与慢速线）间的“差离值”依据。所谓“差离值”（DIF），即12日EMA数值减去26日EMA数值。因此，在持续的涨势中，12日EMA在26日EMA之上。其间的正差离值（+DIF）会愈来愈大。反之在跌势中，差离值可能变负（-DIF），也愈来愈大。 至于行情开始回转，正或负差离值要缩小到一定的程度，才真正是行情反转的信号。MACD的反转信号界定为“差离值”的9日移动平均值（9日EMA）。 在MACD的指数平滑移动平均线计算公式中，都分别加T+1交易日的份量权值，以现在流行的参数12和26为例，其公式如下</p>
 <ul>
-<li><p class="first">12日EMA的计算:</p>
+<li><p>12日EMA的计算:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>EMA（12） = 前一日EMA（12） X 11/13 + 今日收盘价 X 2/13
 26日EMA的计算：
 EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
 </pre></div>
 </div>
 </li>
-<li><p class="first">差离值（DIF）的计算:</p>
+<li><p>差离值（DIF）的计算:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DIF = EMA（12） - EMA（26） 。
 根据差离值计算其9日的EMA，即离差平均值，是所求的DEA值。为了不与指标原名相混淆，此值又名DEA或DEM。今日DEA = （前一日DEA X 8/10 + 今日DIF X 2/10）
 </pre></div>
 </div>
 </li>
-<li><p class="first">用（DIF-DEA）*2即为MACD柱状图。</p>
-</li>
+<li><p>用（DIF-DEA）*2即为MACD柱状图。</p></li>
 </ul>
-<dl class="docutils">
-<dt>故MACD指标是由两线一柱组合起来形成，快速线为DIF，慢速线为DEA，柱状图为MACD。在各类投资中，有以下方法供投资者参考：</dt>
-<dd><ol class="first last arabic simple">
-<li>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)并向上移动时，一般表示为行情处于多头行情中，可以买入开仓或多头持仓；</li>
-<li>当DIF和MACD均小于0(即在图形上表示为它们处于零线以下)并向下移动时，一般表示为行情处于空头行情中，可以卖出开仓或观望。</li>
-<li>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)但都向下移动时，一般表示为行情处于下跌阶段，可以卖出开仓和观望；</li>
-<li>当DIF和MACD均小于0时(即在图形上表示为它们处于零线以下)但向上移动时，一般表示为行情即将上涨，股票将上涨，可以买入开仓或多头持仓。</li>
+<dl class="simple">
+<dt>故MACD指标是由两线一柱组合起来形成，快速线为DIF，慢速线为DEA，柱状图为MACD。在各类投资中，有以下方法供投资者参考：</dt><dd><ol class="arabic simple">
+<li><p>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)并向上移动时，一般表示为行情处于多头行情中，可以买入开仓或多头持仓；</p></li>
+<li><p>当DIF和MACD均小于0(即在图形上表示为它们处于零线以下)并向下移动时，一般表示为行情处于空头行情中，可以卖出开仓或观望。</p></li>
+<li><p>当DIF和MACD均大于0(即在图形上表示为它们处于零线以上)但都向下移动时，一般表示为行情处于下跌阶段，可以卖出开仓和观望；</p></li>
+<li><p>当DIF和MACD均小于0时(即在图形上表示为它们处于零线以下)但向上移动时，一般表示为行情即将上涨，股票将上涨，可以买入开仓或多头持仓。</p></li>
 </ol>
 </dd>
 </dl>
@@ -269,7 +270,7 @@ EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
         <a href="multi_factor.html" class="btn btn-neutral float-right" title="多因子" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="kelly.html" class="btn btn-neutral" title="凯利公式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="kelly.html" class="btn btn-neutral float-left" title="凯利公式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -278,8 +279,10 @@ EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, qytz(lennyh).
-      最后更新于 2019 年 05 月 16 日.
+        &copy; Copyright 2019, qytz(lennyh)
+      <span class="lastupdated">
+        最后更新于 2019 年 05 月 17 日.
+      </span>
 
     </p>
   </div>
@@ -296,33 +299,16 @@ EMA（26） = 前一日EMA（26） X 25/27 + 今日收盘价 X 2/27
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'zh_CN',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
