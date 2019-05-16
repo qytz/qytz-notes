@@ -1,0 +1,13 @@
+<node>
+  <interface name="com.nokia.Demo">
+    <method name="SayHello">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+      <arg name="name" type="s" direction="in" />
+      <arg name="customdata" type="a{sv}" direction="in" />
+    </method>
+    <method name="SayBye"/>
+    <signal name="LateEvent">
+        <arg name="eventkind" type="s" direction="out"/>
+    </signal>
+ </interface>
+</node

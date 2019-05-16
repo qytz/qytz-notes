@@ -1,0 +1,16 @@
+from gi.repository import Gtk
+
+class Handler:
+    def onDeleteWindow(self, *args):
+        Gtk.main_quit(*args)
+
+    def onButtonPressed(self, button):
+        print 'Hello World!'
+
+builder = Gtk.Builder()
+builder.add_from_file('builder_example.glade')
+builder.connect_signals(Handler())
+
+win = builder.get_object('window1')
+win.show_all()
+Gtk.main()

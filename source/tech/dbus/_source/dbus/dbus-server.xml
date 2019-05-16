@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node name="/com/wei/MyObject">
+    <interface name="com.wei.MyObject.Sample">
+        <method name="Test">
+            <arg name="x" type="u" direction="in" />
+            <arg name="d_ret" type="d" direction="out" />
+        </method>
+    </interface>
+</node>

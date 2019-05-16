@@ -10,7 +10,7 @@
 
 二叉查找树相比于其他数据结构的优势在于查找、插入的时间复杂度较低。二叉查找树是基础性数据结构，用于构建更为抽象的数据结构，如集合、multiset、关联数组等。
 
-.. image:: _static/bintree.png
+.. image:: images/bintree.png
 
 
 .. code:: python
@@ -83,7 +83,7 @@
                         parent.right = None
                     del node
                 elif children_count == 1:
-                    # 如果有一个子节点，则让子节点上移替换该节点（该节点消失)
+                    # 如果有一个子节点，则让子节点上移替换该节点（该节点消失）
                     if node.left:
                         n = node.left
                     else:
@@ -109,7 +109,7 @@
 
         def compare_trees(self, node):
             """
-            比较两棵树，比较两个二叉树的方法中，只要有一个节点（叶子）与另外一个树的不同，就返回False，也包括缺少对应叶子的情况。
+            比较两棵树，比较两个二叉树的方法中，只要有一个节点（叶子）与另外一个树的不同，就返回 False，也包括缺少对应叶子的情况。
             """
             if node is None:
                 return False
@@ -172,12 +172,12 @@
 
 root.delete(1)
 
-.. image:: _static/bintree-del1.png
+.. image:: images/bintree-del1.png
 
 root.delete(14)
 
-.. image:: _static/bintree-del2.png
+.. image:: images/bintree-del2.png
 
 root.delete(3)
 
-.. image:: _static/bintree-del3.png
+.. image:: images/bintree-del3.png

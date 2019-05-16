@@ -11,5 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   PyGObject-Tutorial/index
+   gstreamer/index
+   pycairo/index
+   dbus/index
    mysql
+   auto-make-conf
+   chmod-t
+   git-server
 

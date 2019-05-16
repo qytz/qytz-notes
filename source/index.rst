@@ -15,6 +15,7 @@ Contents:
    quant/index
    python/index
    tech/index
+   ipynb/index
 
 
 

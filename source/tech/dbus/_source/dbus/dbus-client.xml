@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<node name="/com/wei/MyObject">
+    <interface name="com.wei.MyObject.Sample">
+        <method name="Test">
+            <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="wei_response" /> 
+            <arg type="u" name="x" direction="in" />
+            <arg type="d" name="d_ret" direction="out" />
+        </method>
+    </interface>
+</node>
+

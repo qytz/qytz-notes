@@ -16,9 +16,9 @@ PyAlgoTrade 的代码也很易读，两个结合阅读效果不错。
 
 当然真实的交易引擎中还有很多其他事件，但最重要的就是这几类事件。
 
-从原理上来讲，量化引擎也是一个决策系统，输入一般是行情数据，用户的策略在引擎内运行，根据行情产生决策，而券商/账户板块则负责决策的执行与统计。
+从原理上来讲，量化引擎也是一个决策系统，输入一般是行情数据，用户的策略在引擎内运行，根据行情产生决策，而券商 / 账户板块则负责决策的执行与统计。
 
-RQAlpha 是单事件源，行情以外的信息需要用户调用api或自己去取。
+RQAlpha 是单事件源，行情以外的信息需要用户调用 api 或自己去取。
 
 PyAlgoTrade 为多事件源，所有的输入都可以是事件源，可以有多种不同的事件源，例如根据关键字过滤 twitter 上的内容等。
 
@@ -27,5 +27,11 @@ PyAlgoTrade 为多事件源，所有的输入都可以是事件源，可以有�
 
 其他模块的实现类似，在此就不多写了，还是多看代码吧，看代码的过程中画了两个简单的结构图，供参考。
 
-.. image:: _static/RQAlpha.svg
-.. image:: _static/PyAlgoTrade.svg
+.. image:: images/RQAlpha.svg
+.. image:: images/PyAlgoTrade.svg
+
+
+.. only:: builder_html
+
+   :download:`RQAlpha<mind/RQAlpha.xmind>`
+   :download:`PyAlgoTrade <mind/PyAlgoTrade.xmind>`
